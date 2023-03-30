@@ -7,7 +7,7 @@ import 'package:dota_online/app/features/teams/team_details/presentation/team_de
 import 'package:dota_online/app/features/teams/teams_list/presentation/teams_list_widget.dart';
 import 'package:go_router/go_router.dart';
 
-class Navigation{
+class Navigation {
   Navigation();
 
   final goRouter = GoRouter(
@@ -22,7 +22,9 @@ class Navigation{
             path: '/matches',
             pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
-              child: const MatchesListWidget(detailsPath: '/matches/match_details'),
+              child: const MatchesListWidget(
+                detailsPath: '/matches/match_details',
+              ),
             ),
             routes: [
               GoRoute(
@@ -40,7 +42,14 @@ class Navigation{
             routes: [
               GoRoute(
                 path: 'team_details',
-                builder: (context, state) => const TeamDetailsWidget(matchesPath: '/matches'),
+                builder: (context, state) => const TeamDetailsWidget(
+                    matchesPath: '/teams/team_details/team_matches',),
+                routes: [
+                  GoRoute(
+                    path: 'team_matches',
+                    builder: (context, state) => const MatchDetailsWidget(),
+                  ),
+                ],
               ),
             ],
           ),

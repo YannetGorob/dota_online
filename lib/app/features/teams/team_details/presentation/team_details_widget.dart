@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 class TeamDetailsWidget extends StatelessWidget {
   const TeamDetailsWidget({required this.matchesPath, super.key});
+
   final String matchesPath;
 
   @override
@@ -16,6 +17,21 @@ class TeamDetailsWidget extends StatelessWidget {
         child: Column(
           children: [
             const Placeholder(),
+            const SizedBox(height: 20,),
+            InkWell(
+              onTap: () => context.go(matchesPath),
+              child: const Placeholder(child: Text('goto matches')),
+            ),
+            const SizedBox(height: 20,),
+            InkWell(
+              onTap: () => context.go(matchesPath),
+              child: const Placeholder(child: Text('goto matches')),
+            ),
+            const SizedBox(height: 20,),
+            InkWell(
+              onTap: () => context.go(matchesPath),
+              child: const Placeholder(child: Text('goto matches')),
+            ),
             const SizedBox(height: 20,),
             InkWell(
               onTap: () => context.go(matchesPath),
