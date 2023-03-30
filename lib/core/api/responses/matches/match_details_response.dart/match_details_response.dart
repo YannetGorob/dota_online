@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final matchDetails = matchDetailsFromJson(jsonString);
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'match_details_response.freezed.dart';

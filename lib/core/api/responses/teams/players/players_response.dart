@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final players = playersFromJson(jsonString);
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'players_response.freezed.dart';

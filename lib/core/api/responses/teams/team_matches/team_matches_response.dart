@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final teamMatches = teamMatchesFromJson(jsonString);
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'team_matches_response.freezed.dart';

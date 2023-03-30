@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final heroStats = heroStatsFromJson(jsonString);
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'hero_stats_response.freezed.dart';
