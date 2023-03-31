@@ -8,14 +8,14 @@ class HomeWidget extends StatefulWidget {
 
   final List<ScaffoldWithNavBarTabItem> tabs = [
     const ScaffoldWithNavBarTabItem(
-      initialLocation: '/matches',
-      icon: Icon(Icons.exposure_zero),
-      label: 'matches',
-    ),
-    const ScaffoldWithNavBarTabItem(
       initialLocation: '/teams',
       icon: Icon(Icons.exposure_plus_1),
       label: 'teams',
+    ),
+    const ScaffoldWithNavBarTabItem(
+      initialLocation: '/matches',
+      icon: Icon(Icons.exposure_zero),
+      label: 'matches',
     ),
     const ScaffoldWithNavBarTabItem(
       initialLocation: '/heroes',
@@ -48,6 +48,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     return Scaffold(
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).primaryColor,
         currentIndex: _currentIndex,
         items: widget.tabs,
         onTap: (index) => _onItemTapped(context, index),

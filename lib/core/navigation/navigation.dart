@@ -1,11 +1,11 @@
-import 'package:dota_online/app/features/heroes/hero_details/presentation/hero_details_widget.dart';
-import 'package:dota_online/app/features/heroes/hero_list/presentation/hero_list_widget.dart';
-import 'package:dota_online/app/features/home/presentation/home_widget.dart';
-import 'package:dota_online/app/features/matches/match_details/presentation/match_details_widget.dart';
-import 'package:dota_online/app/features/matches/matches_list/presentation/matches_list_widget.dart';
-import 'package:dota_online/app/features/teams/team_details/presentation/team_details_widget.dart';
-import 'package:dota_online/app/features/teams/teams_list/presentation/teams_list_widget.dart';
+import 'package:dota_online/app/features/heroes/hero_details/presentation/hero_details_page.dart';
+import 'package:dota_online/app/features/matches/match_details/presentation/match_details_page.dart';
+import 'package:dota_online/app/features/matches/matches_list/presentation/matches_list_page.dart';
+import 'package:dota_online/app/features/teams/team_details/presentation/team_details_page.dart';
 import 'package:go_router/go_router.dart';
+import 'package:dota_online/app/features/heroes/hero_list/presentation/hero_list_page.dart';
+import 'package:dota_online/app/features/home/presentation/home_page.dart';
+import 'package:dota_online/app/features/teams/teams_list/presentation/teams_list_page.dart';
 
 class Navigation {
   Navigation();
@@ -15,21 +15,21 @@ class Navigation {
     routes: [
       ShellRoute(
         builder: (context, state, child) {
-          return HomeWidget(child: child);
+          return HomePage(child: child);
         },
         routes: [
           GoRoute(
             path: '/matches',
             pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
-              child: const MatchesListWidget(
+              child: MatchesListPage(
                 detailsPath: '/matches/match_details',
               ),
             ),
             routes: [
               GoRoute(
                 path: 'match_details',
-                builder: (context, state) => const MatchDetailsWidget(),
+                builder: (context, state) => MatchDetailsPage(),
               ),
             ],
           ),
@@ -37,17 +37,17 @@ class Navigation {
             path: '/teams',
             pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
-              child: const TeamsListWidget(detailsPath: '/teams/team_details'),
+              child: TeamsListPage(detailsPath: '/teams/team_details', teams: [],),
             ),
             routes: [
               GoRoute(
                 path: 'team_details',
-                builder: (context, state) => const TeamDetailsWidget(
+                builder: (context, state) => const TeamDetailsPage(
                     matchesPath: '/teams/team_details/team_matches'),
                 routes: [
                   GoRoute(
                     path: 'team_matches',
-                    builder: (context, state) => const MatchDetailsWidget(),
+                    builder: (context, state) => MatchDetailsPage(),
                   ),
                 ],
               ),
@@ -57,12 +57,12 @@ class Navigation {
             path: '/heroes',
             pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
-              child: const HeroListWidget(detailsPath: '/heroes/hero_details'),
+              child: const HeroListPage(detailsPath: '/heroes/hero_details'),
             ),
             routes: [
               GoRoute(
                 path: 'hero_details',
-                builder: (context, state) => const HeroDetailsWidget(),
+                builder: (context, state) => const HeroDetailsPage(),
               ),
             ],
           ),
