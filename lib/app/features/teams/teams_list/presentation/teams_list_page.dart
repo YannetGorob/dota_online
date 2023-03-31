@@ -1,21 +1,21 @@
-import 'package:dota_online/app/features/teams/teams_list/domain/teams_list_state.dart';
-import 'package:dota_online/core/api/models/team/team_model.dart';
+import 'package:dota_online/app/features/matches/matches_list/domain/matches_list_cubit.dart';
+import 'package:dota_online/app/features/matches/matches_list/domain/matches_list_state.dart';
+import 'package:dota_online/core/api/models/match/matches.dart';
 import 'package:dota_online/core/di/di.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/api/dota_api.dart';
-import '../domain/teams_list_cubit.dart';
 
 class TeamsListPage extends StatelessWidget {
   const TeamsListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<TeamsListCubit>(
-      create: (_) => TeamsListCubit(teamsProvider: locator.get<DotaApi>().teams)
-        ..loadInitialTeamsData(),
+    return BlocProvider<MatchesListCubit>(
+      create: (_) =>
+          MatchesListCubit(matchesProvider: locator.get<DotaApi>().matches)
+            ..loadInitialMatchesData(),
       child: TeamsListWidget(),
     );
   }
@@ -28,14 +28,16 @@ class TeamsListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: BlocBuilder<TeamsListCubit, TeamsListState>(
-        builder: (BuildContext context, TeamsListState state) {
+      body: BlocBuilder<MatchesListCubit, MatchesListState>(
+        builder: (BuildContext context, MatchesListState state) {
           return state.map(
               loading: (_) => CircularProgressIndicator(),
               loaded: (state) => _LoadedBody(
-                    teams: state.teams,
+                    matches: state.matches,
                   ),
-              error: (_) => Center(child: FlutterLogo()));
+              error: (_) => Center(
+                    child: FlutterLogo(),
+                  ));
         },
       ),
     );
@@ -43,17 +45,17 @@ class TeamsListWidget extends StatelessWidget {
 }
 
 class _LoadedBody extends StatelessWidget {
-  const _LoadedBody({Key? key, required this.teams}) : super(key: key);
-  final List<TeamModel> teams;
+  const _LoadedBody({Key? key, required this.matches}) : super(key: key);
+  final List<Matches> matches;
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: teams.length,
+        itemCount: matches.length,
         itemBuilder: (BuildContext context, int index) {
-          final item = teams[index];
+          final item = matches[index];
           return ListTile(
-            title: Text(item.name!),
+            title: Text(item.duration.toString()),
           );
         });
   }

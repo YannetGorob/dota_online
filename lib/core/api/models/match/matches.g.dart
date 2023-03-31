@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'match.dart';
+part of 'matches.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Match _$$_MatchFromJson(Map<String, dynamic> json) => _$_Match(
+_$_Matches _$$_MatchesFromJson(Map<String, dynamic> json) => _$_Matches(
       matchId: json['matchId'] as int?,
       duration: json['duration'] as int?,
       startTime: json['startTime'] as int?,
@@ -23,7 +23,8 @@ _$_Match _$$_MatchFromJson(Map<String, dynamic> json) => _$_Match(
       radiantWin: json['radiantWin'] as bool?,
     );
 
-Map<String, dynamic> _$$_MatchToJson(_$_Match instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MatchesToJson(_$_Matches instance) =>
+    <String, dynamic>{
       'matchId': instance.matchId,
       'duration': instance.duration,
       'startTime': instance.startTime,
