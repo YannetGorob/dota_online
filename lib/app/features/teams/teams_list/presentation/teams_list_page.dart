@@ -34,7 +34,7 @@ class TeamsListWidget extends StatelessWidget {
               loaded: (_) => Center(
                     child: Text('Ok'),
                   ),
-              error: (_) => FlutterLogo());
+              error: (_) => Center(child: FlutterLogo()));
         },
       ),
     );
