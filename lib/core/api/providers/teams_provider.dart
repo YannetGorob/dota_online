@@ -1,10 +1,8 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/core/api/models/team/player.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-
 
 class TeamsProvider {
   TeamsProvider(this._network);

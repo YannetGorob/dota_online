@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'match.dart';
+part of 'matches.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Match _$MatchFromJson(Map<String, dynamic> json) {
-  return _Match.fromJson(json);
+Matches _$MatchesFromJson(Map<String, dynamic> json) {
+  return _Matches.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Match {
+mixin _$Matches {
   int? get matchId => throw _privateConstructorUsedError;
   int? get duration => throw _privateConstructorUsedError;
   int? get startTime => throw _privateConstructorUsedError;
@@ -37,13 +37,13 @@ mixin _$Match {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MatchCopyWith<Match> get copyWith => throw _privateConstructorUsedError;
+  $MatchesCopyWith<Matches> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MatchCopyWith<$Res> {
-  factory $MatchCopyWith(Match value, $Res Function(Match) then) =
-      _$MatchCopyWithImpl<$Res, Match>;
+abstract class $MatchesCopyWith<$Res> {
+  factory $MatchesCopyWith(Matches value, $Res Function(Matches) then) =
+      _$MatchesCopyWithImpl<$Res, Matches>;
   @useResult
   $Res call(
       {int? matchId,
@@ -63,9 +63,9 @@ abstract class $MatchCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MatchCopyWithImpl<$Res, $Val extends Match>
-    implements $MatchCopyWith<$Res> {
-  _$MatchCopyWithImpl(this._value, this._then);
+class _$MatchesCopyWithImpl<$Res, $Val extends Matches>
+    implements $MatchesCopyWith<$Res> {
+  _$MatchesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -152,9 +152,10 @@ class _$MatchCopyWithImpl<$Res, $Val extends Match>
 }
 
 /// @nodoc
-abstract class _$$_MatchCopyWith<$Res> implements $MatchCopyWith<$Res> {
-  factory _$$_MatchCopyWith(_$_Match value, $Res Function(_$_Match) then) =
-      __$$_MatchCopyWithImpl<$Res>;
+abstract class _$$_MatchesCopyWith<$Res> implements $MatchesCopyWith<$Res> {
+  factory _$$_MatchesCopyWith(
+          _$_Matches value, $Res Function(_$_Matches) then) =
+      __$$_MatchesCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -175,9 +176,10 @@ abstract class _$$_MatchCopyWith<$Res> implements $MatchCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_MatchCopyWithImpl<$Res> extends _$MatchCopyWithImpl<$Res, _$_Match>
-    implements _$$_MatchCopyWith<$Res> {
-  __$$_MatchCopyWithImpl(_$_Match _value, $Res Function(_$_Match) _then)
+class __$$_MatchesCopyWithImpl<$Res>
+    extends _$MatchesCopyWithImpl<$Res, _$_Matches>
+    implements _$$_MatchesCopyWith<$Res> {
+  __$$_MatchesCopyWithImpl(_$_Matches _value, $Res Function(_$_Matches) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -198,7 +200,7 @@ class __$$_MatchCopyWithImpl<$Res> extends _$MatchCopyWithImpl<$Res, _$_Match>
     Object? direScore = freezed,
     Object? radiantWin = freezed,
   }) {
-    return _then(_$_Match(
+    return _then(_$_Matches(
       matchId: freezed == matchId
           ? _value.matchId
           : matchId // ignore: cast_nullable_to_non_nullable
@@ -261,8 +263,8 @@ class __$$_MatchCopyWithImpl<$Res> extends _$MatchCopyWithImpl<$Res, _$_Match>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Match implements _Match {
-  const _$_Match(
+class _$_Matches implements _Matches {
+  const _$_Matches(
       {this.matchId,
       this.duration,
       this.startTime,
@@ -278,8 +280,8 @@ class _$_Match implements _Match {
       this.direScore,
       this.radiantWin});
 
-  factory _$_Match.fromJson(Map<String, dynamic> json) =>
-      _$$_MatchFromJson(json);
+  factory _$_Matches.fromJson(Map<String, dynamic> json) =>
+      _$$_MatchesFromJson(json);
 
   @override
   final int? matchId;
@@ -312,14 +314,14 @@ class _$_Match implements _Match {
 
   @override
   String toString() {
-    return 'Match(matchId: $matchId, duration: $duration, startTime: $startTime, radiantTeamId: $radiantTeamId, radiantName: $radiantName, direTeamId: $direTeamId, direName: $direName, leagueid: $leagueid, leagueName: $leagueName, seriesId: $seriesId, seriesType: $seriesType, radiantScore: $radiantScore, direScore: $direScore, radiantWin: $radiantWin)';
+    return 'Matches(matchId: $matchId, duration: $duration, startTime: $startTime, radiantTeamId: $radiantTeamId, radiantName: $radiantName, direTeamId: $direTeamId, direName: $direName, leagueid: $leagueid, leagueName: $leagueName, seriesId: $seriesId, seriesType: $seriesType, radiantScore: $radiantScore, direScore: $direScore, radiantWin: $radiantWin)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Match &&
+            other is _$_Matches &&
             (identical(other.matchId, matchId) || other.matchId == matchId) &&
             (identical(other.duration, duration) ||
                 other.duration == duration) &&
@@ -371,19 +373,19 @@ class _$_Match implements _Match {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MatchCopyWith<_$_Match> get copyWith =>
-      __$$_MatchCopyWithImpl<_$_Match>(this, _$identity);
+  _$$_MatchesCopyWith<_$_Matches> get copyWith =>
+      __$$_MatchesCopyWithImpl<_$_Matches>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MatchToJson(
+    return _$$_MatchesToJson(
       this,
     );
   }
 }
 
-abstract class _Match implements Match {
-  const factory _Match(
+abstract class _Matches implements Matches {
+  const factory _Matches(
       {final int? matchId,
       final int? duration,
       final int? startTime,
@@ -397,9 +399,9 @@ abstract class _Match implements Match {
       final int? seriesType,
       final int? radiantScore,
       final int? direScore,
-      final bool? radiantWin}) = _$_Match;
+      final bool? radiantWin}) = _$_Matches;
 
-  factory _Match.fromJson(Map<String, dynamic> json) = _$_Match.fromJson;
+  factory _Matches.fromJson(Map<String, dynamic> json) = _$_Matches.fromJson;
 
   @override
   int? get matchId;
@@ -431,6 +433,6 @@ abstract class _Match implements Match {
   bool? get radiantWin;
   @override
   @JsonKey(ignore: true)
-  _$$_MatchCopyWith<_$_Match> get copyWith =>
+  _$$_MatchesCopyWith<_$_Matches> get copyWith =>
       throw _privateConstructorUsedError;
 }
