@@ -6,7 +6,5 @@ final locator = GetIt.I;
 
 void configureDependencies() {
   locator.registerLazySingleton<DotaApi>(() => DotaApi.init());
-  // TeamsListCubit(teamsProvider: locator.get<DotaApi>().teams);
   //router
 }
-
