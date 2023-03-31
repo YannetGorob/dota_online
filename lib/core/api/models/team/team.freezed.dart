@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'teams.dart';
+part of 'team.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Teams _$TeamsFromJson(Map<String, dynamic> json) {
-  return _Teams.fromJson(json);
+Team _$TeamFromJson(Map<String, dynamic> json) {
+  return _Team.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Teams {
+mixin _$Team {
   int? get teamId => throw _privateConstructorUsedError;
   double? get rating => throw _privateConstructorUsedError;
   int? get wins => throw _privateConstructorUsedError;
@@ -31,13 +31,13 @@ mixin _$Teams {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TeamsCopyWith<Teams> get copyWith => throw _privateConstructorUsedError;
+  $TeamCopyWith<Team> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TeamsCopyWith<$Res> {
-  factory $TeamsCopyWith(Teams value, $Res Function(Teams) then) =
-      _$TeamsCopyWithImpl<$Res, Teams>;
+abstract class $TeamCopyWith<$Res> {
+  factory $TeamCopyWith(Team value, $Res Function(Team) then) =
+      _$TeamCopyWithImpl<$Res, Team>;
   @useResult
   $Res call(
       {int? teamId,
@@ -51,9 +51,9 @@ abstract class $TeamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TeamsCopyWithImpl<$Res, $Val extends Teams>
-    implements $TeamsCopyWith<$Res> {
-  _$TeamsCopyWithImpl(this._value, this._then);
+class _$TeamCopyWithImpl<$Res, $Val extends Team>
+    implements $TeamCopyWith<$Res> {
+  _$TeamCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -110,9 +110,9 @@ class _$TeamsCopyWithImpl<$Res, $Val extends Teams>
 }
 
 /// @nodoc
-abstract class _$$_TeamsCopyWith<$Res> implements $TeamsCopyWith<$Res> {
-  factory _$$_TeamsCopyWith(_$_Teams value, $Res Function(_$_Teams) then) =
-      __$$_TeamsCopyWithImpl<$Res>;
+abstract class _$$_TeamCopyWith<$Res> implements $TeamCopyWith<$Res> {
+  factory _$$_TeamCopyWith(_$_Team value, $Res Function(_$_Team) then) =
+      __$$_TeamCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -127,9 +127,9 @@ abstract class _$$_TeamsCopyWith<$Res> implements $TeamsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TeamsCopyWithImpl<$Res> extends _$TeamsCopyWithImpl<$Res, _$_Teams>
-    implements _$$_TeamsCopyWith<$Res> {
-  __$$_TeamsCopyWithImpl(_$_Teams _value, $Res Function(_$_Teams) _then)
+class __$$_TeamCopyWithImpl<$Res> extends _$TeamCopyWithImpl<$Res, _$_Team>
+    implements _$$_TeamCopyWith<$Res> {
+  __$$_TeamCopyWithImpl(_$_Team _value, $Res Function(_$_Team) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -144,7 +144,7 @@ class __$$_TeamsCopyWithImpl<$Res> extends _$TeamsCopyWithImpl<$Res, _$_Teams>
     Object? tag = freezed,
     Object? logoUrl = freezed,
   }) {
-    return _then(_$_Teams(
+    return _then(_$_Team(
       teamId: freezed == teamId
           ? _value.teamId
           : teamId // ignore: cast_nullable_to_non_nullable
@@ -183,8 +183,8 @@ class __$$_TeamsCopyWithImpl<$Res> extends _$TeamsCopyWithImpl<$Res, _$_Teams>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Teams implements _Teams {
-  const _$_Teams(
+class _$_Team implements _Team {
+  const _$_Team(
       {this.teamId,
       this.rating,
       this.wins,
@@ -194,8 +194,7 @@ class _$_Teams implements _Teams {
       this.tag,
       this.logoUrl});
 
-  factory _$_Teams.fromJson(Map<String, dynamic> json) =>
-      _$$_TeamsFromJson(json);
+  factory _$_Team.fromJson(Map<String, dynamic> json) => _$$_TeamFromJson(json);
 
   @override
   final int? teamId;
@@ -216,14 +215,14 @@ class _$_Teams implements _Teams {
 
   @override
   String toString() {
-    return 'Teams(teamId: $teamId, rating: $rating, wins: $wins, losses: $losses, lastMatchTime: $lastMatchTime, name: $name, tag: $tag, logoUrl: $logoUrl)';
+    return 'Team(teamId: $teamId, rating: $rating, wins: $wins, losses: $losses, lastMatchTime: $lastMatchTime, name: $name, tag: $tag, logoUrl: $logoUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Teams &&
+            other is _$_Team &&
             (identical(other.teamId, teamId) || other.teamId == teamId) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.wins, wins) || other.wins == wins) &&
@@ -243,19 +242,19 @@ class _$_Teams implements _Teams {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TeamsCopyWith<_$_Teams> get copyWith =>
-      __$$_TeamsCopyWithImpl<_$_Teams>(this, _$identity);
+  _$$_TeamCopyWith<_$_Team> get copyWith =>
+      __$$_TeamCopyWithImpl<_$_Team>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TeamsToJson(
+    return _$$_TeamToJson(
       this,
     );
   }
 }
 
-abstract class _Teams implements Teams {
-  const factory _Teams(
+abstract class _Team implements Team {
+  const factory _Team(
       {final int? teamId,
       final double? rating,
       final int? wins,
@@ -263,9 +262,9 @@ abstract class _Teams implements Teams {
       final int? lastMatchTime,
       final String? name,
       final String? tag,
-      final String? logoUrl}) = _$_Teams;
+      final String? logoUrl}) = _$_Team;
 
-  factory _Teams.fromJson(Map<String, dynamic> json) = _$_Teams.fromJson;
+  factory _Team.fromJson(Map<String, dynamic> json) = _$_Team.fromJson;
 
   @override
   int? get teamId;
@@ -285,6 +284,5 @@ abstract class _Teams implements Teams {
   String? get logoUrl;
   @override
   @JsonKey(ignore: true)
-  _$$_TeamsCopyWith<_$_Teams> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TeamCopyWith<_$_Team> get copyWith => throw _privateConstructorUsedError;
 }

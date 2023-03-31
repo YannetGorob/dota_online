@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'matches.freezed.dart';
-part 'matches.g.dart';
+part 'match.freezed.dart';
+part 'match.g.dart';
 
 @freezed
-class Matches with _$Matches {
-  const factory Matches({
+class Match with _$Match {
+  const factory Match({
     int? matchId,
     int? duration,
     int? startTime,
@@ -20,8 +20,7 @@ class Matches with _$Matches {
     int? radiantScore,
     int? direScore,
     bool? radiantWin,
-  }) = _Matches;
+  }) = _Match;
 
-  factory Matches.fromJson(Map<String, dynamic> json) =>
-      _$MatchesFromJson(json);
+  factory Match.fromJson(Map<String, dynamic> json) => _$MatchFromJson(json);
 }

@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'teams.freezed.dart';
-part 'teams.g.dart';
+part 'team.freezed.dart';
+part 'team.g.dart';
 
 @freezed
-class Teams with _$Teams {
-  const factory Teams({
+class Team with _$Team {
+  const factory Team({
     int? teamId,
     double? rating,
     int? wins,
@@ -14,7 +14,7 @@ class Teams with _$Teams {
     String? name,
     String? tag,
     String? logoUrl,
-  }) = _Teams;
+  }) = _Team;
 
-  factory Teams.fromJson(Map<String, dynamic> json) => _$TeamsFromJson(json);
+  factory Team.fromJson(Map<String, dynamic> json) => _$TeamFromJson(json);
 }

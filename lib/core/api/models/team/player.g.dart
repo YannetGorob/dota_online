@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'players.dart';
+part of 'player.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Players _$$_PlayersFromJson(Map<String, dynamic> json) => _$_Players(
+_$_Player _$$_PlayerFromJson(Map<String, dynamic> json) => _$_Player(
       accountId: json['accountId'] as int?,
       name: json['name'] as String?,
       gamesPlayed: json['gamesPlayed'] as int?,
@@ -14,8 +14,7 @@ _$_Players _$$_PlayersFromJson(Map<String, dynamic> json) => _$_Players(
       isCurrentTeamMember: json['isCurrentTeamMember'] as bool?,
     );
 
-Map<String, dynamic> _$$_PlayersToJson(_$_Players instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_PlayerToJson(_$_Player instance) => <String, dynamic>{
       'accountId': instance.accountId,
       'name': instance.name,
       'gamesPlayed': instance.gamesPlayed,
