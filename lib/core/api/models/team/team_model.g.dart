@@ -7,24 +7,24 @@ part of 'team_model.dart';
 // **************************************************************************
 
 _$_TeamModel _$$_TeamModelFromJson(Map<String, dynamic> json) => _$_TeamModel(
-      teamId: json['teamId'] as int?,
+      teamId: json['team_id'] as int?,
       rating: (json['rating'] as num?)?.toDouble(),
       wins: json['wins'] as int?,
       losses: json['losses'] as int?,
-      lastMatchTime: json['lastMatchTime'] as int?,
+      lastMatchTime: json['last_match_time'] as int?,
       name: json['name'] as String?,
       tag: json['tag'] as String?,
-      logoUrl: json['logoUrl'] as String?,
+      logoUrl: json['logo_url'] as String?,
     );
 
 Map<String, dynamic> _$$_TeamModelToJson(_$_TeamModel instance) =>
     <String, dynamic>{
-      'teamId': instance.teamId,
+      'team_id': instance.teamId,
       'rating': instance.rating,
       'wins': instance.wins,
       'losses': instance.losses,
-      'lastMatchTime': instance.lastMatchTime,
+      'last_match_time': instance.lastMatchTime,
       'name': instance.name,
       'tag': instance.tag,
-      'logoUrl': instance.logoUrl,
+      'logo_url': instance.logoUrl,
     };

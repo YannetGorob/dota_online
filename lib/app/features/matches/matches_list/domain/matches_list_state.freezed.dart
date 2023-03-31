@@ -23,7 +23,6 @@ mixin _$MatchesListState {
     required TResult Function(String? message) error,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
@@ -39,7 +38,6 @@ mixin _$MatchesListState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Loading value) loading,
@@ -47,7 +45,6 @@ mixin _$MatchesListState {
     required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Loading value)? loading,
@@ -77,9 +74,9 @@ class _$MatchesListStateCopyWithImpl<$Res, $Val extends MatchesListState>
     implements $MatchesListStateCopyWith<$Res> {
   _$MatchesListStateCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
@@ -227,7 +224,7 @@ class _$Loaded implements Loaded {
   @override
   List<Matches> get matches {
     if (_matches is EqualUnmodifiableListView) return _matches;
-// ignore: implicit_dynamic_type
+    // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_matches);
   }
 

@@ -7,17 +7,17 @@ part of 'player.dart';
 // **************************************************************************
 
 _$_Player _$$_PlayerFromJson(Map<String, dynamic> json) => _$_Player(
-      accountId: json['accountId'] as int?,
+      accountId: json['account_id'] as int?,
       name: json['name'] as String?,
-      gamesPlayed: json['gamesPlayed'] as int?,
+      gamesPlayed: json['games_played'] as int?,
       wins: json['wins'] as int?,
-      isCurrentTeamMember: json['isCurrentTeamMember'] as bool?,
+      isCurrentTeamMember: json['is_current_team_member'] as bool?,
     );
 
 Map<String, dynamic> _$$_PlayerToJson(_$_Player instance) => <String, dynamic>{
-      'accountId': instance.accountId,
+      'account_id': instance.accountId,
       'name': instance.name,
-      'gamesPlayed': instance.gamesPlayed,
+      'games_played': instance.gamesPlayed,
       'wins': instance.wins,
-      'isCurrentTeamMember': instance.isCurrentTeamMember,
+      'is_current_team_member': instance.isCurrentTeamMember,
     };
