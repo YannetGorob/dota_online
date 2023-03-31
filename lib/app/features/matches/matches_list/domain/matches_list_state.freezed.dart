@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'team_detail_state.dart';
+part of 'matches_list_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,27 +15,25 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$TeamDetailState {
+mixin _$MatchesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Player>? players, List<TeamMatches>? matches)
-        loaded,
+    required TResult Function(List<Match> matches) loaded,
     required TResult Function(String? message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Player>? players, List<TeamMatches>? matches)?
-        loaded,
+    TResult? Function(List<Match> matches)? loaded,
     TResult? Function(String? message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Player>? players, List<TeamMatches>? matches)? loaded,
+    TResult Function(List<Match> matches)? loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) =>
@@ -65,16 +63,16 @@ mixin _$TeamDetailState {
 }
 
 /// @nodoc
-abstract class $TeamDetailStateCopyWith<$Res> {
-  factory $TeamDetailStateCopyWith(
-          TeamDetailState value, $Res Function(TeamDetailState) then) =
-      _$TeamDetailStateCopyWithImpl<$Res, TeamDetailState>;
+abstract class $MatchesListStateCopyWith<$Res> {
+  factory $MatchesListStateCopyWith(
+          MatchesListState value, $Res Function(MatchesListState) then) =
+      _$MatchesListStateCopyWithImpl<$Res, MatchesListState>;
 }
 
 /// @nodoc
-class _$TeamDetailStateCopyWithImpl<$Res, $Val extends TeamDetailState>
-    implements $TeamDetailStateCopyWith<$Res> {
-  _$TeamDetailStateCopyWithImpl(this._value, this._then);
+class _$MatchesListStateCopyWithImpl<$Res, $Val extends MatchesListState>
+    implements $MatchesListStateCopyWith<$Res> {
+  _$MatchesListStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -90,7 +88,7 @@ abstract class _$$LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingCopyWithImpl<$Res>
-    extends _$TeamDetailStateCopyWithImpl<$Res, _$Loading>
+    extends _$MatchesListStateCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
@@ -103,7 +101,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'TeamDetailState.loading()';
+    return 'MatchesListState.loading()';
   }
 
   @override
@@ -119,8 +117,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Player>? players, List<TeamMatches>? matches)
-        loaded,
+    required TResult Function(List<Match> matches) loaded,
     required TResult Function(String? message) error,
   }) {
     return loading();
@@ -130,8 +127,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Player>? players, List<TeamMatches>? matches)?
-        loaded,
+    TResult? Function(List<Match> matches)? loaded,
     TResult? Function(String? message)? error,
   }) {
     return loading?.call();
@@ -141,7 +137,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Player>? players, List<TeamMatches>? matches)? loaded,
+    TResult Function(List<Match> matches)? loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
@@ -186,7 +182,7 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements TeamDetailState {
+abstract class Loading implements MatchesListState {
   const factory Loading() = _$Loading;
 }
 
@@ -195,12 +191,12 @@ abstract class _$$LoadedCopyWith<$Res> {
   factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
       __$$LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Player>? players, List<TeamMatches>? matches});
+  $Res call({List<Match> matches});
 }
 
 /// @nodoc
 class __$$LoadedCopyWithImpl<$Res>
-    extends _$TeamDetailStateCopyWithImpl<$Res, _$Loaded>
+    extends _$MatchesListStateCopyWithImpl<$Res, _$Loaded>
     implements _$$LoadedCopyWith<$Res> {
   __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
       : super(_value, _then);
@@ -208,18 +204,13 @@ class __$$LoadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? players = freezed,
-    Object? matches = freezed,
+    Object? matches = null,
   }) {
     return _then(_$Loaded(
-      players: freezed == players
-          ? _value._players
-          : players // ignore: cast_nullable_to_non_nullable
-              as List<Player>?,
-      matches: freezed == matches
+      matches: null == matches
           ? _value._matches
           : matches // ignore: cast_nullable_to_non_nullable
-              as List<TeamMatches>?,
+              as List<Match>,
     ));
   }
 }
@@ -227,34 +218,19 @@ class __$$LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Loaded implements Loaded {
-  const _$Loaded(
-      {final List<Player>? players, final List<TeamMatches>? matches})
-      : _players = players,
-        _matches = matches;
+  const _$Loaded({required final List<Match> matches}) : _matches = matches;
 
-  final List<Player>? _players;
+  final List<Match> _matches;
   @override
-  List<Player>? get players {
-    final value = _players;
-    if (value == null) return null;
-    if (_players is EqualUnmodifiableListView) return _players;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<TeamMatches>? _matches;
-  @override
-  List<TeamMatches>? get matches {
-    final value = _matches;
-    if (value == null) return null;
+  List<Match> get matches {
     if (_matches is EqualUnmodifiableListView) return _matches;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_matches);
   }
 
   @override
   String toString() {
-    return 'TeamDetailState.loaded(players: $players, matches: $matches)';
+    return 'MatchesListState.loaded(matches: $matches)';
   }
 
   @override
@@ -262,15 +238,12 @@ class _$Loaded implements Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Loaded &&
-            const DeepCollectionEquality().equals(other._players, _players) &&
             const DeepCollectionEquality().equals(other._matches, _matches));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_players),
-      const DeepCollectionEquality().hash(_matches));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_matches));
 
   @JsonKey(ignore: true)
   @override
@@ -282,34 +255,32 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Player>? players, List<TeamMatches>? matches)
-        loaded,
+    required TResult Function(List<Match> matches) loaded,
     required TResult Function(String? message) error,
   }) {
-    return loaded(players, matches);
+    return loaded(matches);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Player>? players, List<TeamMatches>? matches)?
-        loaded,
+    TResult? Function(List<Match> matches)? loaded,
     TResult? Function(String? message)? error,
   }) {
-    return loaded?.call(players, matches);
+    return loaded?.call(matches);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Player>? players, List<TeamMatches>? matches)? loaded,
+    TResult Function(List<Match> matches)? loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(players, matches);
+      return loaded(matches);
     }
     return orElse();
   }
@@ -349,13 +320,10 @@ class _$Loaded implements Loaded {
   }
 }
 
-abstract class Loaded implements TeamDetailState {
-  const factory Loaded(
-      {final List<Player>? players,
-      final List<TeamMatches>? matches}) = _$Loaded;
+abstract class Loaded implements MatchesListState {
+  const factory Loaded({required final List<Match> matches}) = _$Loaded;
 
-  List<Player>? get players;
-  List<TeamMatches>? get matches;
+  List<Match> get matches;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -371,7 +339,7 @@ abstract class _$$ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorCopyWithImpl<$Res>
-    extends _$TeamDetailStateCopyWithImpl<$Res, _$Error>
+    extends _$MatchesListStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
@@ -400,7 +368,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'TeamDetailState.error(message: $message)';
+    return 'MatchesListState.error(message: $message)';
   }
 
   @override
@@ -424,8 +392,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<Player>? players, List<TeamMatches>? matches)
-        loaded,
+    required TResult Function(List<Match> matches) loaded,
     required TResult Function(String? message) error,
   }) {
     return error(message);
@@ -435,8 +402,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<Player>? players, List<TeamMatches>? matches)?
-        loaded,
+    TResult? Function(List<Match> matches)? loaded,
     TResult? Function(String? message)? error,
   }) {
     return error?.call(message);
@@ -446,7 +412,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<Player>? players, List<TeamMatches>? matches)? loaded,
+    TResult Function(List<Match> matches)? loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
@@ -491,7 +457,7 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements TeamDetailState {
+abstract class Error implements MatchesListState {
   const factory Error([final String? message]) = _$Error;
 
   String? get message;

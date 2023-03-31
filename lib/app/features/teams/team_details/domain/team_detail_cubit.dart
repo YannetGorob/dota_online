@@ -9,9 +9,9 @@ class TeamDetailCubit extends Cubit<TeamDetailState> {
 
   final TeamsProvider _teamsProvider;
 
-  Future<void> loadTeamDetailsData() async {
-    final playersResponse = await _teamsProvider.getPlayers();
-    final matchesResponse = await _teamsProvider.getTeamMatches();
+  Future<void> loadTeamDetailsData(int teamId) async {
+    final playersResponse = await _teamsProvider.getPlayers(teamId);
+    final matchesResponse = await _teamsProvider.getTeamMatches(teamId);
 
     final players = playersResponse.map(
       success: (data) => data.value,
@@ -26,8 +26,8 @@ class TeamDetailCubit extends Cubit<TeamDetailState> {
       emit(TeamDetailState.error());
     } else {
       emit(TeamDetailState.loaded(
-        players: [],
-        matches: [],
+        players: players,
+        matches: matches,
       ));
     }
   }

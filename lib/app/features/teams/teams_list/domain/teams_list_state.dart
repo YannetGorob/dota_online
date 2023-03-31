@@ -1,4 +1,4 @@
-import 'package:dota_online/core/api/responses/teams/teams_response.dart';
+import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'teams_list_state.freezed.dart';
@@ -8,7 +8,7 @@ class TeamsListState with _$TeamsListState {
   const factory TeamsListState.loading() = Loading;
 
   const factory TeamsListState.loaded({
-    required List<Teams> teams,
+    required List<TeamModel> teams,
   }) = Loaded;
 
   const factory TeamsListState.error([String? message]) = Error;
