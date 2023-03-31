@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'hero_stats_response.freezed.dart';
-part 'hero_stats_response.g.dart';
+part 'hero_stats.freezed.dart';
+part 'hero_stats.g.dart';
 
 @freezed
 class HeroStats with _$HeroStats {

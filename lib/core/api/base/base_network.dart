@@ -13,6 +13,7 @@ class BaseNetwork {
   Future<ApiResult<T>> sendRequest<T>({
     required String path,
     T Function(Map<String, dynamic> json)? parseResponse,
+    T Function(List<dynamic> json)? parseListResponse,
   }) async {
     if (parseResponse == null) {
       throw ArgumentError();

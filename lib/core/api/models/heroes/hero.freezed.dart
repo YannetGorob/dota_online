@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'heroes_response.dart';
+part of 'hero.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Heroes _$HeroesFromJson(Map<String, dynamic> json) {
-  return _Heroes.fromJson(json);
+Hero _$HeroFromJson(Map<String, dynamic> json) {
+  return _Hero.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Heroes {
+mixin _$Hero {
   int? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get localizedName => throw _privateConstructorUsedError;
@@ -30,13 +30,13 @@ mixin _$Heroes {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HeroesCopyWith<Heroes> get copyWith => throw _privateConstructorUsedError;
+  $HeroCopyWith<Hero> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HeroesCopyWith<$Res> {
-  factory $HeroesCopyWith(Heroes value, $Res Function(Heroes) then) =
-      _$HeroesCopyWithImpl<$Res, Heroes>;
+abstract class $HeroCopyWith<$Res> {
+  factory $HeroCopyWith(Hero value, $Res Function(Hero) then) =
+      _$HeroCopyWithImpl<$Res, Hero>;
   @useResult
   $Res call(
       {int? id,
@@ -49,9 +49,9 @@ abstract class $HeroesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HeroesCopyWithImpl<$Res, $Val extends Heroes>
-    implements $HeroesCopyWith<$Res> {
-  _$HeroesCopyWithImpl(this._value, this._then);
+class _$HeroCopyWithImpl<$Res, $Val extends Hero>
+    implements $HeroCopyWith<$Res> {
+  _$HeroCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -103,9 +103,9 @@ class _$HeroesCopyWithImpl<$Res, $Val extends Heroes>
 }
 
 /// @nodoc
-abstract class _$$_HeroesCopyWith<$Res> implements $HeroesCopyWith<$Res> {
-  factory _$$_HeroesCopyWith(_$_Heroes value, $Res Function(_$_Heroes) then) =
-      __$$_HeroesCopyWithImpl<$Res>;
+abstract class _$$_HeroCopyWith<$Res> implements $HeroCopyWith<$Res> {
+  factory _$$_HeroCopyWith(_$_Hero value, $Res Function(_$_Hero) then) =
+      __$$_HeroCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -119,10 +119,9 @@ abstract class _$$_HeroesCopyWith<$Res> implements $HeroesCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_HeroesCopyWithImpl<$Res>
-    extends _$HeroesCopyWithImpl<$Res, _$_Heroes>
-    implements _$$_HeroesCopyWith<$Res> {
-  __$$_HeroesCopyWithImpl(_$_Heroes _value, $Res Function(_$_Heroes) _then)
+class __$$_HeroCopyWithImpl<$Res> extends _$HeroCopyWithImpl<$Res, _$_Hero>
+    implements _$$_HeroCopyWith<$Res> {
+  __$$_HeroCopyWithImpl(_$_Hero _value, $Res Function(_$_Hero) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -136,7 +135,7 @@ class __$$_HeroesCopyWithImpl<$Res>
     Object? roles = freezed,
     Object? legs = freezed,
   }) {
-    return _then(_$_Heroes(
+    return _then(_$_Hero(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -171,8 +170,8 @@ class __$$_HeroesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Heroes implements _Heroes {
-  const _$_Heroes(
+class _$_Hero implements _Hero {
+  const _$_Hero(
       {this.id,
       this.name,
       this.localizedName,
@@ -182,8 +181,7 @@ class _$_Heroes implements _Heroes {
       this.legs})
       : _roles = roles;
 
-  factory _$_Heroes.fromJson(Map<String, dynamic> json) =>
-      _$$_HeroesFromJson(json);
+  factory _$_Hero.fromJson(Map<String, dynamic> json) => _$$_HeroFromJson(json);
 
   @override
   final int? id;
@@ -210,14 +208,14 @@ class _$_Heroes implements _Heroes {
 
   @override
   String toString() {
-    return 'Heroes(id: $id, name: $name, localizedName: $localizedName, primaryAttr: $primaryAttr, attackType: $attackType, roles: $roles, legs: $legs)';
+    return 'Hero(id: $id, name: $name, localizedName: $localizedName, primaryAttr: $primaryAttr, attackType: $attackType, roles: $roles, legs: $legs)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Heroes &&
+            other is _$_Hero &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.localizedName, localizedName) ||
@@ -245,28 +243,28 @@ class _$_Heroes implements _Heroes {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HeroesCopyWith<_$_Heroes> get copyWith =>
-      __$$_HeroesCopyWithImpl<_$_Heroes>(this, _$identity);
+  _$$_HeroCopyWith<_$_Hero> get copyWith =>
+      __$$_HeroCopyWithImpl<_$_Hero>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_HeroesToJson(
+    return _$$_HeroToJson(
       this,
     );
   }
 }
 
-abstract class _Heroes implements Heroes {
-  const factory _Heroes(
+abstract class _Hero implements Hero {
+  const factory _Hero(
       {final int? id,
       final String? name,
       final String? localizedName,
       final String? primaryAttr,
       final String? attackType,
       final List<String>? roles,
-      final int? legs}) = _$_Heroes;
+      final int? legs}) = _$_Hero;
 
-  factory _Heroes.fromJson(Map<String, dynamic> json) = _$_Heroes.fromJson;
+  factory _Hero.fromJson(Map<String, dynamic> json) = _$_Hero.fromJson;
 
   @override
   int? get id;
@@ -284,6 +282,5 @@ abstract class _Heroes implements Heroes {
   int? get legs;
   @override
   @JsonKey(ignore: true)
-  _$$_HeroesCopyWith<_$_Heroes> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_HeroCopyWith<_$_Hero> get copyWith => throw _privateConstructorUsedError;
 }

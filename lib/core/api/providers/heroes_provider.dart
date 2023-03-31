@@ -1,17 +1,17 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/responses/heroes/hero_stats/hero_stats_response.dart';
-import 'package:dota_online/core/api/responses/heroes/heroes_response.dart';
+import 'package:dota_online/core/api/responses/heroes/hero_stats.dart';
+import 'package:dota_online/core/api/responses/heroes/hero.dart';
 
 class HeroesProvider {
   HeroesProvider(this._network);
 
   final BaseNetwork _network;
 
-  Future<ApiResult<Heroes>> getHeroes() {
-    return _network.sendRequest<Heroes>(
+  Future<ApiResult<Hero>> getHeroes() {
+    return _network.sendRequest<Hero>(
       path: '/heroes',
-      parseResponse: Heroes.fromJson,
+      parseResponse: Hero.fromJson,
     );
   }
 

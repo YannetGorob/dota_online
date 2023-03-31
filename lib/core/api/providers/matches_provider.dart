@@ -1,7 +1,7 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/responses/matches/match_details_response.dart/match_details_response.dart';
-import 'package:dota_online/core/api/responses/matches/matches_response.dart';
+import 'package:dota_online/core/api/models/matches/match_details.dart';
+import 'package:dota_online/core/api/models/matches/matches.dart';
 
 class MatchesProvider {
   MatchesProvider(this._network);
@@ -15,9 +15,9 @@ class MatchesProvider {
     );
   }
 
-  Future<ApiResult<MatchDetails>> getMatchDetails() {
+  Future<ApiResult<MatchDetails>> getMatchDetails(int matchId) {
     return _network.sendRequest(
-      path: '/matches/7082644478',
+      path: '/matches/$matchId',
       parseResponse: MatchDetails.fromJson,
     );
   }
