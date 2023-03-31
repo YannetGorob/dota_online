@@ -13,6 +13,7 @@ class TeamsListCubit extends Cubit<TeamsListState> {
     final teamResponse = await _teamsProvider.getTeams();
     teamResponse.when(
       success: (data) {
+        print('success');
         // emit(TeamsListState.loaded(teams: data));
       },
       failure: (_) => emit(const TeamsListState.error()),
