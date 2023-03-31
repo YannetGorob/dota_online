@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'team.dart';
+part of 'team_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Team _$$_TeamFromJson(Map<String, dynamic> json) => _$_Team(
+_$_TeamModel _$$_TeamModelFromJson(Map<String, dynamic> json) => _$_TeamModel(
       teamId: json['teamId'] as int?,
       rating: (json['rating'] as num?)?.toDouble(),
       wins: json['wins'] as int?,
@@ -17,7 +17,8 @@ _$_Team _$$_TeamFromJson(Map<String, dynamic> json) => _$_Team(
       logoUrl: json['logoUrl'] as String?,
     );
 
-Map<String, dynamic> _$$_TeamToJson(_$_Team instance) => <String, dynamic>{
+Map<String, dynamic> _$$_TeamModelToJson(_$_TeamModel instance) =>
+    <String, dynamic>{
       'teamId': instance.teamId,
       'rating': instance.rating,
       'wins': instance.wins,
