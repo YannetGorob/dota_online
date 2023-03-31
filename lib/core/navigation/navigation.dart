@@ -43,7 +43,7 @@ class Navigation {
               GoRoute(
                 path: 'team_details',
                 builder: (context, state) => const TeamDetailsWidget(
-                    matchesPath: '/teams/team_details/team_matches',),
+                    matchesPath: '/teams/team_details/team_matches'),
                 routes: [
                   GoRoute(
                     path: 'team_matches',

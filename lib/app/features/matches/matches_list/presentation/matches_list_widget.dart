@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -9,8 +10,8 @@ class MatchesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('MatchesListWidget'),
+      appBar: const DotaAppBar(
+        title: 'MatchesListWidget',
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
