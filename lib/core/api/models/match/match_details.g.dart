@@ -8,9 +8,9 @@ part of 'match_details.dart';
 
 _$_MatchDetails _$$_MatchDetailsFromJson(Map<String, dynamic> json) =>
     _$_MatchDetails(
-      matchId: json['matchId'] as int?,
-      barracksStatusDire: json['barracksStatusDire'] as int?,
-      barracksStatusRadiant: json['barracksStatusRadiant'] as int?,
+      matchId: json['match_id'] as int?,
+      barracksStatusDire: json['barracks_status_dire'] as int?,
+      barracksStatusRadiant: json['barracks_status_radiant'] as int?,
       chat: (json['chat'] as List<dynamic>?)
           ?.map((e) => Chat.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -18,121 +18,122 @@ _$_MatchDetails _$$_MatchDetailsFromJson(Map<String, dynamic> json) =>
       cosmetics: json['cosmetics'] == null
           ? null
           : Cosmetics.fromJson(json['cosmetics'] as Map<String, dynamic>),
-      direScore: json['direScore'] as int?,
-      direTeamId: json['direTeamId'] as int?,
-      draftTimings: (json['draftTimings'] as List<dynamic>?)
+      direScore: json['dire_score'] as int?,
+      direTeamId: json['dire_team_id'] as int?,
+      draftTimings: (json['draft_timings'] as List<dynamic>?)
           ?.map((e) => DraftTiming.fromJson(e as Map<String, dynamic>))
           .toList(),
       duration: json['duration'] as int?,
       engine: json['engine'] as int?,
-      firstBloodTime: json['firstBloodTime'] as int?,
-      gameMode: json['gameMode'] as int?,
-      humanPlayers: json['humanPlayers'] as int?,
+      firstBloodTime: json['first_blood_time'] as int?,
+      gameMode: json['game_mode'] as int?,
+      humanPlayers: json['human_players'] as int?,
       leagueid: json['leagueid'] as int?,
-      lobbyType: json['lobbyType'] as int?,
-      matchSeqNum: json['matchSeqNum'] as int?,
-      negativeVotes: json['negativeVotes'] as int?,
+      lobbyType: json['lobby_type'] as int?,
+      matchSeqNum: json['match_seq_num'] as int?,
+      negativeVotes: json['negative_votes'] as int?,
       objectives: (json['objectives'] as List<dynamic>?)
           ?.map((e) => Objective.fromJson(e as Map<String, dynamic>))
           .toList(),
-      picksBans: (json['picksBans'] as List<dynamic>?)
+      picksBans: (json['picks_bans'] as List<dynamic>?)
           ?.map((e) => PicksBan.fromJson(e as Map<String, dynamic>))
           .toList(),
-      positiveVotes: json['positiveVotes'] as int?,
-      radiantGoldAdv: (json['radiantGoldAdv'] as List<dynamic>?)
+      positiveVotes: json['positive_votes'] as int?,
+      radiantGoldAdv: (json['radiant_gold_adv'] as List<dynamic>?)
           ?.map((e) => e as int)
           .toList(),
-      radiantScore: json['radiantScore'] as int?,
-      radiantTeamId: json['radiantTeamId'] as int?,
-      radiantWin: json['radiantWin'] as bool?,
-      radiantXpAdv: (json['radiantXpAdv'] as List<dynamic>?)
+      radiantScore: json['radiant_score'] as int?,
+      radiantTeamId: json['radiant_team_id'] as int?,
+      radiantWin: json['radiant_win'] as bool?,
+      radiantXpAdv: (json['radiant_xp_adv'] as List<dynamic>?)
           ?.map((e) => e as int)
           .toList(),
       skill: json['skill'],
-      startTime: json['startTime'] as int?,
+      startTime: json['start_time'] as int?,
       teamfights: (json['teamfights'] as List<dynamic>?)
           ?.map((e) => Teamfight.fromJson(e as Map<String, dynamic>))
           .toList(),
-      towerStatusDire: json['towerStatusDire'] as int?,
-      towerStatusRadiant: json['towerStatusRadiant'] as int?,
+      towerStatusDire: json['tower_status_dire'] as int?,
+      towerStatusRadiant: json['tower_status_radiant'] as int?,
       version: json['version'] as int?,
-      replaySalt: json['replaySalt'] as int?,
-      seriesId: json['seriesId'] as int?,
-      seriesType: json['seriesType'] as int?,
+      replaySalt: json['replay_salt'] as int?,
+      seriesId: json['series_id'] as int?,
+      seriesType: json['series_type'] as int?,
       league: json['league'] == null
           ? null
           : League.fromJson(json['league'] as Map<String, dynamic>),
-      radiantTeam: json['radiantTeam'] == null
+      radiantTeam: json['radiant_team'] == null
           ? null
-          : Team.fromJson(json['radiantTeam'] as Map<String, dynamic>),
-      direTeam: json['direTeam'] == null
+          : Team.fromJson(json['radiant_team'] as Map<String, dynamic>),
+      direTeam: json['dire_team'] == null
           ? null
-          : Team.fromJson(json['direTeam'] as Map<String, dynamic>),
+          : Team.fromJson(json['dire_team'] as Map<String, dynamic>),
       players: (json['players'] as List<dynamic>?)
           ?.map((e) => MatchDetailsPlayer.fromJson(e as Map<String, dynamic>))
           .toList(),
       patch: json['patch'] as int?,
       region: json['region'] as int?,
-      allWordCounts: json['allWordCounts'] == null
+      allWordCounts: json['all_word_counts'] == null
           ? null
           : AllWordCounts.fromJson(
-              json['allWordCounts'] as Map<String, dynamic>),
-      myWordCounts: json['myWordCounts'] == null
+              json['all_word_counts'] as Map<String, dynamic>),
+      myWordCounts: json['my_word_counts'] == null
           ? null
-          : MyWordCounts.fromJson(json['myWordCounts'] as Map<String, dynamic>),
-      matchDetailsThrow: json['matchDetailsThrow'] as int?,
+          : MyWordCounts.fromJson(
+              json['my_word_counts'] as Map<String, dynamic>),
+      matchDetailsThrow: json['match_details_throw'] as int?,
       loss: json['loss'] as int?,
-      replayUrl: json['replayUrl'] as String?,
+      replayUrl: json['replay_url'] as String?,
     );
 
 Map<String, dynamic> _$$_MatchDetailsToJson(_$_MatchDetails instance) =>
     <String, dynamic>{
-      'matchId': instance.matchId,
-      'barracksStatusDire': instance.barracksStatusDire,
-      'barracksStatusRadiant': instance.barracksStatusRadiant,
+      'match_id': instance.matchId,
+      'barracks_status_dire': instance.barracksStatusDire,
+      'barracks_status_radiant': instance.barracksStatusRadiant,
       'chat': instance.chat,
       'cluster': instance.cluster,
       'cosmetics': instance.cosmetics,
-      'direScore': instance.direScore,
-      'direTeamId': instance.direTeamId,
-      'draftTimings': instance.draftTimings,
+      'dire_score': instance.direScore,
+      'dire_team_id': instance.direTeamId,
+      'draft_timings': instance.draftTimings,
       'duration': instance.duration,
       'engine': instance.engine,
-      'firstBloodTime': instance.firstBloodTime,
-      'gameMode': instance.gameMode,
-      'humanPlayers': instance.humanPlayers,
+      'first_blood_time': instance.firstBloodTime,
+      'game_mode': instance.gameMode,
+      'human_players': instance.humanPlayers,
       'leagueid': instance.leagueid,
-      'lobbyType': instance.lobbyType,
-      'matchSeqNum': instance.matchSeqNum,
-      'negativeVotes': instance.negativeVotes,
+      'lobby_type': instance.lobbyType,
+      'match_seq_num': instance.matchSeqNum,
+      'negative_votes': instance.negativeVotes,
       'objectives': instance.objectives,
-      'picksBans': instance.picksBans,
-      'positiveVotes': instance.positiveVotes,
-      'radiantGoldAdv': instance.radiantGoldAdv,
-      'radiantScore': instance.radiantScore,
-      'radiantTeamId': instance.radiantTeamId,
-      'radiantWin': instance.radiantWin,
-      'radiantXpAdv': instance.radiantXpAdv,
+      'picks_bans': instance.picksBans,
+      'positive_votes': instance.positiveVotes,
+      'radiant_gold_adv': instance.radiantGoldAdv,
+      'radiant_score': instance.radiantScore,
+      'radiant_team_id': instance.radiantTeamId,
+      'radiant_win': instance.radiantWin,
+      'radiant_xp_adv': instance.radiantXpAdv,
       'skill': instance.skill,
-      'startTime': instance.startTime,
+      'start_time': instance.startTime,
       'teamfights': instance.teamfights,
-      'towerStatusDire': instance.towerStatusDire,
-      'towerStatusRadiant': instance.towerStatusRadiant,
+      'tower_status_dire': instance.towerStatusDire,
+      'tower_status_radiant': instance.towerStatusRadiant,
       'version': instance.version,
-      'replaySalt': instance.replaySalt,
-      'seriesId': instance.seriesId,
-      'seriesType': instance.seriesType,
+      'replay_salt': instance.replaySalt,
+      'series_id': instance.seriesId,
+      'series_type': instance.seriesType,
       'league': instance.league,
-      'radiantTeam': instance.radiantTeam,
-      'direTeam': instance.direTeam,
+      'radiant_team': instance.radiantTeam,
+      'dire_team': instance.direTeam,
       'players': instance.players,
       'patch': instance.patch,
       'region': instance.region,
-      'allWordCounts': instance.allWordCounts,
-      'myWordCounts': instance.myWordCounts,
-      'matchDetailsThrow': instance.matchDetailsThrow,
+      'all_word_counts': instance.allWordCounts,
+      'my_word_counts': instance.myWordCounts,
+      'match_details_throw': instance.matchDetailsThrow,
       'loss': instance.loss,
-      'replayUrl': instance.replayUrl,
+      'replay_url': instance.replayUrl,
     };
 
 _$_AllWordCounts _$$_AllWordCountsFromJson(Map<String, dynamic> json) =>
@@ -170,7 +171,7 @@ _$_Chat _$$_ChatFromJson(Map<String, dynamic> json) => _$_Chat(
       type: json['type'] as String?,
       key: json['key'] as String?,
       slot: json['slot'] as int?,
-      playerSlot: json['playerSlot'] as int?,
+      playerSlot: json['player_slot'] as int?,
     );
 
 Map<String, dynamic> _$$_ChatToJson(_$_Chat instance) => <String, dynamic>{
@@ -178,7 +179,7 @@ Map<String, dynamic> _$$_ChatToJson(_$_Chat instance) => <String, dynamic>{
       'type': instance.type,
       'key': instance.key,
       'slot': instance.slot,
-      'playerSlot': instance.playerSlot,
+      'player_slot': instance.playerSlot,
     };
 
 _$_Cosmetics _$$_CosmeticsFromJson(Map<String, dynamic> json) => _$_Cosmetics(
@@ -329,39 +330,39 @@ Map<String, dynamic> _$$_CosmeticsToJson(_$_Cosmetics instance) =>
     };
 
 _$_Team _$$_TeamFromJson(Map<String, dynamic> json) => _$_Team(
-      teamId: json['teamId'] as int?,
+      teamId: json['team_id'] as int?,
       name: json['name'] as String?,
       tag: json['tag'] as String?,
-      logoUrl: json['logoUrl'] as String?,
+      logoUrl: json['logo_url'] as String?,
     );
 
 Map<String, dynamic> _$$_TeamToJson(_$_Team instance) => <String, dynamic>{
-      'teamId': instance.teamId,
+      'team_id': instance.teamId,
       'name': instance.name,
       'tag': instance.tag,
-      'logoUrl': instance.logoUrl,
+      'logo_url': instance.logoUrl,
     };
 
 _$_DraftTiming _$$_DraftTimingFromJson(Map<String, dynamic> json) =>
     _$_DraftTiming(
       order: json['order'] as int?,
       pick: json['pick'] as bool?,
-      activeTeam: json['activeTeam'] as int?,
-      heroId: json['heroId'] as int?,
-      playerSlot: json['playerSlot'] as int?,
-      extraTime: json['extraTime'] as int?,
-      totalTimeTaken: json['totalTimeTaken'] as int?,
+      activeTeam: json['active_team'] as int?,
+      heroId: json['hero_id'] as int?,
+      playerSlot: json['player_slot'] as int?,
+      extraTime: json['extra_time'] as int?,
+      totalTimeTaken: json['total_time_taken'] as int?,
     );
 
 Map<String, dynamic> _$$_DraftTimingToJson(_$_DraftTiming instance) =>
     <String, dynamic>{
       'order': instance.order,
       'pick': instance.pick,
-      'activeTeam': instance.activeTeam,
-      'heroId': instance.heroId,
-      'playerSlot': instance.playerSlot,
-      'extraTime': instance.extraTime,
-      'totalTimeTaken': instance.totalTimeTaken,
+      'active_team': instance.activeTeam,
+      'hero_id': instance.heroId,
+      'player_slot': instance.playerSlot,
+      'extra_time': instance.extraTime,
+      'total_time_taken': instance.totalTimeTaken,
     };
 
 _$_League _$$_LeagueFromJson(Map<String, dynamic> json) => _$_League(
@@ -391,7 +392,7 @@ _$_Objective _$$_ObjectiveFromJson(Map<String, dynamic> json) => _$_Objective(
       type: json['type'] as String?,
       slot: json['slot'] as int?,
       key: json['key'],
-      playerSlot: json['playerSlot'] as int?,
+      playerSlot: json['player_slot'] as int?,
       value: json['value'] as int?,
       killer: json['killer'] as int?,
       team: json['team'] as int?,
@@ -404,7 +405,7 @@ Map<String, dynamic> _$$_ObjectiveToJson(_$_Objective instance) =>
       'type': instance.type,
       'slot': instance.slot,
       'key': instance.key,
-      'playerSlot': instance.playerSlot,
+      'player_slot': instance.playerSlot,
       'value': instance.value,
       'killer': instance.killer,
       'team': instance.team,
@@ -412,685 +413,689 @@ Map<String, dynamic> _$$_ObjectiveToJson(_$_Objective instance) =>
     };
 
 _$_PicksBan _$$_PicksBanFromJson(Map<String, dynamic> json) => _$_PicksBan(
-      isPick: json['isPick'] as bool?,
-      heroId: json['heroId'] as int?,
+      isPick: json['is_pick'] as bool?,
+      heroId: json['hero_id'] as int?,
       team: json['team'] as int?,
       order: json['order'] as int?,
       ord: json['ord'] as int?,
-      matchId: json['matchId'] as int?,
+      matchId: json['match_id'] as int?,
     );
 
 Map<String, dynamic> _$$_PicksBanToJson(_$_PicksBan instance) =>
     <String, dynamic>{
-      'isPick': instance.isPick,
-      'heroId': instance.heroId,
+      'is_pick': instance.isPick,
+      'hero_id': instance.heroId,
       'team': instance.team,
       'order': instance.order,
       'ord': instance.ord,
-      'matchId': instance.matchId,
+      'match_id': instance.matchId,
     };
 
 _$_MatchDetailsPlayer _$$_MatchDetailsPlayerFromJson(
         Map<String, dynamic> json) =>
     _$_MatchDetailsPlayer(
-      matchId: json['matchId'] as int?,
-      playerSlot: json['playerSlot'] as int?,
-      abilityTargets: json['abilityTargets'] == null
+      matchId: json['match_id'] as int?,
+      playerSlot: json['player_slot'] as int?,
+      abilityTargets: json['ability_targets'] == null
           ? null
           : AbilityTargets.fromJson(
-              json['abilityTargets'] as Map<String, dynamic>),
-      abilityUpgradesArr: (json['abilityUpgradesArr'] as List<dynamic>?)
+              json['ability_targets'] as Map<String, dynamic>),
+      abilityUpgradesArr: (json['ability_upgrades_arr'] as List<dynamic>?)
           ?.map((e) => e as int)
           .toList(),
-      abilityUses: json['abilityUses'] == null
+      abilityUses: json['ability_uses'] == null
           ? null
-          : AbilityUses.fromJson(json['abilityUses'] as Map<String, dynamic>),
-      accountId: json['accountId'] as int?,
+          : AbilityUses.fromJson(json['ability_uses'] as Map<String, dynamic>),
+      accountId: json['account_id'] as int?,
       actions: json['actions'] == null
           ? null
           : Actions.fromJson(json['actions'] as Map<String, dynamic>),
-      additionalUnits: json['additionalUnits'],
+      additionalUnits: json['additional_units'],
       assists: json['assists'] as int?,
       backpack0: json['backpack0'] as int?,
       backpack1: json['backpack1'] as int?,
       backpack2: json['backpack2'] as int?,
       backpack3: json['backpack3'],
-      buybackLog: (json['buybackLog'] as List<dynamic>?)
+      buybackLog: (json['buyback_log'] as List<dynamic>?)
           ?.map((e) => Chat.fromJson(e as Map<String, dynamic>))
           .toList(),
-      campsStacked: json['campsStacked'] as int?,
-      connectionLog: json['connectionLog'] as List<dynamic>?,
-      creepsStacked: json['creepsStacked'] as int?,
+      campsStacked: json['camps_stacked'] as int?,
+      connectionLog: json['connection_log'] as List<dynamic>?,
+      creepsStacked: json['creeps_stacked'] as int?,
       damage: json['damage'] == null
           ? null
           : Damage.fromJson(json['damage'] as Map<String, dynamic>),
-      damageInflictor: json['damageInflictor'] == null
+      damageInflictor: json['damage_inflictor'] == null
           ? null
           : DamageInflictor.fromJson(
-              json['damageInflictor'] as Map<String, dynamic>),
-      damageInflictorReceived: json['damageInflictorReceived'] == null
+              json['damage_inflictor'] as Map<String, dynamic>),
+      damageInflictorReceived: json['damage_inflictor_received'] == null
           ? null
           : DamageInflictor.fromJson(
-              json['damageInflictorReceived'] as Map<String, dynamic>),
-      damageTaken: json['damageTaken'] == null
+              json['damage_inflictor_received'] as Map<String, dynamic>),
+      damageTaken: json['damage_taken'] == null
           ? null
-          : Damage.fromJson(json['damageTaken'] as Map<String, dynamic>),
-      damageTargets: json['damageTargets'] == null
+          : Damage.fromJson(json['damage_taken'] as Map<String, dynamic>),
+      damageTargets: json['damage_targets'] == null
           ? null
           : DamageTargets.fromJson(
-              json['damageTargets'] as Map<String, dynamic>),
+              json['damage_targets'] as Map<String, dynamic>),
       deaths: json['deaths'] as int?,
       denies: json['denies'] as int?,
-      dnT: (json['dnT'] as List<dynamic>?)?.map((e) => e as int).toList(),
-      firstbloodClaimed: json['firstbloodClaimed'] as int?,
+      dnT: (json['dn_t'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      firstbloodClaimed: json['firstblood_claimed'] as int?,
       gold: json['gold'] as int?,
-      goldPerMin: json['goldPerMin'] as int?,
-      goldReasons: json['goldReasons'] == null
+      goldPerMin: json['gold_per_min'] as int?,
+      goldReasons: json['gold_reasons'] == null
           ? null
-          : GoldReasons.fromJson(json['goldReasons'] as Map<String, dynamic>),
-      goldSpent: json['goldSpent'] as int?,
-      goldT: (json['goldT'] as List<dynamic>?)?.map((e) => e as int).toList(),
-      heroDamage: json['heroDamage'] as int?,
-      heroHealing: json['heroHealing'] as int?,
-      heroHits: json['heroHits'] == null
+          : GoldReasons.fromJson(json['gold_reasons'] as Map<String, dynamic>),
+      goldSpent: json['gold_spent'] as int?,
+      goldT: (json['gold_t'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      heroDamage: json['hero_damage'] as int?,
+      heroHealing: json['hero_healing'] as int?,
+      heroHits: json['hero_hits'] == null
           ? null
-          : DamageInflictor.fromJson(json['heroHits'] as Map<String, dynamic>),
-      heroId: json['heroId'] as int?,
+          : DamageInflictor.fromJson(json['hero_hits'] as Map<String, dynamic>),
+      heroId: json['hero_id'] as int?,
       item0: json['item0'] as int?,
       item1: json['item1'] as int?,
       item2: json['item2'] as int?,
       item3: json['item3'] as int?,
       item4: json['item4'] as int?,
       item5: json['item5'] as int?,
-      itemNeutral: json['itemNeutral'] as int?,
-      itemUses: json['itemUses'] == null
+      itemNeutral: json['item_neutral'] as int?,
+      itemUses: json['item_uses'] == null
           ? null
-          : PurpleItemUses.fromJson(json['itemUses'] as Map<String, dynamic>),
-      killStreaks: json['killStreaks'] == null
+          : PurpleItemUses.fromJson(json['item_uses'] as Map<String, dynamic>),
+      killStreaks: json['kill_streaks'] == null
           ? null
-          : KillStreaks.fromJson(json['killStreaks'] as Map<String, dynamic>),
+          : KillStreaks.fromJson(json['kill_streaks'] as Map<String, dynamic>),
       killed: json['killed'] == null
           ? null
           : Damage.fromJson(json['killed'] as Map<String, dynamic>),
-      killedBy: json['killedBy'] == null
+      killedBy: json['killed_by'] == null
           ? null
-          : KilledBy.fromJson(json['killedBy'] as Map<String, dynamic>),
+          : KilledBy.fromJson(json['killed_by'] as Map<String, dynamic>),
       kills: json['kills'] as int?,
-      killsLog: (json['killsLog'] as List<dynamic>?)
+      killsLog: (json['kills_log'] as List<dynamic>?)
           ?.map((e) => KillsLog.fromJson(e as Map<String, dynamic>))
           .toList(),
-      lanePos: json['lanePos'] == null
+      lanePos: json['lane_pos'] == null
           ? null
-          : LanePos.fromJson(json['lanePos'] as Map<String, dynamic>),
-      lastHits: json['lastHits'] as int?,
-      leaverStatus: json['leaverStatus'] as int?,
+          : LanePos.fromJson(json['lane_pos'] as Map<String, dynamic>),
+      lastHits: json['last_hits'] as int?,
+      leaverStatus: json['leaver_status'] as int?,
       level: json['level'] as int?,
-      lhT: (json['lhT'] as List<dynamic>?)?.map((e) => e as int).toList(),
-      lifeState: json['lifeState'] == null
+      lhT: (json['lh_t'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      lifeState: json['life_state'] == null
           ? null
-          : LifeState.fromJson(json['lifeState'] as Map<String, dynamic>),
-      maxHeroHit: json['maxHeroHit'] == null
+          : LifeState.fromJson(json['life_state'] as Map<String, dynamic>),
+      maxHeroHit: json['max_hero_hit'] == null
           ? null
-          : MaxHeroHit.fromJson(json['maxHeroHit'] as Map<String, dynamic>),
-      multiKills: json['multiKills'] == null
+          : MaxHeroHit.fromJson(json['max_hero_hit'] as Map<String, dynamic>),
+      multiKills: json['multi_kills'] == null
           ? null
-          : MultiKills.fromJson(json['multiKills'] as Map<String, dynamic>),
-      netWorth: json['netWorth'] as int?,
+          : MultiKills.fromJson(json['multi_kills'] as Map<String, dynamic>),
+      netWorth: json['net_worth'] as int?,
       obs: json['obs'] == null
           ? null
           : Obs.fromJson(json['obs'] as Map<String, dynamic>),
-      obsLeftLog: (json['obsLeftLog'] as List<dynamic>?)
+      obsLeftLog: (json['obs_left_log'] as List<dynamic>?)
           ?.map((e) => Log.fromJson(e as Map<String, dynamic>))
           .toList(),
-      obsLog: (json['obsLog'] as List<dynamic>?)
+      obsLog: (json['obs_log'] as List<dynamic>?)
           ?.map((e) => Log.fromJson(e as Map<String, dynamic>))
           .toList(),
-      obsPlaced: json['obsPlaced'] as int?,
-      partyId: json['partyId'] as int?,
-      partySize: json['partySize'] as int?,
-      performanceOthers: json['performanceOthers'],
-      permanentBuffs: (json['permanentBuffs'] as List<dynamic>?)
+      obsPlaced: json['obs_placed'] as int?,
+      partyId: json['party_id'] as int?,
+      partySize: json['party_size'] as int?,
+      performanceOthers: json['performance_others'],
+      permanentBuffs: (json['permanent_buffs'] as List<dynamic>?)
           ?.map((e) => PermanentBuff.fromJson(e as Map<String, dynamic>))
           .toList(),
       pings: json['pings'] as int?,
-      predVict: json['predVict'] as bool?,
+      predVict: json['pred_vict'] as bool?,
       purchase: json['purchase'] == null
           ? null
           : FirstPurchaseTime.fromJson(
               json['purchase'] as Map<String, dynamic>),
-      purchaseLog: (json['purchaseLog'] as List<dynamic>?)
+      purchaseLog: (json['purchase_log'] as List<dynamic>?)
           ?.map((e) => PurchaseLog.fromJson(e as Map<String, dynamic>))
           .toList(),
       randomed: json['randomed'] as bool?,
       repicked: json['repicked'],
-      roshansKilled: json['roshansKilled'] as int?,
-      runePickups: json['runePickups'] as int?,
+      roshansKilled: json['roshans_killed'] as int?,
+      runePickups: json['rune_pickups'] as int?,
       runes: json['runes'] == null
           ? null
           : Runes.fromJson(json['runes'] as Map<String, dynamic>),
-      runesLog: (json['runesLog'] as List<dynamic>?)
+      runesLog: (json['runes_log'] as List<dynamic>?)
           ?.map((e) => RunesLog.fromJson(e as Map<String, dynamic>))
           .toList(),
       sen: json['sen'] == null
           ? null
           : Sen.fromJson(json['sen'] as Map<String, dynamic>),
-      senLeftLog: (json['senLeftLog'] as List<dynamic>?)
+      senLeftLog: (json['sen_left_log'] as List<dynamic>?)
           ?.map((e) => Log.fromJson(e as Map<String, dynamic>))
           .toList(),
-      senLog: (json['senLog'] as List<dynamic>?)
+      senLog: (json['sen_log'] as List<dynamic>?)
           ?.map((e) => Log.fromJson(e as Map<String, dynamic>))
           .toList(),
-      senPlaced: json['senPlaced'] as int?,
+      senPlaced: json['sen_placed'] as int?,
       stuns: (json['stuns'] as num?)?.toDouble(),
       teamfightParticipation:
-          (json['teamfightParticipation'] as num?)?.toDouble(),
+          (json['teamfight_participation'] as num?)?.toDouble(),
       times: (json['times'] as List<dynamic>?)?.map((e) => e as int).toList(),
-      towerDamage: json['towerDamage'] as int?,
-      towersKilled: json['towersKilled'] as int?,
-      xpPerMin: json['xpPerMin'] as int?,
-      xpReasons: json['xpReasons'] == null
+      towerDamage: json['tower_damage'] as int?,
+      towersKilled: json['towers_killed'] as int?,
+      xpPerMin: json['xp_per_min'] as int?,
+      xpReasons: json['xp_reasons'] == null
           ? null
-          : XpReasons.fromJson(json['xpReasons'] as Map<String, dynamic>),
-      xpT: (json['xpT'] as List<dynamic>?)?.map((e) => e as int).toList(),
+          : XpReasons.fromJson(json['xp_reasons'] as Map<String, dynamic>),
+      xpT: (json['xp_t'] as List<dynamic>?)?.map((e) => e as int).toList(),
       personaname: json['personaname'] as String?,
       name: json['name'] as String?,
-      lastLogin: json['lastLogin'] as String?,
-      radiantWin: json['radiantWin'] as bool?,
-      startTime: json['startTime'] as int?,
+      lastLogin: json['last_login'] as String?,
+      radiantWin: json['radiant_win'] as bool?,
+      startTime: json['start_time'] as int?,
       duration: json['duration'] as int?,
       cluster: json['cluster'] as int?,
-      lobbyType: json['lobbyType'] as int?,
-      gameMode: json['gameMode'] as int?,
-      isContributor: json['isContributor'] as bool?,
+      lobbyType: json['lobby_type'] as int?,
+      gameMode: json['game_mode'] as int?,
+      isContributor: json['is_contributor'] as bool?,
       patch: json['patch'] as int?,
       region: json['region'] as int?,
-      isRadiant: json['isRadiant'] as bool?,
+      isRadiant: json['is_radiant'] as bool?,
       win: json['win'] as int?,
       lose: json['lose'] as int?,
-      totalGold: json['totalGold'] as int?,
-      totalXp: json['totalXp'] as int?,
-      killsPerMin: (json['killsPerMin'] as num?)?.toDouble(),
+      totalGold: json['total_gold'] as int?,
+      totalXp: json['total_xp'] as int?,
+      killsPerMin: (json['kills_per_min'] as num?)?.toDouble(),
       kda: json['kda'] as int?,
       abandons: json['abandons'] as int?,
-      neutralKills: json['neutralKills'] as int?,
-      towerKills: json['towerKills'] as int?,
-      courierKills: json['courierKills'] as int?,
-      laneKills: json['laneKills'] as int?,
-      heroKills: json['heroKills'] as int?,
-      observerKills: json['observerKills'] as int?,
-      sentryKills: json['sentryKills'] as int?,
-      roshanKills: json['roshanKills'] as int?,
-      necronomiconKills: json['necronomiconKills'] as int?,
-      ancientKills: json['ancientKills'] as int?,
-      buybackCount: json['buybackCount'] as int?,
-      observerUses: json['observerUses'] as int?,
-      sentryUses: json['sentryUses'] as int?,
-      laneEfficiency: (json['laneEfficiency'] as num?)?.toDouble(),
-      laneEfficiencyPct: json['laneEfficiencyPct'] as int?,
+      neutralKills: json['neutral_kills'] as int?,
+      towerKills: json['tower_kills'] as int?,
+      courierKills: json['courier_kills'] as int?,
+      laneKills: json['lane_kills'] as int?,
+      heroKills: json['hero_kills'] as int?,
+      observerKills: json['observer_kills'] as int?,
+      sentryKills: json['sentry_kills'] as int?,
+      roshanKills: json['roshan_kills'] as int?,
+      necronomiconKills: json['necronomicon_kills'] as int?,
+      ancientKills: json['ancient_kills'] as int?,
+      buybackCount: json['buyback_count'] as int?,
+      observerUses: json['observer_uses'] as int?,
+      sentryUses: json['sentry_uses'] as int?,
+      laneEfficiency: (json['lane_efficiency'] as num?)?.toDouble(),
+      laneEfficiencyPct: json['lane_efficiency_pct'] as int?,
       lane: json['lane'] as int?,
-      laneRole: json['laneRole'] as int?,
-      isRoaming: json['isRoaming'] as bool?,
-      purchaseTime: json['purchaseTime'] == null
+      laneRole: json['lane_role'] as int?,
+      isRoaming: json['is_roaming'] as bool?,
+      purchaseTime: json['purchase_time'] == null
           ? null
           : FirstPurchaseTime.fromJson(
-              json['purchaseTime'] as Map<String, dynamic>),
-      firstPurchaseTime: json['firstPurchaseTime'] == null
+              json['purchase_time'] as Map<String, dynamic>),
+      firstPurchaseTime: json['first_purchase_time'] == null
           ? null
           : FirstPurchaseTime.fromJson(
-              json['firstPurchaseTime'] as Map<String, dynamic>),
-      itemWin: json['itemWin'] == null
-          ? null
-          : FirstPurchaseTime.fromJson(json['itemWin'] as Map<String, dynamic>),
-      itemUsage: json['itemUsage'] == null
+              json['first_purchase_time'] as Map<String, dynamic>),
+      itemWin: json['item_win'] == null
           ? null
           : FirstPurchaseTime.fromJson(
-              json['itemUsage'] as Map<String, dynamic>),
-      purchaseWardObserver: json['purchaseWardObserver'] as int?,
-      purchaseWardSentry: json['purchaseWardSentry'] as int?,
-      purchaseTpscroll: json['purchaseTpscroll'] as int?,
-      actionsPerMin: json['actionsPerMin'] as int?,
-      lifeStateDead: json['lifeStateDead'] as int?,
-      rankTier: json['rankTier'] as int?,
-      isSubscriber: json['isSubscriber'] as bool?,
+              json['item_win'] as Map<String, dynamic>),
+      itemUsage: json['item_usage'] == null
+          ? null
+          : FirstPurchaseTime.fromJson(
+              json['item_usage'] as Map<String, dynamic>),
+      purchaseWardObserver: json['purchase_ward_observer'] as int?,
+      purchaseWardSentry: json['purchase_ward_sentry'] as int?,
+      purchaseTpscroll: json['purchase_tpscroll'] as int?,
+      actionsPerMin: json['actions_per_min'] as int?,
+      lifeStateDead: json['life_state_dead'] as int?,
+      rankTier: json['rank_tier'] as int?,
+      isSubscriber: json['is_subscriber'] as bool?,
       cosmetics: (json['cosmetics'] as List<dynamic>?)
           ?.map((e) => Cosmetic.fromJson(e as Map<String, dynamic>))
           .toList(),
       benchmarks: json['benchmarks'] == null
           ? null
           : Benchmarks.fromJson(json['benchmarks'] as Map<String, dynamic>),
-      purchaseGem: json['purchaseGem'] as int?,
+      purchaseGem: json['purchase_gem'] as int?,
     );
 
 Map<String, dynamic> _$$_MatchDetailsPlayerToJson(
         _$_MatchDetailsPlayer instance) =>
     <String, dynamic>{
-      'matchId': instance.matchId,
-      'playerSlot': instance.playerSlot,
-      'abilityTargets': instance.abilityTargets,
-      'abilityUpgradesArr': instance.abilityUpgradesArr,
-      'abilityUses': instance.abilityUses,
-      'accountId': instance.accountId,
+      'match_id': instance.matchId,
+      'player_slot': instance.playerSlot,
+      'ability_targets': instance.abilityTargets,
+      'ability_upgrades_arr': instance.abilityUpgradesArr,
+      'ability_uses': instance.abilityUses,
+      'account_id': instance.accountId,
       'actions': instance.actions,
-      'additionalUnits': instance.additionalUnits,
+      'additional_units': instance.additionalUnits,
       'assists': instance.assists,
       'backpack0': instance.backpack0,
       'backpack1': instance.backpack1,
       'backpack2': instance.backpack2,
       'backpack3': instance.backpack3,
-      'buybackLog': instance.buybackLog,
-      'campsStacked': instance.campsStacked,
-      'connectionLog': instance.connectionLog,
-      'creepsStacked': instance.creepsStacked,
+      'buyback_log': instance.buybackLog,
+      'camps_stacked': instance.campsStacked,
+      'connection_log': instance.connectionLog,
+      'creeps_stacked': instance.creepsStacked,
       'damage': instance.damage,
-      'damageInflictor': instance.damageInflictor,
-      'damageInflictorReceived': instance.damageInflictorReceived,
-      'damageTaken': instance.damageTaken,
-      'damageTargets': instance.damageTargets,
+      'damage_inflictor': instance.damageInflictor,
+      'damage_inflictor_received': instance.damageInflictorReceived,
+      'damage_taken': instance.damageTaken,
+      'damage_targets': instance.damageTargets,
       'deaths': instance.deaths,
       'denies': instance.denies,
-      'dnT': instance.dnT,
-      'firstbloodClaimed': instance.firstbloodClaimed,
+      'dn_t': instance.dnT,
+      'firstblood_claimed': instance.firstbloodClaimed,
       'gold': instance.gold,
-      'goldPerMin': instance.goldPerMin,
-      'goldReasons': instance.goldReasons,
-      'goldSpent': instance.goldSpent,
-      'goldT': instance.goldT,
-      'heroDamage': instance.heroDamage,
-      'heroHealing': instance.heroHealing,
-      'heroHits': instance.heroHits,
-      'heroId': instance.heroId,
+      'gold_per_min': instance.goldPerMin,
+      'gold_reasons': instance.goldReasons,
+      'gold_spent': instance.goldSpent,
+      'gold_t': instance.goldT,
+      'hero_damage': instance.heroDamage,
+      'hero_healing': instance.heroHealing,
+      'hero_hits': instance.heroHits,
+      'hero_id': instance.heroId,
       'item0': instance.item0,
       'item1': instance.item1,
       'item2': instance.item2,
       'item3': instance.item3,
       'item4': instance.item4,
       'item5': instance.item5,
-      'itemNeutral': instance.itemNeutral,
-      'itemUses': instance.itemUses,
-      'killStreaks': instance.killStreaks,
+      'item_neutral': instance.itemNeutral,
+      'item_uses': instance.itemUses,
+      'kill_streaks': instance.killStreaks,
       'killed': instance.killed,
-      'killedBy': instance.killedBy,
+      'killed_by': instance.killedBy,
       'kills': instance.kills,
-      'killsLog': instance.killsLog,
-      'lanePos': instance.lanePos,
-      'lastHits': instance.lastHits,
-      'leaverStatus': instance.leaverStatus,
+      'kills_log': instance.killsLog,
+      'lane_pos': instance.lanePos,
+      'last_hits': instance.lastHits,
+      'leaver_status': instance.leaverStatus,
       'level': instance.level,
-      'lhT': instance.lhT,
-      'lifeState': instance.lifeState,
-      'maxHeroHit': instance.maxHeroHit,
-      'multiKills': instance.multiKills,
-      'netWorth': instance.netWorth,
+      'lh_t': instance.lhT,
+      'life_state': instance.lifeState,
+      'max_hero_hit': instance.maxHeroHit,
+      'multi_kills': instance.multiKills,
+      'net_worth': instance.netWorth,
       'obs': instance.obs,
-      'obsLeftLog': instance.obsLeftLog,
-      'obsLog': instance.obsLog,
-      'obsPlaced': instance.obsPlaced,
-      'partyId': instance.partyId,
-      'partySize': instance.partySize,
-      'performanceOthers': instance.performanceOthers,
-      'permanentBuffs': instance.permanentBuffs,
+      'obs_left_log': instance.obsLeftLog,
+      'obs_log': instance.obsLog,
+      'obs_placed': instance.obsPlaced,
+      'party_id': instance.partyId,
+      'party_size': instance.partySize,
+      'performance_others': instance.performanceOthers,
+      'permanent_buffs': instance.permanentBuffs,
       'pings': instance.pings,
-      'predVict': instance.predVict,
+      'pred_vict': instance.predVict,
       'purchase': instance.purchase,
-      'purchaseLog': instance.purchaseLog,
+      'purchase_log': instance.purchaseLog,
       'randomed': instance.randomed,
       'repicked': instance.repicked,
-      'roshansKilled': instance.roshansKilled,
-      'runePickups': instance.runePickups,
+      'roshans_killed': instance.roshansKilled,
+      'rune_pickups': instance.runePickups,
       'runes': instance.runes,
-      'runesLog': instance.runesLog,
+      'runes_log': instance.runesLog,
       'sen': instance.sen,
-      'senLeftLog': instance.senLeftLog,
-      'senLog': instance.senLog,
-      'senPlaced': instance.senPlaced,
+      'sen_left_log': instance.senLeftLog,
+      'sen_log': instance.senLog,
+      'sen_placed': instance.senPlaced,
       'stuns': instance.stuns,
-      'teamfightParticipation': instance.teamfightParticipation,
+      'teamfight_participation': instance.teamfightParticipation,
       'times': instance.times,
-      'towerDamage': instance.towerDamage,
-      'towersKilled': instance.towersKilled,
-      'xpPerMin': instance.xpPerMin,
-      'xpReasons': instance.xpReasons,
-      'xpT': instance.xpT,
+      'tower_damage': instance.towerDamage,
+      'towers_killed': instance.towersKilled,
+      'xp_per_min': instance.xpPerMin,
+      'xp_reasons': instance.xpReasons,
+      'xp_t': instance.xpT,
       'personaname': instance.personaname,
       'name': instance.name,
-      'lastLogin': instance.lastLogin,
-      'radiantWin': instance.radiantWin,
-      'startTime': instance.startTime,
+      'last_login': instance.lastLogin,
+      'radiant_win': instance.radiantWin,
+      'start_time': instance.startTime,
       'duration': instance.duration,
       'cluster': instance.cluster,
-      'lobbyType': instance.lobbyType,
-      'gameMode': instance.gameMode,
-      'isContributor': instance.isContributor,
+      'lobby_type': instance.lobbyType,
+      'game_mode': instance.gameMode,
+      'is_contributor': instance.isContributor,
       'patch': instance.patch,
       'region': instance.region,
-      'isRadiant': instance.isRadiant,
+      'is_radiant': instance.isRadiant,
       'win': instance.win,
       'lose': instance.lose,
-      'totalGold': instance.totalGold,
-      'totalXp': instance.totalXp,
-      'killsPerMin': instance.killsPerMin,
+      'total_gold': instance.totalGold,
+      'total_xp': instance.totalXp,
+      'kills_per_min': instance.killsPerMin,
       'kda': instance.kda,
       'abandons': instance.abandons,
-      'neutralKills': instance.neutralKills,
-      'towerKills': instance.towerKills,
-      'courierKills': instance.courierKills,
-      'laneKills': instance.laneKills,
-      'heroKills': instance.heroKills,
-      'observerKills': instance.observerKills,
-      'sentryKills': instance.sentryKills,
-      'roshanKills': instance.roshanKills,
-      'necronomiconKills': instance.necronomiconKills,
-      'ancientKills': instance.ancientKills,
-      'buybackCount': instance.buybackCount,
-      'observerUses': instance.observerUses,
-      'sentryUses': instance.sentryUses,
-      'laneEfficiency': instance.laneEfficiency,
-      'laneEfficiencyPct': instance.laneEfficiencyPct,
+      'neutral_kills': instance.neutralKills,
+      'tower_kills': instance.towerKills,
+      'courier_kills': instance.courierKills,
+      'lane_kills': instance.laneKills,
+      'hero_kills': instance.heroKills,
+      'observer_kills': instance.observerKills,
+      'sentry_kills': instance.sentryKills,
+      'roshan_kills': instance.roshanKills,
+      'necronomicon_kills': instance.necronomiconKills,
+      'ancient_kills': instance.ancientKills,
+      'buyback_count': instance.buybackCount,
+      'observer_uses': instance.observerUses,
+      'sentry_uses': instance.sentryUses,
+      'lane_efficiency': instance.laneEfficiency,
+      'lane_efficiency_pct': instance.laneEfficiencyPct,
       'lane': instance.lane,
-      'laneRole': instance.laneRole,
-      'isRoaming': instance.isRoaming,
-      'purchaseTime': instance.purchaseTime,
-      'firstPurchaseTime': instance.firstPurchaseTime,
-      'itemWin': instance.itemWin,
-      'itemUsage': instance.itemUsage,
-      'purchaseWardObserver': instance.purchaseWardObserver,
-      'purchaseWardSentry': instance.purchaseWardSentry,
-      'purchaseTpscroll': instance.purchaseTpscroll,
-      'actionsPerMin': instance.actionsPerMin,
-      'lifeStateDead': instance.lifeStateDead,
-      'rankTier': instance.rankTier,
-      'isSubscriber': instance.isSubscriber,
+      'lane_role': instance.laneRole,
+      'is_roaming': instance.isRoaming,
+      'purchase_time': instance.purchaseTime,
+      'first_purchase_time': instance.firstPurchaseTime,
+      'item_win': instance.itemWin,
+      'item_usage': instance.itemUsage,
+      'purchase_ward_observer': instance.purchaseWardObserver,
+      'purchase_ward_sentry': instance.purchaseWardSentry,
+      'purchase_tpscroll': instance.purchaseTpscroll,
+      'actions_per_min': instance.actionsPerMin,
+      'life_state_dead': instance.lifeStateDead,
+      'rank_tier': instance.rankTier,
+      'is_subscriber': instance.isSubscriber,
       'cosmetics': instance.cosmetics,
       'benchmarks': instance.benchmarks,
-      'purchaseGem': instance.purchaseGem,
+      'purchase_gem': instance.purchaseGem,
     };
 
 _$_AbilityTargets _$$_AbilityTargetsFromJson(Map<String, dynamic> json) =>
     _$_AbilityTargets(
-      tinyTossTree: json['tinyTossTree'] == null
+      tinyTossTree: json['tiny_toss_tree'] == null
           ? null
-          : TinyTossTree.fromJson(json['tinyTossTree'] as Map<String, dynamic>),
-      tinyToss: json['tinyToss'] == null
+          : TinyTossTree.fromJson(
+              json['tiny_toss_tree'] as Map<String, dynamic>),
+      tinyToss: json['tiny_toss'] == null
           ? null
-          : Tiny.fromJson(json['tinyToss'] as Map<String, dynamic>),
-      darkSeerIonShell: json['darkSeerIonShell'] == null
+          : Tiny.fromJson(json['tiny_toss'] as Map<String, dynamic>),
+      darkSeerIonShell: json['dark_seer_ion_shell'] == null
           ? null
-          : KilledBy.fromJson(json['darkSeerIonShell'] as Map<String, dynamic>),
-      darkSeerSurge: json['darkSeerSurge'] == null
+          : KilledBy.fromJson(
+              json['dark_seer_ion_shell'] as Map<String, dynamic>),
+      darkSeerSurge: json['dark_seer_surge'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['darkSeerSurge'] as Map<String, dynamic>),
-      hoodwinkAcornShot: json['hoodwinkAcornShot'] == null
+              json['dark_seer_surge'] as Map<String, dynamic>),
+      hoodwinkAcornShot: json['hoodwink_acorn_shot'] == null
           ? null
           : HoodwinkAcornShot.fromJson(
-              json['hoodwinkAcornShot'] as Map<String, dynamic>),
-      hoodwinkHuntersBoomerang: json['hoodwinkHuntersBoomerang'] == null
+              json['hoodwink_acorn_shot'] as Map<String, dynamic>),
+      hoodwinkHuntersBoomerang: json['hoodwink_hunters_boomerang'] == null
           ? null
           : HoodwinkHuntersBoomerang.fromJson(
-              json['hoodwinkHuntersBoomerang'] as Map<String, dynamic>),
-      stormSpiritElectricVortex: json['stormSpiritElectricVortex'] == null
+              json['hoodwink_hunters_boomerang'] as Map<String, dynamic>),
+      stormSpiritElectricVortex: json['storm_spirit_electric_vortex'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['stormSpiritElectricVortex'] as Map<String, dynamic>),
-      tidehunterGush: json['tidehunterGush'] == null
+              json['storm_spirit_electric_vortex'] as Map<String, dynamic>),
+      tidehunterGush: json['tidehunter_gush'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['tidehunterGush'] as Map<String, dynamic>),
-      rubickFadeBolt: json['rubickFadeBolt'] == null
+              json['tidehunter_gush'] as Map<String, dynamic>),
+      rubickFadeBolt: json['rubick_fade_bolt'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['rubickFadeBolt'] as Map<String, dynamic>),
-      rubickTelekinesis: json['rubickTelekinesis'] == null
+              json['rubick_fade_bolt'] as Map<String, dynamic>),
+      rubickTelekinesis: json['rubick_telekinesis'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['rubickTelekinesis'] as Map<String, dynamic>),
-      rubickSpellSteal: json['rubickSpellSteal'] == null
+              json['rubick_telekinesis'] as Map<String, dynamic>),
+      rubickSpellSteal: json['rubick_spell_steal'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['rubickSpellSteal'] as Map<String, dynamic>),
+              json['rubick_spell_steal'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_AbilityTargetsToJson(_$_AbilityTargets instance) =>
     <String, dynamic>{
-      'tinyTossTree': instance.tinyTossTree,
-      'tinyToss': instance.tinyToss,
-      'darkSeerIonShell': instance.darkSeerIonShell,
-      'darkSeerSurge': instance.darkSeerSurge,
-      'hoodwinkAcornShot': instance.hoodwinkAcornShot,
-      'hoodwinkHuntersBoomerang': instance.hoodwinkHuntersBoomerang,
-      'stormSpiritElectricVortex': instance.stormSpiritElectricVortex,
-      'tidehunterGush': instance.tidehunterGush,
-      'rubickFadeBolt': instance.rubickFadeBolt,
-      'rubickTelekinesis': instance.rubickTelekinesis,
-      'rubickSpellSteal': instance.rubickSpellSteal,
+      'tiny_toss_tree': instance.tinyTossTree,
+      'tiny_toss': instance.tinyToss,
+      'dark_seer_ion_shell': instance.darkSeerIonShell,
+      'dark_seer_surge': instance.darkSeerSurge,
+      'hoodwink_acorn_shot': instance.hoodwinkAcornShot,
+      'hoodwink_hunters_boomerang': instance.hoodwinkHuntersBoomerang,
+      'storm_spirit_electric_vortex': instance.stormSpiritElectricVortex,
+      'tidehunter_gush': instance.tidehunterGush,
+      'rubick_fade_bolt': instance.rubickFadeBolt,
+      'rubick_telekinesis': instance.rubickTelekinesis,
+      'rubick_spell_steal': instance.rubickSpellSteal,
     };
 
 _$_KilledBy _$$_KilledByFromJson(Map<String, dynamic> json) => _$_KilledBy(
-      npcDotaHeroRattletrap: json['npcDotaHeroRattletrap'] as int?,
-      npcDotaHeroDarkSeer: json['npcDotaHeroDarkSeer'] as int?,
-      npcDotaHeroTiny: json['npcDotaHeroTiny'] as int?,
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
-      npcDotaHeroMonkeyKing: json['npcDotaHeroMonkeyKing'] as int?,
-      npcDotaHeroTidehunter: json['npcDotaHeroTidehunter'] as int?,
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaHeroHoodwink: json['npcDotaHeroHoodwink'] as int?,
-      npcDotaHeroMirana: json['npcDotaHeroMirana'] as int?,
-      npcDotaHeroRubick: json['npcDotaHeroRubick'] as int?,
-      npcDotaBadguysTower1Bot: json['npcDotaBadguysTower1Bot'] as int?,
-      npcDotaGoodguysTower2Bot: json['npcDotaGoodguysTower2Bot'] as int?,
+      npcDotaHeroRattletrap: json['npc_dota_hero_rattletrap'] as int?,
+      npcDotaHeroDarkSeer: json['npc_dota_hero_dark_seer'] as int?,
+      npcDotaHeroTiny: json['npc_dota_hero_tiny'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
+      npcDotaHeroMonkeyKing: json['npc_dota_hero_monkey_king'] as int?,
+      npcDotaHeroTidehunter: json['npc_dota_hero_tidehunter'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaHeroHoodwink: json['npc_dota_hero_hoodwink'] as int?,
+      npcDotaHeroMirana: json['npc_dota_hero_mirana'] as int?,
+      npcDotaHeroRubick: json['npc_dota_hero_rubick'] as int?,
+      npcDotaBadguysTower1Bot: json['npc_dota_badguys_tower1_bot'] as int?,
+      npcDotaGoodguysTower2Bot: json['npc_dota_goodguys_tower2_bot'] as int?,
     );
 
 Map<String, dynamic> _$$_KilledByToJson(_$_KilledBy instance) =>
     <String, dynamic>{
-      'npcDotaHeroRattletrap': instance.npcDotaHeroRattletrap,
-      'npcDotaHeroDarkSeer': instance.npcDotaHeroDarkSeer,
-      'npcDotaHeroTiny': instance.npcDotaHeroTiny,
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
-      'npcDotaHeroMonkeyKing': instance.npcDotaHeroMonkeyKing,
-      'npcDotaHeroTidehunter': instance.npcDotaHeroTidehunter,
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaHeroHoodwink': instance.npcDotaHeroHoodwink,
-      'npcDotaHeroMirana': instance.npcDotaHeroMirana,
-      'npcDotaHeroRubick': instance.npcDotaHeroRubick,
-      'npcDotaBadguysTower1Bot': instance.npcDotaBadguysTower1Bot,
-      'npcDotaGoodguysTower2Bot': instance.npcDotaGoodguysTower2Bot,
+      'npc_dota_hero_rattletrap': instance.npcDotaHeroRattletrap,
+      'npc_dota_hero_dark_seer': instance.npcDotaHeroDarkSeer,
+      'npc_dota_hero_tiny': instance.npcDotaHeroTiny,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_monkey_king': instance.npcDotaHeroMonkeyKing,
+      'npc_dota_hero_tidehunter': instance.npcDotaHeroTidehunter,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_hero_hoodwink': instance.npcDotaHeroHoodwink,
+      'npc_dota_hero_mirana': instance.npcDotaHeroMirana,
+      'npc_dota_hero_rubick': instance.npcDotaHeroRubick,
+      'npc_dota_badguys_tower1_bot': instance.npcDotaBadguysTower1Bot,
+      'npc_dota_goodguys_tower2_bot': instance.npcDotaGoodguysTower2Bot,
     };
 
 _$_DarkSeerSurge _$$_DarkSeerSurgeFromJson(Map<String, dynamic> json) =>
     _$_DarkSeerSurge(
-      npcDotaHeroRattletrap: json['npcDotaHeroRattletrap'] as int?,
-      npcDotaHeroDarkSeer: json['npcDotaHeroDarkSeer'] as int?,
-      npcDotaHeroTiny: json['npcDotaHeroTiny'] as int?,
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
-      npcDotaHeroMirana: json['npcDotaHeroMirana'] as int?,
+      npcDotaHeroRattletrap: json['npc_dota_hero_rattletrap'] as int?,
+      npcDotaHeroDarkSeer: json['npc_dota_hero_dark_seer'] as int?,
+      npcDotaHeroTiny: json['npc_dota_hero_tiny'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
+      npcDotaHeroMirana: json['npc_dota_hero_mirana'] as int?,
     );
 
 Map<String, dynamic> _$$_DarkSeerSurgeToJson(_$_DarkSeerSurge instance) =>
     <String, dynamic>{
-      'npcDotaHeroRattletrap': instance.npcDotaHeroRattletrap,
-      'npcDotaHeroDarkSeer': instance.npcDotaHeroDarkSeer,
-      'npcDotaHeroTiny': instance.npcDotaHeroTiny,
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
-      'npcDotaHeroMirana': instance.npcDotaHeroMirana,
+      'npc_dota_hero_rattletrap': instance.npcDotaHeroRattletrap,
+      'npc_dota_hero_dark_seer': instance.npcDotaHeroDarkSeer,
+      'npc_dota_hero_tiny': instance.npcDotaHeroTiny,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_mirana': instance.npcDotaHeroMirana,
     };
 
 _$_HoodwinkAcornShot _$$_HoodwinkAcornShotFromJson(Map<String, dynamic> json) =>
     _$_HoodwinkAcornShot(
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
-      npcDotaHeroTiny: json['npcDotaHeroTiny'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
+      npcDotaHeroTiny: json['npc_dota_hero_tiny'] as int?,
     );
 
 Map<String, dynamic> _$$_HoodwinkAcornShotToJson(
         _$_HoodwinkAcornShot instance) =>
     <String, dynamic>{
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
-      'npcDotaHeroTiny': instance.npcDotaHeroTiny,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_tiny': instance.npcDotaHeroTiny,
     };
 
 _$_HoodwinkHuntersBoomerang _$$_HoodwinkHuntersBoomerangFromJson(
         Map<String, dynamic> json) =>
     _$_HoodwinkHuntersBoomerang(
-      npcDotaHeroRattletrap: json['npcDotaHeroRattletrap'] as int?,
-      npcDotaHeroMonkeyKing: json['npcDotaHeroMonkeyKing'] as int?,
-      npcDotaHeroMirana: json['npcDotaHeroMirana'] as int?,
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
+      npcDotaHeroRattletrap: json['npc_dota_hero_rattletrap'] as int?,
+      npcDotaHeroMonkeyKing: json['npc_dota_hero_monkey_king'] as int?,
+      npcDotaHeroMirana: json['npc_dota_hero_mirana'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
     );
 
 Map<String, dynamic> _$$_HoodwinkHuntersBoomerangToJson(
         _$_HoodwinkHuntersBoomerang instance) =>
     <String, dynamic>{
-      'npcDotaHeroRattletrap': instance.npcDotaHeroRattletrap,
-      'npcDotaHeroMonkeyKing': instance.npcDotaHeroMonkeyKing,
-      'npcDotaHeroMirana': instance.npcDotaHeroMirana,
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_rattletrap': instance.npcDotaHeroRattletrap,
+      'npc_dota_hero_monkey_king': instance.npcDotaHeroMonkeyKing,
+      'npc_dota_hero_mirana': instance.npcDotaHeroMirana,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
     };
 
 _$_Tiny _$$_TinyFromJson(Map<String, dynamic> json) => _$_Tiny(
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaHeroHoodwink: json['npcDotaHeroHoodwink'] as int?,
-      npcDotaHeroRubick: json['npcDotaHeroRubick'] as int?,
-      npcDotaHeroMonkeyKing: json['npcDotaHeroMonkeyKing'] as int?,
-      npcDotaHeroTidehunter: json['npcDotaHeroTidehunter'] as int?,
-      npcDotaHeroDarkSeer: json['npcDotaHeroDarkSeer'] as int?,
-      npcDotaHeroRattletrap: json['npcDotaHeroRattletrap'] as int?,
-      npcDotaHeroMirana: json['npcDotaHeroMirana'] as int?,
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
-      npcDotaHeroTiny: json['npcDotaHeroTiny'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaHeroHoodwink: json['npc_dota_hero_hoodwink'] as int?,
+      npcDotaHeroRubick: json['npc_dota_hero_rubick'] as int?,
+      npcDotaHeroMonkeyKing: json['npc_dota_hero_monkey_king'] as int?,
+      npcDotaHeroTidehunter: json['npc_dota_hero_tidehunter'] as int?,
+      npcDotaHeroDarkSeer: json['npc_dota_hero_dark_seer'] as int?,
+      npcDotaHeroRattletrap: json['npc_dota_hero_rattletrap'] as int?,
+      npcDotaHeroMirana: json['npc_dota_hero_mirana'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
+      npcDotaHeroTiny: json['npc_dota_hero_tiny'] as int?,
     );
 
 Map<String, dynamic> _$$_TinyToJson(_$_Tiny instance) => <String, dynamic>{
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaHeroHoodwink': instance.npcDotaHeroHoodwink,
-      'npcDotaHeroRubick': instance.npcDotaHeroRubick,
-      'npcDotaHeroMonkeyKing': instance.npcDotaHeroMonkeyKing,
-      'npcDotaHeroTidehunter': instance.npcDotaHeroTidehunter,
-      'npcDotaHeroDarkSeer': instance.npcDotaHeroDarkSeer,
-      'npcDotaHeroRattletrap': instance.npcDotaHeroRattletrap,
-      'npcDotaHeroMirana': instance.npcDotaHeroMirana,
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
-      'npcDotaHeroTiny': instance.npcDotaHeroTiny,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_hero_hoodwink': instance.npcDotaHeroHoodwink,
+      'npc_dota_hero_rubick': instance.npcDotaHeroRubick,
+      'npc_dota_hero_monkey_king': instance.npcDotaHeroMonkeyKing,
+      'npc_dota_hero_tidehunter': instance.npcDotaHeroTidehunter,
+      'npc_dota_hero_dark_seer': instance.npcDotaHeroDarkSeer,
+      'npc_dota_hero_rattletrap': instance.npcDotaHeroRattletrap,
+      'npc_dota_hero_mirana': instance.npcDotaHeroMirana,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_tiny': instance.npcDotaHeroTiny,
     };
 
 _$_TinyTossTree _$$_TinyTossTreeFromJson(Map<String, dynamic> json) =>
     _$_TinyTossTree(
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaHeroHoodwink: json['npcDotaHeroHoodwink'] as int?,
-      npcDotaHeroRubick: json['npcDotaHeroRubick'] as int?,
-      npcDotaHeroTidehunter: json['npcDotaHeroTidehunter'] as int?,
-      npcDotaHeroMonkeyKing: json['npcDotaHeroMonkeyKing'] as int?,
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
-      npcDotaHeroTiny: json['npcDotaHeroTiny'] as int?,
-      npcDotaHeroMirana: json['npcDotaHeroMirana'] as int?,
-      npcDotaHeroRattletrap: json['npcDotaHeroRattletrap'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaHeroHoodwink: json['npc_dota_hero_hoodwink'] as int?,
+      npcDotaHeroRubick: json['npc_dota_hero_rubick'] as int?,
+      npcDotaHeroTidehunter: json['npc_dota_hero_tidehunter'] as int?,
+      npcDotaHeroMonkeyKing: json['npc_dota_hero_monkey_king'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
+      npcDotaHeroTiny: json['npc_dota_hero_tiny'] as int?,
+      npcDotaHeroMirana: json['npc_dota_hero_mirana'] as int?,
+      npcDotaHeroRattletrap: json['npc_dota_hero_rattletrap'] as int?,
     );
 
 Map<String, dynamic> _$$_TinyTossTreeToJson(_$_TinyTossTree instance) =>
     <String, dynamic>{
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaHeroHoodwink': instance.npcDotaHeroHoodwink,
-      'npcDotaHeroRubick': instance.npcDotaHeroRubick,
-      'npcDotaHeroTidehunter': instance.npcDotaHeroTidehunter,
-      'npcDotaHeroMonkeyKing': instance.npcDotaHeroMonkeyKing,
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
-      'npcDotaHeroTiny': instance.npcDotaHeroTiny,
-      'npcDotaHeroMirana': instance.npcDotaHeroMirana,
-      'npcDotaHeroRattletrap': instance.npcDotaHeroRattletrap,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_hero_hoodwink': instance.npcDotaHeroHoodwink,
+      'npc_dota_hero_rubick': instance.npcDotaHeroRubick,
+      'npc_dota_hero_tidehunter': instance.npcDotaHeroTidehunter,
+      'npc_dota_hero_monkey_king': instance.npcDotaHeroMonkeyKing,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_tiny': instance.npcDotaHeroTiny,
+      'npc_dota_hero_mirana': instance.npcDotaHeroMirana,
+      'npc_dota_hero_rattletrap': instance.npcDotaHeroRattletrap,
     };
 
 _$_AbilityUses _$$_AbilityUsesFromJson(Map<String, dynamic> json) =>
     _$_AbilityUses(
-      ursaEarthshock: json['ursaEarthshock'] as int?,
-      ursaOverpower: json['ursaOverpower'] as int?,
-      ursaEnrage: json['ursaEnrage'] as int?,
-      tinyTreeGrab: json['tinyTreeGrab'] as int?,
-      tinyAvalanche: json['tinyAvalanche'] as int?,
-      tinyTossTree: json['tinyTossTree'] as int?,
-      tinyToss: json['tinyToss'] as int?,
-      darkSeerIonShell: json['darkSeerIonShell'] as int?,
-      darkSeerVacuum: json['darkSeerVacuum'] as int?,
-      darkSeerSurge: json['darkSeerSurge'] as int?,
-      darkSeerWallOfReplica: json['darkSeerWallOfReplica'] as int?,
-      rattletrapBatteryAssault: json['rattletrapBatteryAssault'] as int?,
-      rattletrapPowerCogs: json['rattletrapPowerCogs'] as int?,
-      rattletrapRocketFlare: json['rattletrapRocketFlare'] as int?,
-      rattletrapHookshot: json['rattletrapHookshot'] as int?,
-      abilityCapture: json['abilityCapture'] as int?,
-      rattletrapJetpack: json['rattletrapJetpack'] as int?,
-      miranaStarfall: json['miranaStarfall'] as int?,
-      miranaLeap: json['miranaLeap'] as int?,
-      miranaArrow: json['miranaArrow'] as int?,
-      miranaInvis: json['miranaInvis'] as int?,
-      hoodwinkAcornShot: json['hoodwinkAcornShot'] as int?,
-      hoodwinkBushwhack: json['hoodwinkBushwhack'] as int?,
-      hoodwinkScurry: json['hoodwinkScurry'] as int?,
-      hoodwinkSharpshooter: json['hoodwinkSharpshooter'] as int?,
-      hoodwinkSharpshooterRelease: json['hoodwinkSharpshooterRelease'] as int?,
-      hoodwinkHuntersBoomerang: json['hoodwinkHuntersBoomerang'] as int?,
-      stormSpiritStaticRemnant: json['stormSpiritStaticRemnant'] as int?,
-      stormSpiritElectricVortex: json['stormSpiritElectricVortex'] as int?,
-      stormSpiritBallLightning: json['stormSpiritBallLightning'] as int?,
-      tidehunterAnchorSmash: json['tidehunterAnchorSmash'] as int?,
-      tidehunterGush: json['tidehunterGush'] as int?,
-      tidehunterRavage: json['tidehunterRavage'] as int?,
-      rubickFadeBolt: json['rubickFadeBolt'] as int?,
-      rubickTelekinesis: json['rubickTelekinesis'] as int?,
-      rubickTelekinesisLand: json['rubickTelekinesisLand'] as int?,
-      rubickSpellSteal: json['rubickSpellSteal'] as int?,
-      monkeyKingMischief: json['monkeyKingMischief'] as int?,
-      monkeyKingUntransform: json['monkeyKingUntransform'] as int?,
-      monkeyKingBoundlessStrike: json['monkeyKingBoundlessStrike'] as int?,
-      monkeyKingTreeDance: json['monkeyKingTreeDance'] as int?,
-      monkeyKingPrimalSpring: json['monkeyKingPrimalSpring'] as int?,
-      monkeyKingWukongsCommand: json['monkeyKingWukongsCommand'] as int?,
+      ursaEarthshock: json['ursa_earthshock'] as int?,
+      ursaOverpower: json['ursa_overpower'] as int?,
+      ursaEnrage: json['ursa_enrage'] as int?,
+      tinyTreeGrab: json['tiny_tree_grab'] as int?,
+      tinyAvalanche: json['tiny_avalanche'] as int?,
+      tinyTossTree: json['tiny_toss_tree'] as int?,
+      tinyToss: json['tiny_toss'] as int?,
+      darkSeerIonShell: json['dark_seer_ion_shell'] as int?,
+      darkSeerVacuum: json['dark_seer_vacuum'] as int?,
+      darkSeerSurge: json['dark_seer_surge'] as int?,
+      darkSeerWallOfReplica: json['dark_seer_wall_of_replica'] as int?,
+      rattletrapBatteryAssault: json['rattletrap_battery_assault'] as int?,
+      rattletrapPowerCogs: json['rattletrap_power_cogs'] as int?,
+      rattletrapRocketFlare: json['rattletrap_rocket_flare'] as int?,
+      rattletrapHookshot: json['rattletrap_hookshot'] as int?,
+      abilityCapture: json['ability_capture'] as int?,
+      rattletrapJetpack: json['rattletrap_jetpack'] as int?,
+      miranaStarfall: json['mirana_starfall'] as int?,
+      miranaLeap: json['mirana_leap'] as int?,
+      miranaArrow: json['mirana_arrow'] as int?,
+      miranaInvis: json['mirana_invis'] as int?,
+      hoodwinkAcornShot: json['hoodwink_acorn_shot'] as int?,
+      hoodwinkBushwhack: json['hoodwink_bushwhack'] as int?,
+      hoodwinkScurry: json['hoodwink_scurry'] as int?,
+      hoodwinkSharpshooter: json['hoodwink_sharpshooter'] as int?,
+      hoodwinkSharpshooterRelease:
+          json['hoodwink_sharpshooter_release'] as int?,
+      hoodwinkHuntersBoomerang: json['hoodwink_hunters_boomerang'] as int?,
+      stormSpiritStaticRemnant: json['storm_spirit_static_remnant'] as int?,
+      stormSpiritElectricVortex: json['storm_spirit_electric_vortex'] as int?,
+      stormSpiritBallLightning: json['storm_spirit_ball_lightning'] as int?,
+      tidehunterAnchorSmash: json['tidehunter_anchor_smash'] as int?,
+      tidehunterGush: json['tidehunter_gush'] as int?,
+      tidehunterRavage: json['tidehunter_ravage'] as int?,
+      rubickFadeBolt: json['rubick_fade_bolt'] as int?,
+      rubickTelekinesis: json['rubick_telekinesis'] as int?,
+      rubickTelekinesisLand: json['rubick_telekinesis_land'] as int?,
+      rubickSpellSteal: json['rubick_spell_steal'] as int?,
+      monkeyKingMischief: json['monkey_king_mischief'] as int?,
+      monkeyKingUntransform: json['monkey_king_untransform'] as int?,
+      monkeyKingBoundlessStrike: json['monkey_king_boundless_strike'] as int?,
+      monkeyKingTreeDance: json['monkey_king_tree_dance'] as int?,
+      monkeyKingPrimalSpring: json['monkey_king_primal_spring'] as int?,
+      monkeyKingWukongsCommand: json['monkey_king_wukongs_command'] as int?,
     );
 
 Map<String, dynamic> _$$_AbilityUsesToJson(_$_AbilityUses instance) =>
     <String, dynamic>{
-      'ursaEarthshock': instance.ursaEarthshock,
-      'ursaOverpower': instance.ursaOverpower,
-      'ursaEnrage': instance.ursaEnrage,
-      'tinyTreeGrab': instance.tinyTreeGrab,
-      'tinyAvalanche': instance.tinyAvalanche,
-      'tinyTossTree': instance.tinyTossTree,
-      'tinyToss': instance.tinyToss,
-      'darkSeerIonShell': instance.darkSeerIonShell,
-      'darkSeerVacuum': instance.darkSeerVacuum,
-      'darkSeerSurge': instance.darkSeerSurge,
-      'darkSeerWallOfReplica': instance.darkSeerWallOfReplica,
-      'rattletrapBatteryAssault': instance.rattletrapBatteryAssault,
-      'rattletrapPowerCogs': instance.rattletrapPowerCogs,
-      'rattletrapRocketFlare': instance.rattletrapRocketFlare,
-      'rattletrapHookshot': instance.rattletrapHookshot,
-      'abilityCapture': instance.abilityCapture,
-      'rattletrapJetpack': instance.rattletrapJetpack,
-      'miranaStarfall': instance.miranaStarfall,
-      'miranaLeap': instance.miranaLeap,
-      'miranaArrow': instance.miranaArrow,
-      'miranaInvis': instance.miranaInvis,
-      'hoodwinkAcornShot': instance.hoodwinkAcornShot,
-      'hoodwinkBushwhack': instance.hoodwinkBushwhack,
-      'hoodwinkScurry': instance.hoodwinkScurry,
-      'hoodwinkSharpshooter': instance.hoodwinkSharpshooter,
-      'hoodwinkSharpshooterRelease': instance.hoodwinkSharpshooterRelease,
-      'hoodwinkHuntersBoomerang': instance.hoodwinkHuntersBoomerang,
-      'stormSpiritStaticRemnant': instance.stormSpiritStaticRemnant,
-      'stormSpiritElectricVortex': instance.stormSpiritElectricVortex,
-      'stormSpiritBallLightning': instance.stormSpiritBallLightning,
-      'tidehunterAnchorSmash': instance.tidehunterAnchorSmash,
-      'tidehunterGush': instance.tidehunterGush,
-      'tidehunterRavage': instance.tidehunterRavage,
-      'rubickFadeBolt': instance.rubickFadeBolt,
-      'rubickTelekinesis': instance.rubickTelekinesis,
-      'rubickTelekinesisLand': instance.rubickTelekinesisLand,
-      'rubickSpellSteal': instance.rubickSpellSteal,
-      'monkeyKingMischief': instance.monkeyKingMischief,
-      'monkeyKingUntransform': instance.monkeyKingUntransform,
-      'monkeyKingBoundlessStrike': instance.monkeyKingBoundlessStrike,
-      'monkeyKingTreeDance': instance.monkeyKingTreeDance,
-      'monkeyKingPrimalSpring': instance.monkeyKingPrimalSpring,
-      'monkeyKingWukongsCommand': instance.monkeyKingWukongsCommand,
+      'ursa_earthshock': instance.ursaEarthshock,
+      'ursa_overpower': instance.ursaOverpower,
+      'ursa_enrage': instance.ursaEnrage,
+      'tiny_tree_grab': instance.tinyTreeGrab,
+      'tiny_avalanche': instance.tinyAvalanche,
+      'tiny_toss_tree': instance.tinyTossTree,
+      'tiny_toss': instance.tinyToss,
+      'dark_seer_ion_shell': instance.darkSeerIonShell,
+      'dark_seer_vacuum': instance.darkSeerVacuum,
+      'dark_seer_surge': instance.darkSeerSurge,
+      'dark_seer_wall_of_replica': instance.darkSeerWallOfReplica,
+      'rattletrap_battery_assault': instance.rattletrapBatteryAssault,
+      'rattletrap_power_cogs': instance.rattletrapPowerCogs,
+      'rattletrap_rocket_flare': instance.rattletrapRocketFlare,
+      'rattletrap_hookshot': instance.rattletrapHookshot,
+      'ability_capture': instance.abilityCapture,
+      'rattletrap_jetpack': instance.rattletrapJetpack,
+      'mirana_starfall': instance.miranaStarfall,
+      'mirana_leap': instance.miranaLeap,
+      'mirana_arrow': instance.miranaArrow,
+      'mirana_invis': instance.miranaInvis,
+      'hoodwink_acorn_shot': instance.hoodwinkAcornShot,
+      'hoodwink_bushwhack': instance.hoodwinkBushwhack,
+      'hoodwink_scurry': instance.hoodwinkScurry,
+      'hoodwink_sharpshooter': instance.hoodwinkSharpshooter,
+      'hoodwink_sharpshooter_release': instance.hoodwinkSharpshooterRelease,
+      'hoodwink_hunters_boomerang': instance.hoodwinkHuntersBoomerang,
+      'storm_spirit_static_remnant': instance.stormSpiritStaticRemnant,
+      'storm_spirit_electric_vortex': instance.stormSpiritElectricVortex,
+      'storm_spirit_ball_lightning': instance.stormSpiritBallLightning,
+      'tidehunter_anchor_smash': instance.tidehunterAnchorSmash,
+      'tidehunter_gush': instance.tidehunterGush,
+      'tidehunter_ravage': instance.tidehunterRavage,
+      'rubick_fade_bolt': instance.rubickFadeBolt,
+      'rubick_telekinesis': instance.rubickTelekinesis,
+      'rubick_telekinesis_land': instance.rubickTelekinesisLand,
+      'rubick_spell_steal': instance.rubickSpellSteal,
+      'monkey_king_mischief': instance.monkeyKingMischief,
+      'monkey_king_untransform': instance.monkeyKingUntransform,
+      'monkey_king_boundless_strike': instance.monkeyKingBoundlessStrike,
+      'monkey_king_tree_dance': instance.monkeyKingTreeDance,
+      'monkey_king_primal_spring': instance.monkeyKingPrimalSpring,
+      'monkey_king_wukongs_command': instance.monkeyKingWukongsCommand,
     };
 
 _$_Actions _$$_ActionsFromJson(Map<String, dynamic> json) => _$_Actions(
@@ -1164,32 +1169,33 @@ Map<String, dynamic> _$$_ActionsToJson(_$_Actions instance) =>
 
 _$_Benchmarks _$$_BenchmarksFromJson(Map<String, dynamic> json) =>
     _$_Benchmarks(
-      goldPerMin: json['goldPerMin'] == null
+      goldPerMin: json['gold_per_min'] == null
           ? null
-          : GoldPerMin.fromJson(json['goldPerMin'] as Map<String, dynamic>),
-      xpPerMin: json['xpPerMin'] == null
+          : GoldPerMin.fromJson(json['gold_per_min'] as Map<String, dynamic>),
+      xpPerMin: json['xp_per_min'] == null
           ? null
-          : GoldPerMin.fromJson(json['xpPerMin'] as Map<String, dynamic>),
-      killsPerMin: json['killsPerMin'] == null
+          : GoldPerMin.fromJson(json['xp_per_min'] as Map<String, dynamic>),
+      killsPerMin: json['kills_per_min'] == null
           ? null
-          : GoldPerMin.fromJson(json['killsPerMin'] as Map<String, dynamic>),
-      lastHitsPerMin: json['lastHitsPerMin'] == null
-          ? null
-          : GoldPerMin.fromJson(json['lastHitsPerMin'] as Map<String, dynamic>),
-      heroDamagePerMin: json['heroDamagePerMin'] == null
+          : GoldPerMin.fromJson(json['kills_per_min'] as Map<String, dynamic>),
+      lastHitsPerMin: json['last_hits_per_min'] == null
           ? null
           : GoldPerMin.fromJson(
-              json['heroDamagePerMin'] as Map<String, dynamic>),
-      heroHealingPerMin: json['heroHealingPerMin'] == null
+              json['last_hits_per_min'] as Map<String, dynamic>),
+      heroDamagePerMin: json['hero_damage_per_min'] == null
           ? null
           : GoldPerMin.fromJson(
-              json['heroHealingPerMin'] as Map<String, dynamic>),
-      towerDamage: json['towerDamage'] == null
+              json['hero_damage_per_min'] as Map<String, dynamic>),
+      heroHealingPerMin: json['hero_healing_per_min'] == null
           ? null
-          : GoldPerMin.fromJson(json['towerDamage'] as Map<String, dynamic>),
-      stunsPerMin: json['stunsPerMin'] == null
+          : GoldPerMin.fromJson(
+              json['hero_healing_per_min'] as Map<String, dynamic>),
+      towerDamage: json['tower_damage'] == null
           ? null
-          : GoldPerMin.fromJson(json['stunsPerMin'] as Map<String, dynamic>),
+          : GoldPerMin.fromJson(json['tower_damage'] as Map<String, dynamic>),
+      stunsPerMin: json['stuns_per_min'] == null
+          ? null
+          : GoldPerMin.fromJson(json['stuns_per_min'] as Map<String, dynamic>),
       lhten: json['lhten'] == null
           ? null
           : GoldPerMin.fromJson(json['lhten'] as Map<String, dynamic>),
@@ -1197,14 +1203,14 @@ _$_Benchmarks _$$_BenchmarksFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_BenchmarksToJson(_$_Benchmarks instance) =>
     <String, dynamic>{
-      'goldPerMin': instance.goldPerMin,
-      'xpPerMin': instance.xpPerMin,
-      'killsPerMin': instance.killsPerMin,
-      'lastHitsPerMin': instance.lastHitsPerMin,
-      'heroDamagePerMin': instance.heroDamagePerMin,
-      'heroHealingPerMin': instance.heroHealingPerMin,
-      'towerDamage': instance.towerDamage,
-      'stunsPerMin': instance.stunsPerMin,
+      'gold_per_min': instance.goldPerMin,
+      'xp_per_min': instance.xpPerMin,
+      'kills_per_min': instance.killsPerMin,
+      'last_hits_per_min': instance.lastHitsPerMin,
+      'hero_damage_per_min': instance.heroDamagePerMin,
+      'hero_healing_per_min': instance.heroHealingPerMin,
+      'tower_damage': instance.towerDamage,
+      'stuns_per_min': instance.stunsPerMin,
       'lhten': instance.lhten,
     };
 
@@ -1221,771 +1227,792 @@ Map<String, dynamic> _$$_GoldPerMinToJson(_$_GoldPerMin instance) =>
     };
 
 _$_Cosmetic _$$_CosmeticFromJson(Map<String, dynamic> json) => _$_Cosmetic(
-      itemId: json['itemId'] as int?,
+      itemId: json['item_id'] as int?,
       name: json['name'] as String?,
       prefab: json['prefab'] as String?,
-      creationDate: json['creationDate'] as String?,
-      imageInventory: json['imageInventory'] as String?,
-      imagePath: json['imagePath'] as String?,
-      itemDescription: json['itemDescription'] as String?,
-      itemName: json['itemName'] as String?,
-      itemRarity: json['itemRarity'] as String?,
-      itemTypeName: json['itemTypeName'] as String?,
-      usedByHeroes: json['usedByHeroes'] as String?,
+      creationDate: json['creation_date'] as String?,
+      imageInventory: json['image_inventory'] as String?,
+      imagePath: json['image_path'] as String?,
+      itemDescription: json['item_description'] as String?,
+      itemName: json['item_name'] as String?,
+      itemRarity: json['item_rarity'] as String?,
+      itemTypeName: json['item_type_name'] as String?,
+      usedByHeroes: json['used_by_heroes'] as String?,
     );
 
 Map<String, dynamic> _$$_CosmeticToJson(_$_Cosmetic instance) =>
     <String, dynamic>{
-      'itemId': instance.itemId,
+      'item_id': instance.itemId,
       'name': instance.name,
       'prefab': instance.prefab,
-      'creationDate': instance.creationDate,
-      'imageInventory': instance.imageInventory,
-      'imagePath': instance.imagePath,
-      'itemDescription': instance.itemDescription,
-      'itemName': instance.itemName,
-      'itemRarity': instance.itemRarity,
-      'itemTypeName': instance.itemTypeName,
-      'usedByHeroes': instance.usedByHeroes,
+      'creation_date': instance.creationDate,
+      'image_inventory': instance.imageInventory,
+      'image_path': instance.imagePath,
+      'item_description': instance.itemDescription,
+      'item_name': instance.itemName,
+      'item_rarity': instance.itemRarity,
+      'item_type_name': instance.itemTypeName,
+      'used_by_heroes': instance.usedByHeroes,
     };
 
 _$_Damage _$$_DamageFromJson(Map<String, dynamic> json) => _$_Damage(
-      npcDotaCreepBadguysMelee: json['npcDotaCreepBadguysMelee'] as int?,
-      npcDotaHeroTidehunter: json['npcDotaHeroTidehunter'] as int?,
-      npcDotaCreepBadguysRanged: json['npcDotaCreepBadguysRanged'] as int?,
-      npcDotaCreepGoodguysMelee: json['npcDotaCreepGoodguysMelee'] as int?,
+      npcDotaCreepBadguysMelee: json['npc_dota_creep_badguys_melee'] as int?,
+      npcDotaHeroTidehunter: json['npc_dota_hero_tidehunter'] as int?,
+      npcDotaCreepBadguysRanged: json['npc_dota_creep_badguys_ranged'] as int?,
+      npcDotaCreepGoodguysMelee: json['npc_dota_creep_goodguys_melee'] as int?,
       npcDotaCreepBadguysFlagbearer:
-          json['npcDotaCreepBadguysFlagbearer'] as int?,
-      npcDotaBadguysSiege: json['npcDotaBadguysSiege'] as int?,
+          json['npc_dota_creep_badguys_flagbearer'] as int?,
+      npcDotaBadguysSiege: json['npc_dota_badguys_siege'] as int?,
       npcDotaNeutralForestTrollHighPriest:
-          json['npcDotaNeutralForestTrollHighPriest'] as int?,
+          json['npc_dota_neutral_forest_troll_high_priest'] as int?,
       npcDotaNeutralForestTrollBerserker:
-          json['npcDotaNeutralForestTrollBerserker'] as int?,
-      npcDotaCreepGoodguysRanged: json['npcDotaCreepGoodguysRanged'] as int?,
+          json['npc_dota_neutral_forest_troll_berserker'] as int?,
+      npcDotaCreepGoodguysRanged:
+          json['npc_dota_creep_goodguys_ranged'] as int?,
       npcDotaNeutralKoboldTaskmaster:
-          json['npcDotaNeutralKoboldTaskmaster'] as int?,
+          json['npc_dota_neutral_kobold_taskmaster'] as int?,
       npcDotaNeutralKoboldTunneler:
-          json['npcDotaNeutralKoboldTunneler'] as int?,
-      npcDotaNeutralKobold: json['npcDotaNeutralKobold'] as int?,
-      npcDotaHeroHoodwink: json['npcDotaHeroHoodwink'] as int?,
-      npcDotaNeutralWarpineRaider: json['npcDotaNeutralWarpineRaider'] as int?,
-      npcDotaNeutralFelBeast: json['npcDotaNeutralFelBeast'] as int?,
-      npcDotaNeutralCentaurKhan: json['npcDotaNeutralCentaurKhan'] as int?,
+          json['npc_dota_neutral_kobold_tunneler'] as int?,
+      npcDotaNeutralKobold: json['npc_dota_neutral_kobold'] as int?,
+      npcDotaHeroHoodwink: json['npc_dota_hero_hoodwink'] as int?,
+      npcDotaNeutralWarpineRaider:
+          json['npc_dota_neutral_warpine_raider'] as int?,
+      npcDotaNeutralFelBeast: json['npc_dota_neutral_fel_beast'] as int?,
+      npcDotaNeutralCentaurKhan: json['npc_dota_neutral_centaur_khan'] as int?,
       npcDotaNeutralCentaurOutrunner:
-          json['npcDotaNeutralCentaurOutrunner'] as int?,
-      npcDotaNeutralGhost: json['npcDotaNeutralGhost'] as int?,
+          json['npc_dota_neutral_centaur_outrunner'] as int?,
+      npcDotaNeutralGhost: json['npc_dota_neutral_ghost'] as int?,
       npcDotaNeutralPolarFurbolgUrsaWarrior:
-          json['npcDotaNeutralPolarFurbolgUrsaWarrior'] as int?,
+          json['npc_dota_neutral_polar_furbolg_ursa_warrior'] as int?,
       npcDotaNeutralPolarFurbolgChampion:
-          json['npcDotaNeutralPolarFurbolgChampion'] as int?,
-      npcDotaNeutralHarpyStorm: json['npcDotaNeutralHarpyStorm'] as int?,
-      npcDotaNeutralHarpyScout: json['npcDotaNeutralHarpyScout'] as int?,
-      npcDotaNeutralMudGolem: json['npcDotaNeutralMudGolem'] as int?,
-      npcDotaNeutralMudGolemSplit: json['npcDotaNeutralMudGolemSplit'] as int?,
+          json['npc_dota_neutral_polar_furbolg_champion'] as int?,
+      npcDotaNeutralHarpyStorm: json['npc_dota_neutral_harpy_storm'] as int?,
+      npcDotaNeutralHarpyScout: json['npc_dota_neutral_harpy_scout'] as int?,
+      npcDotaNeutralMudGolem: json['npc_dota_neutral_mud_golem'] as int?,
+      npcDotaNeutralMudGolemSplit:
+          json['npc_dota_neutral_mud_golem_split'] as int?,
       npcDotaNeutralEnragedWildkin:
-          json['npcDotaNeutralEnragedWildkin'] as int?,
-      npcDotaNeutralWildkin: json['npcDotaNeutralWildkin'] as int?,
-      npcDotaNeutralBlackDrake: json['npcDotaNeutralBlackDrake'] as int?,
-      npcDotaNeutralBlackDragon: json['npcDotaNeutralBlackDragon'] as int?,
-      npcDotaBadguysTower1Top: json['npcDotaBadguysTower1Top'] as int?,
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaRoshan: json['npcDotaRoshan'] as int?,
-      npcDotaNeutralRockGolem: json['npcDotaNeutralRockGolem'] as int?,
-      npcDotaNeutralGraniteGolem: json['npcDotaNeutralGraniteGolem'] as int?,
+          json['npc_dota_neutral_enraged_wildkin'] as int?,
+      npcDotaNeutralWildkin: json['npc_dota_neutral_wildkin'] as int?,
+      npcDotaNeutralBlackDrake: json['npc_dota_neutral_black_drake'] as int?,
+      npcDotaNeutralBlackDragon: json['npc_dota_neutral_black_dragon'] as int?,
+      npcDotaBadguysTower1Top: json['npc_dota_badguys_tower1_top'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaRoshan: json['npc_dota_roshan'] as int?,
+      npcDotaNeutralRockGolem: json['npc_dota_neutral_rock_golem'] as int?,
+      npcDotaNeutralGraniteGolem:
+          json['npc_dota_neutral_granite_golem'] as int?,
       npcDotaNeutralSatyrSoulstealer:
-          json['npcDotaNeutralSatyrSoulstealer'] as int?,
+          json['npc_dota_neutral_satyr_soulstealer'] as int?,
       npcDotaNeutralSatyrTrickster:
-          json['npcDotaNeutralSatyrTrickster'] as int?,
+          json['npc_dota_neutral_satyr_trickster'] as int?,
       npcDotaNeutralSatyrHellcaller:
-          json['npcDotaNeutralSatyrHellcaller'] as int?,
-      npcDotaBadguysTower1Mid: json['npcDotaBadguysTower1Mid'] as int?,
+          json['npc_dota_neutral_satyr_hellcaller'] as int?,
+      npcDotaBadguysTower1Mid: json['npc_dota_badguys_tower1_mid'] as int?,
       npcDotaNeutralSmallThunderLizard:
-          json['npcDotaNeutralSmallThunderLizard'] as int?,
+          json['npc_dota_neutral_small_thunder_lizard'] as int?,
       npcDotaNeutralBigThunderLizard:
-          json['npcDotaNeutralBigThunderLizard'] as int?,
-      npcDotaNeutralGiantWolf: json['npcDotaNeutralGiantWolf'] as int?,
-      npcDotaNeutralAlphaWolf: json['npcDotaNeutralAlphaWolf'] as int?,
-      npcDotaNeutralDarkTroll: json['npcDotaNeutralDarkTroll'] as int?,
+          json['npc_dota_neutral_big_thunder_lizard'] as int?,
+      npcDotaNeutralGiantWolf: json['npc_dota_neutral_giant_wolf'] as int?,
+      npcDotaNeutralAlphaWolf: json['npc_dota_neutral_alpha_wolf'] as int?,
+      npcDotaNeutralDarkTroll: json['npc_dota_neutral_dark_troll'] as int?,
       npcDotaNeutralDarkTrollWarlord:
-          json['npcDotaNeutralDarkTrollWarlord'] as int?,
+          json['npc_dota_neutral_dark_troll_warlord'] as int?,
       npcDotaDarkTrollWarlordSkeletonWarrior:
-          json['npcDotaDarkTrollWarlordSkeletonWarrior'] as int?,
-      npcDotaHeroMonkeyKing: json['npcDotaHeroMonkeyKing'] as int?,
-      npcDotaHeroRubick: json['npcDotaHeroRubick'] as int?,
-      npcDotaNeutralOgreMauler: json['npcDotaNeutralOgreMauler'] as int?,
-      npcDotaNeutralOgreMagi: json['npcDotaNeutralOgreMagi'] as int?,
-      npcDotaBadguysTower2Mid: json['npcDotaBadguysTower2Mid'] as int?,
-      npcDotaBadguysTower2Top: json['npcDotaBadguysTower2Top'] as int?,
+          json['npc_dota_dark_troll_warlord_skeleton_warrior'] as int?,
+      npcDotaHeroMonkeyKing: json['npc_dota_hero_monkey_king'] as int?,
+      npcDotaHeroRubick: json['npc_dota_hero_rubick'] as int?,
+      npcDotaNeutralOgreMauler: json['npc_dota_neutral_ogre_mauler'] as int?,
+      npcDotaNeutralOgreMagi: json['npc_dota_neutral_ogre_magi'] as int?,
+      npcDotaBadguysTower2Mid: json['npc_dota_badguys_tower2_mid'] as int?,
+      npcDotaBadguysTower2Top: json['npc_dota_badguys_tower2_top'] as int?,
       npcDotaNeutralFrostbittenGolem:
-          json['npcDotaNeutralFrostbittenGolem'] as int?,
-      npcDotaNeutralIceShaman: json['npcDotaNeutralIceShaman'] as int?,
-      npcDotaBadguysRangeRaxTop: json['npcDotaBadguysRangeRaxTop'] as int?,
-      npcDotaBadguysMeleeRaxTop: json['npcDotaBadguysMeleeRaxTop'] as int?,
-      npcDotaObserverWards: json['npcDotaObserverWards'] as int?,
-      npcDotaSentryWards: json['npcDotaSentryWards'] as int?,
-      npcDotaBadguysTower3Mid: json['npcDotaBadguysTower3Mid'] as int?,
-      npcDotaBadguysRangeRaxMid: json['npcDotaBadguysRangeRaxMid'] as int?,
-      npcDotaBadguysMeleeRaxMid: json['npcDotaBadguysMeleeRaxMid'] as int?,
-      npcDotaBadguysTower3Bot: json['npcDotaBadguysTower3Bot'] as int?,
-      npcDotaBadguysMeleeRaxBot: json['npcDotaBadguysMeleeRaxBot'] as int?,
-      npcDotaBadguysFillers: json['npcDotaBadguysFillers'] as int?,
-      npcDotaBadguysTower1Bot: json['npcDotaBadguysTower1Bot'] as int?,
-      npcDotaBadguysTower3Top: json['npcDotaBadguysTower3Top'] as int?,
-      npcDotaBadguysTower2Bot: json['npcDotaBadguysTower2Bot'] as int?,
-      npcDotaBadguysRangeRaxBot: json['npcDotaBadguysRangeRaxBot'] as int?,
-      npcDotaCourier: json['npcDotaCourier'] as int?,
-      npcDotaNeutralGnollAssassin: json['npcDotaNeutralGnollAssassin'] as int?,
-      npcDotaHeroUrsa: json['npcDotaHeroUrsa'] as int?,
-      npcDotaHeroMirana: json['npcDotaHeroMirana'] as int?,
-      npcDotaHeroTiny: json['npcDotaHeroTiny'] as int?,
-      npcDotaHeroRattletrap: json['npcDotaHeroRattletrap'] as int?,
+          json['npc_dota_neutral_frostbitten_golem'] as int?,
+      npcDotaNeutralIceShaman: json['npc_dota_neutral_ice_shaman'] as int?,
+      npcDotaBadguysRangeRaxTop: json['npc_dota_badguys_range_rax_top'] as int?,
+      npcDotaBadguysMeleeRaxTop: json['npc_dota_badguys_melee_rax_top'] as int?,
+      npcDotaObserverWards: json['npc_dota_observer_wards'] as int?,
+      npcDotaSentryWards: json['npc_dota_sentry_wards'] as int?,
+      npcDotaBadguysTower3Mid: json['npc_dota_badguys_tower3_mid'] as int?,
+      npcDotaBadguysRangeRaxMid: json['npc_dota_badguys_range_rax_mid'] as int?,
+      npcDotaBadguysMeleeRaxMid: json['npc_dota_badguys_melee_rax_mid'] as int?,
+      npcDotaBadguysTower3Bot: json['npc_dota_badguys_tower3_bot'] as int?,
+      npcDotaBadguysMeleeRaxBot: json['npc_dota_badguys_melee_rax_bot'] as int?,
+      npcDotaBadguysFillers: json['npc_dota_badguys_fillers'] as int?,
+      npcDotaBadguysTower1Bot: json['npc_dota_badguys_tower1_bot'] as int?,
+      npcDotaBadguysTower3Top: json['npc_dota_badguys_tower3_top'] as int?,
+      npcDotaBadguysTower2Bot: json['npc_dota_badguys_tower2_bot'] as int?,
+      npcDotaBadguysRangeRaxBot: json['npc_dota_badguys_range_rax_bot'] as int?,
+      npcDotaCourier: json['npc_dota_courier'] as int?,
+      npcDotaNeutralGnollAssassin:
+          json['npc_dota_neutral_gnoll_assassin'] as int?,
+      npcDotaHeroUrsa: json['npc_dota_hero_ursa'] as int?,
+      npcDotaHeroMirana: json['npc_dota_hero_mirana'] as int?,
+      npcDotaHeroTiny: json['npc_dota_hero_tiny'] as int?,
+      npcDotaHeroRattletrap: json['npc_dota_hero_rattletrap'] as int?,
       npcDotaCreepGoodguysFlagbearer:
-          json['npcDotaCreepGoodguysFlagbearer'] as int?,
-      npcDotaHeroDarkSeer: json['npcDotaHeroDarkSeer'] as int?,
-      npcDotaGoodguysTower1Bot: json['npcDotaGoodguysTower1Bot'] as int?,
-      npcDotaGoodguysSiege: json['npcDotaGoodguysSiege'] as int?,
-      illusionNpcDotaHeroDarkSeer: json['illusionNpcDotaHeroDarkSeer'] as int?,
+          json['npc_dota_creep_goodguys_flagbearer'] as int?,
+      npcDotaHeroDarkSeer: json['npc_dota_hero_dark_seer'] as int?,
+      npcDotaGoodguysTower1Bot: json['npc_dota_goodguys_tower1_bot'] as int?,
+      npcDotaGoodguysSiege: json['npc_dota_goodguys_siege'] as int?,
+      illusionNpcDotaHeroDarkSeer:
+          json['illusion_npc_dota_hero_dark_seer'] as int?,
       illusionNpcDotaHeroMonkeyKing:
-          json['illusionNpcDotaHeroMonkeyKing'] as int?,
-      illusionNpcDotaHeroHoodwink: json['illusionNpcDotaHeroHoodwink'] as int?,
-      npcDotaGoodguysTower1Top: json['npcDotaGoodguysTower1Top'] as int?,
+          json['illusion_npc_dota_hero_monkey_king'] as int?,
+      illusionNpcDotaHeroHoodwink:
+          json['illusion_npc_dota_hero_hoodwink'] as int?,
+      npcDotaGoodguysTower1Top: json['npc_dota_goodguys_tower1_top'] as int?,
       illusionNpcDotaHeroTidehunter:
-          json['illusionNpcDotaHeroTidehunter'] as int?,
-      illusionNpcDotaHeroRubick: json['illusionNpcDotaHeroRubick'] as int?,
+          json['illusion_npc_dota_hero_tidehunter'] as int?,
+      illusionNpcDotaHeroRubick: json['illusion_npc_dota_hero_rubick'] as int?,
       illusionNpcDotaHeroStormSpirit:
-          json['illusionNpcDotaHeroStormSpirit'] as int?,
+          json['illusion_npc_dota_hero_storm_spirit'] as int?,
       npcDotaCreepGoodguysMeleeUpgraded:
-          json['npcDotaCreepGoodguysMeleeUpgraded'] as int?,
+          json['npc_dota_creep_goodguys_melee_upgraded'] as int?,
       npcDotaCreepGoodguysRangedUpgraded:
-          json['npcDotaCreepGoodguysRangedUpgraded'] as int?,
+          json['npc_dota_creep_goodguys_ranged_upgraded'] as int?,
       npcDotaGoodguysSiegeUpgraded:
-          json['npcDotaGoodguysSiegeUpgraded'] as int?,
-      illusionNpcDotaHeroTiny: json['illusionNpcDotaHeroTiny'] as int?,
-      npcDotaBadguysTower4: json['npcDotaBadguysTower4'] as int?,
-      npcDotaGoodguysTower2Bot: json['npcDotaGoodguysTower2Bot'] as int?,
-      npcDotaGoodguysTower1Mid: json['npcDotaGoodguysTower1Mid'] as int?,
-      npcDotaRattletrapCog: json['npcDotaRattletrapCog'] as int?,
+          json['npc_dota_goodguys_siege_upgraded'] as int?,
+      illusionNpcDotaHeroTiny: json['illusion_npc_dota_hero_tiny'] as int?,
+      npcDotaBadguysTower4: json['npc_dota_badguys_tower4'] as int?,
+      npcDotaGoodguysTower2Bot: json['npc_dota_goodguys_tower2_bot'] as int?,
+      npcDotaGoodguysTower1Mid: json['npc_dota_goodguys_tower1_mid'] as int?,
+      npcDotaRattletrapCog: json['npc_dota_rattletrap_cog'] as int?,
     );
 
 Map<String, dynamic> _$$_DamageToJson(_$_Damage instance) => <String, dynamic>{
-      'npcDotaCreepBadguysMelee': instance.npcDotaCreepBadguysMelee,
-      'npcDotaHeroTidehunter': instance.npcDotaHeroTidehunter,
-      'npcDotaCreepBadguysRanged': instance.npcDotaCreepBadguysRanged,
-      'npcDotaCreepGoodguysMelee': instance.npcDotaCreepGoodguysMelee,
-      'npcDotaCreepBadguysFlagbearer': instance.npcDotaCreepBadguysFlagbearer,
-      'npcDotaBadguysSiege': instance.npcDotaBadguysSiege,
-      'npcDotaNeutralForestTrollHighPriest':
+      'npc_dota_creep_badguys_melee': instance.npcDotaCreepBadguysMelee,
+      'npc_dota_hero_tidehunter': instance.npcDotaHeroTidehunter,
+      'npc_dota_creep_badguys_ranged': instance.npcDotaCreepBadguysRanged,
+      'npc_dota_creep_goodguys_melee': instance.npcDotaCreepGoodguysMelee,
+      'npc_dota_creep_badguys_flagbearer':
+          instance.npcDotaCreepBadguysFlagbearer,
+      'npc_dota_badguys_siege': instance.npcDotaBadguysSiege,
+      'npc_dota_neutral_forest_troll_high_priest':
           instance.npcDotaNeutralForestTrollHighPriest,
-      'npcDotaNeutralForestTrollBerserker':
+      'npc_dota_neutral_forest_troll_berserker':
           instance.npcDotaNeutralForestTrollBerserker,
-      'npcDotaCreepGoodguysRanged': instance.npcDotaCreepGoodguysRanged,
-      'npcDotaNeutralKoboldTaskmaster': instance.npcDotaNeutralKoboldTaskmaster,
-      'npcDotaNeutralKoboldTunneler': instance.npcDotaNeutralKoboldTunneler,
-      'npcDotaNeutralKobold': instance.npcDotaNeutralKobold,
-      'npcDotaHeroHoodwink': instance.npcDotaHeroHoodwink,
-      'npcDotaNeutralWarpineRaider': instance.npcDotaNeutralWarpineRaider,
-      'npcDotaNeutralFelBeast': instance.npcDotaNeutralFelBeast,
-      'npcDotaNeutralCentaurKhan': instance.npcDotaNeutralCentaurKhan,
-      'npcDotaNeutralCentaurOutrunner': instance.npcDotaNeutralCentaurOutrunner,
-      'npcDotaNeutralGhost': instance.npcDotaNeutralGhost,
-      'npcDotaNeutralPolarFurbolgUrsaWarrior':
+      'npc_dota_creep_goodguys_ranged': instance.npcDotaCreepGoodguysRanged,
+      'npc_dota_neutral_kobold_taskmaster':
+          instance.npcDotaNeutralKoboldTaskmaster,
+      'npc_dota_neutral_kobold_tunneler': instance.npcDotaNeutralKoboldTunneler,
+      'npc_dota_neutral_kobold': instance.npcDotaNeutralKobold,
+      'npc_dota_hero_hoodwink': instance.npcDotaHeroHoodwink,
+      'npc_dota_neutral_warpine_raider': instance.npcDotaNeutralWarpineRaider,
+      'npc_dota_neutral_fel_beast': instance.npcDotaNeutralFelBeast,
+      'npc_dota_neutral_centaur_khan': instance.npcDotaNeutralCentaurKhan,
+      'npc_dota_neutral_centaur_outrunner':
+          instance.npcDotaNeutralCentaurOutrunner,
+      'npc_dota_neutral_ghost': instance.npcDotaNeutralGhost,
+      'npc_dota_neutral_polar_furbolg_ursa_warrior':
           instance.npcDotaNeutralPolarFurbolgUrsaWarrior,
-      'npcDotaNeutralPolarFurbolgChampion':
+      'npc_dota_neutral_polar_furbolg_champion':
           instance.npcDotaNeutralPolarFurbolgChampion,
-      'npcDotaNeutralHarpyStorm': instance.npcDotaNeutralHarpyStorm,
-      'npcDotaNeutralHarpyScout': instance.npcDotaNeutralHarpyScout,
-      'npcDotaNeutralMudGolem': instance.npcDotaNeutralMudGolem,
-      'npcDotaNeutralMudGolemSplit': instance.npcDotaNeutralMudGolemSplit,
-      'npcDotaNeutralEnragedWildkin': instance.npcDotaNeutralEnragedWildkin,
-      'npcDotaNeutralWildkin': instance.npcDotaNeutralWildkin,
-      'npcDotaNeutralBlackDrake': instance.npcDotaNeutralBlackDrake,
-      'npcDotaNeutralBlackDragon': instance.npcDotaNeutralBlackDragon,
-      'npcDotaBadguysTower1Top': instance.npcDotaBadguysTower1Top,
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaRoshan': instance.npcDotaRoshan,
-      'npcDotaNeutralRockGolem': instance.npcDotaNeutralRockGolem,
-      'npcDotaNeutralGraniteGolem': instance.npcDotaNeutralGraniteGolem,
-      'npcDotaNeutralSatyrSoulstealer': instance.npcDotaNeutralSatyrSoulstealer,
-      'npcDotaNeutralSatyrTrickster': instance.npcDotaNeutralSatyrTrickster,
-      'npcDotaNeutralSatyrHellcaller': instance.npcDotaNeutralSatyrHellcaller,
-      'npcDotaBadguysTower1Mid': instance.npcDotaBadguysTower1Mid,
-      'npcDotaNeutralSmallThunderLizard':
+      'npc_dota_neutral_harpy_storm': instance.npcDotaNeutralHarpyStorm,
+      'npc_dota_neutral_harpy_scout': instance.npcDotaNeutralHarpyScout,
+      'npc_dota_neutral_mud_golem': instance.npcDotaNeutralMudGolem,
+      'npc_dota_neutral_mud_golem_split': instance.npcDotaNeutralMudGolemSplit,
+      'npc_dota_neutral_enraged_wildkin': instance.npcDotaNeutralEnragedWildkin,
+      'npc_dota_neutral_wildkin': instance.npcDotaNeutralWildkin,
+      'npc_dota_neutral_black_drake': instance.npcDotaNeutralBlackDrake,
+      'npc_dota_neutral_black_dragon': instance.npcDotaNeutralBlackDragon,
+      'npc_dota_badguys_tower1_top': instance.npcDotaBadguysTower1Top,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_roshan': instance.npcDotaRoshan,
+      'npc_dota_neutral_rock_golem': instance.npcDotaNeutralRockGolem,
+      'npc_dota_neutral_granite_golem': instance.npcDotaNeutralGraniteGolem,
+      'npc_dota_neutral_satyr_soulstealer':
+          instance.npcDotaNeutralSatyrSoulstealer,
+      'npc_dota_neutral_satyr_trickster': instance.npcDotaNeutralSatyrTrickster,
+      'npc_dota_neutral_satyr_hellcaller':
+          instance.npcDotaNeutralSatyrHellcaller,
+      'npc_dota_badguys_tower1_mid': instance.npcDotaBadguysTower1Mid,
+      'npc_dota_neutral_small_thunder_lizard':
           instance.npcDotaNeutralSmallThunderLizard,
-      'npcDotaNeutralBigThunderLizard': instance.npcDotaNeutralBigThunderLizard,
-      'npcDotaNeutralGiantWolf': instance.npcDotaNeutralGiantWolf,
-      'npcDotaNeutralAlphaWolf': instance.npcDotaNeutralAlphaWolf,
-      'npcDotaNeutralDarkTroll': instance.npcDotaNeutralDarkTroll,
-      'npcDotaNeutralDarkTrollWarlord': instance.npcDotaNeutralDarkTrollWarlord,
-      'npcDotaDarkTrollWarlordSkeletonWarrior':
+      'npc_dota_neutral_big_thunder_lizard':
+          instance.npcDotaNeutralBigThunderLizard,
+      'npc_dota_neutral_giant_wolf': instance.npcDotaNeutralGiantWolf,
+      'npc_dota_neutral_alpha_wolf': instance.npcDotaNeutralAlphaWolf,
+      'npc_dota_neutral_dark_troll': instance.npcDotaNeutralDarkTroll,
+      'npc_dota_neutral_dark_troll_warlord':
+          instance.npcDotaNeutralDarkTrollWarlord,
+      'npc_dota_dark_troll_warlord_skeleton_warrior':
           instance.npcDotaDarkTrollWarlordSkeletonWarrior,
-      'npcDotaHeroMonkeyKing': instance.npcDotaHeroMonkeyKing,
-      'npcDotaHeroRubick': instance.npcDotaHeroRubick,
-      'npcDotaNeutralOgreMauler': instance.npcDotaNeutralOgreMauler,
-      'npcDotaNeutralOgreMagi': instance.npcDotaNeutralOgreMagi,
-      'npcDotaBadguysTower2Mid': instance.npcDotaBadguysTower2Mid,
-      'npcDotaBadguysTower2Top': instance.npcDotaBadguysTower2Top,
-      'npcDotaNeutralFrostbittenGolem': instance.npcDotaNeutralFrostbittenGolem,
-      'npcDotaNeutralIceShaman': instance.npcDotaNeutralIceShaman,
-      'npcDotaBadguysRangeRaxTop': instance.npcDotaBadguysRangeRaxTop,
-      'npcDotaBadguysMeleeRaxTop': instance.npcDotaBadguysMeleeRaxTop,
-      'npcDotaObserverWards': instance.npcDotaObserverWards,
-      'npcDotaSentryWards': instance.npcDotaSentryWards,
-      'npcDotaBadguysTower3Mid': instance.npcDotaBadguysTower3Mid,
-      'npcDotaBadguysRangeRaxMid': instance.npcDotaBadguysRangeRaxMid,
-      'npcDotaBadguysMeleeRaxMid': instance.npcDotaBadguysMeleeRaxMid,
-      'npcDotaBadguysTower3Bot': instance.npcDotaBadguysTower3Bot,
-      'npcDotaBadguysMeleeRaxBot': instance.npcDotaBadguysMeleeRaxBot,
-      'npcDotaBadguysFillers': instance.npcDotaBadguysFillers,
-      'npcDotaBadguysTower1Bot': instance.npcDotaBadguysTower1Bot,
-      'npcDotaBadguysTower3Top': instance.npcDotaBadguysTower3Top,
-      'npcDotaBadguysTower2Bot': instance.npcDotaBadguysTower2Bot,
-      'npcDotaBadguysRangeRaxBot': instance.npcDotaBadguysRangeRaxBot,
-      'npcDotaCourier': instance.npcDotaCourier,
-      'npcDotaNeutralGnollAssassin': instance.npcDotaNeutralGnollAssassin,
-      'npcDotaHeroUrsa': instance.npcDotaHeroUrsa,
-      'npcDotaHeroMirana': instance.npcDotaHeroMirana,
-      'npcDotaHeroTiny': instance.npcDotaHeroTiny,
-      'npcDotaHeroRattletrap': instance.npcDotaHeroRattletrap,
-      'npcDotaCreepGoodguysFlagbearer': instance.npcDotaCreepGoodguysFlagbearer,
-      'npcDotaHeroDarkSeer': instance.npcDotaHeroDarkSeer,
-      'npcDotaGoodguysTower1Bot': instance.npcDotaGoodguysTower1Bot,
-      'npcDotaGoodguysSiege': instance.npcDotaGoodguysSiege,
-      'illusionNpcDotaHeroDarkSeer': instance.illusionNpcDotaHeroDarkSeer,
-      'illusionNpcDotaHeroMonkeyKing': instance.illusionNpcDotaHeroMonkeyKing,
-      'illusionNpcDotaHeroHoodwink': instance.illusionNpcDotaHeroHoodwink,
-      'npcDotaGoodguysTower1Top': instance.npcDotaGoodguysTower1Top,
-      'illusionNpcDotaHeroTidehunter': instance.illusionNpcDotaHeroTidehunter,
-      'illusionNpcDotaHeroRubick': instance.illusionNpcDotaHeroRubick,
-      'illusionNpcDotaHeroStormSpirit': instance.illusionNpcDotaHeroStormSpirit,
-      'npcDotaCreepGoodguysMeleeUpgraded':
+      'npc_dota_hero_monkey_king': instance.npcDotaHeroMonkeyKing,
+      'npc_dota_hero_rubick': instance.npcDotaHeroRubick,
+      'npc_dota_neutral_ogre_mauler': instance.npcDotaNeutralOgreMauler,
+      'npc_dota_neutral_ogre_magi': instance.npcDotaNeutralOgreMagi,
+      'npc_dota_badguys_tower2_mid': instance.npcDotaBadguysTower2Mid,
+      'npc_dota_badguys_tower2_top': instance.npcDotaBadguysTower2Top,
+      'npc_dota_neutral_frostbitten_golem':
+          instance.npcDotaNeutralFrostbittenGolem,
+      'npc_dota_neutral_ice_shaman': instance.npcDotaNeutralIceShaman,
+      'npc_dota_badguys_range_rax_top': instance.npcDotaBadguysRangeRaxTop,
+      'npc_dota_badguys_melee_rax_top': instance.npcDotaBadguysMeleeRaxTop,
+      'npc_dota_observer_wards': instance.npcDotaObserverWards,
+      'npc_dota_sentry_wards': instance.npcDotaSentryWards,
+      'npc_dota_badguys_tower3_mid': instance.npcDotaBadguysTower3Mid,
+      'npc_dota_badguys_range_rax_mid': instance.npcDotaBadguysRangeRaxMid,
+      'npc_dota_badguys_melee_rax_mid': instance.npcDotaBadguysMeleeRaxMid,
+      'npc_dota_badguys_tower3_bot': instance.npcDotaBadguysTower3Bot,
+      'npc_dota_badguys_melee_rax_bot': instance.npcDotaBadguysMeleeRaxBot,
+      'npc_dota_badguys_fillers': instance.npcDotaBadguysFillers,
+      'npc_dota_badguys_tower1_bot': instance.npcDotaBadguysTower1Bot,
+      'npc_dota_badguys_tower3_top': instance.npcDotaBadguysTower3Top,
+      'npc_dota_badguys_tower2_bot': instance.npcDotaBadguysTower2Bot,
+      'npc_dota_badguys_range_rax_bot': instance.npcDotaBadguysRangeRaxBot,
+      'npc_dota_courier': instance.npcDotaCourier,
+      'npc_dota_neutral_gnoll_assassin': instance.npcDotaNeutralGnollAssassin,
+      'npc_dota_hero_ursa': instance.npcDotaHeroUrsa,
+      'npc_dota_hero_mirana': instance.npcDotaHeroMirana,
+      'npc_dota_hero_tiny': instance.npcDotaHeroTiny,
+      'npc_dota_hero_rattletrap': instance.npcDotaHeroRattletrap,
+      'npc_dota_creep_goodguys_flagbearer':
+          instance.npcDotaCreepGoodguysFlagbearer,
+      'npc_dota_hero_dark_seer': instance.npcDotaHeroDarkSeer,
+      'npc_dota_goodguys_tower1_bot': instance.npcDotaGoodguysTower1Bot,
+      'npc_dota_goodguys_siege': instance.npcDotaGoodguysSiege,
+      'illusion_npc_dota_hero_dark_seer': instance.illusionNpcDotaHeroDarkSeer,
+      'illusion_npc_dota_hero_monkey_king':
+          instance.illusionNpcDotaHeroMonkeyKing,
+      'illusion_npc_dota_hero_hoodwink': instance.illusionNpcDotaHeroHoodwink,
+      'npc_dota_goodguys_tower1_top': instance.npcDotaGoodguysTower1Top,
+      'illusion_npc_dota_hero_tidehunter':
+          instance.illusionNpcDotaHeroTidehunter,
+      'illusion_npc_dota_hero_rubick': instance.illusionNpcDotaHeroRubick,
+      'illusion_npc_dota_hero_storm_spirit':
+          instance.illusionNpcDotaHeroStormSpirit,
+      'npc_dota_creep_goodguys_melee_upgraded':
           instance.npcDotaCreepGoodguysMeleeUpgraded,
-      'npcDotaCreepGoodguysRangedUpgraded':
+      'npc_dota_creep_goodguys_ranged_upgraded':
           instance.npcDotaCreepGoodguysRangedUpgraded,
-      'npcDotaGoodguysSiegeUpgraded': instance.npcDotaGoodguysSiegeUpgraded,
-      'illusionNpcDotaHeroTiny': instance.illusionNpcDotaHeroTiny,
-      'npcDotaBadguysTower4': instance.npcDotaBadguysTower4,
-      'npcDotaGoodguysTower2Bot': instance.npcDotaGoodguysTower2Bot,
-      'npcDotaGoodguysTower1Mid': instance.npcDotaGoodguysTower1Mid,
-      'npcDotaRattletrapCog': instance.npcDotaRattletrapCog,
+      'npc_dota_goodguys_siege_upgraded': instance.npcDotaGoodguysSiegeUpgraded,
+      'illusion_npc_dota_hero_tiny': instance.illusionNpcDotaHeroTiny,
+      'npc_dota_badguys_tower4': instance.npcDotaBadguysTower4,
+      'npc_dota_goodguys_tower2_bot': instance.npcDotaGoodguysTower2Bot,
+      'npc_dota_goodguys_tower1_mid': instance.npcDotaGoodguysTower1Mid,
+      'npc_dota_rattletrap_cog': instance.npcDotaRattletrapCog,
     };
 
 _$_DamageInflictor _$$_DamageInflictorFromJson(Map<String, dynamic> json) =>
     _$_DamageInflictor(
-      ursaEarthshock: json['ursaEarthshock'] as int?,
-      damageInflictorNull: json['damageInflictorNull'] as int?,
+      ursaEarthshock: json['ursa_earthshock'] as int?,
+      damageInflictorNull: json['damage_inflictor_null'] as int?,
       bfury: json['bfury'] as int?,
-      tinyTreeGrab: json['tinyTreeGrab'] as int?,
-      tinyAvalanche: json['tinyAvalanche'] as int?,
-      tinyTossTree: json['tinyTossTree'] as int?,
-      tinyToss: json['tinyToss'] as int?,
-      darkSeerIonShell: json['darkSeerIonShell'] as int?,
-      darkSeerVacuum: json['darkSeerVacuum'] as int?,
-      orbOfVenom: json['orbOfVenom'] as int?,
-      rattletrapBatteryAssault: json['rattletrapBatteryAssault'] as int?,
-      rattletrapRocketFlare: json['rattletrapRocketFlare'] as int?,
-      rattletrapPowerCogs: json['rattletrapPowerCogs'] as int?,
-      rattletrapHookshot: json['rattletrapHookshot'] as int?,
+      tinyTreeGrab: json['tiny_tree_grab'] as int?,
+      tinyAvalanche: json['tiny_avalanche'] as int?,
+      tinyTossTree: json['tiny_toss_tree'] as int?,
+      tinyToss: json['tiny_toss'] as int?,
+      darkSeerIonShell: json['dark_seer_ion_shell'] as int?,
+      darkSeerVacuum: json['dark_seer_vacuum'] as int?,
+      orbOfVenom: json['orb_of_venom'] as int?,
+      rattletrapBatteryAssault: json['rattletrap_battery_assault'] as int?,
+      rattletrapRocketFlare: json['rattletrap_rocket_flare'] as int?,
+      rattletrapPowerCogs: json['rattletrap_power_cogs'] as int?,
+      rattletrapHookshot: json['rattletrap_hookshot'] as int?,
       orchid: json['orchid'] as int?,
-      miranaStarfall: json['miranaStarfall'] as int?,
-      miranaArrow: json['miranaArrow'] as int?,
-      hoodwinkBushwhack: json['hoodwinkBushwhack'] as int?,
-      hoodwinkAcornShot: json['hoodwinkAcornShot'] as int?,
-      hoodwinkSharpshooter: json['hoodwinkSharpshooter'] as int?,
-      hoodwinkHuntersBoomerang: json['hoodwinkHuntersBoomerang'] as int?,
-      stormSpiritOverload: json['stormSpiritOverload'] as int?,
-      stormSpiritStaticRemnant: json['stormSpiritStaticRemnant'] as int?,
-      stormSpiritBallLightning: json['stormSpiritBallLightning'] as int?,
-      witchBlade: json['witchBlade'] as int?,
+      miranaStarfall: json['mirana_starfall'] as int?,
+      miranaArrow: json['mirana_arrow'] as int?,
+      hoodwinkBushwhack: json['hoodwink_bushwhack'] as int?,
+      hoodwinkAcornShot: json['hoodwink_acorn_shot'] as int?,
+      hoodwinkSharpshooter: json['hoodwink_sharpshooter'] as int?,
+      hoodwinkHuntersBoomerang: json['hoodwink_hunters_boomerang'] as int?,
+      stormSpiritOverload: json['storm_spirit_overload'] as int?,
+      stormSpiritStaticRemnant: json['storm_spirit_static_remnant'] as int?,
+      stormSpiritBallLightning: json['storm_spirit_ball_lightning'] as int?,
+      witchBlade: json['witch_blade'] as int?,
       dust: json['dust'] as int?,
-      tidehunterAnchorSmash: json['tidehunterAnchorSmash'] as int?,
-      tidehunterGush: json['tidehunterGush'] as int?,
-      tidehunterRavage: json['tidehunterRavage'] as int?,
+      tidehunterAnchorSmash: json['tidehunter_anchor_smash'] as int?,
+      tidehunterGush: json['tidehunter_gush'] as int?,
+      tidehunterRavage: json['tidehunter_ravage'] as int?,
       cyclone: json['cyclone'] as int?,
-      blackPowderBag: json['blackPowderBag'] as int?,
-      rubickFadeBolt: json['rubickFadeBolt'] as int?,
-      monkeyKingBoundlessStrike: json['monkeyKingBoundlessStrike'] as int?,
-      monkeyKingTreeDance: json['monkeyKingTreeDance'] as int?,
-      monkeyKingWukongsCommand: json['monkeyKingWukongsCommand'] as int?,
+      blackPowderBag: json['black_powder_bag'] as int?,
+      rubickFadeBolt: json['rubick_fade_bolt'] as int?,
+      monkeyKingBoundlessStrike: json['monkey_king_boundless_strike'] as int?,
+      monkeyKingTreeDance: json['monkey_king_tree_dance'] as int?,
+      monkeyKingWukongsCommand: json['monkey_king_wukongs_command'] as int?,
     );
 
 Map<String, dynamic> _$$_DamageInflictorToJson(_$_DamageInflictor instance) =>
     <String, dynamic>{
-      'ursaEarthshock': instance.ursaEarthshock,
-      'damageInflictorNull': instance.damageInflictorNull,
+      'ursa_earthshock': instance.ursaEarthshock,
+      'damage_inflictor_null': instance.damageInflictorNull,
       'bfury': instance.bfury,
-      'tinyTreeGrab': instance.tinyTreeGrab,
-      'tinyAvalanche': instance.tinyAvalanche,
-      'tinyTossTree': instance.tinyTossTree,
-      'tinyToss': instance.tinyToss,
-      'darkSeerIonShell': instance.darkSeerIonShell,
-      'darkSeerVacuum': instance.darkSeerVacuum,
-      'orbOfVenom': instance.orbOfVenom,
-      'rattletrapBatteryAssault': instance.rattletrapBatteryAssault,
-      'rattletrapRocketFlare': instance.rattletrapRocketFlare,
-      'rattletrapPowerCogs': instance.rattletrapPowerCogs,
-      'rattletrapHookshot': instance.rattletrapHookshot,
+      'tiny_tree_grab': instance.tinyTreeGrab,
+      'tiny_avalanche': instance.tinyAvalanche,
+      'tiny_toss_tree': instance.tinyTossTree,
+      'tiny_toss': instance.tinyToss,
+      'dark_seer_ion_shell': instance.darkSeerIonShell,
+      'dark_seer_vacuum': instance.darkSeerVacuum,
+      'orb_of_venom': instance.orbOfVenom,
+      'rattletrap_battery_assault': instance.rattletrapBatteryAssault,
+      'rattletrap_rocket_flare': instance.rattletrapRocketFlare,
+      'rattletrap_power_cogs': instance.rattletrapPowerCogs,
+      'rattletrap_hookshot': instance.rattletrapHookshot,
       'orchid': instance.orchid,
-      'miranaStarfall': instance.miranaStarfall,
-      'miranaArrow': instance.miranaArrow,
-      'hoodwinkBushwhack': instance.hoodwinkBushwhack,
-      'hoodwinkAcornShot': instance.hoodwinkAcornShot,
-      'hoodwinkSharpshooter': instance.hoodwinkSharpshooter,
-      'hoodwinkHuntersBoomerang': instance.hoodwinkHuntersBoomerang,
-      'stormSpiritOverload': instance.stormSpiritOverload,
-      'stormSpiritStaticRemnant': instance.stormSpiritStaticRemnant,
-      'stormSpiritBallLightning': instance.stormSpiritBallLightning,
-      'witchBlade': instance.witchBlade,
+      'mirana_starfall': instance.miranaStarfall,
+      'mirana_arrow': instance.miranaArrow,
+      'hoodwink_bushwhack': instance.hoodwinkBushwhack,
+      'hoodwink_acorn_shot': instance.hoodwinkAcornShot,
+      'hoodwink_sharpshooter': instance.hoodwinkSharpshooter,
+      'hoodwink_hunters_boomerang': instance.hoodwinkHuntersBoomerang,
+      'storm_spirit_overload': instance.stormSpiritOverload,
+      'storm_spirit_static_remnant': instance.stormSpiritStaticRemnant,
+      'storm_spirit_ball_lightning': instance.stormSpiritBallLightning,
+      'witch_blade': instance.witchBlade,
       'dust': instance.dust,
-      'tidehunterAnchorSmash': instance.tidehunterAnchorSmash,
-      'tidehunterGush': instance.tidehunterGush,
-      'tidehunterRavage': instance.tidehunterRavage,
+      'tidehunter_anchor_smash': instance.tidehunterAnchorSmash,
+      'tidehunter_gush': instance.tidehunterGush,
+      'tidehunter_ravage': instance.tidehunterRavage,
       'cyclone': instance.cyclone,
-      'blackPowderBag': instance.blackPowderBag,
-      'rubickFadeBolt': instance.rubickFadeBolt,
-      'monkeyKingBoundlessStrike': instance.monkeyKingBoundlessStrike,
-      'monkeyKingTreeDance': instance.monkeyKingTreeDance,
-      'monkeyKingWukongsCommand': instance.monkeyKingWukongsCommand,
+      'black_powder_bag': instance.blackPowderBag,
+      'rubick_fade_bolt': instance.rubickFadeBolt,
+      'monkey_king_boundless_strike': instance.monkeyKingBoundlessStrike,
+      'monkey_king_tree_dance': instance.monkeyKingTreeDance,
+      'monkey_king_wukongs_command': instance.monkeyKingWukongsCommand,
     };
 
 _$_DamageTargets _$$_DamageTargetsFromJson(Map<String, dynamic> json) =>
     _$_DamageTargets(
-      ursaEarthshock: json['ursaEarthshock'] == null
+      ursaEarthshock: json['ursa_earthshock'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['ursaEarthshock'] as Map<String, dynamic>),
-      damageTargetsNull: json['damageTargetsNull'] == null
+              json['ursa_earthshock'] as Map<String, dynamic>),
+      damageTargetsNull: json['damage_targets_null'] == null
           ? null
           : KilledBy.fromJson(
-              json['damageTargetsNull'] as Map<String, dynamic>),
+              json['damage_targets_null'] as Map<String, dynamic>),
       bfury: json['bfury'] == null
           ? null
           : KilledBy.fromJson(json['bfury'] as Map<String, dynamic>),
-      tinyTreeGrab: json['tinyTreeGrab'] == null
+      tinyTreeGrab: json['tiny_tree_grab'] == null
           ? null
-          : TinyTreeGrab.fromJson(json['tinyTreeGrab'] as Map<String, dynamic>),
-      tinyAvalanche: json['tinyAvalanche'] == null
+          : TinyTreeGrab.fromJson(
+              json['tiny_tree_grab'] as Map<String, dynamic>),
+      tinyAvalanche: json['tiny_avalanche'] == null
           ? null
-          : Tiny.fromJson(json['tinyAvalanche'] as Map<String, dynamic>),
-      tinyTossTree: json['tinyTossTree'] == null
-          ? null
-          : TinyTossTree.fromJson(json['tinyTossTree'] as Map<String, dynamic>),
-      tinyToss: json['tinyToss'] == null
-          ? null
-          : TinyTossTree.fromJson(json['tinyToss'] as Map<String, dynamic>),
-      darkSeerIonShell: json['darkSeerIonShell'] == null
+          : Tiny.fromJson(json['tiny_avalanche'] as Map<String, dynamic>),
+      tinyTossTree: json['tiny_toss_tree'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['darkSeerIonShell'] as Map<String, dynamic>),
-      darkSeerVacuum: json['darkSeerVacuum'] == null
+              json['tiny_toss_tree'] as Map<String, dynamic>),
+      tinyToss: json['tiny_toss'] == null
+          ? null
+          : TinyTossTree.fromJson(json['tiny_toss'] as Map<String, dynamic>),
+      darkSeerIonShell: json['dark_seer_ion_shell'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['darkSeerVacuum'] as Map<String, dynamic>),
-      orbOfVenom: json['orbOfVenom'] == null
-          ? null
-          : KilledBy.fromJson(json['orbOfVenom'] as Map<String, dynamic>),
-      rattletrapBatteryAssault: json['rattletrapBatteryAssault'] == null
+              json['dark_seer_ion_shell'] as Map<String, dynamic>),
+      darkSeerVacuum: json['dark_seer_vacuum'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['rattletrapBatteryAssault'] as Map<String, dynamic>),
-      rattletrapRocketFlare: json['rattletrapRocketFlare'] == null
+              json['dark_seer_vacuum'] as Map<String, dynamic>),
+      orbOfVenom: json['orb_of_venom'] == null
+          ? null
+          : KilledBy.fromJson(json['orb_of_venom'] as Map<String, dynamic>),
+      rattletrapBatteryAssault: json['rattletrap_battery_assault'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['rattletrapRocketFlare'] as Map<String, dynamic>),
-      rattletrapPowerCogs: json['rattletrapPowerCogs'] == null
+              json['rattletrap_battery_assault'] as Map<String, dynamic>),
+      rattletrapRocketFlare: json['rattletrap_rocket_flare'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['rattletrapPowerCogs'] as Map<String, dynamic>),
-      rattletrapHookshot: json['rattletrapHookshot'] == null
+              json['rattletrap_rocket_flare'] as Map<String, dynamic>),
+      rattletrapPowerCogs: json['rattletrap_power_cogs'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['rattletrapHookshot'] as Map<String, dynamic>),
+              json['rattletrap_power_cogs'] as Map<String, dynamic>),
+      rattletrapHookshot: json['rattletrap_hookshot'] == null
+          ? null
+          : TinyTossTree.fromJson(
+              json['rattletrap_hookshot'] as Map<String, dynamic>),
       orchid: json['orchid'] == null
           ? null
           : Orchid.fromJson(json['orchid'] as Map<String, dynamic>),
-      miranaStarfall: json['miranaStarfall'] == null
+      miranaStarfall: json['mirana_starfall'] == null
           ? null
           : TinyTossTree.fromJson(
-              json['miranaStarfall'] as Map<String, dynamic>),
-      miranaArrow: json['miranaArrow'] == null
+              json['mirana_starfall'] as Map<String, dynamic>),
+      miranaArrow: json['mirana_arrow'] == null
           ? null
-          : TinyTossTree.fromJson(json['miranaArrow'] as Map<String, dynamic>),
-      hoodwinkBushwhack: json['hoodwinkBushwhack'] == null
-          ? null
-          : DarkSeerSurge.fromJson(
-              json['hoodwinkBushwhack'] as Map<String, dynamic>),
-      hoodwinkAcornShot: json['hoodwinkAcornShot'] == null
+          : TinyTossTree.fromJson(json['mirana_arrow'] as Map<String, dynamic>),
+      hoodwinkBushwhack: json['hoodwink_bushwhack'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['hoodwinkAcornShot'] as Map<String, dynamic>),
-      hoodwinkSharpshooter: json['hoodwinkSharpshooter'] == null
+              json['hoodwink_bushwhack'] as Map<String, dynamic>),
+      hoodwinkAcornShot: json['hoodwink_acorn_shot'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['hoodwinkSharpshooter'] as Map<String, dynamic>),
-      hoodwinkHuntersBoomerang: json['hoodwinkHuntersBoomerang'] == null
+              json['hoodwink_acorn_shot'] as Map<String, dynamic>),
+      hoodwinkSharpshooter: json['hoodwink_sharpshooter'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['hoodwinkHuntersBoomerang'] as Map<String, dynamic>),
-      stormSpiritOverload: json['stormSpiritOverload'] == null
+              json['hoodwink_sharpshooter'] as Map<String, dynamic>),
+      hoodwinkHuntersBoomerang: json['hoodwink_hunters_boomerang'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['stormSpiritOverload'] as Map<String, dynamic>),
-      stormSpiritStaticRemnant: json['stormSpiritStaticRemnant'] == null
+              json['hoodwink_hunters_boomerang'] as Map<String, dynamic>),
+      stormSpiritOverload: json['storm_spirit_overload'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['stormSpiritStaticRemnant'] as Map<String, dynamic>),
-      stormSpiritBallLightning: json['stormSpiritBallLightning'] == null
+              json['storm_spirit_overload'] as Map<String, dynamic>),
+      stormSpiritStaticRemnant: json['storm_spirit_static_remnant'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['stormSpiritBallLightning'] as Map<String, dynamic>),
-      witchBlade: json['witchBlade'] == null
+              json['storm_spirit_static_remnant'] as Map<String, dynamic>),
+      stormSpiritBallLightning: json['storm_spirit_ball_lightning'] == null
           ? null
-          : DarkSeerSurge.fromJson(json['witchBlade'] as Map<String, dynamic>),
+          : DarkSeerSurge.fromJson(
+              json['storm_spirit_ball_lightning'] as Map<String, dynamic>),
+      witchBlade: json['witch_blade'] == null
+          ? null
+          : DarkSeerSurge.fromJson(json['witch_blade'] as Map<String, dynamic>),
       dust: json['dust'] == null
           ? null
           : DarkSeerSurge.fromJson(json['dust'] as Map<String, dynamic>),
-      tidehunterAnchorSmash: json['tidehunterAnchorSmash'] == null
+      tidehunterAnchorSmash: json['tidehunter_anchor_smash'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['tidehunterAnchorSmash'] as Map<String, dynamic>),
-      tidehunterGush: json['tidehunterGush'] == null
+              json['tidehunter_anchor_smash'] as Map<String, dynamic>),
+      tidehunterGush: json['tidehunter_gush'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['tidehunterGush'] as Map<String, dynamic>),
-      tidehunterRavage: json['tidehunterRavage'] == null
+              json['tidehunter_gush'] as Map<String, dynamic>),
+      tidehunterRavage: json['tidehunter_ravage'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['tidehunterRavage'] as Map<String, dynamic>),
+              json['tidehunter_ravage'] as Map<String, dynamic>),
       cyclone: json['cyclone'] == null
           ? null
           : DarkSeerSurge.fromJson(json['cyclone'] as Map<String, dynamic>),
-      blackPowderBag: json['blackPowderBag'] == null
+      blackPowderBag: json['black_powder_bag'] == null
           ? null
           : HoodwinkAcornShot.fromJson(
-              json['blackPowderBag'] as Map<String, dynamic>),
-      rubickFadeBolt: json['rubickFadeBolt'] == null
+              json['black_powder_bag'] as Map<String, dynamic>),
+      rubickFadeBolt: json['rubick_fade_bolt'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['rubickFadeBolt'] as Map<String, dynamic>),
-      monkeyKingBoundlessStrike: json['monkeyKingBoundlessStrike'] == null
+              json['rubick_fade_bolt'] as Map<String, dynamic>),
+      monkeyKingBoundlessStrike: json['monkey_king_boundless_strike'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['monkeyKingBoundlessStrike'] as Map<String, dynamic>),
-      monkeyKingTreeDance: json['monkeyKingTreeDance'] == null
+              json['monkey_king_boundless_strike'] as Map<String, dynamic>),
+      monkeyKingTreeDance: json['monkey_king_tree_dance'] == null
           ? null
           : MonkeyKingTreeDance.fromJson(
-              json['monkeyKingTreeDance'] as Map<String, dynamic>),
-      monkeyKingWukongsCommand: json['monkeyKingWukongsCommand'] == null
+              json['monkey_king_tree_dance'] as Map<String, dynamic>),
+      monkeyKingWukongsCommand: json['monkey_king_wukongs_command'] == null
           ? null
           : DarkSeerSurge.fromJson(
-              json['monkeyKingWukongsCommand'] as Map<String, dynamic>),
+              json['monkey_king_wukongs_command'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_DamageTargetsToJson(_$_DamageTargets instance) =>
     <String, dynamic>{
-      'ursaEarthshock': instance.ursaEarthshock,
-      'damageTargetsNull': instance.damageTargetsNull,
+      'ursa_earthshock': instance.ursaEarthshock,
+      'damage_targets_null': instance.damageTargetsNull,
       'bfury': instance.bfury,
-      'tinyTreeGrab': instance.tinyTreeGrab,
-      'tinyAvalanche': instance.tinyAvalanche,
-      'tinyTossTree': instance.tinyTossTree,
-      'tinyToss': instance.tinyToss,
-      'darkSeerIonShell': instance.darkSeerIonShell,
-      'darkSeerVacuum': instance.darkSeerVacuum,
-      'orbOfVenom': instance.orbOfVenom,
-      'rattletrapBatteryAssault': instance.rattletrapBatteryAssault,
-      'rattletrapRocketFlare': instance.rattletrapRocketFlare,
-      'rattletrapPowerCogs': instance.rattletrapPowerCogs,
-      'rattletrapHookshot': instance.rattletrapHookshot,
+      'tiny_tree_grab': instance.tinyTreeGrab,
+      'tiny_avalanche': instance.tinyAvalanche,
+      'tiny_toss_tree': instance.tinyTossTree,
+      'tiny_toss': instance.tinyToss,
+      'dark_seer_ion_shell': instance.darkSeerIonShell,
+      'dark_seer_vacuum': instance.darkSeerVacuum,
+      'orb_of_venom': instance.orbOfVenom,
+      'rattletrap_battery_assault': instance.rattletrapBatteryAssault,
+      'rattletrap_rocket_flare': instance.rattletrapRocketFlare,
+      'rattletrap_power_cogs': instance.rattletrapPowerCogs,
+      'rattletrap_hookshot': instance.rattletrapHookshot,
       'orchid': instance.orchid,
-      'miranaStarfall': instance.miranaStarfall,
-      'miranaArrow': instance.miranaArrow,
-      'hoodwinkBushwhack': instance.hoodwinkBushwhack,
-      'hoodwinkAcornShot': instance.hoodwinkAcornShot,
-      'hoodwinkSharpshooter': instance.hoodwinkSharpshooter,
-      'hoodwinkHuntersBoomerang': instance.hoodwinkHuntersBoomerang,
-      'stormSpiritOverload': instance.stormSpiritOverload,
-      'stormSpiritStaticRemnant': instance.stormSpiritStaticRemnant,
-      'stormSpiritBallLightning': instance.stormSpiritBallLightning,
-      'witchBlade': instance.witchBlade,
+      'mirana_starfall': instance.miranaStarfall,
+      'mirana_arrow': instance.miranaArrow,
+      'hoodwink_bushwhack': instance.hoodwinkBushwhack,
+      'hoodwink_acorn_shot': instance.hoodwinkAcornShot,
+      'hoodwink_sharpshooter': instance.hoodwinkSharpshooter,
+      'hoodwink_hunters_boomerang': instance.hoodwinkHuntersBoomerang,
+      'storm_spirit_overload': instance.stormSpiritOverload,
+      'storm_spirit_static_remnant': instance.stormSpiritStaticRemnant,
+      'storm_spirit_ball_lightning': instance.stormSpiritBallLightning,
+      'witch_blade': instance.witchBlade,
       'dust': instance.dust,
-      'tidehunterAnchorSmash': instance.tidehunterAnchorSmash,
-      'tidehunterGush': instance.tidehunterGush,
-      'tidehunterRavage': instance.tidehunterRavage,
+      'tidehunter_anchor_smash': instance.tidehunterAnchorSmash,
+      'tidehunter_gush': instance.tidehunterGush,
+      'tidehunter_ravage': instance.tidehunterRavage,
       'cyclone': instance.cyclone,
-      'blackPowderBag': instance.blackPowderBag,
-      'rubickFadeBolt': instance.rubickFadeBolt,
-      'monkeyKingBoundlessStrike': instance.monkeyKingBoundlessStrike,
-      'monkeyKingTreeDance': instance.monkeyKingTreeDance,
-      'monkeyKingWukongsCommand': instance.monkeyKingWukongsCommand,
+      'black_powder_bag': instance.blackPowderBag,
+      'rubick_fade_bolt': instance.rubickFadeBolt,
+      'monkey_king_boundless_strike': instance.monkeyKingBoundlessStrike,
+      'monkey_king_tree_dance': instance.monkeyKingTreeDance,
+      'monkey_king_wukongs_command': instance.monkeyKingWukongsCommand,
     };
 
 _$_MonkeyKingTreeDance _$$_MonkeyKingTreeDanceFromJson(
         Map<String, dynamic> json) =>
     _$_MonkeyKingTreeDance(
-      npcDotaHeroDarkSeer: json['npcDotaHeroDarkSeer'] as int?,
+      npcDotaHeroDarkSeer: json['npc_dota_hero_dark_seer'] as int?,
     );
 
 Map<String, dynamic> _$$_MonkeyKingTreeDanceToJson(
         _$_MonkeyKingTreeDance instance) =>
     <String, dynamic>{
-      'npcDotaHeroDarkSeer': instance.npcDotaHeroDarkSeer,
+      'npc_dota_hero_dark_seer': instance.npcDotaHeroDarkSeer,
     };
 
 _$_Orchid _$$_OrchidFromJson(Map<String, dynamic> json) => _$_Orchid(
-      npcDotaHeroHoodwink: json['npcDotaHeroHoodwink'] as int?,
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaHeroMonkeyKing: json['npcDotaHeroMonkeyKing'] as int?,
+      npcDotaHeroHoodwink: json['npc_dota_hero_hoodwink'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaHeroMonkeyKing: json['npc_dota_hero_monkey_king'] as int?,
     );
 
 Map<String, dynamic> _$$_OrchidToJson(_$_Orchid instance) => <String, dynamic>{
-      'npcDotaHeroHoodwink': instance.npcDotaHeroHoodwink,
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaHeroMonkeyKing': instance.npcDotaHeroMonkeyKing,
+      'npc_dota_hero_hoodwink': instance.npcDotaHeroHoodwink,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_hero_monkey_king': instance.npcDotaHeroMonkeyKing,
     };
 
 _$_TinyTreeGrab _$$_TinyTreeGrabFromJson(Map<String, dynamic> json) =>
     _$_TinyTreeGrab(
-      npcDotaHeroStormSpirit: json['npcDotaHeroStormSpirit'] as int?,
-      npcDotaHeroTidehunter: json['npcDotaHeroTidehunter'] as int?,
+      npcDotaHeroStormSpirit: json['npc_dota_hero_storm_spirit'] as int?,
+      npcDotaHeroTidehunter: json['npc_dota_hero_tidehunter'] as int?,
     );
 
 Map<String, dynamic> _$$_TinyTreeGrabToJson(_$_TinyTreeGrab instance) =>
     <String, dynamic>{
-      'npcDotaHeroStormSpirit': instance.npcDotaHeroStormSpirit,
-      'npcDotaHeroTidehunter': instance.npcDotaHeroTidehunter,
+      'npc_dota_hero_storm_spirit': instance.npcDotaHeroStormSpirit,
+      'npc_dota_hero_tidehunter': instance.npcDotaHeroTidehunter,
     };
 
 _$_FirstPurchaseTime _$$_FirstPurchaseTimeFromJson(Map<String, dynamic> json) =>
     _$_FirstPurchaseTime(
       tango: json['tango'] as int?,
-      magicStick: json['magicStick'] as int?,
-      quellingBlade: json['quellingBlade'] as int?,
+      magicStick: json['magic_stick'] as int?,
+      quellingBlade: json['quelling_blade'] as int?,
       branches: json['branches'] as int?,
-      ringOfHealth: json['ringOfHealth'] as int?,
+      ringOfHealth: json['ring_of_health'] as int?,
       boots: json['boots'] as int?,
-      magicWand: json['magicWand'] as int?,
-      bootsOfElves: json['bootsOfElves'] as int?,
+      magicWand: json['magic_wand'] as int?,
+      bootsOfElves: json['boots_of_elves'] as int?,
       gloves: json['gloves'] as int?,
-      powerTreads: json['powerTreads'] as int?,
-      wardObserver: json['wardObserver'] as int?,
+      powerTreads: json['power_treads'] as int?,
+      wardObserver: json['ward_observer'] as int?,
       claymore: json['claymore'] as int?,
       clarity: json['clarity'] as int?,
       broadsword: json['broadsword'] as int?,
-      voidStone: json['voidStone'] as int?,
+      voidStone: json['void_stone'] as int?,
       pers: json['pers'] as int?,
       bfury: json['bfury'] as int?,
-      wardSentry: json['wardSentry'] as int?,
+      wardSentry: json['ward_sentry'] as int?,
       blink: json['blink'] as int?,
-      ogreAxe: json['ogreAxe'] as int?,
+      ogreAxe: json['ogre_axe'] as int?,
       tpscroll: json['tpscroll'] as int?,
-      mithrilHammer: json['mithrilHammer'] as int?,
-      blackKingBar: json['blackKingBar'] as int?,
-      beltOfStrength: json['beltOfStrength'] as int?,
+      mithrilHammer: json['mithril_hammer'] as int?,
+      blackKingBar: json['black_king_bar'] as int?,
+      beltOfStrength: json['belt_of_strength'] as int?,
       basher: json['basher'] as int?,
-      staffOfWizardry: json['staffOfWizardry'] as int?,
-      bladeOfAlacrity: json['bladeOfAlacrity'] as int?,
-      ultimateScepter: json['ultimateScepter'] as int?,
-      pointBooster: json['pointBooster'] as int?,
+      staffOfWizardry: json['staff_of_wizardry'] as int?,
+      bladeOfAlacrity: json['blade_of_alacrity'] as int?,
+      ultimateScepter: json['ultimate_scepter'] as int?,
+      pointBooster: json['point_booster'] as int?,
       vanguard: json['vanguard'] as int?,
-      vitalityBooster: json['vitalityBooster'] as int?,
-      abyssalBlade: json['abyssalBlade'] as int?,
-      faerieFire: json['faerieFire'] as int?,
+      vitalityBooster: json['vitality_booster'] as int?,
+      abyssalBlade: json['abyssal_blade'] as int?,
+      faerieFire: json['faerie_fire'] as int?,
       bottle: json['bottle'] as int?,
-      windLace: json['windLace'] as int?,
-      bladesOfAttack: json['bladesOfAttack'] as int?,
+      windLace: json['wind_lace'] as int?,
+      bladesOfAttack: json['blades_of_attack'] as int?,
       chainmail: json['chainmail'] as int?,
-      phaseBoots: json['phaseBoots'] as int?,
+      phaseBoots: json['phase_boots'] as int?,
       quarterstaff: json['quarterstaff'] as int?,
-      sobiMask: json['sobiMask'] as int?,
-      oblivionStaff: json['oblivionStaff'] as int?,
+      sobiMask: json['sobi_mask'] as int?,
+      oblivionStaff: json['oblivion_staff'] as int?,
       robe: json['robe'] as int?,
-      echoSabre: json['echoSabre'] as int?,
+      echoSabre: json['echo_sabre'] as int?,
       hyperstone: json['hyperstone'] as int?,
-      ringOfProtection: json['ringOfProtection'] as int?,
+      ringOfProtection: json['ring_of_protection'] as int?,
       buckler: json['buckler'] as int?,
       assault: json['assault'] as int?,
       platemail: json['platemail'] as int?,
-      aghanimsShard: json['aghanimsShard'] as int?,
-      blitzKnuckles: json['blitzKnuckles'] as int?,
-      shadowAmulet: json['shadowAmulet'] as int?,
-      invisSword: json['invisSword'] as int?,
-      lesserCrit: json['lesserCrit'] as int?,
-      silverEdge: json['silverEdge'] as int?,
-      enchantedMango: json['enchantedMango'] as int?,
-      energyBooster: json['energyBooster'] as int?,
-      arcaneBoots: json['arcaneBoots'] as int?,
-      ringOfRegen: json['ringOfRegen'] as int?,
+      aghanimsShard: json['aghanims_shard'] as int?,
+      blitzKnuckles: json['blitz_knuckles'] as int?,
+      shadowAmulet: json['shadow_amulet'] as int?,
+      invisSword: json['invis_sword'] as int?,
+      lesserCrit: json['lesser_crit'] as int?,
+      silverEdge: json['silver_edge'] as int?,
+      enchantedMango: json['enchanted_mango'] as int?,
+      energyBooster: json['energy_booster'] as int?,
+      arcaneBoots: json['arcane_boots'] as int?,
+      ringOfRegen: json['ring_of_regen'] as int?,
       headdress: json['headdress'] as int?,
       mekansm: json['mekansm'] as int?,
-      infusedRaindrop: json['infusedRaindrop'] as int?,
+      infusedRaindrop: json['infused_raindrop'] as int?,
       cloak: json['cloak'] as int?,
-      hoodOfDefiance: json['hoodOfDefiance'] as int?,
+      hoodOfDefiance: json['hood_of_defiance'] as int?,
       pipe: json['pipe'] as int?,
-      guardianGreaves: json['guardianGreaves'] as int?,
-      ultimateOrb: json['ultimateOrb'] as int?,
+      guardianGreaves: json['guardian_greaves'] as int?,
+      ultimateOrb: json['ultimate_orb'] as int?,
       sheepstick: json['sheepstick'] as int?,
-      mysticStaff: json['mysticStaff'] as int?,
-      tranquilBoots: json['tranquilBoots'] as int?,
-      smokeOfDeceit: json['smokeOfDeceit'] as int?,
-      fluffyHat: json['fluffyHat'] as int?,
-      tomeOfKnowledge: json['tomeOfKnowledge'] as int?,
+      mysticStaff: json['mystic_staff'] as int?,
+      tranquilBoots: json['tranquil_boots'] as int?,
+      smokeOfDeceit: json['smoke_of_deceit'] as int?,
+      fluffyHat: json['fluffy_hat'] as int?,
+      tomeOfKnowledge: json['tome_of_knowledge'] as int?,
       orchid: json['orchid'] as int?,
-      forceStaff: json['forceStaff'] as int?,
+      forceStaff: json['force_staff'] as int?,
       sange: json['sange'] as int?,
       gem: json['gem'] as int?,
-      glimmerCape: json['glimmerCape'] as int?,
-      blightStone: json['blightStone'] as int?,
+      glimmerCape: json['glimmer_cape'] as int?,
+      blightStone: json['blight_stone'] as int?,
       dust: json['dust'] as int?,
       flask: json['flask'] as int?,
       kaya: json['kaya'] as int?,
-      falconBlade: json['falconBlade'] as int?,
-      witchBlade: json['witchBlade'] as int?,
+      falconBlade: json['falcon_blade'] as int?,
+      witchBlade: json['witch_blade'] as int?,
       gauntlets: json['gauntlets'] as int?,
-      soulRing: json['soulRing'] as int?,
+      soulRing: json['soul_ring'] as int?,
       cyclone: json['cyclone'] as int?,
-      orbOfVenom: json['orbOfVenom'] as int?,
+      orbOfVenom: json['orb_of_venom'] as int?,
       relic: json['relic'] as int?,
-      helmOfIronWill: json['helmOfIronWill'] as int?,
+      helmOfIronWill: json['helm_of_iron_will'] as int?,
       nullifier: json['nullifier'] as int?,
-      recipeMagicWand: json['recipeMagicWand'] as int?,
-      wardDispenser: json['wardDispenser'] as int?,
-      recipeBlackKingBar: json['recipeBlackKingBar'] as int?,
-      recipeBasher: json['recipeBasher'] as int?,
-      recipeAbyssalBlade: json['recipeAbyssalBlade'] as int?,
-      recipeBuckler: json['recipeBuckler'] as int?,
-      recipeAssault: json['recipeAssault'] as int?,
-      recipeLesserCrit: json['recipeLesserCrit'] as int?,
-      recipeSilverEdge: json['recipeSilverEdge'] as int?,
-      recipeHeaddress: json['recipeHeaddress'] as int?,
-      recipeMekansm: json['recipeMekansm'] as int?,
-      recipePipe: json['recipePipe'] as int?,
-      recipeGuardianGreaves: json['recipeGuardianGreaves'] as int?,
-      recipeOrchid: json['recipeOrchid'] as int?,
-      recipeForceStaff: json['recipeForceStaff'] as int?,
-      recipeSange: json['recipeSange'] as int?,
-      recipeGlimmerCape: json['recipeGlimmerCape'] as int?,
-      recipeKaya: json['recipeKaya'] as int?,
-      recipeFalconBlade: json['recipeFalconBlade'] as int?,
-      recipeWitchBlade: json['recipeWitchBlade'] as int?,
-      recipeSoulRing: json['recipeSoulRing'] as int?,
-      recipeCyclone: json['recipeCyclone'] as int?,
+      recipeMagicWand: json['recipe_magic_wand'] as int?,
+      wardDispenser: json['ward_dispenser'] as int?,
+      recipeBlackKingBar: json['recipe_black_king_bar'] as int?,
+      recipeBasher: json['recipe_basher'] as int?,
+      recipeAbyssalBlade: json['recipe_abyssal_blade'] as int?,
+      recipeBuckler: json['recipe_buckler'] as int?,
+      recipeAssault: json['recipe_assault'] as int?,
+      recipeLesserCrit: json['recipe_lesser_crit'] as int?,
+      recipeSilverEdge: json['recipe_silver_edge'] as int?,
+      recipeHeaddress: json['recipe_headdress'] as int?,
+      recipeMekansm: json['recipe_mekansm'] as int?,
+      recipePipe: json['recipe_pipe'] as int?,
+      recipeGuardianGreaves: json['recipe_guardian_greaves'] as int?,
+      recipeOrchid: json['recipe_orchid'] as int?,
+      recipeForceStaff: json['recipe_force_staff'] as int?,
+      recipeSange: json['recipe_sange'] as int?,
+      recipeGlimmerCape: json['recipe_glimmer_cape'] as int?,
+      recipeKaya: json['recipe_kaya'] as int?,
+      recipeFalconBlade: json['recipe_falcon_blade'] as int?,
+      recipeWitchBlade: json['recipe_witch_blade'] as int?,
+      recipeSoulRing: json['recipe_soul_ring'] as int?,
+      recipeCyclone: json['recipe_cyclone'] as int?,
     );
 
 Map<String, dynamic> _$$_FirstPurchaseTimeToJson(
         _$_FirstPurchaseTime instance) =>
     <String, dynamic>{
       'tango': instance.tango,
-      'magicStick': instance.magicStick,
-      'quellingBlade': instance.quellingBlade,
+      'magic_stick': instance.magicStick,
+      'quelling_blade': instance.quellingBlade,
       'branches': instance.branches,
-      'ringOfHealth': instance.ringOfHealth,
+      'ring_of_health': instance.ringOfHealth,
       'boots': instance.boots,
-      'magicWand': instance.magicWand,
-      'bootsOfElves': instance.bootsOfElves,
+      'magic_wand': instance.magicWand,
+      'boots_of_elves': instance.bootsOfElves,
       'gloves': instance.gloves,
-      'powerTreads': instance.powerTreads,
-      'wardObserver': instance.wardObserver,
+      'power_treads': instance.powerTreads,
+      'ward_observer': instance.wardObserver,
       'claymore': instance.claymore,
       'clarity': instance.clarity,
       'broadsword': instance.broadsword,
-      'voidStone': instance.voidStone,
+      'void_stone': instance.voidStone,
       'pers': instance.pers,
       'bfury': instance.bfury,
-      'wardSentry': instance.wardSentry,
+      'ward_sentry': instance.wardSentry,
       'blink': instance.blink,
-      'ogreAxe': instance.ogreAxe,
+      'ogre_axe': instance.ogreAxe,
       'tpscroll': instance.tpscroll,
-      'mithrilHammer': instance.mithrilHammer,
-      'blackKingBar': instance.blackKingBar,
-      'beltOfStrength': instance.beltOfStrength,
+      'mithril_hammer': instance.mithrilHammer,
+      'black_king_bar': instance.blackKingBar,
+      'belt_of_strength': instance.beltOfStrength,
       'basher': instance.basher,
-      'staffOfWizardry': instance.staffOfWizardry,
-      'bladeOfAlacrity': instance.bladeOfAlacrity,
-      'ultimateScepter': instance.ultimateScepter,
-      'pointBooster': instance.pointBooster,
+      'staff_of_wizardry': instance.staffOfWizardry,
+      'blade_of_alacrity': instance.bladeOfAlacrity,
+      'ultimate_scepter': instance.ultimateScepter,
+      'point_booster': instance.pointBooster,
       'vanguard': instance.vanguard,
-      'vitalityBooster': instance.vitalityBooster,
-      'abyssalBlade': instance.abyssalBlade,
-      'faerieFire': instance.faerieFire,
+      'vitality_booster': instance.vitalityBooster,
+      'abyssal_blade': instance.abyssalBlade,
+      'faerie_fire': instance.faerieFire,
       'bottle': instance.bottle,
-      'windLace': instance.windLace,
-      'bladesOfAttack': instance.bladesOfAttack,
+      'wind_lace': instance.windLace,
+      'blades_of_attack': instance.bladesOfAttack,
       'chainmail': instance.chainmail,
-      'phaseBoots': instance.phaseBoots,
+      'phase_boots': instance.phaseBoots,
       'quarterstaff': instance.quarterstaff,
-      'sobiMask': instance.sobiMask,
-      'oblivionStaff': instance.oblivionStaff,
+      'sobi_mask': instance.sobiMask,
+      'oblivion_staff': instance.oblivionStaff,
       'robe': instance.robe,
-      'echoSabre': instance.echoSabre,
+      'echo_sabre': instance.echoSabre,
       'hyperstone': instance.hyperstone,
-      'ringOfProtection': instance.ringOfProtection,
+      'ring_of_protection': instance.ringOfProtection,
       'buckler': instance.buckler,
       'assault': instance.assault,
       'platemail': instance.platemail,
-      'aghanimsShard': instance.aghanimsShard,
-      'blitzKnuckles': instance.blitzKnuckles,
-      'shadowAmulet': instance.shadowAmulet,
-      'invisSword': instance.invisSword,
-      'lesserCrit': instance.lesserCrit,
-      'silverEdge': instance.silverEdge,
-      'enchantedMango': instance.enchantedMango,
-      'energyBooster': instance.energyBooster,
-      'arcaneBoots': instance.arcaneBoots,
-      'ringOfRegen': instance.ringOfRegen,
+      'aghanims_shard': instance.aghanimsShard,
+      'blitz_knuckles': instance.blitzKnuckles,
+      'shadow_amulet': instance.shadowAmulet,
+      'invis_sword': instance.invisSword,
+      'lesser_crit': instance.lesserCrit,
+      'silver_edge': instance.silverEdge,
+      'enchanted_mango': instance.enchantedMango,
+      'energy_booster': instance.energyBooster,
+      'arcane_boots': instance.arcaneBoots,
+      'ring_of_regen': instance.ringOfRegen,
       'headdress': instance.headdress,
       'mekansm': instance.mekansm,
-      'infusedRaindrop': instance.infusedRaindrop,
+      'infused_raindrop': instance.infusedRaindrop,
       'cloak': instance.cloak,
-      'hoodOfDefiance': instance.hoodOfDefiance,
+      'hood_of_defiance': instance.hoodOfDefiance,
       'pipe': instance.pipe,
-      'guardianGreaves': instance.guardianGreaves,
-      'ultimateOrb': instance.ultimateOrb,
+      'guardian_greaves': instance.guardianGreaves,
+      'ultimate_orb': instance.ultimateOrb,
       'sheepstick': instance.sheepstick,
-      'mysticStaff': instance.mysticStaff,
-      'tranquilBoots': instance.tranquilBoots,
-      'smokeOfDeceit': instance.smokeOfDeceit,
-      'fluffyHat': instance.fluffyHat,
-      'tomeOfKnowledge': instance.tomeOfKnowledge,
+      'mystic_staff': instance.mysticStaff,
+      'tranquil_boots': instance.tranquilBoots,
+      'smoke_of_deceit': instance.smokeOfDeceit,
+      'fluffy_hat': instance.fluffyHat,
+      'tome_of_knowledge': instance.tomeOfKnowledge,
       'orchid': instance.orchid,
-      'forceStaff': instance.forceStaff,
+      'force_staff': instance.forceStaff,
       'sange': instance.sange,
       'gem': instance.gem,
-      'glimmerCape': instance.glimmerCape,
-      'blightStone': instance.blightStone,
+      'glimmer_cape': instance.glimmerCape,
+      'blight_stone': instance.blightStone,
       'dust': instance.dust,
       'flask': instance.flask,
       'kaya': instance.kaya,
-      'falconBlade': instance.falconBlade,
-      'witchBlade': instance.witchBlade,
+      'falcon_blade': instance.falconBlade,
+      'witch_blade': instance.witchBlade,
       'gauntlets': instance.gauntlets,
-      'soulRing': instance.soulRing,
+      'soul_ring': instance.soulRing,
       'cyclone': instance.cyclone,
-      'orbOfVenom': instance.orbOfVenom,
+      'orb_of_venom': instance.orbOfVenom,
       'relic': instance.relic,
-      'helmOfIronWill': instance.helmOfIronWill,
+      'helm_of_iron_will': instance.helmOfIronWill,
       'nullifier': instance.nullifier,
-      'recipeMagicWand': instance.recipeMagicWand,
-      'wardDispenser': instance.wardDispenser,
-      'recipeBlackKingBar': instance.recipeBlackKingBar,
-      'recipeBasher': instance.recipeBasher,
-      'recipeAbyssalBlade': instance.recipeAbyssalBlade,
-      'recipeBuckler': instance.recipeBuckler,
-      'recipeAssault': instance.recipeAssault,
-      'recipeLesserCrit': instance.recipeLesserCrit,
-      'recipeSilverEdge': instance.recipeSilverEdge,
-      'recipeHeaddress': instance.recipeHeaddress,
-      'recipeMekansm': instance.recipeMekansm,
-      'recipePipe': instance.recipePipe,
-      'recipeGuardianGreaves': instance.recipeGuardianGreaves,
-      'recipeOrchid': instance.recipeOrchid,
-      'recipeForceStaff': instance.recipeForceStaff,
-      'recipeSange': instance.recipeSange,
-      'recipeGlimmerCape': instance.recipeGlimmerCape,
-      'recipeKaya': instance.recipeKaya,
-      'recipeFalconBlade': instance.recipeFalconBlade,
-      'recipeWitchBlade': instance.recipeWitchBlade,
-      'recipeSoulRing': instance.recipeSoulRing,
-      'recipeCyclone': instance.recipeCyclone,
+      'recipe_magic_wand': instance.recipeMagicWand,
+      'ward_dispenser': instance.wardDispenser,
+      'recipe_black_king_bar': instance.recipeBlackKingBar,
+      'recipe_basher': instance.recipeBasher,
+      'recipe_abyssal_blade': instance.recipeAbyssalBlade,
+      'recipe_buckler': instance.recipeBuckler,
+      'recipe_assault': instance.recipeAssault,
+      'recipe_lesser_crit': instance.recipeLesserCrit,
+      'recipe_silver_edge': instance.recipeSilverEdge,
+      'recipe_headdress': instance.recipeHeaddress,
+      'recipe_mekansm': instance.recipeMekansm,
+      'recipe_pipe': instance.recipePipe,
+      'recipe_guardian_greaves': instance.recipeGuardianGreaves,
+      'recipe_orchid': instance.recipeOrchid,
+      'recipe_force_staff': instance.recipeForceStaff,
+      'recipe_sange': instance.recipeSange,
+      'recipe_glimmer_cape': instance.recipeGlimmerCape,
+      'recipe_kaya': instance.recipeKaya,
+      'recipe_falcon_blade': instance.recipeFalconBlade,
+      'recipe_witch_blade': instance.recipeWitchBlade,
+      'recipe_soul_ring': instance.recipeSoulRing,
+      'recipe_cyclone': instance.recipeCyclone,
     };
 
 _$_GoldReasons _$$_GoldReasonsFromJson(Map<String, dynamic> json) =>
@@ -2024,95 +2051,95 @@ Map<String, dynamic> _$$_GoldReasonsToJson(_$_GoldReasons instance) =>
 
 _$_PurpleItemUses _$$_PurpleItemUsesFromJson(Map<String, dynamic> json) =>
     _$_PurpleItemUses(
-      quellingBlade: json['quellingBlade'] as int?,
+      quellingBlade: json['quelling_blade'] as int?,
       tango: json['tango'] as int?,
       branches: json['branches'] as int?,
-      tangoSingle: json['tangoSingle'] as int?,
-      powerTreads: json['powerTreads'] as int?,
-      pogoStick: json['pogoStick'] as int?,
+      tangoSingle: json['tango_single'] as int?,
+      powerTreads: json['power_treads'] as int?,
+      pogoStick: json['pogo_stick'] as int?,
       tpscroll: json['tpscroll'] as int?,
-      magicWand: json['magicWand'] as int?,
-      wardObserver: json['wardObserver'] as int?,
+      magicWand: json['magic_wand'] as int?,
+      wardObserver: json['ward_observer'] as int?,
       bfury: json['bfury'] as int?,
       clarity: json['clarity'] as int?,
       blink: json['blink'] as int?,
-      wardDispenser: json['wardDispenser'] as int?,
-      wardSentry: json['wardSentry'] as int?,
-      blackKingBar: json['blackKingBar'] as int?,
-      aghanimsShardRoshan: json['aghanimsShardRoshan'] as int?,
-      smokeOfDeceit: json['smokeOfDeceit'] as int?,
-      abyssalBlade: json['abyssalBlade'] as int?,
+      wardDispenser: json['ward_dispenser'] as int?,
+      wardSentry: json['ward_sentry'] as int?,
+      blackKingBar: json['black_king_bar'] as int?,
+      aghanimsShardRoshan: json['aghanims_shard_roshan'] as int?,
+      smokeOfDeceit: json['smoke_of_deceit'] as int?,
+      abyssalBlade: json['abyssal_blade'] as int?,
       bottle: json['bottle'] as int?,
-      magicStick: json['magicStick'] as int?,
-      phaseBoots: json['phaseBoots'] as int?,
-      faerieFire: json['faerieFire'] as int?,
-      invisSword: json['invisSword'] as int?,
-      enchantedMango: json['enchantedMango'] as int?,
-      arcaneBoots: json['arcaneBoots'] as int?,
-      hoodOfDefiance: json['hoodOfDefiance'] as int?,
+      magicStick: json['magic_stick'] as int?,
+      phaseBoots: json['phase_boots'] as int?,
+      faerieFire: json['faerie_fire'] as int?,
+      invisSword: json['invis_sword'] as int?,
+      enchantedMango: json['enchanted_mango'] as int?,
+      arcaneBoots: json['arcane_boots'] as int?,
+      hoodOfDefiance: json['hood_of_defiance'] as int?,
       mekansm: json['mekansm'] as int?,
       pipe: json['pipe'] as int?,
-      guardianGreaves: json['guardianGreaves'] as int?,
+      guardianGreaves: json['guardian_greaves'] as int?,
       sheepstick: json['sheepstick'] as int?,
-      tomeOfKnowledge: json['tomeOfKnowledge'] as int?,
+      tomeOfKnowledge: json['tome_of_knowledge'] as int?,
       orchid: json['orchid'] as int?,
-      forceStaff: json['forceStaff'] as int?,
-      ogreSealTotem: json['ogreSealTotem'] as int?,
+      forceStaff: json['force_staff'] as int?,
+      ogreSealTotem: json['ogre_seal_totem'] as int?,
       gem: json['gem'] as int?,
-      glimmerCape: json['glimmerCape'] as int?,
-      seedsOfSerenity: json['seedsOfSerenity'] as int?,
+      glimmerCape: json['glimmer_cape'] as int?,
+      seedsOfSerenity: json['seeds_of_serenity'] as int?,
       dust: json['dust'] as int?,
       flask: json['flask'] as int?,
-      soulRing: json['soulRing'] as int?,
+      soulRing: json['soul_ring'] as int?,
       cyclone: json['cyclone'] as int?,
-      daggerOfRistul: json['daggerOfRistul'] as int?,
+      daggerOfRistul: json['dagger_of_ristul'] as int?,
       nullifier: json['nullifier'] as int?,
     );
 
 Map<String, dynamic> _$$_PurpleItemUsesToJson(_$_PurpleItemUses instance) =>
     <String, dynamic>{
-      'quellingBlade': instance.quellingBlade,
+      'quelling_blade': instance.quellingBlade,
       'tango': instance.tango,
       'branches': instance.branches,
-      'tangoSingle': instance.tangoSingle,
-      'powerTreads': instance.powerTreads,
-      'pogoStick': instance.pogoStick,
+      'tango_single': instance.tangoSingle,
+      'power_treads': instance.powerTreads,
+      'pogo_stick': instance.pogoStick,
       'tpscroll': instance.tpscroll,
-      'magicWand': instance.magicWand,
-      'wardObserver': instance.wardObserver,
+      'magic_wand': instance.magicWand,
+      'ward_observer': instance.wardObserver,
       'bfury': instance.bfury,
       'clarity': instance.clarity,
       'blink': instance.blink,
-      'wardDispenser': instance.wardDispenser,
-      'wardSentry': instance.wardSentry,
-      'blackKingBar': instance.blackKingBar,
-      'aghanimsShardRoshan': instance.aghanimsShardRoshan,
-      'smokeOfDeceit': instance.smokeOfDeceit,
-      'abyssalBlade': instance.abyssalBlade,
+      'ward_dispenser': instance.wardDispenser,
+      'ward_sentry': instance.wardSentry,
+      'black_king_bar': instance.blackKingBar,
+      'aghanims_shard_roshan': instance.aghanimsShardRoshan,
+      'smoke_of_deceit': instance.smokeOfDeceit,
+      'abyssal_blade': instance.abyssalBlade,
       'bottle': instance.bottle,
-      'magicStick': instance.magicStick,
-      'phaseBoots': instance.phaseBoots,
-      'faerieFire': instance.faerieFire,
-      'invisSword': instance.invisSword,
-      'enchantedMango': instance.enchantedMango,
-      'arcaneBoots': instance.arcaneBoots,
-      'hoodOfDefiance': instance.hoodOfDefiance,
+      'magic_stick': instance.magicStick,
+      'phase_boots': instance.phaseBoots,
+      'faerie_fire': instance.faerieFire,
+      'invis_sword': instance.invisSword,
+      'enchanted_mango': instance.enchantedMango,
+      'arcane_boots': instance.arcaneBoots,
+      'hood_of_defiance': instance.hoodOfDefiance,
       'mekansm': instance.mekansm,
       'pipe': instance.pipe,
-      'guardianGreaves': instance.guardianGreaves,
+      'guardian_greaves': instance.guardianGreaves,
       'sheepstick': instance.sheepstick,
-      'tomeOfKnowledge': instance.tomeOfKnowledge,
+      'tome_of_knowledge': instance.tomeOfKnowledge,
       'orchid': instance.orchid,
-      'forceStaff': instance.forceStaff,
-      'ogreSealTotem': instance.ogreSealTotem,
+      'force_staff': instance.forceStaff,
+      'ogre_seal_totem': instance.ogreSealTotem,
       'gem': instance.gem,
-      'glimmerCape': instance.glimmerCape,
-      'seedsOfSerenity': instance.seedsOfSerenity,
+      'glimmer_cape': instance.glimmerCape,
+      'seeds_of_serenity': instance.seedsOfSerenity,
       'dust': instance.dust,
       'flask': instance.flask,
-      'soulRing': instance.soulRing,
+      'soul_ring': instance.soulRing,
       'cyclone': instance.cyclone,
-      'daggerOfRistul': instance.daggerOfRistul,
+      'dagger_of_ristul': instance.daggerOfRistul,
       'nullifier': instance.nullifier,
     };
 
@@ -4434,7 +4461,7 @@ _$_MaxHeroHit _$$_MaxHeroHitFromJson(Map<String, dynamic> json) =>
       key: json['key'] as String?,
       value: json['value'] as int?,
       slot: json['slot'] as int?,
-      playerSlot: json['playerSlot'] as int?,
+      playerSlot: json['player_slot'] as int?,
     );
 
 Map<String, dynamic> _$$_MaxHeroHitToJson(_$_MaxHeroHit instance) =>
@@ -4447,7 +4474,7 @@ Map<String, dynamic> _$$_MaxHeroHitToJson(_$_MaxHeroHit instance) =>
       'key': instance.key,
       'value': instance.value,
       'slot': instance.slot,
-      'playerSlot': instance.playerSlot,
+      'player_slot': instance.playerSlot,
     };
 
 _$_MultiKills _$$_MultiKillsFromJson(Map<String, dynamic> json) =>
@@ -4773,7 +4800,7 @@ _$_Log _$$_LogFromJson(Map<String, dynamic> json) => _$_Log(
       z: json['z'] as int?,
       entityleft: json['entityleft'] as bool?,
       ehandle: json['ehandle'] as int?,
-      playerSlot: json['playerSlot'] as int?,
+      playerSlot: json['player_slot'] as int?,
     );
 
 Map<String, dynamic> _$$_LogToJson(_$_Log instance) => <String, dynamic>{
@@ -4787,21 +4814,21 @@ Map<String, dynamic> _$$_LogToJson(_$_Log instance) => <String, dynamic>{
       'z': instance.z,
       'entityleft': instance.entityleft,
       'ehandle': instance.ehandle,
-      'playerSlot': instance.playerSlot,
+      'player_slot': instance.playerSlot,
     };
 
 _$_PermanentBuff _$$_PermanentBuffFromJson(Map<String, dynamic> json) =>
     _$_PermanentBuff(
-      permanentBuff: json['permanentBuff'] as int?,
-      stackCount: json['stackCount'] as int?,
-      grantTime: json['grantTime'] as int?,
+      permanentBuff: json['permanent_buff'] as int?,
+      stackCount: json['stack_count'] as int?,
+      grantTime: json['grant_time'] as int?,
     );
 
 Map<String, dynamic> _$$_PermanentBuffToJson(_$_PermanentBuff instance) =>
     <String, dynamic>{
-      'permanentBuff': instance.permanentBuff,
-      'stackCount': instance.stackCount,
-      'grantTime': instance.grantTime,
+      'permanent_buff': instance.permanentBuff,
+      'stack_count': instance.stackCount,
+      'grant_time': instance.grantTime,
     };
 
 _$_PurchaseLog _$$_PurchaseLogFromJson(Map<String, dynamic> json) =>
@@ -5253,7 +5280,7 @@ Map<String, dynamic> _$$_XpReasonsToJson(_$_XpReasons instance) =>
 _$_Teamfight _$$_TeamfightFromJson(Map<String, dynamic> json) => _$_Teamfight(
       start: json['start'] as int?,
       end: json['end'] as int?,
-      lastDeath: json['lastDeath'] as int?,
+      lastDeath: json['last_death'] as int?,
       deaths: json['deaths'] as int?,
       players: (json['players'] as List<dynamic>?)
           ?.map((e) => TeamfightPlayer.fromJson(e as Map<String, dynamic>))
@@ -5264,26 +5291,26 @@ Map<String, dynamic> _$$_TeamfightToJson(_$_Teamfight instance) =>
     <String, dynamic>{
       'start': instance.start,
       'end': instance.end,
-      'lastDeath': instance.lastDeath,
+      'last_death': instance.lastDeath,
       'deaths': instance.deaths,
       'players': instance.players,
     };
 
 _$_TeamfightPlayer _$$_TeamfightPlayerFromJson(Map<String, dynamic> json) =>
     _$_TeamfightPlayer(
-      deathsPos: json['deathsPos'] == null
+      deathsPos: json['deaths_pos'] == null
           ? null
-          : DeathsPos.fromJson(json['deathsPos'] as Map<String, dynamic>),
-      abilityUses: json['abilityUses'] == null
+          : DeathsPos.fromJson(json['deaths_pos'] as Map<String, dynamic>),
+      abilityUses: json['ability_uses'] == null
           ? null
-          : AbilityUses.fromJson(json['abilityUses'] as Map<String, dynamic>),
-      abilityTargets: json['abilityTargets'] == null
+          : AbilityUses.fromJson(json['ability_uses'] as Map<String, dynamic>),
+      abilityTargets: json['ability_targets'] == null
           ? null
           : MyWordCounts.fromJson(
-              json['abilityTargets'] as Map<String, dynamic>),
-      itemUses: json['itemUses'] == null
+              json['ability_targets'] as Map<String, dynamic>),
+      itemUses: json['item_uses'] == null
           ? null
-          : FluffyItemUses.fromJson(json['itemUses'] as Map<String, dynamic>),
+          : FluffyItemUses.fromJson(json['item_uses'] as Map<String, dynamic>),
       killed: json['killed'] == null
           ? null
           : TinyTossTree.fromJson(json['killed'] as Map<String, dynamic>),
@@ -5291,27 +5318,27 @@ _$_TeamfightPlayer _$$_TeamfightPlayerFromJson(Map<String, dynamic> json) =>
       buybacks: json['buybacks'] as int?,
       damage: json['damage'] as int?,
       healing: json['healing'] as int?,
-      goldDelta: json['goldDelta'] as int?,
-      xpDelta: json['xpDelta'] as int?,
-      xpStart: json['xpStart'] as int?,
-      xpEnd: json['xpEnd'] as int?,
+      goldDelta: json['gold_delta'] as int?,
+      xpDelta: json['xp_delta'] as int?,
+      xpStart: json['xp_start'] as int?,
+      xpEnd: json['xp_end'] as int?,
     );
 
 Map<String, dynamic> _$$_TeamfightPlayerToJson(_$_TeamfightPlayer instance) =>
     <String, dynamic>{
-      'deathsPos': instance.deathsPos,
-      'abilityUses': instance.abilityUses,
-      'abilityTargets': instance.abilityTargets,
-      'itemUses': instance.itemUses,
+      'deaths_pos': instance.deathsPos,
+      'ability_uses': instance.abilityUses,
+      'ability_targets': instance.abilityTargets,
+      'item_uses': instance.itemUses,
       'killed': instance.killed,
       'deaths': instance.deaths,
       'buybacks': instance.buybacks,
       'damage': instance.damage,
       'healing': instance.healing,
-      'goldDelta': instance.goldDelta,
-      'xpDelta': instance.xpDelta,
-      'xpStart': instance.xpStart,
-      'xpEnd': instance.xpEnd,
+      'gold_delta': instance.goldDelta,
+      'xp_delta': instance.xpDelta,
+      'xp_start': instance.xpStart,
+      'xp_end': instance.xpEnd,
     };
 
 _$_DeathsPos _$$_DeathsPosFromJson(Map<String, dynamic> json) => _$_DeathsPos(
@@ -5349,60 +5376,60 @@ Map<String, dynamic> _$$_DeathsPos144ToJson(_$_DeathsPos144 instance) =>
 
 _$_FluffyItemUses _$$_FluffyItemUsesFromJson(Map<String, dynamic> json) =>
     _$_FluffyItemUses(
-      powerTreads: json['powerTreads'] as int?,
+      powerTreads: json['power_treads'] as int?,
       clarity: json['clarity'] as int?,
       bfury: json['bfury'] as int?,
       tpscroll: json['tpscroll'] as int?,
       blink: json['blink'] as int?,
-      magicWand: json['magicWand'] as int?,
-      phaseBoots: json['phaseBoots'] as int?,
+      magicWand: json['magic_wand'] as int?,
+      phaseBoots: json['phase_boots'] as int?,
       bottle: json['bottle'] as int?,
-      arcaneBoots: json['arcaneBoots'] as int?,
-      pogoStick: json['pogoStick'] as int?,
-      wardDispenser: json['wardDispenser'] as int?,
-      wardObserver: json['wardObserver'] as int?,
-      seedsOfSerenity: json['seedsOfSerenity'] as int?,
+      arcaneBoots: json['arcane_boots'] as int?,
+      pogoStick: json['pogo_stick'] as int?,
+      wardDispenser: json['ward_dispenser'] as int?,
+      wardObserver: json['ward_observer'] as int?,
+      seedsOfSerenity: json['seeds_of_serenity'] as int?,
       cyclone: json['cyclone'] as int?,
-      hoodOfDefiance: json['hoodOfDefiance'] as int?,
-      abyssalBlade: json['abyssalBlade'] as int?,
-      blackKingBar: json['blackKingBar'] as int?,
+      hoodOfDefiance: json['hood_of_defiance'] as int?,
+      abyssalBlade: json['abyssal_blade'] as int?,
+      blackKingBar: json['black_king_bar'] as int?,
       pipe: json['pipe'] as int?,
-      guardianGreaves: json['guardianGreaves'] as int?,
+      guardianGreaves: json['guardian_greaves'] as int?,
       orchid: json['orchid'] as int?,
-      magicStick: json['magicStick'] as int?,
-      ogreSealTotem: json['ogreSealTotem'] as int?,
-      wardSentry: json['wardSentry'] as int?,
-      glimmerCape: json['glimmerCape'] as int?,
+      magicStick: json['magic_stick'] as int?,
+      ogreSealTotem: json['ogre_seal_totem'] as int?,
+      wardSentry: json['ward_sentry'] as int?,
+      glimmerCape: json['glimmer_cape'] as int?,
       dust: json['dust'] as int?,
       nullifier: json['nullifier'] as int?,
     );
 
 Map<String, dynamic> _$$_FluffyItemUsesToJson(_$_FluffyItemUses instance) =>
     <String, dynamic>{
-      'powerTreads': instance.powerTreads,
+      'power_treads': instance.powerTreads,
       'clarity': instance.clarity,
       'bfury': instance.bfury,
       'tpscroll': instance.tpscroll,
       'blink': instance.blink,
-      'magicWand': instance.magicWand,
-      'phaseBoots': instance.phaseBoots,
+      'magic_wand': instance.magicWand,
+      'phase_boots': instance.phaseBoots,
       'bottle': instance.bottle,
-      'arcaneBoots': instance.arcaneBoots,
-      'pogoStick': instance.pogoStick,
-      'wardDispenser': instance.wardDispenser,
-      'wardObserver': instance.wardObserver,
-      'seedsOfSerenity': instance.seedsOfSerenity,
+      'arcane_boots': instance.arcaneBoots,
+      'pogo_stick': instance.pogoStick,
+      'ward_dispenser': instance.wardDispenser,
+      'ward_observer': instance.wardObserver,
+      'seeds_of_serenity': instance.seedsOfSerenity,
       'cyclone': instance.cyclone,
-      'hoodOfDefiance': instance.hoodOfDefiance,
-      'abyssalBlade': instance.abyssalBlade,
-      'blackKingBar': instance.blackKingBar,
+      'hood_of_defiance': instance.hoodOfDefiance,
+      'abyssal_blade': instance.abyssalBlade,
+      'black_king_bar': instance.blackKingBar,
       'pipe': instance.pipe,
-      'guardianGreaves': instance.guardianGreaves,
+      'guardian_greaves': instance.guardianGreaves,
       'orchid': instance.orchid,
-      'magicStick': instance.magicStick,
-      'ogreSealTotem': instance.ogreSealTotem,
-      'wardSentry': instance.wardSentry,
-      'glimmerCape': instance.glimmerCape,
+      'magic_stick': instance.magicStick,
+      'ogre_seal_totem': instance.ogreSealTotem,
+      'ward_sentry': instance.wardSentry,
+      'glimmer_cape': instance.glimmerCape,
       'dust': instance.dust,
       'nullifier': instance.nullifier,
     };
