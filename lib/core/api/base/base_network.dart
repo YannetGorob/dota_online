@@ -15,7 +15,7 @@ class BaseNetwork {
     T Function(Map<String, dynamic> json)? parseResponse,
     T Function(List<dynamic> json)? parseListResponse,
   }) async {
-    if (parseResponse == null) {
+    if (parseResponse == null && parseListResponse == null && T != Null) {
       throw ArgumentError();
     }
 
@@ -31,8 +31,11 @@ class BaseNetwork {
       }
 
       if (result.statusCode == HttpStatus.ok) {
-        if (data is Map<String, dynamic>) {
+        if (data is Map<String, dynamic> && parseResponse != null) {
           final value = parseResponse(data);
+          return ApiResult<T>.success(value);
+        } else if (data is List && parseListResponse != null) {
+          final value = parseListResponse(data);
           return ApiResult<T>.success(value);
         } else {
           return ApiResult<T>.failure(_unexpectedErrorMessage);
