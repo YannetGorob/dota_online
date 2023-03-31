@@ -1,7 +1,7 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/responses/heroes/hero_stats.dart';
-import 'package:dota_online/core/api/responses/heroes/hero.dart';
+import 'package:dota_online/core/api/models/heroes/hero.dart';
+import 'package:dota_online/core/api/models/heroes/hero_stats.dart';
 
 class HeroesProvider {
   HeroesProvider(this._network);
