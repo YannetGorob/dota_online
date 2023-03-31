@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'heroes_response.dart';
+part of 'hero.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Heroes _$$_HeroesFromJson(Map<String, dynamic> json) => _$_Heroes(
+_$_Hero _$$_HeroFromJson(Map<String, dynamic> json) => _$_Hero(
       id: json['id'] as int?,
       name: json['name'] as String?,
       localizedName: json['localizedName'] as String?,
@@ -17,7 +17,7 @@ _$_Heroes _$$_HeroesFromJson(Map<String, dynamic> json) => _$_Heroes(
       legs: json['legs'] as int?,
     );
 
-Map<String, dynamic> _$$_HeroesToJson(_$_Heroes instance) => <String, dynamic>{
+Map<String, dynamic> _$$_HeroToJson(_$_Hero instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'localizedName': instance.localizedName,

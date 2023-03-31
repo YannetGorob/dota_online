@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'match_details_response.dart';
+part of 'match_details.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -46,7 +46,7 @@ mixin _$MatchDetails {
   int? get radiantTeamId => throw _privateConstructorUsedError;
   bool? get radiantWin => throw _privateConstructorUsedError;
   List<int>? get radiantXpAdv => throw _privateConstructorUsedError;
-  dynamic? get skill => throw _privateConstructorUsedError;
+  dynamic get skill => throw _privateConstructorUsedError;
   int? get startTime => throw _privateConstructorUsedError;
   List<Teamfight>? get teamfights => throw _privateConstructorUsedError;
   int? get towerStatusDire => throw _privateConstructorUsedError;
@@ -106,7 +106,7 @@ abstract class $MatchDetailsCopyWith<$Res> {
       int? radiantTeamId,
       bool? radiantWin,
       List<int>? radiantXpAdv,
-      dynamic? skill,
+      dynamic skill,
       int? startTime,
       List<Teamfight>? teamfights,
       int? towerStatusDire,
@@ -303,7 +303,7 @@ class _$MatchDetailsCopyWithImpl<$Res, $Val extends MatchDetails>
       skill: freezed == skill
           ? _value.skill
           : skill // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       startTime: freezed == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -491,7 +491,7 @@ abstract class _$$_MatchDetailsCopyWith<$Res>
       int? radiantTeamId,
       bool? radiantWin,
       List<int>? radiantXpAdv,
-      dynamic? skill,
+      dynamic skill,
       int? startTime,
       List<Teamfight>? teamfights,
       int? towerStatusDire,
@@ -692,7 +692,7 @@ class __$$_MatchDetailsCopyWithImpl<$Res>
       skill: freezed == skill
           ? _value.skill
           : skill // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       startTime: freezed == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -936,7 +936,7 @@ class _$_MatchDetails implements _MatchDetails {
   }
 
   @override
-  final dynamic? skill;
+  final dynamic skill;
   @override
   final int? startTime;
   final List<Teamfight>? _teamfights;
@@ -1179,7 +1179,7 @@ abstract class _MatchDetails implements MatchDetails {
       final int? radiantTeamId,
       final bool? radiantWin,
       final List<int>? radiantXpAdv,
-      final dynamic? skill,
+      final dynamic skill,
       final int? startTime,
       final List<Teamfight>? teamfights,
       final int? towerStatusDire,
@@ -1256,7 +1256,7 @@ abstract class _MatchDetails implements MatchDetails {
   @override
   List<int>? get radiantXpAdv;
   @override
-  dynamic? get skill;
+  dynamic get skill;
   @override
   int? get startTime;
   @override
@@ -3924,8 +3924,8 @@ League _$LeagueFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$League {
   int? get leagueid => throw _privateConstructorUsedError;
-  dynamic? get ticket => throw _privateConstructorUsedError;
-  dynamic? get banner => throw _privateConstructorUsedError;
+  dynamic get ticket => throw _privateConstructorUsedError;
+  dynamic get banner => throw _privateConstructorUsedError;
   String? get tier => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
@@ -3941,8 +3941,8 @@ abstract class $LeagueCopyWith<$Res> {
   @useResult
   $Res call(
       {int? leagueid,
-      dynamic? ticket,
-      dynamic? banner,
+      dynamic ticket,
+      dynamic banner,
       String? tier,
       String? name});
 }
@@ -3974,11 +3974,11 @@ class _$LeagueCopyWithImpl<$Res, $Val extends League>
       ticket: freezed == ticket
           ? _value.ticket
           : ticket // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       banner: freezed == banner
           ? _value.banner
           : banner // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       tier: freezed == tier
           ? _value.tier
           : tier // ignore: cast_nullable_to_non_nullable
@@ -3999,8 +3999,8 @@ abstract class _$$_LeagueCopyWith<$Res> implements $LeagueCopyWith<$Res> {
   @useResult
   $Res call(
       {int? leagueid,
-      dynamic? ticket,
-      dynamic? banner,
+      dynamic ticket,
+      dynamic banner,
       String? tier,
       String? name});
 }
@@ -4029,11 +4029,11 @@ class __$$_LeagueCopyWithImpl<$Res>
       ticket: freezed == ticket
           ? _value.ticket
           : ticket // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       banner: freezed == banner
           ? _value.banner
           : banner // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       tier: freezed == tier
           ? _value.tier
           : tier // ignore: cast_nullable_to_non_nullable
@@ -4058,9 +4058,9 @@ class _$_League implements _League {
   @override
   final int? leagueid;
   @override
-  final dynamic? ticket;
+  final dynamic ticket;
   @override
-  final dynamic? banner;
+  final dynamic banner;
   @override
   final String? tier;
   @override
@@ -4111,8 +4111,8 @@ class _$_League implements _League {
 abstract class _League implements League {
   const factory _League(
       {final int? leagueid,
-      final dynamic? ticket,
-      final dynamic? banner,
+      final dynamic ticket,
+      final dynamic banner,
       final String? tier,
       final String? name}) = _$_League;
 
@@ -4121,9 +4121,9 @@ abstract class _League implements League {
   @override
   int? get leagueid;
   @override
-  dynamic? get ticket;
+  dynamic get ticket;
   @override
-  dynamic? get banner;
+  dynamic get banner;
   @override
   String? get tier;
   @override
@@ -4224,7 +4224,7 @@ mixin _$Objective {
   int? get time => throw _privateConstructorUsedError;
   String? get type => throw _privateConstructorUsedError;
   int? get slot => throw _privateConstructorUsedError;
-  dynamic? get key => throw _privateConstructorUsedError;
+  dynamic get key => throw _privateConstructorUsedError;
   int? get playerSlot => throw _privateConstructorUsedError;
   int? get value => throw _privateConstructorUsedError;
   int? get killer => throw _privateConstructorUsedError;
@@ -4246,7 +4246,7 @@ abstract class $ObjectiveCopyWith<$Res> {
       {int? time,
       String? type,
       int? slot,
-      dynamic? key,
+      dynamic key,
       int? playerSlot,
       int? value,
       int? killer,
@@ -4293,7 +4293,7 @@ class _$ObjectiveCopyWithImpl<$Res, $Val extends Objective>
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       playerSlot: freezed == playerSlot
           ? _value.playerSlot
           : playerSlot // ignore: cast_nullable_to_non_nullable
@@ -4329,7 +4329,7 @@ abstract class _$$_ObjectiveCopyWith<$Res> implements $ObjectiveCopyWith<$Res> {
       {int? time,
       String? type,
       int? slot,
-      dynamic? key,
+      dynamic key,
       int? playerSlot,
       int? value,
       int? killer,
@@ -4374,7 +4374,7 @@ class __$$_ObjectiveCopyWithImpl<$Res>
       key: freezed == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       playerSlot: freezed == playerSlot
           ? _value.playerSlot
           : playerSlot // ignore: cast_nullable_to_non_nullable
@@ -4423,7 +4423,7 @@ class _$_Objective implements _Objective {
   @override
   final int? slot;
   @override
-  final dynamic? key;
+  final dynamic key;
   @override
   final int? playerSlot;
   @override
@@ -4490,7 +4490,7 @@ abstract class _Objective implements Objective {
       {final int? time,
       final String? type,
       final int? slot,
-      final dynamic? key,
+      final dynamic key,
       final int? playerSlot,
       final int? value,
       final int? killer,
@@ -4507,7 +4507,7 @@ abstract class _Objective implements Objective {
   @override
   int? get slot;
   @override
-  dynamic? get key;
+  dynamic get key;
   @override
   int? get playerSlot;
   @override
@@ -4775,12 +4775,12 @@ mixin _$MatchDetailsPlayer {
   AbilityUses? get abilityUses => throw _privateConstructorUsedError;
   int? get accountId => throw _privateConstructorUsedError;
   Actions? get actions => throw _privateConstructorUsedError;
-  dynamic? get additionalUnits => throw _privateConstructorUsedError;
+  dynamic get additionalUnits => throw _privateConstructorUsedError;
   int? get assists => throw _privateConstructorUsedError;
   int? get backpack0 => throw _privateConstructorUsedError;
   int? get backpack1 => throw _privateConstructorUsedError;
   int? get backpack2 => throw _privateConstructorUsedError;
-  dynamic? get backpack3 => throw _privateConstructorUsedError;
+  dynamic get backpack3 => throw _privateConstructorUsedError;
   List<Chat>? get buybackLog => throw _privateConstructorUsedError;
   int? get campsStacked => throw _privateConstructorUsedError;
   List<dynamic>? get connectionLog => throw _privateConstructorUsedError;
@@ -4832,14 +4832,14 @@ mixin _$MatchDetailsPlayer {
   int? get obsPlaced => throw _privateConstructorUsedError;
   int? get partyId => throw _privateConstructorUsedError;
   int? get partySize => throw _privateConstructorUsedError;
-  dynamic? get performanceOthers => throw _privateConstructorUsedError;
+  dynamic get performanceOthers => throw _privateConstructorUsedError;
   List<PermanentBuff>? get permanentBuffs => throw _privateConstructorUsedError;
   int? get pings => throw _privateConstructorUsedError;
   bool? get predVict => throw _privateConstructorUsedError;
   FirstPurchaseTime? get purchase => throw _privateConstructorUsedError;
   List<PurchaseLog>? get purchaseLog => throw _privateConstructorUsedError;
   bool? get randomed => throw _privateConstructorUsedError;
-  dynamic? get repicked => throw _privateConstructorUsedError;
+  dynamic get repicked => throw _privateConstructorUsedError;
   int? get roshansKilled => throw _privateConstructorUsedError;
   int? get runePickups => throw _privateConstructorUsedError;
   Runes? get runes => throw _privateConstructorUsedError;
@@ -4930,12 +4930,12 @@ abstract class $MatchDetailsPlayerCopyWith<$Res> {
       AbilityUses? abilityUses,
       int? accountId,
       Actions? actions,
-      dynamic? additionalUnits,
+      dynamic additionalUnits,
       int? assists,
       int? backpack0,
       int? backpack1,
       int? backpack2,
-      dynamic? backpack3,
+      dynamic backpack3,
       List<Chat>? buybackLog,
       int? campsStacked,
       List<dynamic>? connectionLog,
@@ -4986,14 +4986,14 @@ abstract class $MatchDetailsPlayerCopyWith<$Res> {
       int? obsPlaced,
       int? partyId,
       int? partySize,
-      dynamic? performanceOthers,
+      dynamic performanceOthers,
       List<PermanentBuff>? permanentBuffs,
       int? pings,
       bool? predVict,
       FirstPurchaseTime? purchase,
       List<PurchaseLog>? purchaseLog,
       bool? randomed,
-      dynamic? repicked,
+      dynamic repicked,
       int? roshansKilled,
       int? runePickups,
       Runes? runes,
@@ -5278,7 +5278,7 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
       additionalUnits: freezed == additionalUnits
           ? _value.additionalUnits
           : additionalUnits // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       assists: freezed == assists
           ? _value.assists
           : assists // ignore: cast_nullable_to_non_nullable
@@ -5298,7 +5298,7 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
       backpack3: freezed == backpack3
           ? _value.backpack3
           : backpack3 // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       buybackLog: freezed == buybackLog
           ? _value.buybackLog
           : buybackLog // ignore: cast_nullable_to_non_nullable
@@ -5502,7 +5502,7 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
       performanceOthers: freezed == performanceOthers
           ? _value.performanceOthers
           : performanceOthers // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       permanentBuffs: freezed == permanentBuffs
           ? _value.permanentBuffs
           : permanentBuffs // ignore: cast_nullable_to_non_nullable
@@ -5530,7 +5530,7 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
       repicked: freezed == repicked
           ? _value.repicked
           : repicked // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       roshansKilled: freezed == roshansKilled
           ? _value.roshansKilled
           : roshansKilled // ignore: cast_nullable_to_non_nullable
@@ -6160,12 +6160,12 @@ abstract class _$$_MatchDetailsPlayerCopyWith<$Res>
       AbilityUses? abilityUses,
       int? accountId,
       Actions? actions,
-      dynamic? additionalUnits,
+      dynamic additionalUnits,
       int? assists,
       int? backpack0,
       int? backpack1,
       int? backpack2,
-      dynamic? backpack3,
+      dynamic backpack3,
       List<Chat>? buybackLog,
       int? campsStacked,
       List<dynamic>? connectionLog,
@@ -6216,14 +6216,14 @@ abstract class _$$_MatchDetailsPlayerCopyWith<$Res>
       int? obsPlaced,
       int? partyId,
       int? partySize,
-      dynamic? performanceOthers,
+      dynamic performanceOthers,
       List<PermanentBuff>? permanentBuffs,
       int? pings,
       bool? predVict,
       FirstPurchaseTime? purchase,
       List<PurchaseLog>? purchaseLog,
       bool? randomed,
-      dynamic? repicked,
+      dynamic repicked,
       int? roshansKilled,
       int? runePickups,
       Runes? runes,
@@ -6534,7 +6534,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
       additionalUnits: freezed == additionalUnits
           ? _value.additionalUnits
           : additionalUnits // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       assists: freezed == assists
           ? _value.assists
           : assists // ignore: cast_nullable_to_non_nullable
@@ -6554,7 +6554,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
       backpack3: freezed == backpack3
           ? _value.backpack3
           : backpack3 // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       buybackLog: freezed == buybackLog
           ? _value._buybackLog
           : buybackLog // ignore: cast_nullable_to_non_nullable
@@ -6758,7 +6758,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
       performanceOthers: freezed == performanceOthers
           ? _value.performanceOthers
           : performanceOthers // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       permanentBuffs: freezed == permanentBuffs
           ? _value._permanentBuffs
           : permanentBuffs // ignore: cast_nullable_to_non_nullable
@@ -6786,7 +6786,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
       repicked: freezed == repicked
           ? _value.repicked
           : repicked // ignore: cast_nullable_to_non_nullable
-              as dynamic?,
+              as dynamic,
       roshansKilled: freezed == roshansKilled
           ? _value.roshansKilled
           : roshansKilled // ignore: cast_nullable_to_non_nullable
@@ -7251,7 +7251,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @override
   final Actions? actions;
   @override
-  final dynamic? additionalUnits;
+  final dynamic additionalUnits;
   @override
   final int? assists;
   @override
@@ -7261,7 +7261,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @override
   final int? backpack2;
   @override
-  final dynamic? backpack3;
+  final dynamic backpack3;
   final List<Chat>? _buybackLog;
   @override
   List<Chat>? get buybackLog {
@@ -7427,7 +7427,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @override
   final int? partySize;
   @override
-  final dynamic? performanceOthers;
+  final dynamic performanceOthers;
   final List<PermanentBuff>? _permanentBuffs;
   @override
   List<PermanentBuff>? get permanentBuffs {
@@ -7457,7 +7457,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @override
   final bool? randomed;
   @override
-  final dynamic? repicked;
+  final dynamic repicked;
   @override
   final int? roshansKilled;
   @override
@@ -7999,12 +7999,12 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
       final AbilityUses? abilityUses,
       final int? accountId,
       final Actions? actions,
-      final dynamic? additionalUnits,
+      final dynamic additionalUnits,
       final int? assists,
       final int? backpack0,
       final int? backpack1,
       final int? backpack2,
-      final dynamic? backpack3,
+      final dynamic backpack3,
       final List<Chat>? buybackLog,
       final int? campsStacked,
       final List<dynamic>? connectionLog,
@@ -8055,14 +8055,14 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
       final int? obsPlaced,
       final int? partyId,
       final int? partySize,
-      final dynamic? performanceOthers,
+      final dynamic performanceOthers,
       final List<PermanentBuff>? permanentBuffs,
       final int? pings,
       final bool? predVict,
       final FirstPurchaseTime? purchase,
       final List<PurchaseLog>? purchaseLog,
       final bool? randomed,
-      final dynamic? repicked,
+      final dynamic repicked,
       final int? roshansKilled,
       final int? runePickups,
       final Runes? runes,
@@ -8150,7 +8150,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   @override
   Actions? get actions;
   @override
-  dynamic? get additionalUnits;
+  dynamic get additionalUnits;
   @override
   int? get assists;
   @override
@@ -8160,7 +8160,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   @override
   int? get backpack2;
   @override
-  dynamic? get backpack3;
+  dynamic get backpack3;
   @override
   List<Chat>? get buybackLog;
   @override
@@ -8262,7 +8262,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   @override
   int? get partySize;
   @override
-  dynamic? get performanceOthers;
+  dynamic get performanceOthers;
   @override
   List<PermanentBuff>? get permanentBuffs;
   @override
@@ -8276,7 +8276,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   @override
   bool? get randomed;
   @override
-  dynamic? get repicked;
+  dynamic get repicked;
   @override
   int? get roshansKilled;
   @override

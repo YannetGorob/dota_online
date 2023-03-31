@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'matches_response.dart';
+part of 'matches.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

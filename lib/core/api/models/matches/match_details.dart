@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'match_details_response.freezed.dart';
-part 'match_details_response.g.dart';
+part 'match_details.freezed.dart';
+part 'match_details.g.dart';
 
 @freezed
 class MatchDetails with _$MatchDetails {

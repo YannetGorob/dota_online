@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'heroes_response.freezed.dart';
-part 'heroes_response.g.dart';
+part 'hero.freezed.dart';
+part 'hero.g.dart';
 
 @freezed
-class Heroes with _$Heroes {
-  const factory Heroes({
+class Hero with _$Hero {
+  const factory Hero({
     int? id,
     String? name,
     String? localizedName,
@@ -13,7 +13,7 @@ class Heroes with _$Heroes {
     String? attackType,
     List<String>? roles,
     int? legs,
-  }) = _Heroes;
+  }) = _Hero;
 
-  factory Heroes.fromJson(Map<String, dynamic> json) => _$HeroesFromJson(json);
+  factory Hero.fromJson(Map<String, dynamic> json) => _$HeroFromJson(json);
 }

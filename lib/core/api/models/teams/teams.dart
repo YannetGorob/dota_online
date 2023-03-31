@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'teams_response.freezed.dart';
-part 'teams_response.g.dart';
+part 'teams.freezed.dart';
+part 'teams.g.dart';
 
 @freezed
 class Teams with _$Teams {

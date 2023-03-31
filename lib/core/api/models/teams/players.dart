@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'players_response.freezed.dart';
-part 'players_response.g.dart';
+part 'players.freezed.dart';
+part 'players.g.dart';
 
 @freezed
 class Players with _$Players {

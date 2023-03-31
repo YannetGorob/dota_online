@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'matches_response.freezed.dart';
-part 'matches_response.g.dart';
+part 'matches.freezed.dart';
+part 'matches.g.dart';
 
 @freezed
 class Matches with _$Matches {

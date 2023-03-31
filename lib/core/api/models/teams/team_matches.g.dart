@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'team_matches_response.dart';
+part of 'team_matches.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

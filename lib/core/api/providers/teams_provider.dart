@@ -1,8 +1,8 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/responses/teams/players/players_response.dart';
-import 'package:dota_online/core/api/responses/teams/team_matches/team_matches_response.dart';
-import 'package:dota_online/core/api/responses/teams/teams_response.dart';
+import 'package:dota_online/core/api/models/teams/players.dart';
+import 'package:dota_online/core/api/models/teams/team_matches.dart';
+import 'package:dota_online/core/api/models/teams/teams.dart';
 
 class TeamsProvider {
   TeamsProvider(this._network);
@@ -11,21 +11,21 @@ class TeamsProvider {
 
   Future<ApiResult<Teams>> getTeams() {
     return _network.sendRequest(
-      path: 'teams',
+      path: '/teams',
       parseResponse: Teams.fromJson,
     );
   }
 
-  Future<ApiResult<Players>> getPlayers() {
+  Future<ApiResult<Players>> getPlayers(int teamId) {
     return _network.sendRequest(
-      path: '/teams/8599101/players',
+      path: '/teams/$teamId/players',
       parseResponse: Players.fromJson,
     );
   }
 
-  Future<ApiResult<TeamMatches>> getTeamMatches() {
+  Future<ApiResult<TeamMatches>> getTeamMatches(int teamId) {
     return _network.sendRequest(
-      path: '/teams/8599101/matches',
+      path: '/teams/$teamId/matches',
       parseResponse: TeamMatches.fromJson,
     );
   }
