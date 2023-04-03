@@ -1,4 +1,3 @@
-import 'package:dota_online/app/features/teams/teams_list/presentation/teams_list_page.dart';
 import 'package:dota_online/core/di/di.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-
   @override
   void initState() {
     super.initState();
@@ -29,7 +27,7 @@ class _AppState extends State<App> {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: TeamsListPage(),
+      home: Placeholder(),
     );
   }
 }
