@@ -1,9 +1,8 @@
+import 'package:dota_online/app/features/heroes/hero_list/domain/heroes_list_cubit.dart';
+import 'package:dota_online/app/features/heroes/hero_list/domain/heroes_list_state.dart';
 import 'package:dota_online/app/features/matches/match_details/domain/match_details_cubit.dart';
 import 'package:dota_online/app/features/matches/match_details/domain/match_details_state.dart';
-import 'package:dota_online/app/features/matches/matches_list/domain/matches_list_cubit.dart';
-import 'package:dota_online/app/features/matches/matches_list/domain/matches_list_state.dart';
-import 'package:dota_online/core/api/models/match/match_details.dart';
-import 'package:dota_online/core/api/models/match/matches.dart';
+import 'package:dota_online/core/api/models/hero/hero_model.dart';
 import 'package:dota_online/core/di/di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,10 +14,10 @@ class TeamsListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<MatchDetailsCubit>(
+    return BlocProvider<HeroesListCubit>(
       create: (_) =>
-          MatchDetailsCubit(matchesProvider: locator.get<DotaApi>().matches)
-            ..getMatchDetailsData(7082644478),
+          HeroesListCubit(heroesProvider: locator.get<DotaApi>().heroes)
+            ..getHeroesInitialData(),
       child: TeamsListWidget(),
     );
   }
@@ -31,12 +30,12 @@ class TeamsListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
-        builder: (BuildContext context, MatchDetailsState state) {
+      body: BlocBuilder<HeroesListCubit, HeroesListState>(
+        builder: (BuildContext context, HeroesListState state) {
           return state.map(
               loading: (_) => CircularProgressIndicator(),
               loaded: (state) => _LoadedBody(
-                    matchDetails: state.matchDetails,
+                    heroes: state.heroes,
                   ),
               error: (_) => Center(
                     child: FlutterLogo(),
@@ -48,11 +47,17 @@ class TeamsListWidget extends StatelessWidget {
 }
 
 class _LoadedBody extends StatelessWidget {
-  const _LoadedBody({Key? key, required this.matchDetails}) : super(key: key);
-  final MatchDetails matchDetails;
+  const _LoadedBody({Key? key, required this.heroes}) : super(key: key);
+  final List<HeroModel> heroes;
 
   @override
   Widget build(BuildContext context) {
-    return Text(matchDetails.chat![0].type!);
+    return ListView.builder(
+      itemBuilder: (BuildContext context, int index) {
+        if (heroes[index].name != null) return Text(heroes[index].name!);
+        return null;
+      },
+      itemCount: heroes.length,
+    );
   }
 }

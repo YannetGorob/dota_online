@@ -1,4 +1,4 @@
-import 'package:dota_online/core/api/models/team/player.dart';
+import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -9,7 +9,7 @@ class TeamDetailState with _$TeamDetailState {
   const factory TeamDetailState.loading() = Loading;
 
   const factory TeamDetailState.loaded({
-    List<Player>? players,
+    List<PlayerModel>? players,
     List<TeamMatches>? matches,
   }) = Loaded;
 
