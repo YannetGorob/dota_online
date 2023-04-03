@@ -7,7 +7,8 @@ class TeamsListPage extends StatelessWidget {
 
   final String detailsPath;
 
-  late final List<Teams> teams;
+  //todo: delete this when when the cubit sends the model here
+  final List<Teams> teams = List.generate(7, (index) => Teams(name: 'team name', rating: 4,));
 
   @override
   Widget build(BuildContext context) {

@@ -7,25 +7,31 @@ class MatchListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = TextStyle(color: Colors.white);
+    final canShowMatch = match.leagueName != null &&
+        match.radiantName != null &&
+        match.direName != null &&
+        match.direScore != null &&
+        match.radiantScore != null &&
+        match.duration != null;
 
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      elevation: 10,
-      color: Color(0xc56c0606),
-      child: SizedBox(
-          height: 100,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Text('leagueName: ${match.leagueName}',style: textStyle,),
-              Text('${match.radiantName!} VS ${match.direName!}', style: textStyle,),
-              Text('${match.radiantScore} : ${match.direScore}',style: textStyle,),
-            ],
-          )
-      )
-    );
+    return canShowMatch
+        ? Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            elevation: 10,
+            color: Color(0xfff56a00),
+            child: SizedBox(
+                height: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text('(${match.matchId}) leagueName: ${match.leagueName}'),
+                    Text('match.duration: ${match.duration}'),
+                    Text('${match.radiantName!} VS ${match.direName!}'),
+                    Text('${match.radiantScore} : ${match.direScore}'),
+                  ],
+                )))
+        : Container();
   }
 }

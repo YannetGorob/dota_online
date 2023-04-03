@@ -42,7 +42,7 @@ class Navigation {
             routes: [
               GoRoute(
                 path: 'team_details',
-                builder: (context, state) => const TeamDetailsPage(
+                builder: (context, state) => TeamDetailsPage(
                     matchesPath: '/teams/team_details/team_matches'),
                 routes: [
                   GoRoute(
