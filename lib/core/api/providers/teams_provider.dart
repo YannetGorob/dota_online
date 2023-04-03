@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/models/team/player.dart';
+import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 
@@ -20,12 +20,12 @@ class TeamsProvider {
     );
   }
 
-  Future<ApiResult<List<Player>>> getPlayers(int teamId) {
-    return _network.sendRequest<List<Player>>(
+  Future<ApiResult<List<PlayerModel>>> getPlayers(int teamId) {
+    return _network.sendRequest<List<PlayerModel>>(
       path: '/teams/$teamId/players',
       parseListResponse: (json) {
-        return List<Player>.from(
-          json.map((e) => Player.fromJson(e as Map<String, dynamic>)),
+        return List<PlayerModel>.from(
+          json.map((e) => PlayerModel.fromJson(e as Map<String, dynamic>)),
         );
       },
     );

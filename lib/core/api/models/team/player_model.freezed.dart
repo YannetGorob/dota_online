@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'player.dart';
+part of 'player_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Player _$PlayerFromJson(Map<String, dynamic> json) {
-  return _Player.fromJson(json);
+PlayerModel _$PlayerModelFromJson(Map<String, dynamic> json) {
+  return _PlayerModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Player {
+mixin _$PlayerModel {
   int? get accountId => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   int? get gamesPlayed => throw _privateConstructorUsedError;
@@ -28,13 +28,15 @@ mixin _$Player {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PlayerCopyWith<Player> get copyWith => throw _privateConstructorUsedError;
+  $PlayerModelCopyWith<PlayerModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PlayerCopyWith<$Res> {
-  factory $PlayerCopyWith(Player value, $Res Function(Player) then) =
-      _$PlayerCopyWithImpl<$Res, Player>;
+abstract class $PlayerModelCopyWith<$Res> {
+  factory $PlayerModelCopyWith(
+          PlayerModel value, $Res Function(PlayerModel) then) =
+      _$PlayerModelCopyWithImpl<$Res, PlayerModel>;
   @useResult
   $Res call(
       {int? accountId,
@@ -45,9 +47,9 @@ abstract class $PlayerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PlayerCopyWithImpl<$Res, $Val extends Player>
-    implements $PlayerCopyWith<$Res> {
-  _$PlayerCopyWithImpl(this._value, this._then);
+class _$PlayerModelCopyWithImpl<$Res, $Val extends PlayerModel>
+    implements $PlayerModelCopyWith<$Res> {
+  _$PlayerModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,9 +91,11 @@ class _$PlayerCopyWithImpl<$Res, $Val extends Player>
 }
 
 /// @nodoc
-abstract class _$$_PlayerCopyWith<$Res> implements $PlayerCopyWith<$Res> {
-  factory _$$_PlayerCopyWith(_$_Player value, $Res Function(_$_Player) then) =
-      __$$_PlayerCopyWithImpl<$Res>;
+abstract class _$$_PlayerModelCopyWith<$Res>
+    implements $PlayerModelCopyWith<$Res> {
+  factory _$$_PlayerModelCopyWith(
+          _$_PlayerModel value, $Res Function(_$_PlayerModel) then) =
+      __$$_PlayerModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,10 +107,11 @@ abstract class _$$_PlayerCopyWith<$Res> implements $PlayerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PlayerCopyWithImpl<$Res>
-    extends _$PlayerCopyWithImpl<$Res, _$_Player>
-    implements _$$_PlayerCopyWith<$Res> {
-  __$$_PlayerCopyWithImpl(_$_Player _value, $Res Function(_$_Player) _then)
+class __$$_PlayerModelCopyWithImpl<$Res>
+    extends _$PlayerModelCopyWithImpl<$Res, _$_PlayerModel>
+    implements _$$_PlayerModelCopyWith<$Res> {
+  __$$_PlayerModelCopyWithImpl(
+      _$_PlayerModel _value, $Res Function(_$_PlayerModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +123,7 @@ class __$$_PlayerCopyWithImpl<$Res>
     Object? wins = freezed,
     Object? isCurrentTeamMember = freezed,
   }) {
-    return _then(_$_Player(
+    return _then(_$_PlayerModel(
       accountId: freezed == accountId
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
@@ -145,16 +150,16 @@ class __$$_PlayerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Player implements _Player {
-  const _$_Player(
+class _$_PlayerModel implements _PlayerModel {
+  const _$_PlayerModel(
       {this.accountId,
       this.name,
       this.gamesPlayed,
       this.wins,
       this.isCurrentTeamMember});
 
-  factory _$_Player.fromJson(Map<String, dynamic> json) =>
-      _$$_PlayerFromJson(json);
+  factory _$_PlayerModel.fromJson(Map<String, dynamic> json) =>
+      _$$_PlayerModelFromJson(json);
 
   @override
   final int? accountId;
@@ -169,14 +174,14 @@ class _$_Player implements _Player {
 
   @override
   String toString() {
-    return 'Player(accountId: $accountId, name: $name, gamesPlayed: $gamesPlayed, wins: $wins, isCurrentTeamMember: $isCurrentTeamMember)';
+    return 'PlayerModel(accountId: $accountId, name: $name, gamesPlayed: $gamesPlayed, wins: $wins, isCurrentTeamMember: $isCurrentTeamMember)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Player &&
+            other is _$_PlayerModel &&
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId) &&
             (identical(other.name, name) || other.name == name) &&
@@ -195,26 +200,27 @@ class _$_Player implements _Player {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PlayerCopyWith<_$_Player> get copyWith =>
-      __$$_PlayerCopyWithImpl<_$_Player>(this, _$identity);
+  _$$_PlayerModelCopyWith<_$_PlayerModel> get copyWith =>
+      __$$_PlayerModelCopyWithImpl<_$_PlayerModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PlayerToJson(
+    return _$$_PlayerModelToJson(
       this,
     );
   }
 }
 
-abstract class _Player implements Player {
-  const factory _Player(
+abstract class _PlayerModel implements PlayerModel {
+  const factory _PlayerModel(
       {final int? accountId,
       final String? name,
       final int? gamesPlayed,
       final int? wins,
-      final bool? isCurrentTeamMember}) = _$_Player;
+      final bool? isCurrentTeamMember}) = _$_PlayerModel;
 
-  factory _Player.fromJson(Map<String, dynamic> json) = _$_Player.fromJson;
+  factory _PlayerModel.fromJson(Map<String, dynamic> json) =
+      _$_PlayerModel.fromJson;
 
   @override
   int? get accountId;
@@ -228,6 +234,6 @@ abstract class _Player implements Player {
   bool? get isCurrentTeamMember;
   @override
   @JsonKey(ignore: true)
-  _$$_PlayerCopyWith<_$_Player> get copyWith =>
+  _$$_PlayerModelCopyWith<_$_PlayerModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

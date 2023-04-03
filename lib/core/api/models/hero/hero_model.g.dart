@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'hero.dart';
+part of 'hero_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Hero _$$_HeroFromJson(Map<String, dynamic> json) => _$_Hero(
+_$_HeroModel _$$_HeroModelFromJson(Map<String, dynamic> json) => _$_HeroModel(
       id: json['id'] as int?,
       name: json['name'] as String?,
       localizedName: json['localized_name'] as String?,
@@ -17,7 +17,8 @@ _$_Hero _$$_HeroFromJson(Map<String, dynamic> json) => _$_Hero(
       legs: json['legs'] as int?,
     );
 
-Map<String, dynamic> _$$_HeroToJson(_$_Hero instance) => <String, dynamic>{
+Map<String, dynamic> _$$_HeroModelToJson(_$_HeroModel instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'localized_name': instance.localizedName,
