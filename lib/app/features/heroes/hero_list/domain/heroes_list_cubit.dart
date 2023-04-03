@@ -10,7 +10,7 @@ class HeroesListCubit extends Cubit<HeroesListState> {
   final HeroesProvider _heroesProvider;
 
   Future<void> getHeroesInitialData() async {
-    final heroesResponse = await _heroesProvider.getHeroes();
+    final heroesResponse = await _heroesProvider.getHeroStats();
 
     heroesResponse.when(
       success: (data) {
