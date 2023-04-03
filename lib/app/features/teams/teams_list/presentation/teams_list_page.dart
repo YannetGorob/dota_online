@@ -1,5 +1,8 @@
+import 'package:dota_online/app/features/matches/match_details/domain/match_details_cubit.dart';
+import 'package:dota_online/app/features/matches/match_details/domain/match_details_state.dart';
 import 'package:dota_online/app/features/matches/matches_list/domain/matches_list_cubit.dart';
 import 'package:dota_online/app/features/matches/matches_list/domain/matches_list_state.dart';
+import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/core/api/models/match/matches.dart';
 import 'package:dota_online/core/di/di.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +15,10 @@ class TeamsListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<MatchesListCubit>(
+    return BlocProvider<MatchDetailsCubit>(
       create: (_) =>
-          MatchesListCubit(matchesProvider: locator.get<DotaApi>().matches)
-            ..loadInitialMatchesData(),
+          MatchDetailsCubit(matchesProvider: locator.get<DotaApi>().matches)
+            ..getMatchDetailsData(7082644478),
       child: TeamsListWidget(),
     );
   }
@@ -28,12 +31,12 @@ class TeamsListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: BlocBuilder<MatchesListCubit, MatchesListState>(
-        builder: (BuildContext context, MatchesListState state) {
+      body: BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
+        builder: (BuildContext context, MatchDetailsState state) {
           return state.map(
               loading: (_) => CircularProgressIndicator(),
               loaded: (state) => _LoadedBody(
-                    matches: state.matches,
+                    matchDetails: state.matchDetails,
                   ),
               error: (_) => Center(
                     child: FlutterLogo(),
@@ -45,18 +48,11 @@ class TeamsListWidget extends StatelessWidget {
 }
 
 class _LoadedBody extends StatelessWidget {
-  const _LoadedBody({Key? key, required this.matches}) : super(key: key);
-  final List<Matches> matches;
+  const _LoadedBody({Key? key, required this.matchDetails}) : super(key: key);
+  final MatchDetails matchDetails;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: matches.length,
-        itemBuilder: (BuildContext context, int index) {
-          final item = matches[index];
-          return ListTile(
-            title: Text(item.duration.toString()),
-          );
-        });
+    return Text(matchDetails.chat![0].type!);
   }
 }
