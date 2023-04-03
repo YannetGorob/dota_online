@@ -1,11 +1,12 @@
-import 'package:dota_online/core/api/models/teams/teams.dart';
 import 'package:flutter/material.dart';
+
+import 'package:dota_online/core/api/models/team/team_model.dart';
 
 class TeamsListItem extends StatelessWidget {
   TeamsListItem({required this.team});
 
-  final Teams team;
-  final  defaultImage =
+  final TeamModel team;
+  final defaultImage =
       'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg';
 
   @override

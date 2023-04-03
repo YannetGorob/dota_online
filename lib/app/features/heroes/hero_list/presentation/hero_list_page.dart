@@ -7,6 +7,8 @@ class HeroListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeroListWidget(detailsPath: detailsPath,);
+    return HeroListWidget(
+      detailsPath: detailsPath,
+    );
   }
 }

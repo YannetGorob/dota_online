@@ -1,9 +1,9 @@
-import 'package:dota_online/core/api/models/matches/matches.dart';
+import 'package:dota_online/core/api/models/match/match_model.dart';
 import 'package:flutter/material.dart';
 
 class MatchListItem extends StatelessWidget {
   const MatchListItem({Key? key, required this.match}) : super(key: key);
-  final Matches match;
+  final MatchModel match;
 
   @override
   Widget build(BuildContext context) {

@@ -7,8 +7,10 @@ class HeroDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: DotaAppBar(title: 'HeroDetailsWidget',),
-      body:  Padding(
+      appBar: DotaAppBar(
+        title: 'HeroDetailsWidget',
+      ),
+      body: Padding(
         padding: EdgeInsets.all(16),
         child: Placeholder(),
       ),

@@ -8,6 +8,8 @@ class MatchesListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MatchesListWidget(detailsPath: detailsPath,);
+    return MatchesListWidget(
+      detailsPath: detailsPath,
+    );
   }
 }

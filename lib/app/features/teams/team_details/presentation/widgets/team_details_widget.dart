@@ -1,16 +1,19 @@
 import 'package:dota_online/app/features/teams/team_details/presentation/widgets/player_list_item.dart';
 import 'package:dota_online/app/features/teams/team_details/presentation/widgets/team_match_list_item.dart';
+import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:dota_online/core/api/models/teams/players.dart';
-import 'package:dota_online/core/api/models/teams/team_matches.dart';
+import 'package:dota_online/core/api/models/team/team_matches.dart';
 
 class TeamDetailsWidget extends StatelessWidget {
   const TeamDetailsWidget(
-      {required this.matchesPath, super.key, required this.players, required this.matches});
+      {required this.matchesPath,
+      super.key,
+      required this.players,
+      required this.matches});
 
   final String matchesPath;
-  final List<Players> players;
+  final List<PlayerModel> players;
   final List<TeamMatches> matches;
 
   @override
@@ -32,8 +35,8 @@ class TeamDetailsWidget extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
                       return PlayerListItem(
-                          player: players[index],
-                        );
+                        player: players[index],
+                      );
                     },
                   ),
                 ),
@@ -47,7 +50,9 @@ class TeamDetailsWidget extends StatelessWidget {
                     itemCount: matches.length,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) {
-                      return TeamMatchListItem(teamMatch: matches[index],);
+                      return TeamMatchListItem(
+                        teamMatch: matches[index],
+                      );
                     },
                   ),
                 ),

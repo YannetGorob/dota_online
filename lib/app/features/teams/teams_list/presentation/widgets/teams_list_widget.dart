@@ -1,15 +1,15 @@
 import 'package:dota_online/app/features/teams/teams_list/presentation/widgets/teams_list_item.dart';
-import 'package:dota_online/core/api/models/teams/teams.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:dota_online/core/api/models/team/team_model.dart';
 
 class TeamsListWidget extends StatelessWidget {
   TeamsListWidget({required this.detailsPath, super.key, required this.teams});
 
   final String detailsPath;
 
-  final List<Teams> teams;
+  final List<TeamModel> teams;
 
   @override
   Widget build(BuildContext context) {

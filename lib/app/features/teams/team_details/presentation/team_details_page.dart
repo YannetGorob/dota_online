@@ -1,15 +1,15 @@
 import 'package:dota_online/app/features/teams/team_details/presentation/widgets/team_details_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:dota_online/core/api/models/teams/players.dart';
-import 'package:dota_online/core/api/models/teams/team_matches.dart';
+import 'package:dota_online/core/api/models/team/player_model.dart';
+import 'package:dota_online/core/api/models/team/team_matches.dart';
 
 class TeamDetailsPage extends StatelessWidget {
   TeamDetailsPage({Key? key, required this.matchesPath}) : super(key: key);
   final String matchesPath;
 
   //todo: remove list generation since the values will come from the block
-  final List<Players> players = List.generate(5, (index) {
-    return Players(
+  final List<PlayerModel> players = List.generate(5, (index) {
+    return PlayerModel(
         name: 'Chel', isCurrentTeamMember: true, gamesPlayed: 7, wins: 5);
   });
 
