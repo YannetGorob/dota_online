@@ -37,7 +37,7 @@ class Navigation {
             path: '/teams',
             pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
-              child: TeamsListPage(detailsPath: '/teams/team_details', teams: [],),
+              child: TeamsListPage(detailsPath: '/teams/team_details',),
             ),
             routes: [
               GoRoute(
