@@ -12,9 +12,6 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-
-  late final Navigation _navigation = Navigation();
-
   @override
   void initState() {
     super.initState();
@@ -27,7 +24,7 @@ class _AppState extends State<App> {
       theme: LightDotaTheme().theme(context),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      routerConfig: _navigation.goRouter,
+      routerConfig: locator.get<Navigation>().goRouter,
     );
   }
 }
