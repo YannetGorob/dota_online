@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/providers/heroes_provider.dart';
+import 'package:dota_online/core/utils/change_url.dart';
 import 'heroes_list_state.dart';
 
 class HeroesListCubit extends Cubit<HeroesListState> {
@@ -13,7 +14,14 @@ class HeroesListCubit extends Cubit<HeroesListState> {
     final heroesResponse = await _heroesProvider.getHeroStats();
 
     heroesResponse.when(
-      success: (data) => emit(HeroesListState.loaded(heroes: data)),
+      success: (data) {
+        final heroesData = data
+            .map((e) => e.copyWith(
+                  img: ChangeUrl.changeUrl(e.img),
+                ))
+            .toList();
+        emit(HeroesListState.loaded(heroes: heroesData));
+      },
       failure: (_) => emit(HeroesListState.error()),
     );
   }
