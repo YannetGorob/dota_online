@@ -41,8 +41,11 @@ class Navigation {
             routes: [
               GoRoute(
                 path: 'team_details',
-                builder: (context, state) => TeamDetailsPage(
-                    matchesPath: '/teams/team_details/team_matches'),
+                builder: (context, state) {
+                  final int teamId = state.extra as int;
+                  return TeamDetailsPage(
+                    matchesPath: '/teams/team_details/team_matches',teamId: teamId);
+                },
                 routes: [
                   GoRoute(
                     path: 'team_matches',

@@ -23,10 +23,13 @@ class TeamListBody extends StatelessWidget {
           ),
           sliver: SliverGrid(
             delegate: SliverChildBuilderDelegate(
-                  (context, index) {
+              (context, index) {
                 return InkWell(
                   onTap: () {
-                    context.go(detailsPath);
+                    context.go(
+                      detailsPath,
+                      extra: teams[index].teamId,
+                    );
                   },
                   child: TeamsListItem(
                     team: teams[index],
