@@ -1,8 +1,8 @@
 import 'package:dota_online/core/di/di.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
+import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:dota_online/core/navigation/navigation.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
