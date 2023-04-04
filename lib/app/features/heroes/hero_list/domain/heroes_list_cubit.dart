@@ -13,9 +13,7 @@ class HeroesListCubit extends Cubit<HeroesListState> {
     final heroesResponse = await _heroesProvider.getHeroStats();
 
     heroesResponse.when(
-      success: (data) {
-        emit(HeroesListState.loaded(heroes: data));
-      },
+      success: (data) => emit(HeroesListState.loaded(heroes: data)),
       failure: (_) => emit(HeroesListState.error()),
     );
   }

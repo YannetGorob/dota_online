@@ -37,15 +37,19 @@ class MatchesListWidget extends StatelessWidget {
       appBar: const DotaAppBar(
         title: 'MatchesListWidget',
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: matchesList.length,
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () => context.go(detailsPath),
-            child: MatchListItem(match: matchesList[index]),
-          );
-        },
+      body: Container(
+        height: 500,
+        color: Colors.amber,
+        child: ListView.builder(
+          padding: const EdgeInsets.all(16),
+          itemCount: matchesList.length,
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: () => context.go(detailsPath),
+              child: MatchListItem(match: matchesList[index]),
+            );
+          },
+        ),
       ),
     );
   }

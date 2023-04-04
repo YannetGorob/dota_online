@@ -12,7 +12,10 @@ class HeroesProvider {
       path: '/heroStats',
       parseListResponse: (json) {
         return List<HeroStats>.from(
-            json.map((e) => HeroStats.fromJson(e as Map<String, dynamic>)));
+          json.map(
+            (e) => HeroStats.fromJson(e as Map<String, dynamic>),
+          ),
+        );
       },
     );
   }
