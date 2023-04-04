@@ -1,6 +1,13 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
 import 'package:dota_online/core/api/models/team/team_model.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+part 'card_info_field.dart';
+
+part 'team_card_image.dart';
+
+part 'team_card_text_content.dart';
 
 class TeamsListItem extends StatelessWidget {
   TeamsListItem({required this.team});
@@ -12,33 +19,39 @@ class TeamsListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final canShowTeam = team.name != null;
-    return canShowTeam
-        ? Card(
-            color: Colors.black38,
-            elevation: 5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 60,
-                  backgroundImage: NetworkImage(team.logoUrl ?? defaultImage),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(team.name!),
-                    if (team.rating != null)
-                      Text(team.rating.toString()),
-                    if (team.wins != null)
-                      Text('team.wins: ' + team.wins.toString()),
-                    if (team.losses != null)
-                      Text('team.losses: ' + team.losses.toString())
-                  ],
-                ),
-              ],
-            ),
-          )
-        : Container();
+
+    if (!canShowTeam) return Container();
+
+    final cardHeight = MediaQuery.of(context).size.height * 0.285;
+    final cardWidth = MediaQuery.of(context).size.width * 0.42;
+
+    return UnconstrainedBox(
+      child: Container(
+        height: cardHeight,
+        width: cardWidth,
+        color: Colors.black38,
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TeamCardImage(
+                height: cardHeight * 0.4,
+                imageUrl: team.logoUrl,
+              ),
+              TeamCardTextContent(
+                cardHeight: cardHeight,
+                cardWidth: cardWidth,
+                teamName: team.name!,
+                teamRating: team.rating.toString(),
+                teamWins: team.wins.toString(),
+                teamLosses: team.losses.toString(),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
