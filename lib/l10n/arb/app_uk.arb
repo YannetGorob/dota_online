@@ -1,0 +1,9 @@
+{
+    "@@locale": "uk",
+    "matchesList": "Список матчів",
+    "matchDetails": "Деталі матчу",
+    "teamsList": "Список команд",
+    "teamDetails": "Деталі команд",
+    "heroesList": "Список героїв",
+    "heroDetails": "Деталі героя"
+}

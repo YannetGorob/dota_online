@@ -1,7 +1,9 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+    "matchesList": "Matches List",
+    "matchDetails": "Match Details",
+    "teamsList": "Teams List",
+    "teamDetails": "Team Details",
+    "heroesList": "Heroes List",
+    "heroDetails": "Hero Details"
 }
