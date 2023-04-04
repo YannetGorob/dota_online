@@ -21,7 +21,8 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: LightDotaTheme().theme(context),
+      theme: ThemeData.dark(),
+     // LightDotaTheme().theme(context),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: locator.get<Navigation>().goRouter,
