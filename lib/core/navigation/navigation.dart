@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 import 'package:dota_online/app/features/teams/teams_list/presentation/teams_list_page.dart';
 
 class Navigation {
-  Navigation();
 
   final goRouter = GoRouter(
     initialLocation: '/matches',
@@ -70,4 +69,8 @@ class Navigation {
       ),
     ],
   );
+}
+class AppRoute extends GoRoute{
+  AppRoute({required super.path});
+
 }

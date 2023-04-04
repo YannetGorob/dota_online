@@ -10,12 +10,14 @@ class TeamsListPage extends StatelessWidget {
   TeamsListPage({Key? key, required this.detailsPath}) : super(key: key);
 
   final String detailsPath;
-  late final List<TeamModel> teams;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<TeamsListCubit>(
-      create: (_) => TeamsListCubit(teamsProvider: locator.get<DotaApi>().teams),
+      create: (context) => TeamsListCubit(
+        teamsProvider: locator.get<DotaApi>().teams,
+      )..loadInitialTeamsData(),
+      child: TeamsListWidget(detailsPath: detailsPath),
     );
   }
 }

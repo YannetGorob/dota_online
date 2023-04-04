@@ -11,27 +11,31 @@ class TeamsListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canShowTeam = team.name != null && team.rating != null;
+    final canShowTeam = team.name != null;
     return canShowTeam
         ? Card(
             color: Colors.black38,
             elevation: 5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
                   radius: 60,
-                  backgroundColor: Colors.black54,
                   backgroundImage: NetworkImage(team.logoUrl ?? defaultImage),
                 ),
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('team.name: ' + team.name!),
-                  Text('team.rating: ' + team.rating.toString()),
-                  if (team.wins != null)
-                    Text('team.wins: ' + team.wins.toString()),
-                  if (team.losses != null)
-                    Text('team.losses: ' + team.losses.toString())
-                ]),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(team.name!),
+                    if (team.rating != null)
+                      Text(team.rating.toString()),
+                    if (team.wins != null)
+                      Text('team.wins: ' + team.wins.toString()),
+                    if (team.losses != null)
+                      Text('team.losses: ' + team.losses.toString())
+                  ],
+                ),
               ],
             ),
           )

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DotaAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const DotaAppBar({
-    this.title,
-    super.key,
-  });
+  const DotaAppBar({this.title, super.key});
 
   final String? title;
 
