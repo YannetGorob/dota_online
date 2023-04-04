@@ -22,7 +22,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData.dark(),
-     // LightDotaTheme().theme(context),
+      //LightDotaTheme().theme(context),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: locator.get<Navigation>().goRouter,
