@@ -54,7 +54,7 @@ class Navigation {
                 routes: [
                   GoRoute(
                     path: 'team_matches',
-                    builder: (context, state) => MatchDetailsPage(matchId: 0),
+                    builder: (context, state) => MatchDetailsPage(matchId: state.extra as int),
                   ),
                 ],
               ),

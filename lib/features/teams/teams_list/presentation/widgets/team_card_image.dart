@@ -22,7 +22,7 @@ class TeamCardImage extends StatelessWidget {
       child: CachedNetworkImage(
         fit: BoxFit.fill,
         imageUrl: imageUrl!,
-        placeholder: (context, url) => CircularProgressIndicator(),
+        placeholder: (context, url) => Center(child: CircularProgressIndicator()),
         errorWidget: (context, url, error) =>
             Image.asset('assets/images/dota_logo.png'),
       ),
