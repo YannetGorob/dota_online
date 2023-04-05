@@ -4,15 +4,18 @@ import 'package:dota_online/features/teams/team_details/presentation/widgets/inf
 import 'package:dota_online/features/teams/team_details/presentation/widgets/player_list_item.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/team_match_list_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
     required this.players,
     required this.matches,
+    required this.matchesPath,
   });
 
   final List<PlayerModel>? players;
   final List<TeamMatches>? matches;
+  final String matchesPath;
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +89,16 @@ class TeamDetailsBody extends StatelessWidget {
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return TeamMatchListItem(
-                  teamMatch: matches![index],
+                return InkWell(
+                  onTap: () {
+                    context.go(
+                      matchesPath,
+                      extra: matches![index].matchId,
+                    );
+                  },
+                  child: TeamMatchListItem(
+                    teamMatch: matches![index],
+                  ),
                 );
               },
               childCount: matches!.length,

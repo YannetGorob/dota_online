@@ -25,7 +25,10 @@ class TeamDetailsWidget extends StatelessWidget {
             loading: (value) => Center(child: CircularProgressIndicator()),
             loaded: (value) {
               return TeamDetailsBody(
-                  players: value.players, matches: value.matches);
+                players: value.players,
+                matches: value.matches,
+                matchesPath: matchesPath,
+              );
             },
           );
         },
