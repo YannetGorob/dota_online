@@ -108,7 +108,7 @@ class MatchDetailsBody extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Duration: ${(matchDetails.duration!) / 60}',
+                    'Duration: ${((matchDetails.duration!) / 60).toStringAsFixed(2)}',
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],
