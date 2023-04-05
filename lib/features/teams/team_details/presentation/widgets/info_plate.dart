@@ -24,72 +24,70 @@ class InfoPlate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: GoogleFonts.tinos(
-              textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: size,
-              ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: GoogleFonts.tinos(
+            textStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: size,
             ),
           ),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  firsIcon,
-                  Text(
-                    firstText,
-                    style: GoogleFonts.tinos(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: size * 0.667,
-                      ),
+        ),
+        Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                firsIcon,
+                Text(
+                  firstText,
+                  style: GoogleFonts.tinos(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: size * 0.667,
                     ),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  secondIcon,
-                  Text(
-                    secondText,
-                    style: GoogleFonts.tinos(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: size * 0.667,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              if (thirdIcon != null && thirdText != null)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    thirdIcon!,
-                    Text(
-                      thirdText!,
-                      style: GoogleFonts.tinos(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: size * 0.667,
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
-            ],
-          )
-        ],
-      ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                secondIcon,
+                Text(
+                  secondText,
+                  style: GoogleFonts.tinos(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: size * 0.667,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (thirdIcon != null && thirdText != null)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  thirdIcon!,
+                  Text(
+                    thirdText!,
+                    style: GoogleFonts.tinos(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: size * 0.667,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+          ],
+        )
+      ],
     );
   }
 }
