@@ -1,8 +1,7 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
-import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
-
+import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -42,7 +41,7 @@ class HeroTile extends StatelessWidget {
             Hero(
               tag: hero.id!,
               child: CachedHeroImage(
-                height: cardHeight * 0.8,
+                height: cardHeight * 0.7,
                 imageUrl: hero.img,
               ),
             ),
@@ -93,22 +92,6 @@ class HeroTile extends StatelessWidget {
                   ],
                 ),
               ],
-            ),
-            SizedBox(height: defaultPadding),
-            Text(
-              'Health: ${hero.baseHealth}',
-              style: CustomTextStyle.textTextStyle,
-            ),
-            SizedBox(height: defaultPadding / 4),
-            if (hero.baseMana != null)
-              Text(
-                'Mana: ${hero.baseMana!.toString()}',
-                style: CustomTextStyle.textTextStyle,
-              ),
-            SizedBox(height: defaultPadding / 4),
-            Text(
-              'Damage: ${hero.baseAttackMin}-${hero.baseAttackMax}',
-              style: CustomTextStyle.textTextStyle,
             ),
           ]),
         ),

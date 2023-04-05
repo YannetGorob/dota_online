@@ -38,4 +38,4 @@ flutter:
   generate: true
 
   assets:
-    - assets/images/dota_logo.png
+    - assets/images/
