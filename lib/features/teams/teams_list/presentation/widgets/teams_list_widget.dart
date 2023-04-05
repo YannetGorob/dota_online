@@ -16,7 +16,7 @@ class TeamsListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DotaAppBar(
-        title: context.l10n.matchesList,
+        title: context.l10n.teamsList,
       ),
       body: BlocBuilder<TeamsListCubit, TeamsListState>(
         builder: (context, state) {
