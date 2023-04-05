@@ -5,5 +5,8 @@
     "teamsList": "Список команд",
     "teamDetails": "Деталі команд",
     "heroesList": "Список героїв",
-    "heroDetails": "Деталі героя"
+    "heroDetails": "Деталі героя",
+    "matchesTab": "Матчі",
+    "heroesTab": "Герої",
+    "teamsTab": "Команди"
 }
