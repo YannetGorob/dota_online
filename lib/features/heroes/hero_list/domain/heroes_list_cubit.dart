@@ -20,9 +20,11 @@ class HeroesListCubit extends Cubit<HeroesListState> {
                   img: ChangeUrl.changeUrl(e.img),
                 ))
             .toList();
-        emit(HeroesListState.loaded(heroes: heroesData));
+        if (!this.isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },
-      failure: (_) => emit(HeroesListState.error()),
+      failure: (_) {
+        if (!this.isClosed) emit(HeroesListState.error());
+      },
     );
   }
 }

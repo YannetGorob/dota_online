@@ -30,7 +30,7 @@ class HeroTile extends StatelessWidget {
       elevation: 10,
       child: InkWell(
         onTap: () {
-          context.go(detailsPath);
+          context.go(detailsPath, extra: hero);
         },
         child: Padding(
           padding: const EdgeInsets.all(defaultPadding),

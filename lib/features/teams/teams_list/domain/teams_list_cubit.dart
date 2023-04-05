@@ -12,8 +12,18 @@ class TeamsListCubit extends Cubit<TeamsListState> {
   Future<void> loadInitialTeamsData() async {
     final teamsResponse = await _teamsProvider.getTeams();
     teamsResponse.when(
-      success: (data) => emit(TeamsListState.loaded(teams: data)),
-      failure: (_) => emit(const TeamsListState.error()),
+      success: (data) {
+        if (!this.isClosed)
+          emit(
+            TeamsListState.loaded(teams: data),
+          );
+      },
+      failure: (_) {
+        if (!this.isClosed)
+          emit(
+            const TeamsListState.error(),
+          );
+      },
     );
   }
 }
