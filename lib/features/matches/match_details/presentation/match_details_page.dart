@@ -6,14 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MatchDetailsPage extends StatelessWidget {
-  const MatchDetailsPage({Key? key}) : super(key: key);
+  const MatchDetailsPage({required this.matchId});
+
+  final int matchId;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<MatchDetailsCubit>(
-      create: (context) =>
-          MatchDetailsCubit(matchesProvider: locator.get<DotaApi>().matches),
-      // ..getMatchDetailsData(matchId),
+      create: (context) => MatchDetailsCubit(
+        matchesProvider: locator.get<DotaApi>().matches,
+      )..getMatchDetailsData(matchId),
       child: MatchDetailsWidget(),
     );
   }

@@ -49,7 +49,7 @@ class _Body extends StatelessWidget {
     return ListView.builder(
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () => context.go(detailsPath),
+          onTap: () => context.go(detailsPath, extra: matches[index].matchId),
           child: MatchCard(match: matches[index]),
         );
       },

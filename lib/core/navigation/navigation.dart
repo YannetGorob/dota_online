@@ -26,9 +26,12 @@ class Navigation {
             ),
             routes: [
               GoRoute(
-                path: 'match_details',
-                builder: (context, state) => MatchDetailsPage(),
-              ),
+                  path: 'match_details',
+                  builder: (context, state) {
+                    return MatchDetailsPage(
+                      matchId: state.extra as int,
+                    );
+                  }),
             ],
           ),
           GoRoute(
@@ -45,12 +48,13 @@ class Navigation {
                 builder: (context, state) {
                   final int teamId = state.extra as int;
                   return TeamDetailsPage(
-                    matchesPath: '/teams/team_details/team_matches',teamId: teamId);
+                      matchesPath: '/teams/team_details/team_matches',
+                      teamId: teamId);
                 },
                 routes: [
                   GoRoute(
                     path: 'team_matches',
-                    builder: (context, state) => MatchDetailsPage(),
+                    builder: (context, state) => MatchDetailsPage(matchId: 0),
                   ),
                 ],
               ),
