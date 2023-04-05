@@ -1,10 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
+import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-part 'hero_card_image.dart';
 
 class HeroTile extends StatelessWidget {
   const HeroTile({
@@ -18,8 +18,6 @@ class HeroTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
-    final double tittleTextSize = 25;
-    final double textSize = 18;
 
     return Card(
       margin: EdgeInsets.symmetric(
@@ -38,13 +36,15 @@ class HeroTile extends StatelessWidget {
             if (hero.localizedName != null)
               Text(
                 hero.localizedName!,
-                style: TextStyle(
-                    fontSize: tittleTextSize, fontWeight: FontWeight.bold),
+                style: CustomTextStyle.titleTextStyle,
               ),
             SizedBox(height: defaultPadding / 4),
-            HeroCardImage(
-              height: cardHeight * 0.8,
-              imageUrl: hero.img,
+            Hero(
+              tag: hero.id!,
+              child: CachedHeroImage(
+                height: cardHeight * 0.8,
+                imageUrl: hero.img,
+              ),
             ),
             SizedBox(height: defaultPadding),
             Row(
@@ -52,7 +52,7 @@ class HeroTile extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    HeroCardImage(
+                    CachedHeroImage(
                       height: 20,
                       imageUrl:
                           'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png',
@@ -60,13 +60,13 @@ class HeroTile extends StatelessWidget {
                     SizedBox(width: 7),
                     Text(
                       '${hero.baseStr}',
-                      style: TextStyle(fontSize: textSize),
+                      style: CustomTextStyle.textTextStyle,
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    HeroCardImage(
+                    CachedHeroImage(
                       height: 20,
                       imageUrl:
                           'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_agility.png',
@@ -74,13 +74,13 @@ class HeroTile extends StatelessWidget {
                     SizedBox(width: 7),
                     Text(
                       '${hero.baseAgi}',
-                      style: TextStyle(fontSize: textSize),
+                      style: CustomTextStyle.textTextStyle,
                     ),
                   ],
                 ),
                 Row(
                   children: [
-                    HeroCardImage(
+                    CachedHeroImage(
                       height: 20,
                       imageUrl:
                           'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png',
@@ -88,7 +88,7 @@ class HeroTile extends StatelessWidget {
                     SizedBox(width: 7),
                     Text(
                       '${hero.baseInt}',
-                      style: TextStyle(fontSize: textSize),
+                      style: CustomTextStyle.textTextStyle,
                     ),
                   ],
                 ),
@@ -97,18 +97,18 @@ class HeroTile extends StatelessWidget {
             SizedBox(height: defaultPadding),
             Text(
               'Health: ${hero.baseHealth}',
-              style: TextStyle(fontSize: textSize),
+              style: CustomTextStyle.textTextStyle,
             ),
             SizedBox(height: defaultPadding / 4),
             if (hero.baseMana != null)
               Text(
                 'Mana: ${hero.baseMana!.toString()}',
-                style: TextStyle(fontSize: textSize),
+                style: CustomTextStyle.textTextStyle,
               ),
             SizedBox(height: defaultPadding / 4),
             Text(
               'Damage: ${hero.baseAttackMin}-${hero.baseAttackMax}',
-              style: TextStyle(fontSize: textSize),
+              style: CustomTextStyle.textTextStyle,
             ),
           ]),
         ),
