@@ -25,7 +25,7 @@ class CachedHeroImage extends StatelessWidget {
       height: height,
       width: width,
       child: CachedNetworkImage(
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
         imageUrl: imageUrl!,
         placeholder: (context, url) => CircularProgressIndicator(),
         errorWidget: (context, url, error) =>

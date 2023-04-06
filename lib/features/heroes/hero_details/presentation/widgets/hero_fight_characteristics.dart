@@ -10,7 +10,7 @@ class HeroFightCharacteristics extends StatelessWidget {
 
   final String? imagePath;
   final String? tittle;
-  final String value;
+  final String? value;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,11 @@ class HeroFightCharacteristics extends StatelessWidget {
               '${tittle}: ',
               style: CustomTextStyle.subtitleTextStyle,
             ),
-          Text(
-            value,
-            style: CustomTextStyle.textTextStyle,
-          )
+          if (value != null)
+            Text(
+              value!,
+              style: CustomTextStyle.textTextStyle,
+            )
         ],
       ),
     );

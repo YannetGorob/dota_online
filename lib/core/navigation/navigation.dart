@@ -75,9 +75,7 @@ class Navigation {
                     if (state.extra is HeroStats)
                       return HeroDetailsPage(hero: state.extra as HeroStats);
 
-                    return DotaErrorWidget(
-                      path: '/heroes',
-                    );
+                    return DotaErrorWidget();
                   }),
             ],
           ),
@@ -85,8 +83,4 @@ class Navigation {
       ),
     ],
   );
-}
-
-class AppRoute extends GoRoute {
-  AppRoute({required super.path});
 }

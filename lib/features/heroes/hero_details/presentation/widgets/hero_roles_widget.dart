@@ -14,23 +14,22 @@ class HeroRolesWidget extends StatelessWidget {
         'Roles',
         style: CustomTextStyle.subtitleTextStyle,
       ),
+      SizedBox(height: 10),
       Container(
         height: height,
-        child: ListView.separated(
+        child: ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           itemCount: roles.length,
           itemBuilder: (BuildContext context, int index) {
             final item = roles[index];
-            return Text(
-              item,
-              style: CustomTextStyle.textTextStyle,
-            );
-          },
-          separatorBuilder: (BuildContext context, int index) {
-            return Divider(
-              height: 20,
-              color: Colors.grey,
-              thickness: 2,
+            return Card(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  item,
+                  style: CustomTextStyle.textTextStyle,
+                ),
+              ),
             );
           },
         ),
