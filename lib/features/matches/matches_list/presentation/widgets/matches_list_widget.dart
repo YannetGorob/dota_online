@@ -47,6 +47,7 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: matches.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () => context.go(detailsPath, extra: matches[index].matchId),
