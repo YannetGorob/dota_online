@@ -1,3 +1,6 @@
+import 'package:dota_online/core/api/models/team/player_model.dart';
+import 'package:dota_online/core/api/models/team/team_model.dart';
+import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_widget.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:go_router/go_router.dart';
@@ -46,17 +49,28 @@ class Navigation {
             ),
             routes: [
               GoRoute(
+                name: 'team_details',
                 path: 'team_details',
                 builder: (context, state) {
-                  final int teamId = state.extra as int;
+                  int teamId = int.parse(state.queryParams['teamId']!);
                   return TeamDetailsPage(
-                      matchesPath: '/teams/team_details/team_matches',
-                      teamId: teamId);
+                    matchesPath: '/teams/team_details/team_matches',
+                    teamId: teamId,
+                    team: state.extra as TeamModel,
+                  );
                 },
                 routes: [
                   GoRoute(
+                    path: 'players_list',
+                    builder: (context, state) {
+                      return PlayersWidget(
+                          players: state.extra as List<PlayerModel>);
+                    },
+                  ),
+                  GoRoute(
                     path: 'team_matches',
-                    builder: (context, state) => MatchDetailsPage(matchId: state.extra as int),
+                    builder: (context, state) =>
+                        MatchDetailsPage(matchId: state.extra as int),
                   ),
                 ],
               ),

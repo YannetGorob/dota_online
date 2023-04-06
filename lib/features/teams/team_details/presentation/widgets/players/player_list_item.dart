@@ -9,16 +9,15 @@ class PlayerListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canShowPlayer = player.name != null;
-    if (!canShowPlayer) Container();
+
+    if (player.isCurrentTeamMember == null)
+      return Container();
 
     Color? _cardColor() {
-      if (player.isCurrentTeamMember == null) {
-        return Colors.grey;
-      } else if (player.isCurrentTeamMember!) {
+      if (player.isCurrentTeamMember!) {
         return Colors.green[900];
       } else {
-        return Colors.red[900];
+        return Colors.green[200];
       }
     }
 
@@ -26,20 +25,18 @@ class PlayerListItem extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       color: _cardColor(),
       child: Container(
-        height: 100,
+        padding: EdgeInsetsDirectional.all(10),
         alignment: Alignment.center,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            if (player.name != null)
-              Text(
-                player.name!,
-                style: GoogleFonts.tinos(
-                  textStyle:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                ),
+            Text(
+              player.name!,
+              style: GoogleFonts.tinos(
+                textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
               ),
+            ),
             if (player.wins != null && player.gamesPlayed != null)
               Text(
                 '${player.wins} wins out of ${player.gamesPlayed} games',

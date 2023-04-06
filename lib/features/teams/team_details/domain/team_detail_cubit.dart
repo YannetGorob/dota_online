@@ -14,7 +14,7 @@ class TeamDetailCubit extends Cubit<TeamDetailState> {
     final matchesResponse = await _teamsProvider.getTeamMatches(teamId);
 
     final players = playersResponse.map(
-      success: (data) => data.value,
+      success: (data) => data.value.where((e) => e.name != null).toList(),
       failure: (_) => null,
     );
     final matches = matchesResponse.map(

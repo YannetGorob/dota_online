@@ -1,111 +1,109 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/info_plate.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/player_list_item.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/team_match_list_item.dart';
+import 'package:dota_online/core/api/models/team/team_model.dart';
+import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
+import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
     required this.players,
     required this.matches,
     required this.matchesPath,
+    required this.team,
   });
 
   final List<PlayerModel>? players;
   final List<TeamMatches>? matches;
+  final TeamModel team;
   final String matchesPath;
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        if (players != null)
-          SliverPadding(
-            padding: EdgeInsetsDirectional.all(16),
-            sliver: SliverToBoxAdapter(
-              child: InfoPlate(
-                title: 'Players:',
-                size: 30,
-                firsIcon: Icon(
-                  Icons.square,
-                  color: Color(0xff1b5e20),
-                  size: 30,
+    return Padding(
+      padding:
+          const EdgeInsets.symmetric(horizontal: defaultPadding, vertical: 0),
+      child: CustomScrollView(
+        slivers: [
+          if (players != null)
+            SliverPadding(
+              padding: EdgeInsetsDirectional.all(4),
+              sliver: SliverToBoxAdapter(
+                child: Text(
+                  'PLAYERS',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.tinos(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
                 ),
-                firstText: 'current member',
-                secondIcon: Icon(
-                  Icons.square,
-                  color: Color(0xffb61c1c),
-                  size: 30,
-                ),
-                secondText: 'not current member',
-                thirdIcon: Icon(
-                  Icons.square,
-                  color: Color(0xff9d9d9d),
-                  size: 30,
-                ),
-                thirdText: 'no info',
               ),
             ),
-          ),
-        SliverPadding(
-          padding: EdgeInsetsDirectional.all(16),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return PlayerListItem(
-                  player: players![index],
-                );
-              },
-              childCount: players!.length,
-            ),
-          ),
-        ),
-        if (matches != null)
-          SliverPadding(
-            padding: EdgeInsets.all(16),
-            sliver: SliverToBoxAdapter(
-              child: InfoPlate(
-                title: 'Team matches:',
-                size: 30,
-                firsIcon: Icon(
-                  Icons.remove,
-                  color: Color(0xff579bbf),
-                  size: 30,
+          PlayersList(players: players!),
+          if (players!.length != 0)
+            SliverToBoxAdapter(child: _playersButton(context, players!)),
+          if (matches != null)
+            SliverPadding(
+              padding: EdgeInsets.only(top: 20),
+              sliver: SliverToBoxAdapter(
+                child: Text(
+                  'MATCHES',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.tinos(
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                    ),
+                  ),
                 ),
-                firstText: ' radiant',
-                secondIcon: Icon(
-                  Icons.remove,
-                  color: Color(0xff9b4242),
-                  size: 30,
-                ),
-                secondText: ' dire',
               ),
             ),
-          ),
-        SliverPadding(
-          padding: EdgeInsetsDirectional.all(16),
-          sliver: SliverList(
+          SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
                 return InkWell(
                   onTap: () {
-                    context.go(
+                    context.push(
                       matchesPath,
                       extra: matches![index].matchId,
                     );
                   },
                   child: TeamMatchListItem(
-                    teamMatch: matches![index],
+                    teamMatch: matches![index], team: team,
                   ),
                 );
               },
               childCount: matches!.length,
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  ElevatedButton _playersButton(
+      BuildContext context, List<PlayerModel> players) {
+    return ElevatedButton(
+      child: Text(
+        'View all players',
+        style: GoogleFonts.tinos(
+          textStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
-      ],
+      ),
+      onPressed: () {
+        context.push(
+          '/teams/team_details/players_list',
+          extra: players,
+        );
+      },
     );
   }
 }
