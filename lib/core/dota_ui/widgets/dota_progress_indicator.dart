@@ -1,3 +1,4 @@
+import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class DotaProgressIndicator extends StatefulWidget {
@@ -63,7 +64,7 @@ class _DotaProgressIndicatorState extends State<DotaProgressIndicator>
         children: <Widget>[
           Center(
             child: new Container(
-              child: Image.asset('assets/images/dota_logo.png'),
+              child: Image.asset(Assets.images.dotaLogo.path),
               height: size,
             ),
           ),

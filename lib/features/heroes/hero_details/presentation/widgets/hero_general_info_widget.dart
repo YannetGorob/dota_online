@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
+import 'package:dota_online/core/utils/choose_img.dart';
 import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_base_health_mana.dart';
@@ -19,22 +20,22 @@ class HeroGeneralInfoW extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final image = this.getImage(hero.primaryAttr);
-    final attackType = this.getAttackTypeImg(hero.attackType);
+    final primaryAtrImg = ChoseImg.getPrimaryAttrImage(hero.primaryAttr);
+    final attackTypeImg = ChoseImg.getAttackTypeImg(hero.attackType);
     return Column(
       children: [
-        if (image != null)
+        if (primaryAtrImg != null)
           Align(
             alignment: Alignment.topLeft,
             child: Image.asset(
-              image,
+              primaryAtrImg,
               height: 40,
             ),
           ),
         SizedBox(height: 10),
         if (hero.attackType != null)
           HeroFightCharacteristics(
-            imagePath: attackType,
+            imagePath: attackTypeImg,
             tittle: 'Attack type',
             value: hero.attackType!,
           ),
@@ -89,29 +90,5 @@ class HeroGeneralInfoW extends StatelessWidget {
         ),
       ],
     );
-  }
-
-  String? getImage(String? primaryAttr) {
-    switch (primaryAttr) {
-      case 'agi':
-        return Assets.images.heroAgility.path;
-      case 'str':
-        return Assets.images.heroStrength.path;
-      case 'int':
-        return Assets.images.heroIntelligence.path;
-      default:
-        return null;
-    }
-  }
-
-  String? getAttackTypeImg(String? attackType) {
-    switch (attackType) {
-      case 'Melee':
-        return Assets.images.melee;
-      case 'Ranged':
-        return Assets.images.ranged;
-      default:
-        return null;
-    }
   }
 }
