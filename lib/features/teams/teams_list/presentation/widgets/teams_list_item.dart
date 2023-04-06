@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:google_fonts/google_fonts.dart';
