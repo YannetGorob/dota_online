@@ -2,8 +2,7 @@ import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
-import 'package:dota_online/features/heroes/hero_list/presentation/widgets/hero_attribute_widget.dart';
-import 'package:dota_online/gen/assets.gen.dart';
+import 'package:dota_online/features/heroes/hero_list/presentation/widgets/hero_all_attributes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -52,20 +51,7 @@ class HeroTile extends StatelessWidget {
                 ),
               ),
               SizedBox(height: defaultPadding),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  HeroAttributeWidget(
-                      imgPath: Assets.images.heroStrength.path,
-                      value: '${hero.baseStr}'),
-                  HeroAttributeWidget(
-                      imgPath: Assets.images.heroAgility.path,
-                      value: '${hero.baseAgi}'),
-                  HeroAttributeWidget(
-                      imgPath: Assets.images.heroIntelligence.path,
-                      value: '${hero.baseInt}'),
-                ],
-              ),
+              HeroAllAttributes(hero: hero),
             ],
           ),
         ),
