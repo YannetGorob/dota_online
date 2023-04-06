@@ -21,16 +21,17 @@ class HeroesListWidget extends StatelessWidget {
         title: context.l10n.heroesList,
       ),
       body: BlocBuilder<HeroesListCubit, HeroesListState>(
-          builder: (context, state) {
-        return state.map(
-          loading: (_) => Center(child: DotaProgressIndicator()),
-          loaded: (state) => BodyHeroesWidget(
-            heroes: state.heroes,
-            detailsPath: detailsPath,
-          ),
-          error: (_) => DotaErrorWidget(),
-        );
-      }),
+        builder: (context, state) {
+          return state.map(
+            loading: (_) => Center(child: DotaProgressIndicator()),
+            loaded: (state) => BodyHeroesWidget(
+              heroes: state.heroes,
+              detailsPath: detailsPath,
+            ),
+            error: (_) => DotaErrorWidget(),
+          );
+        },
+      ),
     );
   }
 }

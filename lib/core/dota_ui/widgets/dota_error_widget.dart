@@ -1,8 +1,7 @@
-import 'package:dota_online/app/app.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
+import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DotaErrorWidget extends StatelessWidget {
   const DotaErrorWidget();
@@ -15,7 +14,7 @@ class DotaErrorWidget extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            Image.asset('assets/images/dota_logo.png'),
+            Image.asset(Assets.images.dotaLogo.path),
           ],
         ),
       ),
