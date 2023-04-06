@@ -13,70 +13,91 @@ class MatchCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             Text(
-              '🏆 ${match.leagueName}',
-              style: TextStyle(
+              '🏆 ${match.leagueName ?? 'Error'}',
+              style: const TextStyle(
                 fontSize: 15,
               ),
+              textAlign: TextAlign.center,
             ),
-            FittedBox(
-              fit: BoxFit.fitWidth,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    '♿️${match.direName}',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: Text(
+                      '♿️${match.radiantName ?? 'Error'}',
+                      style: TextStyle(
+                        color: Colors.green.shade700,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  Text(' vs '),
-                  Text(
-                    '♿️${match.radiantName}',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                ),
+                const Expanded(
+                  flex: 0,
+                  child: Center(
+                    child: Text(' vs '),
+                  ),
+                ),
+                Expanded(
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: Text(
+                      '♿️${match.direName ?? 'Error'}',
+                      style: TextStyle(
+                        color: Colors.red.shade700,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            Text('⏳${(match.duration! / 60).toStringAsFixed(2)}'),
+            if (match.duration != null)
+              Text('⏳${(match.duration! / 60).toStringAsFixed(2)}'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  match.direScore.toString(),
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
+                if (match.direScore != null)
+                  Text(
+                    match.direScore.toString(),
+                    style: const TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
+                const Text(
                   ' : ',
                   style: TextStyle(
                     fontSize: 30,
                   ),
                 ),
-                Text(
-                  match.radiantScore.toString(),
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
+                if (match.radiantScore != null)
+                  Text(
+                    match.radiantScore.toString(),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                    ),
                   ),
-                ),
               ],
             ),
-            Text(
+            const Text(
               'score',
-              style: TextStyle(fontSize: 10, color: Colors.grey),
+              style: TextStyle(
+                fontSize: 10,
+                color: Colors.grey,
+              ),
             ),
           ],
         ),
