@@ -21,7 +21,7 @@ class TeamMatchListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canShowMatch = teamMatch.opposingTeamName != null ;
+    final canShowMatch = teamMatch.opposingTeamName != null;
 
     if (!canShowMatch) Container();
 
@@ -108,14 +108,18 @@ class TeamMatchListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.timer),
-                      Text((teamMatch.duration! / 60).toStringAsFixed(2)),
+                      Text((teamMatch.duration! / 60)
+                          .toStringAsFixed(2)
+                          .replaceAll('.', ':')),
                     ],
                   ),
                 if (teamMatch.startTime != null)
                   Text(
                     DateFormat('dd.MM.yyyy')
-                        .format(DateTime.fromMillisecondsSinceEpoch(
-                            teamMatch.startTime! * 1000))
+                        .format(
+                          DateTime.fromMillisecondsSinceEpoch(
+                              teamMatch.startTime! * 1000),
+                        )
                         .toString(),
                   ),
               ],

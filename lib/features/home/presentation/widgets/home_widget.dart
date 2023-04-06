@@ -33,15 +33,16 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     tabs = [
       ScaffoldWithNavBarTabItem(
+      initialLocation: '/matches',
+      icon: Icon(Icons.emoji_events_rounded),
+      label: context.l10n.matchesTab,
+    ),
+      ScaffoldWithNavBarTabItem(
         initialLocation: '/teams',
         icon: Icon(Icons.people),
         label: context.l10n.teamsTab,
       ),
-      ScaffoldWithNavBarTabItem(
-        initialLocation: '/matches',
-        icon: Icon(Icons.emoji_events_rounded),
-        label: context.l10n.matchesTab,
-      ),
+
       ScaffoldWithNavBarTabItem(
         initialLocation: '/heroes',
         icon: Icon(CupertinoIcons.ant),

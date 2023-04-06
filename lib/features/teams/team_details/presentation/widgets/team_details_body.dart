@@ -46,7 +46,14 @@ class TeamDetailsBody extends StatelessWidget {
             ),
           PlayersList(players: players!),
           if (players!.length != 0)
-            SliverToBoxAdapter(child: _playersButton(context, players!)),
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 4
+              ),
+              sliver: SliverToBoxAdapter(
+                child: _playersButton(context, players!),
+              ),
+            ),
           if (matches != null)
             SliverPadding(
               padding: EdgeInsets.only(top: 20),
@@ -74,7 +81,8 @@ class TeamDetailsBody extends StatelessWidget {
                     );
                   },
                   child: TeamMatchListItem(
-                    teamMatch: matches![index], team: team,
+                    teamMatch: matches![index],
+                    team: team,
                   ),
                 );
               },
