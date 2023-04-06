@@ -31,7 +31,7 @@ class MatchCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: FittedBox(
-                    fit: BoxFit.fill,
+                    fit: BoxFit.scaleDown,
                     child: Text(
                       '♿️${match.radiantName ?? 'Error'}',
                       style: TextStyle(
@@ -50,7 +50,7 @@ class MatchCard extends StatelessWidget {
                 ),
                 Expanded(
                   child: FittedBox(
-                    fit: BoxFit.fill,
+                    fit: BoxFit.scaleDown,
                     child: Text(
                       '♿️${match.direName ?? 'Error'}',
                       style: TextStyle(
