@@ -1,3 +1,5 @@
+import 'package:dota_online/core/api/models/hero/hero_stats.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_page.dart';
@@ -68,17 +70,17 @@ class Navigation {
             ),
             routes: [
               GoRoute(
-                path: 'hero_details',
-                builder: (context, state) => const HeroDetailsPage(),
-              ),
+                  path: 'hero_details',
+                  builder: (context, state) {
+                    if (state.extra is HeroStats)
+                      return HeroDetailsPage(hero: state.extra as HeroStats);
+
+                    return DotaErrorWidget();
+                  }),
             ],
           ),
         ],
       ),
     ],
   );
-}
-
-class AppRoute extends GoRoute {
-  AppRoute({required super.path});
 }
