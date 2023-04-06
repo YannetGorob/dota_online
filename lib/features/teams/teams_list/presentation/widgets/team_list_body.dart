@@ -26,10 +26,12 @@ class TeamListBody extends StatelessWidget {
               (context, index) {
                 return InkWell(
                   onTap: () {
-                    context.go(
-                      detailsPath,
-                      extra: teams[index].teamId,
-                    );
+                    if(teams[index].teamId != null){
+                      context.goNamed(
+                        'team_details',
+                        queryParams: {'teamId': teams[index].teamId.toString()},
+                      );
+                    }
                   },
                   child: TeamsListItem(
                     team: teams[index],

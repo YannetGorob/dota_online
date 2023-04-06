@@ -1,3 +1,5 @@
+import 'package:dota_online/core/api/models/team/player_model.dart';
+import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_widget.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_page.dart';
@@ -44,14 +46,22 @@ class Navigation {
             ),
             routes: [
               GoRoute(
+                name: 'team_details',
                 path: 'team_details',
                 builder: (context, state) {
-                  final int teamId = state.extra as int;
+                  int teamId = int.parse(state.queryParams['teamId']!);
                   return TeamDetailsPage(
                       matchesPath: '/teams/team_details/team_matches',
                       teamId: teamId);
                 },
                 routes: [
+                  GoRoute(
+                    path: 'players_list',
+                    builder: (context, state) {
+                      return PlayersWidget(
+                        players: state.extra as List<PlayerModel>);
+                    },
+                  ),
                   GoRoute(
                     path: 'team_matches',
                     builder: (context, state) => MatchDetailsPage(matchId: state.extra as int),
@@ -77,8 +87,4 @@ class Navigation {
       ),
     ],
   );
-}
-
-class AppRoute extends GoRoute {
-  AppRoute({required super.path});
 }
