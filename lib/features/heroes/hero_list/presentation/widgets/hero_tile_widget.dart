@@ -3,6 +3,7 @@ import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/core/utils/choose_img.dart';
 import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
+import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -44,10 +45,7 @@ class HeroTile extends StatelessWidget {
                     ),
                     SizedBox(width: 10),
                     if (primaryAtrImg != null)
-                      Image.asset(
-                        primaryAtrImg,
-                        height: 30,
-                      ),
+                      Image.asset(primaryAtrImg, height: 30),
                   ],
                 ),
               SizedBox(height: defaultPadding / 4),

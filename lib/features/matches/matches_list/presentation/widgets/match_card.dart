@@ -2,52 +2,38 @@ import 'package:dota_online/core/api/models/match/match_model.dart';
 import 'package:flutter/material.dart';
 
 class MatchCard extends StatelessWidget {
-  const MatchCard({
-    required this.match,
-    super.key,
-  });
+  const MatchCard({required this.match, super.key});
 
   final MatchModel match;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             Text(
               '🏆 ${match.leagueName ?? 'Error'}',
-              style: const TextStyle(
-                fontSize: 15,
-              ),
+              style: const TextStyle(fontSize: 15),
               textAlign: TextAlign.center,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      '♿️${match.radiantName ?? 'Error'}',
-                      style: TextStyle(
-                        color: Colors.green.shade700,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  child: Text(
+                    '♿️${match.radiantName ?? '---'}',
+                    maxLines: 1,
+                    style: TextStyle(
+                      color: Colors.green.shade700,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                const Expanded(
-                  flex: 0,
-                  child: Center(
-                    child: Text(' vs '),
-                  ),
-                ),
+                Center(child: Text(' vs ')),
                 Expanded(
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
@@ -76,12 +62,7 @@ class MatchCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                const Text(
-                  ' : ',
-                  style: TextStyle(
-                    fontSize: 30,
-                  ),
-                ),
+                const Text(' : ', style: TextStyle(fontSize: 30)),
                 if (match.radiantScore != null)
                   Text(
                     match.radiantScore.toString(),
@@ -94,10 +75,7 @@ class MatchCard extends StatelessWidget {
             ),
             const Text(
               'score',
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 10, color: Colors.grey),
             ),
           ],
         ),

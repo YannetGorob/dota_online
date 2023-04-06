@@ -17,18 +17,16 @@ class HeroesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(
-        title: context.l10n.heroesList,
-      ),
+      appBar: DotaAppBar(title: context.l10n.heroesList),
       body: BlocBuilder<HeroesListCubit, HeroesListState>(
         builder: (context, state) {
           return state.map(
-            loading: (_) => Center(child: DotaProgressIndicator()),
+            loading: (_) => DotaProgressIndicator(),
+            error: (_) => DotaErrorWidget(),
             loaded: (state) => BodyHeroesWidget(
               heroes: state.heroes,
               detailsPath: detailsPath,
             ),
-            error: (_) => DotaErrorWidget(),
           );
         },
       ),

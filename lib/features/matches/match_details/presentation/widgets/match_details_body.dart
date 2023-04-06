@@ -20,6 +20,7 @@ class MatchDetailsBody extends StatelessWidget {
           delegate: SliverChildBuilderDelegate(
             childCount: 10,
             (context, index) {
+              final item = matchDetails.players![index];
               return Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -55,7 +56,8 @@ class MatchDetailsBody extends StatelessWidget {
                             SizedBox(
                               width: 40,
                               child: Text(
-                                  'K: ${matchDetails.players![index].kills!.toString()}'),
+                                'K: ${matchDetails.players![index].kills!.toString()}',
+                              ),
                             ),
                           const SizedBox(width: 10),
                           if (matchDetails.players != null &&

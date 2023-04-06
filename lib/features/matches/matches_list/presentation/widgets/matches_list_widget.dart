@@ -19,20 +19,15 @@ class MatchesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(
-        title: context.l10n.matchesList,
-      ),
+      appBar: DotaAppBar(title: context.l10n.matchesList),
       body: BlocBuilder<MatchesListCubit, MatchesListState>(
         builder: (context, state) {
           return state.map(
-            loading: (value) => Center(child: DotaProgressIndicator()),
+            loading: (_) => DotaProgressIndicator(),
+            error: (_) => DotaErrorWidget(),
             loaded: (value) {
-              return _Body(
-                detailsPath: detailsPath,
-                matches: value.matches,
-              );
+              return _Body(detailsPath: detailsPath, matches: value.matches);
             },
-            error: (value) => DotaErrorWidget(),
           );
         },
       ),

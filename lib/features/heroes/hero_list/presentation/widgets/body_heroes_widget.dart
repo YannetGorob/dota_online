@@ -14,13 +14,11 @@ class BodyHeroesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: heroes.length,
-        itemBuilder: (BuildContext context, int index) {
-          final item = heroes[index];
-          return HeroTile(
-            detailsPath: detailsPath,
-            hero: item,
-          );
-        });
+      itemCount: heroes.length,
+      itemBuilder: (BuildContext context, int index) {
+        final item = heroes[index];
+        return HeroTile(detailsPath: detailsPath, hero: item);
+      },
+    );
   }
 }

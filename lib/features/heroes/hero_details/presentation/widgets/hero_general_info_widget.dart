@@ -48,13 +48,11 @@ class HeroGeneralInfoW extends StatelessWidget {
         ),
         if (hero.baseHealth != null)
           HeroBaseHealthMana(
-            width: width,
             color: Colors.green,
             title: hero.baseHealth.toString(),
           ),
         if (hero.baseMana != null)
           HeroBaseHealthMana(
-            width: width,
             color: Colors.blue,
             title: hero.baseMana.toString(),
           ),

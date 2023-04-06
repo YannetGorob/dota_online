@@ -12,16 +12,13 @@ class MatchesListCubit extends Cubit<MatchesListState> {
 
   Future<void> loadInitialMatchesData() async {
     final matchesResponse = await _matchesProvider.getMatches();
-    matchesResponse.when(success: (data) {
-      if (!this.isClosed)
-        emit(
-          MatchesListState.loaded(matches: data),
-        );
-    }, failure: (_) {
-      if (!this.isClosed)
-        emit(
-          MatchesListState.error(),
-        );
-    });
+    matchesResponse.when(
+      success: (data) {
+        if (!this.isClosed) emit(MatchesListState.loaded(matches: data));
+      },
+      failure: (_) {
+        if (!this.isClosed) emit(MatchesListState.error());
+      },
+    );
   }
 }

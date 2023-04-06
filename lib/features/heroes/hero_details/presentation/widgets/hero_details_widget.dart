@@ -17,14 +17,9 @@ class HeroDetailsWidget extends StatelessWidget {
     final roles = hero.roles;
 
     return DotaScaffold(
-      appBar: DotaAppBar(
-        title: hero.localizedName,
-      ),
+      appBar: DotaAppBar(title: hero.localizedName),
       body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 15,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
@@ -39,9 +34,7 @@ class HeroDetailsWidget extends StatelessWidget {
                 delegate: SliverChildBuilderDelegate(
                   childCount: roles.length,
                   (BuildContext context, int index) {
-                    return HeroRolesCard(
-                      role: roles[index],
-                    );
+                    return HeroRolesCard(role: roles[index]);
                   },
                 ),
               ),

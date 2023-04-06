@@ -9,9 +9,7 @@ class PlayerListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    if (player.isCurrentTeamMember == null)
-      return Container();
+    if (player.isCurrentTeamMember == null) return SizedBox();
 
     Color? _cardColor() {
       if (player.isCurrentTeamMember!) {

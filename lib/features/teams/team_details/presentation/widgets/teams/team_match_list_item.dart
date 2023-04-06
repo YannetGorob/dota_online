@@ -23,7 +23,9 @@ class TeamMatchListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final canShowMatch = teamMatch.opposingTeamName != null;
 
-    if (!canShowMatch) Container();
+    if (!canShowMatch) {
+      return SizedBox();
+    }
 
     return Card(
       color: Colors.black38,
@@ -108,9 +110,11 @@ class TeamMatchListItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.timer),
-                      Text((teamMatch.duration! / 60)
-                          .toStringAsFixed(2)
-                          .replaceAll('.', ':')),
+                      Text(
+                        (teamMatch.duration! / 60)
+                            .toStringAsFixed(2)
+                            .replaceAll('.', ':'),
+                      ),
                     ],
                   ),
                 if (teamMatch.startTime != null)

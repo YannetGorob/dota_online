@@ -13,9 +13,7 @@ class PlayersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(
-        title: 'Players',
-      ),
+      appBar: DotaAppBar(title: 'Players'),
       body: CustomScrollView(
         slivers: [
           SliverPadding(
@@ -27,7 +25,8 @@ class PlayersWidget extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                 childCount: players.length,
                 (context, index) {
-                  return PlayerListItem(player: players[index]);
+                  final item = players[index];
+                  return PlayerListItem(player: item);
                 },
               ),
             ),

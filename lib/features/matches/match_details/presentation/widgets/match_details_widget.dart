@@ -35,9 +35,8 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-        appBar: DotaAppBar(
-          title: context.l10n.matchDetails,
-        ),
-        body: MatchDetailsBody(matchDetails: matchDetails));
+      appBar: DotaAppBar(title: context.l10n.matchDetails),
+      body: MatchDetailsBody(matchDetails: matchDetails),
+    );
   }
 }

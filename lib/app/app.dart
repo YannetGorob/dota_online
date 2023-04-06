@@ -27,6 +27,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData.dark().copyWith(
+        //extensions: ,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: direColor,
         ),

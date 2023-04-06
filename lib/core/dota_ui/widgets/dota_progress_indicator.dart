@@ -8,9 +8,8 @@ class DotaProgressIndicator extends StatefulWidget {
 
 class _DotaProgressIndicatorState extends State<DotaProgressIndicator>
     with TickerProviderStateMixin {
-  late AnimationController motionController;
-  late Animation motionAnimation;
-  double size = 8;
+  late final AnimationController motionController;
+  late final Animation<double> motionAnimation;
 
   void initState() {
     super.initState();
@@ -39,16 +38,6 @@ class _DotaProgressIndicatorState extends State<DotaProgressIndicator>
         );
       },
     );
-
-    motionController.addListener(
-      () {
-        setState(
-          () {
-            size = motionController.value * 100;
-          },
-        );
-      },
-    );
   }
 
   @override
@@ -59,17 +48,14 @@ class _DotaProgressIndicatorState extends State<DotaProgressIndicator>
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Stack(
-        children: <Widget>[
-          Center(
-            child: new Container(
-              child: Image.asset(Assets.images.dotaLogo.path),
-              height: size,
-            ),
-          ),
-        ],
-      ),
+    return AnimatedBuilder(
+      animation: motionAnimation,
+      builder: (context, child) {
+        return Container(
+          child: Image.asset(Assets.images.dotaLogo.path),
+          height: motionAnimation.value * 100,
+        );
+      },
     );
   }
 }

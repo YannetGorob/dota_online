@@ -12,15 +12,11 @@ class HeroesListCubit extends Cubit<HeroesListState> {
 
   Future<void> getHeroesInitialData() async {
     final heroesResponse = await _heroesProvider.getHeroStats();
-
+// TODO: rename
     heroesResponse.when(
       success: (data) {
         final heroesData = data
-            .map(
-              (e) => e.copyWith(
-                img: ChangeUrl.changeUrl(e.img),
-              ),
-            )
+            .map((e) => e.copyWith(img: ChangeUrl.changeUrl(e.img)))
             .toList();
         if (!this.isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },

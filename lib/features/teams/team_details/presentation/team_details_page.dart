@@ -24,7 +24,10 @@ class TeamDetailsPage extends StatelessWidget {
         return TeamDetailCubit(teamsProvider: locator.get<DotaApi>().teams)
           ..loadTeamDetailsData(teamId);
       },
-      child: TeamDetailsWidget(matchesPath: matchesPath, team: team,),
+      child: TeamDetailsWidget(
+        matchesPath: matchesPath,
+        team: team,
+      ),
     );
   }
 }

@@ -24,10 +24,10 @@ class TeamDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          const EdgeInsets.symmetric(horizontal: defaultPadding, vertical: 0),
+      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
       child: CustomScrollView(
         slivers: [
+          SliverPadding(padding: EdgeInsets.only(top: 10)),
           if (players != null)
             SliverPadding(
               padding: EdgeInsetsDirectional.all(4),
@@ -47,9 +47,7 @@ class TeamDetailsBody extends StatelessWidget {
           PlayersList(players: players!),
           if (players!.length != 0)
             SliverPadding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 4
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 4),
               sliver: SliverToBoxAdapter(
                 child: _playersButton(context, players!),
               ),
@@ -72,6 +70,7 @@ class TeamDetailsBody extends StatelessWidget {
             ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
+              childCount: matches!.length,
               (context, index) {
                 return InkWell(
                   onTap: () {
@@ -86,7 +85,6 @@ class TeamDetailsBody extends StatelessWidget {
                   ),
                 );
               },
-              childCount: matches!.length,
             ),
           ),
         ],
@@ -95,7 +93,9 @@ class TeamDetailsBody extends StatelessWidget {
   }
 
   ElevatedButton _playersButton(
-      BuildContext context, List<PlayerModel> players) {
+    BuildContext context,
+    List<PlayerModel> players,
+  ) {
     return ElevatedButton(
       child: Text(
         'View all players',

@@ -10,16 +10,10 @@ class PlayersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<PlayerModel> currentPlayers = [];
+    final currentPlayers =
+        players.where((e) => e.isCurrentTeamMember == true).toList();
 
-    for (var i = 0; i < players.length; i++) {
-      if (players[i].isCurrentTeamMember != null) if (players[i]
-          .isCurrentTeamMember!) {
-        currentPlayers.add(players[i]);
-      }
-    }
-
-    if (currentPlayers.length > 0) {
+    if (currentPlayers.isNotEmpty) {
       return SliverList(
         delegate: SliverChildBuilderDelegate(
           childCount: currentPlayers.length,
@@ -28,7 +22,7 @@ class PlayersList extends StatelessWidget {
           },
         ),
       );
-    } else if (currentPlayers.length == 0 && players.length > 0) {
+    } else if (currentPlayers.isEmpty && players.length > 0) {
       return SliverToBoxAdapter(
         child: Center(
           child: Text(
