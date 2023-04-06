@@ -19,7 +19,6 @@ class MatchDetailsBody extends StatelessWidget {
           delegate: SliverChildBuilderDelegate(
             childCount: 10,
             (context, index) {
-              print(matchDetails.players![index].isRadiant);
               return Padding(
                 padding: const EdgeInsets.all(8),
                 child: Card(
