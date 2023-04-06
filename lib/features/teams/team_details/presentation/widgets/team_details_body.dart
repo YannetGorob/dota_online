@@ -1,7 +1,7 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
+import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/info_plate.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +13,12 @@ class TeamDetailsBody extends StatelessWidget {
     required this.players,
     required this.matches,
     required this.matchesPath,
+    required this.team,
   });
 
   final List<PlayerModel>? players;
   final List<TeamMatches>? matches;
+  final TeamModel team;
   final String matchesPath;
 
   @override
@@ -47,9 +49,7 @@ class TeamDetailsBody extends StatelessWidget {
             SliverToBoxAdapter(child: _playersButton(context, players!)),
           if (matches != null)
             SliverPadding(
-              padding: EdgeInsets.only(
-                top: 20
-              ),
+              padding: EdgeInsets.only(top: 20),
               sliver: SliverToBoxAdapter(
                 child: Text(
                   'MATCHES',
@@ -74,7 +74,7 @@ class TeamDetailsBody extends StatelessWidget {
                     );
                   },
                   child: TeamMatchListItem(
-                    teamMatch: matches![index],
+                    teamMatch: matches![index], team: team,
                   ),
                 );
               },

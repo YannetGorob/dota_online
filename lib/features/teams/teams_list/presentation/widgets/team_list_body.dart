@@ -30,6 +30,7 @@ class TeamListBody extends StatelessWidget {
                       context.goNamed(
                         'team_details',
                         queryParams: {'teamId': teams[index].teamId.toString()},
+                        extra: teams[index]
                       );
                     }
                   },

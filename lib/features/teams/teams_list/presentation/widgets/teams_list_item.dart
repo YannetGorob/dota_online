@@ -14,8 +14,6 @@ class TeamsListItem extends StatelessWidget {
   TeamsListItem({required this.team});
 
   final TeamModel team;
-  final defaultImage =
-      'https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg';
 
   @override
   Widget build(BuildContext context) {

@@ -9,52 +9,31 @@ class MatchScoreWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     if (teamMatch.radiantScore == null &&
-        teamMatch.direScore == null &&
-        teamMatch.radiantWin == null) {
+        teamMatch.direScore == null) {
       return Container();
     }
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        if (teamMatch.radiantWin!)
-          Text(
-            teamMatch.radiantScore.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff579bbf),
-            ),
-          )
-        else
-          Text(
-            teamMatch.direScore.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff9b4242),
-            ),
+        Text(
+          teamMatch.radiantScore.toString(),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: radiantColor,
           ),
+        ),
         Text(' : ',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-        if (teamMatch.radiantWin!)
-          Text(
-            teamMatch.direScore.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff9b4242),
-            ),
-          )
-        else
-          Text(
-            teamMatch.radiantScore.toString(),
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color(0xff579bbf),
-            ),
+        Text(
+          teamMatch.direScore.toString(),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: direColor,
           ),
+        )
       ],
     );
   }
