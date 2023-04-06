@@ -1,8 +1,8 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/utils/choose_img.dart';
 import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
-import 'package:dota_online/features/heroes/hero_list/presentation/widgets/hero_all_attributes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -18,7 +18,8 @@ class HeroTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
-
+    final cardWidth = MediaQuery.of(context).size.width;
+    final primaryAtrImg = ChoseImg.getPrimaryAttrImage(hero.primaryAttr);
     return Card(
       margin: EdgeInsets.symmetric(
         horizontal: defaultPadding,
@@ -35,9 +36,19 @@ class HeroTile extends StatelessWidget {
           child: Column(
             children: [
               if (hero.localizedName != null)
-                Text(
-                  hero.localizedName!,
-                  style: CustomTextStyle.titleTextStyle,
+                Row(
+                  children: [
+                    Text(
+                      hero.localizedName!,
+                      style: CustomTextStyle.titleTextStyle,
+                    ),
+                    SizedBox(width: 10),
+                    if (primaryAtrImg != null)
+                      Image.asset(
+                        primaryAtrImg,
+                        height: 30,
+                      ),
+                  ],
                 ),
               SizedBox(height: defaultPadding / 4),
               Hero(
@@ -46,12 +57,11 @@ class HeroTile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   child: CachedHeroImage(
                     height: cardHeight * 0.7,
+                    width: cardWidth,
                     imageUrl: hero.img,
                   ),
                 ),
               ),
-              SizedBox(height: defaultPadding),
-              HeroAllAttributes(hero: hero),
             ],
           ),
         ),

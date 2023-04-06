@@ -16,7 +16,7 @@ class HeroAttributeWidget extends StatelessWidget {
       children: [
         Image.asset(
           imgPath,
-          height: 25,
+          height: 30,
         ),
         SizedBox(width: 7),
         if (value != null)

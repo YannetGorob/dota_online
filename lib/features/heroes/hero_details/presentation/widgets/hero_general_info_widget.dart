@@ -4,6 +4,7 @@ import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_base_health_mana.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_fight_characteristics.dart';
+import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_all_attributes.dart';
 import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,14 +25,6 @@ class HeroGeneralInfoW extends StatelessWidget {
     final attackTypeImg = ChoseImg.getAttackTypeImg(hero.attackType);
     return Column(
       children: [
-        if (primaryAtrImg != null)
-          Align(
-            alignment: Alignment.topLeft,
-            child: Image.asset(
-              primaryAtrImg,
-              height: 40,
-            ),
-          ),
         SizedBox(height: 10),
         if (hero.attackType != null)
           HeroFightCharacteristics(
@@ -65,7 +58,9 @@ class HeroGeneralInfoW extends StatelessWidget {
             color: Colors.blue,
             title: hero.baseMana.toString(),
           ),
-        SizedBox(height: 20),
+        SizedBox(height: 15),
+        HeroAllAttributes(hero: hero),
+        SizedBox(height: 15),
         HeroFightCharacteristics(
           imagePath: Assets.images.iconMovementSpeed.path,
           tittle: 'Speed',
