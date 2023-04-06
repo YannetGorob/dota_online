@@ -18,79 +18,84 @@ class HeroDetailsWidget extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     final image = this.getImage(hero.primaryAttr);
+    final attackType = this.getAttackTypeImg(hero.attackType);
     return DotaScaffold(
-        appBar: DotaAppBar(
-          title: hero.localizedName,
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    if (image != null) Image.asset(image),
-                  ],
-                ),
-                SizedBox(height: 10),
-                if (hero.attackType != null)
-                  HeroFightCharacteristics(
-                    tittle: 'Attack type',
-                    value: hero.attackType!,
-                  ),
-                Hero(
-                  tag: hero.id!,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8),
-                    ),
-                    child: CachedHeroImage(
-                      width: width,
-                      imageUrl: hero.img!,
-                      height: height * 0.2,
-                    ),
+      appBar: DotaAppBar(
+        title: hero.localizedName,
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              if (image != null)
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Image.asset(
+                    image,
+                    height: 40,
                   ),
                 ),
-                if (hero.baseHealth != null)
-                  HeroBaseHealthMana(
+              SizedBox(height: 10),
+              if (hero.attackType != null)
+                HeroFightCharacteristics(
+                  imagePath: attackType,
+                  tittle: 'Attack type',
+                  value: hero.attackType!,
+                ),
+              Hero(
+                tag: hero.id!,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    topRight: Radius.circular(8),
+                  ),
+                  child: CachedHeroImage(
                     width: width,
-                    color: Colors.green,
-                    title: hero.baseHealth.toString(),
+                    imageUrl: hero.img!,
+                    height: height * 0.2,
                   ),
-                if (hero.baseMana != null)
-                  HeroBaseHealthMana(
-                    width: width,
-                    color: Colors.blue,
-                    title: hero.baseMana.toString(),
-                  ),
-                SizedBox(height: 20),
-                HeroFightCharacteristics(
-                  imagePath: Assets.images.iconMovementSpeed.path,
-                  tittle: 'Speed',
-                  value: hero.moveSpeed.toString(),
                 ),
-                HeroFightCharacteristics(
-                  imagePath: Assets.images.iconDamage.path,
-                  tittle: 'Damage',
-                  value: '${hero.baseAttackMin}-${hero.baseAttackMax}',
+              ),
+              if (hero.baseHealth != null)
+                HeroBaseHealthMana(
+                  width: width,
+                  color: Colors.green,
+                  title: hero.baseHealth.toString(),
                 ),
-                HeroFightCharacteristics(
-                  imagePath: Assets.images.iconArmor.path,
-                  tittle: 'Armor',
-                  value: hero.baseArmor.toString(),
+              if (hero.baseMana != null)
+                HeroBaseHealthMana(
+                  width: width,
+                  color: Colors.blue,
+                  title: hero.baseMana.toString(),
                 ),
-                SizedBox(height: 10),
-                if (hero.roles != null)
-                  HeroRolesWidget(
-                    roles: hero.roles!,
-                    height: height * 0.3,
-                  ),
-              ],
-            ),
+              SizedBox(height: 20),
+              HeroFightCharacteristics(
+                imagePath: Assets.images.iconMovementSpeed.path,
+                tittle: 'Speed',
+                value: hero.moveSpeed.toString(),
+              ),
+              HeroFightCharacteristics(
+                imagePath: Assets.images.iconDamage.path,
+                tittle: 'Damage',
+                value: '${hero.baseAttackMin}-${hero.baseAttackMax}',
+              ),
+              HeroFightCharacteristics(
+                imagePath: Assets.images.iconArmor.path,
+                tittle: 'Armor',
+                value: hero.baseArmor.toString(),
+              ),
+              SizedBox(height: 10),
+              if (hero.roles != null)
+                HeroRolesWidget(
+                  roles: hero.roles!,
+                  height: height * 0.054 * hero.roles!.length,
+                ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   String? getImage(String? primaryAttr) {
@@ -101,6 +106,17 @@ class HeroDetailsWidget extends StatelessWidget {
         return Assets.images.heroStrength.path;
       case 'int':
         return Assets.images.heroIntelligence.path;
+      default:
+        return null;
+    }
+  }
+
+  String? getAttackTypeImg(String? attackType) {
+    switch (attackType) {
+      case 'Melee':
+        return Assets.images.melee;
+      case 'Ranged':
+        return Assets.images.ranged;
       default:
         return null;
     }

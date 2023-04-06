@@ -16,6 +16,7 @@ class HeroRolesWidget extends StatelessWidget {
       ),
       SizedBox(height: 10),
       Container(
+        color: Colors.green,
         height: height,
         child: ListView.builder(
           physics: const NeverScrollableScrollPhysics(),

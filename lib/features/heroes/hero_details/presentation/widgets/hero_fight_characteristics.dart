@@ -1,5 +1,6 @@
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HeroFightCharacteristics extends StatelessWidget {
   const HeroFightCharacteristics({
@@ -18,7 +19,11 @@ class HeroFightCharacteristics extends StatelessWidget {
       padding: EdgeInsets.only(left: 0, bottom: 15),
       child: Row(
         children: [
-          if (imagePath != null) Image.asset(imagePath!, height: 20, width: 20),
+          if (imagePath != null)
+            if (imagePath!.contains('.svg'))
+              SvgPicture.asset(imagePath!)
+            else
+              Image.asset(imagePath!, height: 20, width: 20),
           SizedBox(width: 15),
           if (tittle != null)
             Text(

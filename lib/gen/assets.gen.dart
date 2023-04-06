@@ -40,15 +40,23 @@ class $AssetsImagesGen {
   AssetGenImage get iconMovementSpeed =>
       const AssetGenImage('assets/images/icon_movement_speed.png');
 
+  /// File path: assets/images/melee.svg
+  String get melee => 'assets/images/melee.svg';
+
+  /// File path: assets/images/ranged.svg
+  String get ranged => 'assets/images/ranged.svg';
+
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
         dotaLogo,
         heroAgility,
         heroIntelligence,
         heroStrength,
         iconArmor,
         iconDamage,
-        iconMovementSpeed
+        iconMovementSpeed,
+        melee,
+        ranged
       ];
 }
 
