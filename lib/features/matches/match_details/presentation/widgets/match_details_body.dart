@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
+import 'package:dota_online/features/matches/match_details/presentation/widgets/dota_sliver_persistent_header.dart';
 import 'package:flutter/material.dart';
 
 class MatchDetailsBody extends StatelessWidget {
@@ -10,111 +11,9 @@ class MatchDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverList(
-          delegate: SliverChildListDelegate([
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  if (matchDetails.matchId != null)
-                    Text(
-                      'Match ${matchDetails.matchId.toString()}',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  SizedBox(height: 10),
-                  if (matchDetails.league != null &&
-                      matchDetails.league!.name != null)
-                    Text(
-                      matchDetails.league!.name!,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  SizedBox(height: 10),
-                  FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            if (matchDetails.radiantTeam != null &&
-                                matchDetails.radiantTeam!.name != null)
-                              Text(
-                                matchDetails.radiantTeam!.name!,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            Text(
-                              'The Radiant',
-                              style: TextStyle(
-                                color: Colors.green,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(width: 20),
-                        Text(
-                          matchDetails.radiantScore.toString(),
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          ' : ',
-                          style: TextStyle(fontSize: 25),
-                        ),
-                        Text(
-                          matchDetails.direScore.toString(),
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(width: 20),
-                        Column(
-                          children: [
-                            if (matchDetails.direTeam != null &&
-                                matchDetails.direTeam!.name != null)
-                              Text(
-                                matchDetails.direTeam!.name!,
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            Text(
-                              'The Dire',
-                              style: TextStyle(
-                                color: Colors.red,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Text(
-                    'score',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Duration: ${((matchDetails.duration!) / 60).toStringAsFixed(2)}',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
-              ),
-            )
-          ]),
+        SliverPersistentHeader(
+          pinned: true,
+          delegate: DotaSliverPersistentHeader(matchDetails: matchDetails),
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
@@ -131,29 +30,53 @@ class MatchDetailsBody extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const Text(
-                          '🎮',
-                          style: TextStyle(fontSize: 30),
+                        Expanded(
+                          child: Row(
+                            children: [
+                              const Text(
+                                '🎮',
+                                style: TextStyle(fontSize: 30),
+                              ),
+                              const SizedBox(width: 10),
+                              if (matchDetails.players != null &&
+                                  matchDetails.players![index].name != null)
+                                Text(matchDetails.players![index].name!)
+                              else
+                                Text(
+                                  'Name not found :(',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                            ],
+                          ),
                         ),
-                        SizedBox(width: 5),
-                        if (matchDetails.players != null &&
-                            matchDetails.players![index].name != null)
-                          Text(matchDetails.players![index].name!),
-                        if (matchDetails.players != null &&
-                            matchDetails.players![index].kills != null)
-                          SizedBox(width: 10),
-                        Text(
-                            'K: ${matchDetails.players![index].kills!.toString()}'),
-                        if (matchDetails.players != null &&
-                            matchDetails.players![index].assists != null)
-                          SizedBox(width: 10),
-                        Text(
-                            'A: ${matchDetails.players![index].assists!.toString()}'),
-                        if (matchDetails.players != null &&
-                            matchDetails.players![index].deaths != null)
-                          SizedBox(width: 10),
-                        Text(
-                            'D: ${matchDetails.players![index].deaths!.toString()}'),
+                        Row(
+                          children: [
+                            if (matchDetails.players != null &&
+                                matchDetails.players![index].kills != null)
+                              SizedBox(
+                                width: 40,
+                                child: Text(
+                                    'K: ${matchDetails.players![index].kills!.toString()}'),
+                              ),
+                            const SizedBox(width: 10),
+                            if (matchDetails.players != null &&
+                                matchDetails.players![index].deaths != null)
+                              SizedBox(
+                                width: 40,
+                                child: Text(
+                                    'D: ${matchDetails.players![index].deaths!.toString()}'),
+                              ),
+                            const SizedBox(width: 10),
+                            if (matchDetails.players != null &&
+                                matchDetails.players![index].assists != null)
+                              SizedBox(
+                                width: 40,
+                                child: Text(
+                                  'A: ${matchDetails.players![index].assists!.toString()}',
+                                ),
+                              ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -161,7 +84,7 @@ class MatchDetailsBody extends StatelessWidget {
               );
             },
           ),
-        )
+        ),
       ],
     );
   }

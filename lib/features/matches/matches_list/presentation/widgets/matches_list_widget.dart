@@ -1,5 +1,7 @@
 import 'package:dota_online/core/api/models/match/match_model.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/features/matches/matches_list/domain/matches_list_cubit.dart';
 import 'package:dota_online/features/matches/matches_list/domain/matches_list_state.dart';
@@ -23,14 +25,14 @@ class MatchesListWidget extends StatelessWidget {
       body: BlocBuilder<MatchesListCubit, MatchesListState>(
         builder: (context, state) {
           return state.map(
-            loading: (value) => Center(child: CircularProgressIndicator()),
+            loading: (value) => Center(child: DotaProgressIndicator()),
             loaded: (value) {
               return _Body(
                 detailsPath: detailsPath,
                 matches: value.matches,
               );
             },
-            error: (value) => Center(child: FlutterLogo()),
+            error: (value) => DotaErrorWidget(),
           );
         },
       ),
@@ -47,6 +49,7 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: matches.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () => context.go(detailsPath, extra: matches[index].matchId),

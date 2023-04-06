@@ -1,4 +1,6 @@
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/features/heroes/hero_list/domain/heroes_list_cubit.dart';
 import 'package:dota_online/features/heroes/hero_list/domain/heroes_list_state.dart';
@@ -19,16 +21,17 @@ class HeroesListWidget extends StatelessWidget {
         title: context.l10n.heroesList,
       ),
       body: BlocBuilder<HeroesListCubit, HeroesListState>(
-          builder: (context, state) {
-        return state.map(
-          loading: (_) => Center(child: CircularProgressIndicator()),
-          loaded: (state) => BodyHeroesWidget(
-            heroes: state.heroes,
-            detailsPath: detailsPath,
-          ),
-          error: (_) => Center(child: FlutterLogo()),
-        );
-      }),
+        builder: (context, state) {
+          return state.map(
+            loading: (_) => Center(child: DotaProgressIndicator()),
+            loaded: (state) => BodyHeroesWidget(
+              heroes: state.heroes,
+              detailsPath: detailsPath,
+            ),
+            error: (_) => DotaErrorWidget(),
+          );
+        },
+      ),
     );
   }
 }
