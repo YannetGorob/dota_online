@@ -1,5 +1,6 @@
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/features/teams/team_details/domain/team_detail_cubit.dart';
 import 'package:dota_online/features/teams/team_details/domain/team_detail_state.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/team_details_body.dart';
@@ -22,7 +23,7 @@ class TeamDetailsWidget extends StatelessWidget {
         builder: (context, state) {
           return state.map(
             error: (value) => DotaErrorWidget(),
-            loading: (value) => Center(child: CircularProgressIndicator()),
+            loading: (value) => Center(child: DotaProgressIndicator()),
             loaded: (value) {
               return TeamDetailsBody(
                 players: value.players,

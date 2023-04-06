@@ -1,5 +1,6 @@
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/features/teams/teams_list/domain/teams_list_state.dart';
 import 'package:dota_online/features/teams/teams_list/presentation/widgets/team_list_body.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -25,7 +26,7 @@ class TeamsListWidget extends StatelessWidget {
             loaded: (value) {
               return TeamListBody(teams: value.teams, detailsPath: detailsPath);
             },
-            loading: (value) => Center(child: CircularProgressIndicator()),
+            loading: (value) => Center(child: DotaProgressIndicator()),
           );
         },
       ),
