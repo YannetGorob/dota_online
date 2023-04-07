@@ -1,4 +1,7 @@
 import 'package:dota_online/core/api/models/match/match_model.dart';
+import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/features/matches/matches_list/presentation/widgets/team_name_on_matches_list.dart';
+import 'package:dota_online/features/matches/matches_list/presentation/widgets/team_score_on_matches_list.dart';
 import 'package:flutter/material.dart';
 
 class MatchCard extends StatelessWidget {
@@ -15,62 +18,37 @@ class MatchCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              '🏆 ${match.leagueName ?? 'Error'}',
+              '🏆 ${match.leagueName ?? '???'}',
               style: const TextStyle(fontSize: 15),
               textAlign: TextAlign.center,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: Text(
-                    '♿️${match.radiantName ?? '---'}',
-                    maxLines: 1,
-                    style: TextStyle(
-                      color: Colors.green.shade700,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: TeamNameOnMatchesListWidget(
+                    teamColor: radiantColor,
+                    teamName: match.radiantName ?? '???',
                   ),
                 ),
-                Center(child: Text(' vs ')),
+                const Expanded(flex: 0, child: Center(child: Text(' vs '))),
                 Expanded(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      '♿️${match.direName ?? 'Error'}',
-                      style: TextStyle(
-                        color: Colors.red.shade700,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  child: TeamNameOnMatchesListWidget(
+                    teamName: match.direName ?? '???',
+                    teamColor: direColor,
                   ),
                 ),
               ],
             ),
             if (match.duration != null)
-              Text('⏳${(match.duration! / 60).toStringAsFixed(2)}'),
+              Text(
+                '⏳${(match.duration! / 60).toStringAsFixed(2).replaceAll('.', ':')}',
+              ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (match.direScore != null)
-                  Text(
-                    match.direScore.toString(),
-                    style: const TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                teamScoreOnMatchesList(teamScore: match.radiantScore ?? 0),
                 const Text(' : ', style: TextStyle(fontSize: 30)),
-                if (match.radiantScore != null)
-                  Text(
-                    match.radiantScore.toString(),
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 40,
-                    ),
-                  ),
+                teamScoreOnMatchesList(teamScore: match.direScore ?? 0),
               ],
             ),
             const Text(
