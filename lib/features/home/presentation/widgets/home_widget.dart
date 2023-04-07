@@ -34,12 +34,12 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     tabs = [
       ScaffoldWithNavBarTabItem(
-      initialLocation: '/matches',
+      initialLocation: '/${AppRoutes.matchesPage.name}',
       icon: Icon(Icons.emoji_events_rounded),
       label: context.l10n.matchesTab,
     ),
       ScaffoldWithNavBarTabItem(
-        initialLocation: '/' + AppRoutes.teamsPage.name,
+        initialLocation: '/${AppRoutes.teamsPage.name}',
         icon: Icon(Icons.people),
         label: context.l10n.teamsTab,
       ),

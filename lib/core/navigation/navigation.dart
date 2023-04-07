@@ -1,9 +1,9 @@
+import 'package:dota_online/app/app.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_widget.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_page.dart';
@@ -18,6 +18,8 @@ enum AppRoutes {
   teamDetailsPage,
   playersListPage,
   teamMatchesPage,
+  matchesPage,
+  matchDetailsPage,
 }
 
 extension AppRoutesExtension on AppRoutes {
@@ -31,6 +33,10 @@ extension AppRoutesExtension on AppRoutes {
         return 'players_list';
       case AppRoutes.teamMatchesPage:
         return 'team_matches';
+      case AppRoutes.matchesPage:
+        return 'matches';
+      case AppRoutes.matchDetailsPage:
+        return 'match_details';
       default:
         return 'teams';
     }
@@ -39,7 +45,7 @@ extension AppRoutesExtension on AppRoutes {
 
 class Navigation {
   final goRouter = GoRouter(
-    initialLocation: '/matches',
+    initialLocation: '/${AppRoutes.matchesPage.name}',
     routes: [
       ShellRoute(
         builder: (context, state, child) {
@@ -47,21 +53,20 @@ class Navigation {
         },
         routes: [
           GoRoute(
-            path: '/matches',
+            name: AppRoutes.matchesPage.name,
+            path: '/${AppRoutes.matchesPage.name}',
             pageBuilder: (context, state) => NoTransitionPage(
               key: state.pageKey,
-              child: MatchesListPage(
-                detailsPath: '/matches/match_details',
-              ),
+              child: MatchesListPage(),
             ),
             routes: [
               GoRoute(
-                  path: 'match_details',
-                  builder: (context, state) {
-                    return MatchDetailsPage(
-                      matchId: state.extra as int,
-                    );
-                  }),
+                name: AppRoutes.matchDetailsPage.name,
+                path: AppRoutes.matchDetailsPage.name,
+                builder: (context, state) {
+                  return MatchDetailsPage(matchId: state.extra as int);
+                },
+              ),
             ],
           ),
           GoRoute(
