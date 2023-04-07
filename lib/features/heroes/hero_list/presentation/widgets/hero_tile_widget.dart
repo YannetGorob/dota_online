@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
-import 'package:dota_online/core/utils/choose_img.dart';
+import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:dota_online/gen/assets.gen.dart';
@@ -20,7 +20,7 @@ class HeroTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
     final cardWidth = MediaQuery.of(context).size.width;
-    final primaryAtrImg = ChoseImg.getPrimaryAttrImage(hero.primaryAttr);
+    final primaryAtrImg = HeroAssetUtil.getPrimaryAttrImage(hero.primaryAttr);
     return Card(
       margin: EdgeInsets.symmetric(
         horizontal: defaultPadding,

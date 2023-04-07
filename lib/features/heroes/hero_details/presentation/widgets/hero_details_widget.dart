@@ -23,7 +23,7 @@ class HeroDetailsWidget extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
-              child: HeroGeneralInfoW(
+              child: HeroGeneralInfoWidget(
                 hero: hero,
                 height: height,
                 width: width,

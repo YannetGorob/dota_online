@@ -1,6 +1,6 @@
 import 'package:dota_online/gen/assets.gen.dart';
 
-class ChoseImg {
+class HeroAssetUtil {
   static String? getPrimaryAttrImage(String? primaryAttr) {
     switch (primaryAttr) {
       case 'agi':
