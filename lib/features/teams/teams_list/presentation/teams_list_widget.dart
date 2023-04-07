@@ -16,17 +16,15 @@ class TeamsListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DotaAppBar(
-        title: context.l10n.teamsList,
-      ),
+      appBar: DotaAppBar(title: context.l10n.teamsList),
       body: BlocBuilder<TeamsListCubit, TeamsListState>(
         builder: (context, state) {
           return state.map(
-            error: (value) => DotaErrorWidget(),
+            error: (_) => DotaErrorWidget(),
+            loading: (_) => Center(child: DotaProgressIndicator()),
             loaded: (value) {
               return TeamListBody(teams: value.teams, detailsPath: detailsPath);
             },
-            loading: (value) => Center(child: DotaProgressIndicator()),
           );
         },
       ),
