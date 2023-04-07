@@ -7,10 +7,8 @@ class MatchScoreWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    if (teamMatch.radiantScore == null &&
-        teamMatch.direScore == null) {
-      return Container();
+    if (teamMatch.radiantScore == null && teamMatch.direScore == null) {
+      return SizedBox();
     }
 
     return Row(
@@ -24,8 +22,10 @@ class MatchScoreWidget extends StatelessWidget {
             color: radiantColor,
           ),
         ),
-        Text(' : ',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        Text(
+          ' : ',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
         Text(
           teamMatch.direScore.toString(),
           style: TextStyle(
@@ -33,7 +33,7 @@ class MatchScoreWidget extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: direColor,
           ),
-        )
+        ),
       ],
     );
   }

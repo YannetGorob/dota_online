@@ -16,7 +16,6 @@ class MatchesListCubit extends Cubit<MatchesListState> {
         if (!this.isClosed) {
           emit(MatchesListState.loaded(matches: data));
         }
-        ;
       },
       failure: (_) {
         if (!this.isClosed) {

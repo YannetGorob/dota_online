@@ -14,16 +14,9 @@ class HeroAttributeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          imgPath,
-          height: 30,
-        ),
-        SizedBox(width: 7),
-        if (value != null)
-          Text(
-            value!,
-            style: CustomTextStyle.textTextStyle,
-          ),
+        Image.asset(imgPath, height: 30),
+        SizedBox(width: 8),
+        if (value != null) Text(value!, style: CustomTextStyle.textTextStyle),
       ],
     );
   }

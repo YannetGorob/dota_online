@@ -42,7 +42,6 @@ class _HomeWidgetState extends State<HomeWidget> {
         icon: Icon(Icons.people),
         label: context.l10n.teamsTab,
       ),
-
       ScaffoldWithNavBarTabItem(
         initialLocation: '/heroes',
         icon: Icon(CupertinoIcons.ant),

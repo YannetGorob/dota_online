@@ -26,8 +26,8 @@ class TeamDetailsWidget extends StatelessWidget {
       body: BlocBuilder<TeamDetailCubit, TeamDetailState>(
         builder: (context, state) {
           return state.map(
-            error: (value) => DotaErrorWidget(),
-            loading: (value) => Center(child: DotaProgressIndicator()),
+            error: (_) => DotaErrorWidget(),
+            loading: (_) => Center(child: DotaProgressIndicator()),
             loaded: (value) {
               return TeamDetailsBody(
                 players: value.players,

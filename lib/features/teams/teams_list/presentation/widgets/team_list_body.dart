@@ -23,27 +23,26 @@ class TeamListBody extends StatelessWidget {
           ),
           sliver: SliverGrid(
             delegate: SliverChildBuilderDelegate(
+              childCount: teams.length,
               (context, index) {
+                final item = teams[index];
                 return InkWell(
                   onTap: () {
-                    if(teams[index].teamId != null){
+                    if (item.teamId != null) {
                       context.goNamed(
                         'team_details',
-                        queryParams: {'teamId': teams[index].teamId.toString()},
-                        extra: teams[index]
+                        queryParams: {'teamId': item.teamId.toString()},
+                        extra: item,
                       );
                     }
                   },
-                  child: TeamsListItem(
-                    team: teams[index],
-                  ),
+                  child: TeamsListItem(team: item),
                 );
               },
-              childCount: teams.length,
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+              mainAxisSpacing: 15,
+              crossAxisSpacing: 15,
               crossAxisCount: 2,
               childAspectRatio: 0.7,
             ),
