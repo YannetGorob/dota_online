@@ -19,7 +19,7 @@ class MatchDetailsWidget extends StatelessWidget {
       body: BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
         builder: (context, state) {
           return state.map(
-            loading: ((_) => Center(child: DotaProgressIndicator())),
+            loading: ((_) => DotaProgressIndicator()),
             error: (_) => DotaErrorWidget(),
             loaded: (value) {
               return MatchDetailsBody(matchDetails: value.matchDetails);
