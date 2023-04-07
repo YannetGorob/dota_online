@@ -1,11 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'card_info_field.dart';
-part 'team_card_image.dart';
+
 part 'team_card_text_content.dart';
 
 class TeamsListItem extends StatelessWidget {
@@ -17,41 +16,40 @@ class TeamsListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final canShowTeam = team.name != null;
 
-    if (!canShowTeam) return Container();
+    if (!canShowTeam) return SizedBox();
 
-    final cardHeight = MediaQuery.of(context).size.height * 0.285;
-    final cardWidth = MediaQuery.of(context).size.width * 0.42;
+    return LayoutBuilder(
+      builder: (context, size) {
+        final cardHeight = size.maxHeight;
+        final cardWidth = size.maxWidth;
 
-    /*return LayoutBuilder(builder: (BuildContext context, BoxConstraints r) {
-      r.maxHeight
-    },);*/
-    return UnconstrainedBox(
-      child: Container(
-        height: cardHeight,
-        width: cardWidth,
-        color: Colors.black38,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TeamCardImage(
-                height: cardHeight * 0.4,
-                imageUrl: team.logoUrl,
-              ),
-              TeamCardTextContent(
-                cardHeight: cardHeight,
-                cardWidth: cardWidth,
-                teamName: team.name!,
-                teamRating: team.rating.toString(),
-                teamWins: team.wins.toString(),
-                teamLosses: team.losses.toString(),
-              ),
-            ],
+        return Container(
+          height: size.maxHeight,
+          width: size.maxWidth,
+          color: Colors.black38,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                DotaCachedImage(
+                  height: cardHeight * 0.4,
+                  imageUrl: team.logoUrl,
+                ),
+                TeamCardTextContent(
+                  cardHeight: cardHeight,
+                  cardWidth: cardWidth,
+                  teamName: team.name!,
+                  teamRating: team.rating.toString(),
+                  teamWins: team.wins.toString(),
+                  teamLosses: team.losses.toString(),
+                ),
+              ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

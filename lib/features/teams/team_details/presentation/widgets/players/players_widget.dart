@@ -3,6 +3,7 @@ import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/player_list_item.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class PlayersWidget extends StatelessWidget {
@@ -13,12 +14,11 @@ class PlayersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(title: 'Players'),
+      appBar: DotaAppBar(title: context.l10n.players),
       body: CustomScrollView(
         slivers: [
           SliverPadding(
             padding: EdgeInsetsDirectional.symmetric(
-              vertical: 0,
               horizontal: defaultPadding,
             ),
             sliver: SliverList(
@@ -30,7 +30,7 @@ class PlayersWidget extends StatelessWidget {
                 },
               ),
             ),
-          )
+          ),
         ],
       ),
     );
