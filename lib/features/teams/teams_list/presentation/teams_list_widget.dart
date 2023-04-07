@@ -9,24 +9,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dota_online/features/teams/teams_list/domain/teams_list_cubit.dart';
 
 class TeamsListWidget extends StatelessWidget {
-  TeamsListWidget({required this.detailsPath, super.key});
-
-  final String detailsPath;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DotaAppBar(
-        title: context.l10n.teamsList,
-      ),
+      appBar: DotaAppBar(title: context.l10n.teamsList),
       body: BlocBuilder<TeamsListCubit, TeamsListState>(
         builder: (context, state) {
           return state.map(
-            error: (value) => DotaErrorWidget(),
+            error: (_) => DotaErrorWidget(),
+            loading: (_) => DotaProgressIndicator(),
             loaded: (value) {
-              return TeamListBody(teams: value.teams, detailsPath: detailsPath);
+              return TeamListBody(teams: value.teams);
             },
-            loading: (value) => Center(child: DotaProgressIndicator()),
           );
         },
       ),

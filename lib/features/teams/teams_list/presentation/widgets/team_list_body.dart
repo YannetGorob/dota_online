@@ -1,16 +1,13 @@
 import 'package:dota_online/core/api/models/team/team_model.dart';
+import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/features/teams/teams_list/presentation/widgets/teams_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class TeamListBody extends StatelessWidget {
-  const TeamListBody({
-    required this.teams,
-    required this.detailsPath,
-  });
+  const TeamListBody({required this.teams});
 
   final List<TeamModel> teams;
-  final String detailsPath;
 
   @override
   Widget build(BuildContext context) {
@@ -23,27 +20,26 @@ class TeamListBody extends StatelessWidget {
           ),
           sliver: SliverGrid(
             delegate: SliverChildBuilderDelegate(
+              childCount: teams.length,
               (context, index) {
+                final item = teams[index];
                 return InkWell(
                   onTap: () {
-                    if(teams[index].teamId != null){
+                    if (item.teamId != null) {
                       context.goNamed(
-                        'team_details',
-                        queryParams: {'teamId': teams[index].teamId.toString()},
-                        extra: teams[index]
+                        AppRoutes.teamDetailsPage.name,
+                        queryParams: {'teamId': item.teamId.toString()},
+                        extra: item,
                       );
                     }
                   },
-                  child: TeamsListItem(
-                    team: teams[index],
-                  ),
+                  child: TeamsListItem(team: item),
                 );
               },
-              childCount: teams.length,
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
+              mainAxisSpacing: 15,
+              crossAxisSpacing: 15,
               crossAxisCount: 2,
               childAspectRatio: 0.7,
             ),

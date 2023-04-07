@@ -10,13 +10,9 @@ class DotaErrorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return DotaScaffold(
       appBar: DotaAppBar(),
-      body: Container(
+      body: Padding(
         padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Image.asset(Assets.images.dotaLogo.path),
-          ],
-        ),
+        child: Image.asset(Assets.images.dotaLogo.path),
       ),
     );
   }

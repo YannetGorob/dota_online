@@ -1,4 +1,3 @@
-import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
@@ -15,29 +14,19 @@ class MatchDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
-      builder: (context, state) {
-        return state.map(
-          loading: ((value) => Center(child: DotaProgressIndicator())),
-          loaded: (value) => _Body(matchDetails: value.matchDetails),
-          error: (value) => DotaErrorWidget(),
-        );
-      },
-    );
-  }
-}
-
-class _Body extends StatelessWidget {
-  const _Body({required this.matchDetails});
-
-  final MatchDetails matchDetails;
-
-  @override
-  Widget build(BuildContext context) {
     return DotaScaffold(
-        appBar: DotaAppBar(
-          title: context.l10n.matchDetails,
-        ),
-        body: MatchDetailsBody(matchDetails: matchDetails));
+      appBar: DotaAppBar(title: context.l10n.matchDetails),
+      body: BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
+        builder: (context, state) {
+          return state.map(
+            loading: ((_) => Center(child: DotaProgressIndicator())),
+            error: (_) => DotaErrorWidget(),
+            loaded: (value) {
+              return MatchDetailsBody(matchDetails: value.matchDetails);
+            },
+          );
+        },
+      ),
+    );
   }
 }

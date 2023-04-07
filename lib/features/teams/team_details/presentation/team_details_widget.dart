@@ -9,12 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TeamDetailsWidget extends StatelessWidget {
-  const TeamDetailsWidget({
-    required this.matchesPath,
-    required this.team,
-  });
+  const TeamDetailsWidget({required this.team});
 
-  final String matchesPath;
   final TeamModel team;
 
   @override
@@ -26,13 +22,12 @@ class TeamDetailsWidget extends StatelessWidget {
       body: BlocBuilder<TeamDetailCubit, TeamDetailState>(
         builder: (context, state) {
           return state.map(
-            error: (value) => DotaErrorWidget(),
-            loading: (value) => Center(child: DotaProgressIndicator()),
+            error: (_) => DotaErrorWidget(),
+            loading: (_) => Center(child: DotaProgressIndicator()),
             loaded: (value) {
               return TeamDetailsBody(
                 players: value.players,
                 matches: value.matches,
-                matchesPath: matchesPath,
                 team: team,
               );
             },

@@ -1,4 +1,8 @@
 import 'package:bloc/bloc.dart';
+import 'package:dota_online/core/api/base/api_result.dart';
+import 'package:dota_online/core/api/models/match/match_model.dart';
+import 'package:dota_online/core/api/models/team/player_model.dart';
+import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/providers/teams_provider.dart';
 import 'package:dota_online/features/teams/team_details/domain/team_detail_state.dart';
 
@@ -10,14 +14,16 @@ class TeamDetailCubit extends Cubit<TeamDetailState> {
   final TeamsProvider _teamsProvider;
 
   Future<void> loadTeamDetailsData(int teamId) async {
-    final playersResponse = await _teamsProvider.getPlayers(teamId);
-    final matchesResponse = await _teamsProvider.getTeamMatches(teamId);
+    final responses = await Future.wait([
+      _teamsProvider.getPlayers(teamId),
+      _teamsProvider.getTeamMatches(teamId),
+    ]);
 
-    final players = playersResponse.map(
+    final players = (responses[0] as ApiResult<List<PlayerModel>>).map(
       success: (data) => data.value.where((e) => e.name != null).toList(),
       failure: (_) => null,
     );
-    final matches = matchesResponse.map(
+    final matches = (responses[1] as ApiResult<List<TeamMatches>>).map(
       success: (data) => data.value,
       failure: (_) => null,
     );

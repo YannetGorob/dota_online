@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/providers/matches_provider.dart';
-
-import 'matches_list_state.dart';
+import 'package:dota_online/features/matches/matches_list/domain/matches_list_state.dart';
 
 class MatchesListCubit extends Cubit<MatchesListState> {
   MatchesListCubit({required MatchesProvider matchesProvider})
@@ -12,16 +11,17 @@ class MatchesListCubit extends Cubit<MatchesListState> {
 
   Future<void> loadInitialMatchesData() async {
     final matchesResponse = await _matchesProvider.getMatches();
-    matchesResponse.when(success: (data) {
-      if (!this.isClosed)
-        emit(
-          MatchesListState.loaded(matches: data),
-        );
-    }, failure: (_) {
-      if (!this.isClosed)
-        emit(
-          MatchesListState.error(),
-        );
-    });
+    matchesResponse.when(
+      success: (data) {
+        if (!this.isClosed) {
+          emit(MatchesListState.loaded(matches: data));
+        }
+      },
+      failure: (_) {
+        if (!this.isClosed) {
+          emit(MatchesListState.error());
+        }
+      },
+    );
   }
 }
