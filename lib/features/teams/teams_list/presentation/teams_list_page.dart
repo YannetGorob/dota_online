@@ -6,9 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TeamsListPage extends StatelessWidget {
-  TeamsListPage({Key? key, required this.detailsPath}) : super(key: key);
-
-  final String detailsPath;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class TeamsListPage extends StatelessWidget {
         teamsProvider: locator.get<DotaApi>().teams,
       )..loadInitialTeamsData();
       },
-      child: TeamsListWidget(detailsPath: detailsPath),
+      child: TeamsListWidget(),
     );
   }
 }

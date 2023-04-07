@@ -1,3 +1,4 @@
+import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       label: context.l10n.matchesTab,
     ),
       ScaffoldWithNavBarTabItem(
-        initialLocation: '/teams',
+        initialLocation: '/' + AppRoutes.teamsPage.name,
         icon: Icon(Icons.people),
         label: context.l10n.teamsTab,
       ),

@@ -2,6 +2,7 @@ import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
-    required this.matchesPath,
     required this.team,
     this.players,
     this.matches,
@@ -19,7 +19,6 @@ class TeamDetailsBody extends StatelessWidget {
   final List<PlayerModel>? players;
   final List<TeamMatches>? matches;
   final TeamModel team;
-  final String matchesPath;
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +73,8 @@ class TeamDetailsBody extends StatelessWidget {
               (context, index) {
                 return InkWell(
                   onTap: () {
-                    context.push(
-                      matchesPath,
+                    context.pushNamed(
+                      AppRoutes.teamMatchesPage.name,
                       extra: matches![index].matchId,
                     );
                   },
