@@ -16,14 +16,15 @@ class HeroFightCharacteristics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 0, bottom: 15),
+      padding: EdgeInsets.only(bottom: 15),
       child: Row(
         children: [
           if (imagePath != null)
-            if (imagePath!.contains('.svg'))
-              SvgPicture.asset(imagePath!)
-            else
-              Image.asset(imagePath!, height: 20, width: 20),
+            Image.asset(
+              imagePath!,
+              height: 20,
+              width: 20,
+            ),
           SizedBox(width: 15),
           if (tittle != null)
             Text(

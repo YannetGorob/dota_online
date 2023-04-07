@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'dota_progress_indicator.dart';
@@ -17,22 +18,18 @@ class DotaCachedImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (imageUrl == null) {
-      return SizedBox(
-        child: Image.asset(
-          'assets/images/dota_logo.png',
-          height: height,
-          width: width,
-        ),
-      );
+      return Assets.images.dotaLogo.image(height: height, width: width);
     }
 
-    return SizedBox(
+    return CachedNetworkImage(
       height: height,
-      child: CachedNetworkImage(
-        fit: BoxFit.fill,
-        imageUrl: imageUrl!,
-        placeholder: (_, __) => DotaProgressIndicator(),
-        errorWidget: (_, __, ___) => Image.asset('assets/images/dota_logo.png'),
+      width: width,
+      fit: BoxFit.fill,
+      imageUrl: imageUrl!,
+      placeholder: (_, __) => DotaProgressIndicator(),
+      errorWidget: (_, __, ___) => Assets.images.dotaLogo.image(
+        height: height,
+        width: width,
       ),
     );
   }

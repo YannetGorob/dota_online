@@ -19,11 +19,12 @@ class HeroDetailsWidget extends StatelessWidget {
     return DotaScaffold(
       appBar: DotaAppBar(title: hero.localizedName),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: CustomScrollView(
           slivers: [
+            SliverPadding(padding: EdgeInsets.only(top: 15)),
             SliverToBoxAdapter(
-              child: HeroGeneralInfoW(
+              child: HeroGeneralInfoWidget(
                 hero: hero,
                 height: height,
                 width: width,
