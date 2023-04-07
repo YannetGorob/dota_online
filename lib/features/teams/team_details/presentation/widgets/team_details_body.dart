@@ -106,8 +106,8 @@ class TeamDetailsBody extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        context.push(
-          '/teams/team_details/players_list',
+        context.pushNamed(
+          AppRoutes.playersListPage.name,
           extra: players,
         );
       },
