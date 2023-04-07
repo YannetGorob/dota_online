@@ -1,9 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
-import 'package:dota_online/features/teams/teams_list/presentation/widgets/teams_list_item.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -43,94 +41,120 @@ class TeamMatchListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            FittedBox(
-              fit: BoxFit.fill,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      TeamCardImage(
-                        height: 80,
-                        imageUrl: team.logoUrl,
-                      ),
-                      Text(
-                        team.name.toString(),
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.tinos(
-                          textStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    '  VS  ',
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.tinos(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 40,
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      TeamCardImage(
-                        height: 80,
-                        imageUrl: teamMatch.opposingTeamLogo,
-                      ),
-                      Text(
-                        teamMatch.opposingTeamName.toString(),
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.tinos(
-                          textStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            Divider(color: Colors.white),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                MatchScoreWidget(teamMatch: teamMatch),
-                if (teamMatch.duration != null)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.timer),
-                      Text(
-                        (teamMatch.duration! / 60)
-                            .toStringAsFixed(2)
-                            .replaceAll('.', ':'),
-                      ),
-                    ],
-                  ),
-                if (teamMatch.startTime != null)
-                  Text(
-                    DateFormat('dd.MM.yyyy')
-                        .format(
-                          DateTime.fromMillisecondsSinceEpoch(
-                              teamMatch.startTime! * 1000),
-                        )
-                        .toString(),
-                  ),
-              ],
-            ),
+          _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
+          Divider(color: Colors.white),
+          _MatchParamsWidget(teamMatch: teamMatch),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _MatchOpponentsWidget extends StatelessWidget {
+  const _MatchOpponentsWidget({
+    required this.teamMatch,
+    required this.team,
+  });
+
+  final TeamMatches teamMatch;
+  final TeamModel team;
+
+  @override
+  Widget build(BuildContext context) {
+    return FittedBox(
+      fit: BoxFit.fill,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          _TeamItem(
+            teamName: team.name.toString(),
+            img: team.logoUrl,
+          ),
+          Text(
+            '  VS  ',
+            style: GoogleFonts.tinos(
+              textStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
+              ),
+            ),
+          ),
+          _TeamItem(
+            teamName: teamMatch.opposingTeamName.toString(),
+            img: teamMatch.opposingTeamLogo,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MatchParamsWidget extends StatelessWidget {
+  const _MatchParamsWidget({required this.teamMatch});
+
+  final TeamMatches teamMatch;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        MatchScoreWidget(teamMatch: teamMatch),
+        if (teamMatch.duration != null)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.timer),
+              Text(_formatMatchDuration()),
+            ],
+          ),
+        if (teamMatch.startTime != null)
+          Text(_formatMatchStartTime()),
+      ],
+    );
+  }
+
+  String _formatMatchDuration() {
+    final timeInMinutes = teamMatch.duration! / 60;
+    return timeInMinutes.toStringAsFixed(2).replaceAll('.', ':');
+  }
+
+  String _formatMatchStartTime() {
+    final dt = DateTime.fromMillisecondsSinceEpoch(teamMatch.startTime! * 1000);
+    return DateFormat('dd.MM.yyyy').format(dt).toString();
+  }
+}
+
+class _TeamItem extends StatelessWidget {
+  const _TeamItem({
+    required this.teamName,
+    this.img,
+  });
+
+  final String teamName;
+  final String? img;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        DotaCachedImage(
+          imageUrl: img,
+          height: 80,
+        ),
+        Text(
+          teamName,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+          style: GoogleFonts.tinos(
+            textStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

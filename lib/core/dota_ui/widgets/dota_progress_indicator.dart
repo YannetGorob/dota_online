@@ -51,9 +51,11 @@ class _DotaProgressIndicatorState extends State<DotaProgressIndicator>
     return AnimatedBuilder(
       animation: motionAnimation,
       builder: (context, child) {
-        return Container(
-          child: Image.asset(Assets.images.dotaLogo.path),
-          height: motionAnimation.value * 100,
+        return Center(
+          child: Container(
+            child: Image.asset(Assets.images.dotaLogo.path),
+            height: motionAnimation.value * 100,
+          ),
         );
       },
     );

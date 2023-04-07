@@ -1,11 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'card_info_field.dart';
-part 'team_card_image.dart';
 part 'team_card_text_content.dart';
 
 class TeamsListItem extends StatelessWidget {
@@ -36,7 +34,7 @@ class TeamsListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TeamCardImage(
+              DotaCachedImage(
                 height: cardHeight * 0.4,
                 imageUrl: team.logoUrl,
               ),

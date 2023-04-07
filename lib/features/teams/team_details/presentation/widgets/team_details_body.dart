@@ -10,10 +10,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
-    required this.players,
-    required this.matches,
     required this.matchesPath,
     required this.team,
+    this.players,
+    this.matches,
   });
 
   final List<PlayerModel>? players;
@@ -45,7 +45,7 @@ class TeamDetailsBody extends StatelessWidget {
               ),
             ),
           PlayersList(players: players!),
-          if (players!.length != 0)
+          if (players!.isNotEmpty)
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 4),
               sliver: SliverToBoxAdapter(
