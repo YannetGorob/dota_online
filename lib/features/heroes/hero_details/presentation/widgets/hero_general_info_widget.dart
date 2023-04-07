@@ -1,49 +1,34 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
-import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
+import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_all_attributes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_base_health_mana.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_fight_characteristics.dart';
-import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_all_attributes.dart';
 import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class HeroGeneralInfoWidget extends StatelessWidget {
-  const HeroGeneralInfoWidget({
-    required this.hero,
-    required this.height,
-    required this.width,
-  });
+  const HeroGeneralInfoWidget({required this.hero});
 
   final HeroStats hero;
-  final double height;
-  final double width;
 
   @override
   Widget build(BuildContext context) {
-    final primaryAtrImg = HeroAssetUtil.getPrimaryAttrImage(hero.primaryAttr);
-    final attackTypeImg = HeroAssetUtil.getAttackTypeImg(hero.attackType);
     return Column(
       children: [
         SizedBox(height: 10),
         if (hero.attackType != null)
           HeroFightCharacteristics(
-            imagePath: attackTypeImg,
             tittle: 'Attack type',
             value: hero.attackType!,
+            imagePath: HeroAssetUtil.getAttackTypeAsset(hero.attackType),
           ),
         Hero(
           tag: hero.id!,
           child: ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(8),
-              topRight: Radius.circular(8),
-            ),
-            child: CachedHeroImage(
-              width: width,
-              imageUrl: hero.img!,
-              height: height * 0.2,
-            ),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(8)),
+            child: DotaCachedImage(imageUrl: hero.img, width: double.infinity),
           ),
         ),
         if (hero.baseHealth != null)
@@ -78,9 +63,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
           'Roles',
           style: CustomTextStyle.subtitleTextStyle,
         ),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10),
       ],
     );
   }

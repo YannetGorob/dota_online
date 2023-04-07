@@ -17,12 +17,17 @@ class HeroAllAttributes extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         HeroAttributeWidget(
-            imgPath: Assets.images.heroStrength.path, value: '${hero.baseStr}'),
+          imgPath: Assets.images.heroStrength.path,
+          value: '${hero.baseStr}',
+        ),
         HeroAttributeWidget(
-            imgPath: Assets.images.heroAgility.path, value: '${hero.baseAgi}'),
+          imgPath: Assets.images.heroAgility.path,
+          value: '${hero.baseAgi}',
+        ),
         HeroAttributeWidget(
-            imgPath: Assets.images.heroIntelligence.path,
-            value: '${hero.baseInt}'),
+          imgPath: Assets.images.heroIntelligence.path,
+          value: '${hero.baseInt}',
+        ),
       ],
     );
   }

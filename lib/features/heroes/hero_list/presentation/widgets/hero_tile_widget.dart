@@ -1,9 +1,8 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
-import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
-import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +19,7 @@ class HeroTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
     final cardWidth = MediaQuery.of(context).size.width;
-    final primaryAtrImg = HeroAssetUtil.getPrimaryAttrImage(hero.primaryAttr);
+    final primaryAtrImg = HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr);
     return Card(
       margin: EdgeInsets.symmetric(
         horizontal: defaultPadding,
@@ -53,7 +52,7 @@ class HeroTile extends StatelessWidget {
                 tag: hero.id!,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: CachedHeroImage(
+                  child: DotaCachedImage(
                     height: cardHeight * 0.7,
                     width: cardWidth,
                     imageUrl: hero.img,

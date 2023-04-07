@@ -22,10 +22,7 @@ class HeroBaseHealthMana extends StatelessWidget {
         ),
       ),
       height: 30,
-      child: Text(
-        title,
-        style: CustomTextStyle.textTextStyle,
-      ),
+      child: Text(title, style: CustomTextStyle.textTextStyle),
     );
   }
 }

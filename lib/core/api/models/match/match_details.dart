@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'match_details.freezed.dart';
+
 part 'match_details.g.dart';
 
 @freezed
@@ -57,6 +58,7 @@ class MatchDetailsPlayer with _$MatchDetailsPlayer {
     int? assists,
     int? deaths,
     int? kills,
+    @JsonKey(name: 'personaname') String? personName,
     String? name,
     bool? radiantWin,
     int? duration,

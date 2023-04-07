@@ -12,7 +12,7 @@ class DotaErrorWidget extends StatelessWidget {
       appBar: DotaAppBar(),
       body: Padding(
         padding: EdgeInsets.all(20),
-        child: Image.asset(Assets.images.dotaLogo.path),
+        child: Assets.images.dotaLogo.image(),
       ),
     );
   }

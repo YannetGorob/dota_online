@@ -12,8 +12,6 @@ class HeroDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
     final roles = hero.roles;
 
     return DotaScaffold(
@@ -22,13 +20,7 @@ class HeroDetailsWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: CustomScrollView(
           slivers: [
-            SliverToBoxAdapter(
-              child: HeroGeneralInfoWidget(
-                hero: hero,
-                height: height,
-                width: width,
-              ),
-            ),
+            SliverToBoxAdapter(child: HeroGeneralInfoWidget(hero: hero)),
             if (roles != null)
               SliverList(
                 delegate: SliverChildBuilderDelegate(

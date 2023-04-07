@@ -16,6 +16,7 @@ class _AppState extends State<App> {
   @override
   void initState() {
     super.initState();
+
     configureDependencies();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,

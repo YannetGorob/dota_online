@@ -1,7 +1,7 @@
 import 'package:dota_online/gen/assets.gen.dart';
 
 class HeroAssetUtil {
-  static String? getPrimaryAttrImage(String? primaryAttr) {
+  static String? getPrimaryAttributesAsset(String? primaryAttr) {
     switch (primaryAttr) {
       case 'agi':
         return Assets.images.heroAgility.path;
@@ -14,12 +14,12 @@ class HeroAssetUtil {
     }
   }
 
-  static String? getAttackTypeImg(String? attackType) {
+  static String? getAttackTypeAsset(String? attackType) {
     switch (attackType) {
       case 'Melee':
-        return Assets.images.melee;
+        return Assets.images.melee.path;
       case 'Ranged':
-        return Assets.images.ranged;
+        return Assets.images.ranged.path;
       default:
         return null;
     }

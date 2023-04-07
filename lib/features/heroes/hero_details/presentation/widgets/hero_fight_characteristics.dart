@@ -26,15 +26,8 @@ class HeroFightCharacteristics extends StatelessWidget {
               Image.asset(imagePath!, height: 20, width: 20),
           SizedBox(width: 15),
           if (tittle != null)
-            Text(
-              '${tittle}: ',
-              style: CustomTextStyle.subtitleTextStyle,
-            ),
-          if (value != null)
-            Text(
-              value!,
-              style: CustomTextStyle.textTextStyle,
-            )
+            Text('${tittle}: ', style: CustomTextStyle.subtitleTextStyle),
+          if (value != null) Text(value!, style: CustomTextStyle.textTextStyle)
         ],
       ),
     );
