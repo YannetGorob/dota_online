@@ -1,4 +1,6 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
+import 'package:dota_online/features/matches/match_details/presentation/widgets/team_name_on_match_details.dart';
+import 'package:dota_online/features/matches/match_details/presentation/widgets/team_score_on_match_details.dart';
 import 'package:flutter/material.dart';
 
 class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
@@ -24,10 +26,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             if (matchDetails.matchId != null)
               Text(
                 'Match ${matchDetails.matchId.toString()}',
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.grey,
-                ),
+                style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
             const SizedBox(height: 10),
             if (matchDetails.league != null &&
@@ -35,100 +34,42 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
               Text(
                 matchDetails.league!.name!,
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.grey,
-                ),
+                style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
             const SizedBox(height: 10),
             Row(
               children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      if (matchDetails.radiantTeam != null &&
-                          matchDetails.radiantTeam!.name != null)
-                        FittedBox(
-                          fit: BoxFit.fitWidth,
-                          child: Text(
-                            matchDetails.radiantTeam!.name!,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      const Text(
-                        'The Radiant',
-                        style: TextStyle(
-                          color: Colors.green,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 5),
-                Expanded(
-                  flex: 0,
-                  child: Center(
-                    child: Row(
-                      children: [
-                        Text(
-                          matchDetails.radiantScore.toString(),
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const Text(
-                          ' : ',
-                          style: TextStyle(fontSize: 25),
-                        ),
-                        Text(
-                          matchDetails.direScore.toString(),
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                if (matchDetails.radiantTeam != null &&
+                    matchDetails.direTeam != null)
+                  Expanded(
+                    child: TeamNameOnMatchDetails(
+                      matchDetails: matchDetails,
+                      teamName: matchDetails.radiantTeam!.name ?? '???',
                     ),
                   ),
+                Row(
+                  children: [
+                    TeamScoreOnMatchDetails(
+                      teamScore: matchDetails.radiantScore ?? 0,
+                    ),
+                    const Text(' : ', style: TextStyle(fontSize: 25)),
+                    TeamScoreOnMatchDetails(
+                      teamScore: matchDetails.direScore ?? 0,
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 5),
                 Expanded(
-                  child: Column(
-                    children: [
-                      if (matchDetails.direTeam != null &&
-                          matchDetails.direTeam!.name != null)
-                        FittedBox(
-                          fit: BoxFit.fitWidth,
-                          child: Text(
-                            matchDetails.direTeam!.name!,
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      const Text(
-                        'The Dire',
-                        style: TextStyle(
-                          color: Colors.red,
-                        ),
-                      ),
-                    ],
+                  child: TeamNameOnMatchDetails(
+                    matchDetails: matchDetails,
+                    teamName: matchDetails.direTeam!.name ?? '???',
                   ),
                 ),
               ],
             ),
-            const Text(
-              'score',
-              style: TextStyle(color: Colors.grey),
-            ),
+            const Text('score', style: TextStyle(color: Colors.grey)),
             const SizedBox(height: 10),
             Text(
-              'Duration: ${((matchDetails.duration!) / 60).toStringAsFixed(2)}',
+              'Duration: ${((matchDetails.duration!) / 60).toStringAsFixed(2).replaceAll('.', ':')}',
               style: TextStyle(color: Colors.grey),
             ),
           ],

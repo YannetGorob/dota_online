@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/dota_sliver_persistent_header.dart';
+import 'package:dota_online/features/matches/match_details/presentation/widgets/player_stats_widget.dart';
 import 'package:flutter/material.dart';
 
 class MatchDetailsBody extends StatelessWidget {
@@ -33,49 +33,27 @@ class MatchDetailsBody extends StatelessWidget {
                       Expanded(
                         child: Row(
                           children: [
-                            const Text(
-                              '🎮',
-                              style: TextStyle(fontSize: 30),
-                            ),
+                            const Text('🎮', style: TextStyle(fontSize: 30)),
                             const SizedBox(width: 10),
                             if (matchDetails.players != null &&
-                                matchDetails.players![index].name != null)
-                              Text(matchDetails.players![index].name!)
+                                item.name != null)
+                              Text(item.name!)
                             else
-                              Text(
-                                'Name not found :(',
-                                style: TextStyle(color: Colors.grey),
-                              ),
+                              Text('???', style: TextStyle(color: Colors.grey)),
                           ],
                         ),
                       ),
                       Row(
                         children: [
                           if (matchDetails.players != null &&
-                              matchDetails.players![index].kills != null)
-                            SizedBox(
-                              width: 40,
-                              child: Text(
-                                'K: ${matchDetails.players![index].kills!.toString()}',
-                              ),
-                            ),
-                          const SizedBox(width: 10),
+                              item.kills != null)
+                            PlayerStatsWidget(stats: item.kills!),
                           if (matchDetails.players != null &&
-                              matchDetails.players![index].deaths != null)
-                            SizedBox(
-                              width: 40,
-                              child: Text(
-                                  'D: ${matchDetails.players![index].deaths!.toString()}'),
-                            ),
-                          const SizedBox(width: 10),
+                              item.deaths != null)
+                            PlayerStatsWidget(stats: item.deaths!),
                           if (matchDetails.players != null &&
-                              matchDetails.players![index].assists != null)
-                            SizedBox(
-                              width: 40,
-                              child: Text(
-                                'A: ${matchDetails.players![index].assists!.toString()}',
-                              ),
-                            ),
+                              item.assists != null)
+                            PlayerStatsWidget(stats: item.assists!),
                         ],
                       ),
                     ],

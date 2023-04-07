@@ -23,14 +23,10 @@ mixin _$MatchModel {
   int? get matchId => throw _privateConstructorUsedError;
   int? get duration => throw _privateConstructorUsedError;
   int? get startTime => throw _privateConstructorUsedError;
-  int? get radiantTeamId => throw _privateConstructorUsedError;
   String? get radiantName => throw _privateConstructorUsedError;
-  int? get direTeamId => throw _privateConstructorUsedError;
   String? get direName => throw _privateConstructorUsedError;
   int? get leagueid => throw _privateConstructorUsedError;
   String? get leagueName => throw _privateConstructorUsedError;
-  int? get seriesId => throw _privateConstructorUsedError;
-  int? get seriesType => throw _privateConstructorUsedError;
   int? get radiantScore => throw _privateConstructorUsedError;
   int? get direScore => throw _privateConstructorUsedError;
   bool? get radiantWin => throw _privateConstructorUsedError;
@@ -51,14 +47,10 @@ abstract class $MatchModelCopyWith<$Res> {
       {int? matchId,
       int? duration,
       int? startTime,
-      int? radiantTeamId,
       String? radiantName,
-      int? direTeamId,
       String? direName,
       int? leagueid,
       String? leagueName,
-      int? seriesId,
-      int? seriesType,
       int? radiantScore,
       int? direScore,
       bool? radiantWin});
@@ -80,14 +72,10 @@ class _$MatchModelCopyWithImpl<$Res, $Val extends MatchModel>
     Object? matchId = freezed,
     Object? duration = freezed,
     Object? startTime = freezed,
-    Object? radiantTeamId = freezed,
     Object? radiantName = freezed,
-    Object? direTeamId = freezed,
     Object? direName = freezed,
     Object? leagueid = freezed,
     Object? leagueName = freezed,
-    Object? seriesId = freezed,
-    Object? seriesType = freezed,
     Object? radiantScore = freezed,
     Object? direScore = freezed,
     Object? radiantWin = freezed,
@@ -105,18 +93,10 @@ class _$MatchModelCopyWithImpl<$Res, $Val extends MatchModel>
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
               as int?,
-      radiantTeamId: freezed == radiantTeamId
-          ? _value.radiantTeamId
-          : radiantTeamId // ignore: cast_nullable_to_non_nullable
-              as int?,
       radiantName: freezed == radiantName
           ? _value.radiantName
           : radiantName // ignore: cast_nullable_to_non_nullable
               as String?,
-      direTeamId: freezed == direTeamId
-          ? _value.direTeamId
-          : direTeamId // ignore: cast_nullable_to_non_nullable
-              as int?,
       direName: freezed == direName
           ? _value.direName
           : direName // ignore: cast_nullable_to_non_nullable
@@ -129,14 +109,6 @@ class _$MatchModelCopyWithImpl<$Res, $Val extends MatchModel>
           ? _value.leagueName
           : leagueName // ignore: cast_nullable_to_non_nullable
               as String?,
-      seriesId: freezed == seriesId
-          ? _value.seriesId
-          : seriesId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      seriesType: freezed == seriesType
-          ? _value.seriesType
-          : seriesType // ignore: cast_nullable_to_non_nullable
-              as int?,
       radiantScore: freezed == radiantScore
           ? _value.radiantScore
           : radiantScore // ignore: cast_nullable_to_non_nullable
@@ -165,14 +137,10 @@ abstract class _$$_MatchModelCopyWith<$Res>
       {int? matchId,
       int? duration,
       int? startTime,
-      int? radiantTeamId,
       String? radiantName,
-      int? direTeamId,
       String? direName,
       int? leagueid,
       String? leagueName,
-      int? seriesId,
-      int? seriesType,
       int? radiantScore,
       int? direScore,
       bool? radiantWin});
@@ -192,14 +160,10 @@ class __$$_MatchModelCopyWithImpl<$Res>
     Object? matchId = freezed,
     Object? duration = freezed,
     Object? startTime = freezed,
-    Object? radiantTeamId = freezed,
     Object? radiantName = freezed,
-    Object? direTeamId = freezed,
     Object? direName = freezed,
     Object? leagueid = freezed,
     Object? leagueName = freezed,
-    Object? seriesId = freezed,
-    Object? seriesType = freezed,
     Object? radiantScore = freezed,
     Object? direScore = freezed,
     Object? radiantWin = freezed,
@@ -217,18 +181,10 @@ class __$$_MatchModelCopyWithImpl<$Res>
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
               as int?,
-      radiantTeamId: freezed == radiantTeamId
-          ? _value.radiantTeamId
-          : radiantTeamId // ignore: cast_nullable_to_non_nullable
-              as int?,
       radiantName: freezed == radiantName
           ? _value.radiantName
           : radiantName // ignore: cast_nullable_to_non_nullable
               as String?,
-      direTeamId: freezed == direTeamId
-          ? _value.direTeamId
-          : direTeamId // ignore: cast_nullable_to_non_nullable
-              as int?,
       direName: freezed == direName
           ? _value.direName
           : direName // ignore: cast_nullable_to_non_nullable
@@ -241,14 +197,6 @@ class __$$_MatchModelCopyWithImpl<$Res>
           ? _value.leagueName
           : leagueName // ignore: cast_nullable_to_non_nullable
               as String?,
-      seriesId: freezed == seriesId
-          ? _value.seriesId
-          : seriesId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      seriesType: freezed == seriesType
-          ? _value.seriesType
-          : seriesType // ignore: cast_nullable_to_non_nullable
-              as int?,
       radiantScore: freezed == radiantScore
           ? _value.radiantScore
           : radiantScore // ignore: cast_nullable_to_non_nullable
@@ -272,14 +220,10 @@ class _$_MatchModel implements _MatchModel {
       {this.matchId,
       this.duration,
       this.startTime,
-      this.radiantTeamId,
       this.radiantName,
-      this.direTeamId,
       this.direName,
       this.leagueid,
       this.leagueName,
-      this.seriesId,
-      this.seriesType,
       this.radiantScore,
       this.direScore,
       this.radiantWin});
@@ -294,21 +238,13 @@ class _$_MatchModel implements _MatchModel {
   @override
   final int? startTime;
   @override
-  final int? radiantTeamId;
-  @override
   final String? radiantName;
-  @override
-  final int? direTeamId;
   @override
   final String? direName;
   @override
   final int? leagueid;
   @override
   final String? leagueName;
-  @override
-  final int? seriesId;
-  @override
-  final int? seriesType;
   @override
   final int? radiantScore;
   @override
@@ -318,7 +254,7 @@ class _$_MatchModel implements _MatchModel {
 
   @override
   String toString() {
-    return 'MatchModel(matchId: $matchId, duration: $duration, startTime: $startTime, radiantTeamId: $radiantTeamId, radiantName: $radiantName, direTeamId: $direTeamId, direName: $direName, leagueid: $leagueid, leagueName: $leagueName, seriesId: $seriesId, seriesType: $seriesType, radiantScore: $radiantScore, direScore: $direScore, radiantWin: $radiantWin)';
+    return 'MatchModel(matchId: $matchId, duration: $duration, startTime: $startTime, radiantName: $radiantName, direName: $direName, leagueid: $leagueid, leagueName: $leagueName, radiantScore: $radiantScore, direScore: $direScore, radiantWin: $radiantWin)';
   }
 
   @override
@@ -331,22 +267,14 @@ class _$_MatchModel implements _MatchModel {
                 other.duration == duration) &&
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
-            (identical(other.radiantTeamId, radiantTeamId) ||
-                other.radiantTeamId == radiantTeamId) &&
             (identical(other.radiantName, radiantName) ||
                 other.radiantName == radiantName) &&
-            (identical(other.direTeamId, direTeamId) ||
-                other.direTeamId == direTeamId) &&
             (identical(other.direName, direName) ||
                 other.direName == direName) &&
             (identical(other.leagueid, leagueid) ||
                 other.leagueid == leagueid) &&
             (identical(other.leagueName, leagueName) ||
                 other.leagueName == leagueName) &&
-            (identical(other.seriesId, seriesId) ||
-                other.seriesId == seriesId) &&
-            (identical(other.seriesType, seriesType) ||
-                other.seriesType == seriesType) &&
             (identical(other.radiantScore, radiantScore) ||
                 other.radiantScore == radiantScore) &&
             (identical(other.direScore, direScore) ||
@@ -362,14 +290,10 @@ class _$_MatchModel implements _MatchModel {
       matchId,
       duration,
       startTime,
-      radiantTeamId,
       radiantName,
-      direTeamId,
       direName,
       leagueid,
       leagueName,
-      seriesId,
-      seriesType,
       radiantScore,
       direScore,
       radiantWin);
@@ -393,14 +317,10 @@ abstract class _MatchModel implements MatchModel {
       {final int? matchId,
       final int? duration,
       final int? startTime,
-      final int? radiantTeamId,
       final String? radiantName,
-      final int? direTeamId,
       final String? direName,
       final int? leagueid,
       final String? leagueName,
-      final int? seriesId,
-      final int? seriesType,
       final int? radiantScore,
       final int? direScore,
       final bool? radiantWin}) = _$_MatchModel;
@@ -415,21 +335,13 @@ abstract class _MatchModel implements MatchModel {
   @override
   int? get startTime;
   @override
-  int? get radiantTeamId;
-  @override
   String? get radiantName;
-  @override
-  int? get direTeamId;
   @override
   String? get direName;
   @override
   int? get leagueid;
   @override
   String? get leagueName;
-  @override
-  int? get seriesId;
-  @override
-  int? get seriesType;
   @override
   int? get radiantScore;
   @override
