@@ -10,9 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MatchesListWidget extends StatelessWidget {
-  MatchesListWidget({required this.detailsPath, super.key});
-
-  final String detailsPath;
+  MatchesListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +22,7 @@ class MatchesListWidget extends StatelessWidget {
             loading: (_) => DotaProgressIndicator(),
             error: (_) => DotaErrorWidget(),
             loaded: (value) {
-              return MatchesListBody(
-                detailsPath: detailsPath,
-                matches: value.matches,
-              );
+              return MatchesListBody(matches: value.matches);
             },
           );
         },

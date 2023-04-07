@@ -6,9 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MatchesListPage extends StatelessWidget {
-  const MatchesListPage({Key? key, required this.detailsPath})
-      : super(key: key);
-  final String detailsPath;
+  const MatchesListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +14,7 @@ class MatchesListPage extends StatelessWidget {
       create: (context) => MatchesListCubit(
         matchesProvider: locator.get<DotaApi>().matches,
       )..loadInitialMatchesData(),
-      child: MatchesListWidget(detailsPath: detailsPath),
+      child: MatchesListWidget(),
     );
   }
 }

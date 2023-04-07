@@ -8,12 +8,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TeamDetailsPage extends StatelessWidget {
   TeamDetailsPage({
-    required this.matchesPath,
     required this.teamId,
     required this.team,
   });
 
-  final String matchesPath;
   final int teamId;
   final TeamModel team;
 
@@ -24,10 +22,7 @@ class TeamDetailsPage extends StatelessWidget {
         return TeamDetailCubit(teamsProvider: locator.get<DotaApi>().teams)
           ..loadTeamDetailsData(teamId);
       },
-      child: TeamDetailsWidget(
-        matchesPath: matchesPath,
-        team: team,
-      ),
+      child: TeamDetailsWidget(team: team),
     );
   }
 }

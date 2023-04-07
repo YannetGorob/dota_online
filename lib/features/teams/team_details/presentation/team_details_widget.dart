@@ -9,12 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TeamDetailsWidget extends StatelessWidget {
-  const TeamDetailsWidget({
-    required this.matchesPath,
-    required this.team,
-  });
+  const TeamDetailsWidget({required this.team});
 
-  final String matchesPath;
   final TeamModel team;
 
   @override
@@ -32,7 +28,6 @@ class TeamDetailsWidget extends StatelessWidget {
               return TeamDetailsBody(
                 players: value.players,
                 matches: value.matches,
-                matchesPath: matchesPath,
                 team: team,
               );
             },
