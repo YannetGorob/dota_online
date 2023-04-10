@@ -1,5 +1,5 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/player_list_item.dart';
@@ -19,7 +19,7 @@ class PlayersWidget extends StatelessWidget {
         slivers: [
           SliverPadding(
             padding: EdgeInsetsDirectional.symmetric(
-              horizontal: defaultPadding,
+              horizontal: 20,
             ),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(

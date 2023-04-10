@@ -1,7 +1,6 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
@@ -23,7 +22,7 @@ class TeamDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CustomScrollView(
         slivers: [
           SliverPadding(padding: EdgeInsets.only(top: 10)),

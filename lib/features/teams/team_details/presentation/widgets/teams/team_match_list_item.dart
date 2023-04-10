@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,16 +34,18 @@ class TeamMatchListItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
             width: 5,
-            color: teamMatch.radiant! ? radiantColor : direColor,
+            color: teamMatch.radiant!
+                ? DotaColors.radiantColor
+                : DotaColors.direColor,
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-          _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
-          Divider(color: Colors.white),
-          _MatchParamsWidget(teamMatch: teamMatch),
+            _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
+            Divider(color: Colors.white),
+            _MatchParamsWidget(teamMatch: teamMatch),
           ],
         ),
       ),
@@ -109,8 +111,7 @@ class _MatchParamsWidget extends StatelessWidget {
               Text(_formatMatchDuration()),
             ],
           ),
-        if (teamMatch.startTime != null)
-          Text(_formatMatchStartTime()),
+        if (teamMatch.startTime != null) Text(_formatMatchStartTime()),
       ],
     );
   }

@@ -1,5 +1,5 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
@@ -22,8 +22,8 @@ class HeroTile extends StatelessWidget {
 
     return Card(
       margin: EdgeInsets.symmetric(
-        horizontal: defaultPadding,
-        vertical: defaultPadding / 2,
+        horizontal: 20,
+        vertical: 10,
       ),
       shadowColor: Colors.black,
       elevation: 10,
@@ -32,7 +32,7 @@ class HeroTile extends StatelessWidget {
           context.go(detailsPath, extra: hero);
         },
         child: Padding(
-          padding: const EdgeInsets.all(defaultPadding),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               if (hero.localizedName != null)
@@ -47,7 +47,7 @@ class HeroTile extends StatelessWidget {
                       HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),
                   ],
                 ),
-              SizedBox(height: defaultPadding / 4),
+              SizedBox(height: 5),
               Hero(
                 tag: hero.id!,
                 child: ClipRRect(

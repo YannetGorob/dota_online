@@ -24,8 +24,6 @@ class BaseNetwork {
         path,
       );
 
-      print(path);
-
       final data = result.data;
 
       if (kDebugMode) {
