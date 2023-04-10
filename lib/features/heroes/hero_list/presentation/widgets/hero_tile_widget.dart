@@ -19,7 +19,7 @@ class HeroTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
     final cardWidth = MediaQuery.of(context).size.width;
-    final primaryAtrImg = HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr);
+
     return Card(
       margin: EdgeInsets.symmetric(
         horizontal: defaultPadding,
@@ -43,8 +43,8 @@ class HeroTile extends StatelessWidget {
                       style: CustomTextStyle.titleTextStyle,
                     ),
                     SizedBox(width: 10),
-                    if (primaryAtrImg != null)
-                      Image.asset(primaryAtrImg, height: 30),
+                    if (hero.primaryAttr != null)
+                      HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),
                   ],
                 ),
               SizedBox(height: defaultPadding / 4),

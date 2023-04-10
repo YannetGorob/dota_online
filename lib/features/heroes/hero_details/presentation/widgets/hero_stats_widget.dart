@@ -1,8 +1,8 @@
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
 
-class HeroBaseHealthMana extends StatelessWidget {
-  const HeroBaseHealthMana({
+class HeroStatsWidget extends StatelessWidget {
+  const HeroStatsWidget({
     required this.title,
     required this.color,
   });
