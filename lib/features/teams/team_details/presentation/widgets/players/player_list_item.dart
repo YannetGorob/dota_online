@@ -1,6 +1,5 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PlayerListItem extends StatelessWidget {
   const PlayerListItem({required this.player});
@@ -30,19 +29,11 @@ class PlayerListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              player.name!,
-              style: GoogleFonts.tinos(
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                ),
-              ),
-            ),
+            Text(player.name!, style: Theme.of(context).textTheme.bodyMedium),
             if (player.wins != null && player.gamesPlayed != null)
               Text(
                 '${player.wins} wins out of ${player.gamesPlayed} games',
-                style: TextStyle(fontSize: 15),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
           ],
         ),
