@@ -1,9 +1,8 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
-import 'package:dota_online/features/heroes/constants/cached_hero_image.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
-import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,11 +19,11 @@ class HeroTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
     final cardWidth = MediaQuery.of(context).size.width;
-    final primaryAtrImg = HeroAssetUtil.getPrimaryAttrImage(hero.primaryAttr);
+
     return Card(
       margin: EdgeInsets.symmetric(
-        horizontal: defaultPadding,
-        vertical: defaultPadding / 2,
+        horizontal: 20,
+        vertical: 10,
       ),
       shadowColor: Colors.black,
       elevation: 10,
@@ -33,7 +32,7 @@ class HeroTile extends StatelessWidget {
           context.go(detailsPath, extra: hero);
         },
         child: Padding(
-          padding: const EdgeInsets.all(defaultPadding),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               if (hero.localizedName != null)
@@ -44,16 +43,16 @@ class HeroTile extends StatelessWidget {
                       style: CustomTextStyle.titleTextStyle,
                     ),
                     SizedBox(width: 10),
-                    if (primaryAtrImg != null)
-                      Image.asset(primaryAtrImg, height: 30),
+                    if (hero.primaryAttr != null)
+                      HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),
                   ],
                 ),
-              SizedBox(height: defaultPadding / 4),
+              SizedBox(height: 5),
               Hero(
                 tag: hero.id!,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: CachedHeroImage(
+                  child: DotaCachedImage(
                     height: cardHeight * 0.7,
                     width: cardWidth,
                     imageUrl: hero.img,

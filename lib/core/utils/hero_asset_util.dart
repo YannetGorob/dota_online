@@ -1,25 +1,26 @@
 import 'package:dota_online/gen/assets.gen.dart';
+import 'package:flutter/material.dart';
 
 class HeroAssetUtil {
-  static String? getPrimaryAttrImage(String? primaryAttr) {
+  static Widget getPrimaryAttributesAsset(String? primaryAttr) {
     switch (primaryAttr) {
       case 'agi':
-        return Assets.images.heroAgility.path;
+        return Assets.images.heroAgility.image(height: 30);
       case 'str':
-        return Assets.images.heroStrength.path;
+        return Assets.images.heroStrength.image(height: 30);
       case 'int':
-        return Assets.images.heroIntelligence.path;
+        return Assets.images.heroIntelligence.image(height: 30);
       default:
-        return null;
+        throw Exception();
     }
   }
 
-  static String? getAttackTypeImg(String? attackType) {
+  static Widget? getAttackTypeAsset(String? attackType) {
     switch (attackType) {
       case 'Melee':
-        return Assets.images.melee;
+        return Assets.images.melee.svg();
       case 'Ranged':
-        return Assets.images.ranged;
+        return Assets.images.ranged.svg();
       default:
         return null;
     }

@@ -1,5 +1,5 @@
 import 'package:dota_online/core/di/di.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/dota_colors.dart';
 import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +16,7 @@ class _AppState extends State<App> {
   @override
   void initState() {
     super.initState();
+
     configureDependencies();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -29,7 +30,7 @@ class _AppState extends State<App> {
       theme: ThemeData.dark().copyWith(
         //extensions: ,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          selectedItemColor: direColor,
+          selectedItemColor: DotaColors.direColor,
         ),
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,

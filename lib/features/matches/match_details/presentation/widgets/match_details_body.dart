@@ -10,6 +10,8 @@ class MatchDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final players = matchDetails.players ?? [];
+
     return CustomScrollView(
       slivers: [
         SliverPersistentHeader(
@@ -18,9 +20,10 @@ class MatchDetailsBody extends StatelessWidget {
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(
-            childCount: 10,
+            childCount: players.length,
             (context, index) {
-              final item = matchDetails.players![index];
+              final item = players[index];
+
               return Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -35,9 +38,10 @@ class MatchDetailsBody extends StatelessWidget {
                           children: [
                             const Text('🎮', style: TextStyle(fontSize: 30)),
                             const SizedBox(width: 10),
-                            if (matchDetails.players != null &&
-                                item.name != null)
+                            if (item.name != null)
                               Text(item.name!)
+                            else if (item.personName != null)
+                              Text(item.personName!)
                             else
                               Text('???', style: TextStyle(color: Colors.grey)),
                           ],
@@ -45,14 +49,11 @@ class MatchDetailsBody extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          if (matchDetails.players != null &&
-                              item.kills != null)
+                          if (item.kills != null)
                             PlayerStatsWidget(stats: item.kills!),
-                          if (matchDetails.players != null &&
-                              item.deaths != null)
+                          if (item.deaths != null)
                             PlayerStatsWidget(stats: item.deaths!),
-                          if (matchDetails.players != null &&
-                              item.assists != null)
+                          if (item.assists != null)
                             PlayerStatsWidget(stats: item.assists!),
                         ],
                       ),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class DotaScaffold extends StatelessWidget {
   const DotaScaffold({
+    required this.body,
     this.appBar,
-    this.body = const SizedBox(),
     super.key,
   });
 

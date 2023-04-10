@@ -19,7 +19,7 @@ class MatchScoreWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: radiantColor,
+            color: DotaColors.radiantColor,
           ),
         ),
         Text(
@@ -31,7 +31,7 @@ class MatchScoreWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
-            color: direColor,
+            color: DotaColors.direColor,
           ),
         ),
       ],

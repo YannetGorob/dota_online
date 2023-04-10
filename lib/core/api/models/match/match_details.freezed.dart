@@ -879,6 +879,8 @@ mixin _$MatchDetailsPlayer {
   int? get assists => throw _privateConstructorUsedError;
   int? get deaths => throw _privateConstructorUsedError;
   int? get kills => throw _privateConstructorUsedError;
+  @JsonKey(name: 'personaname')
+  String? get personName => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   bool? get radiantWin => throw _privateConstructorUsedError;
   int? get duration => throw _privateConstructorUsedError;
@@ -903,6 +905,7 @@ abstract class $MatchDetailsPlayerCopyWith<$Res> {
       int? assists,
       int? deaths,
       int? kills,
+      @JsonKey(name: 'personaname') String? personName,
       String? name,
       bool? radiantWin,
       int? duration,
@@ -928,6 +931,7 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
     Object? assists = freezed,
     Object? deaths = freezed,
     Object? kills = freezed,
+    Object? personName = freezed,
     Object? name = freezed,
     Object? radiantWin = freezed,
     Object? duration = freezed,
@@ -952,6 +956,10 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
           ? _value.kills
           : kills // ignore: cast_nullable_to_non_nullable
               as int?,
+      personName: freezed == personName
+          ? _value.personName
+          : personName // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -993,6 +1001,7 @@ abstract class _$$_MatchDetailsPlayerCopyWith<$Res>
       int? assists,
       int? deaths,
       int? kills,
+      @JsonKey(name: 'personaname') String? personName,
       String? name,
       bool? radiantWin,
       int? duration,
@@ -1016,6 +1025,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
     Object? assists = freezed,
     Object? deaths = freezed,
     Object? kills = freezed,
+    Object? personName = freezed,
     Object? name = freezed,
     Object? radiantWin = freezed,
     Object? duration = freezed,
@@ -1040,6 +1050,10 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
           ? _value.kills
           : kills // ignore: cast_nullable_to_non_nullable
               as int?,
+      personName: freezed == personName
+          ? _value.personName
+          : personName // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1076,6 +1090,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
       this.assists,
       this.deaths,
       this.kills,
+      @JsonKey(name: 'personaname') this.personName,
       this.name,
       this.radiantWin,
       this.duration,
@@ -1095,6 +1110,9 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @override
   final int? kills;
   @override
+  @JsonKey(name: 'personaname')
+  final String? personName;
+  @override
   final String? name;
   @override
   final bool? radiantWin;
@@ -1109,7 +1127,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
 
   @override
   String toString() {
-    return 'MatchDetailsPlayer(matchId: $matchId, assists: $assists, deaths: $deaths, kills: $kills, name: $name, radiantWin: $radiantWin, duration: $duration, isRadiant: $isRadiant, win: $win, lose: $lose)';
+    return 'MatchDetailsPlayer(matchId: $matchId, assists: $assists, deaths: $deaths, kills: $kills, personName: $personName, name: $name, radiantWin: $radiantWin, duration: $duration, isRadiant: $isRadiant, win: $win, lose: $lose)';
   }
 
   @override
@@ -1121,6 +1139,8 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
             (identical(other.assists, assists) || other.assists == assists) &&
             (identical(other.deaths, deaths) || other.deaths == deaths) &&
             (identical(other.kills, kills) || other.kills == kills) &&
+            (identical(other.personName, personName) ||
+                other.personName == personName) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.radiantWin, radiantWin) ||
                 other.radiantWin == radiantWin) &&
@@ -1135,7 +1155,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, matchId, assists, deaths, kills,
-      name, radiantWin, duration, isRadiant, win, lose);
+      personName, name, radiantWin, duration, isRadiant, win, lose);
 
   @JsonKey(ignore: true)
   @override
@@ -1158,6 +1178,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
       final int? assists,
       final int? deaths,
       final int? kills,
+      @JsonKey(name: 'personaname') final String? personName,
       final String? name,
       final bool? radiantWin,
       final int? duration,
@@ -1176,6 +1197,9 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   int? get deaths;
   @override
   int? get kills;
+  @override
+  @JsonKey(name: 'personaname')
+  String? get personName;
   @override
   String? get name;
   @override

@@ -19,11 +19,7 @@ class DotaAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: Image.asset(
-            Assets.images.dotaLogo.path,
-            height: 30,
-            width: 30,
-          ),
+          child: Assets.images.dotaLogo.image(height: 30, width: 30),
         ),
       ],
     );

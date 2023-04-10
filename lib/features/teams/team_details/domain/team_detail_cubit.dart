@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/base/api_result.dart';
-import 'package:dota_online/core/api/models/match/match_model.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/providers/teams_provider.dart';

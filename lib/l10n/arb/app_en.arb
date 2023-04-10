@@ -3,10 +3,18 @@
     "matchesList": "Matches List",
     "matchDetails": "Match Details",
     "teamsList": "Teams List",
-    "teamDetails": "Team Details",
     "heroesList": "Heroes List",
     "matchesTab": "Matches",
     "heroesTab": "Heroes",
     "teamsTab": "Teams",
-    "players": "Players"
+    "players": "Players",
+    "attackType": "Attack type",
+    "speed": "Speed",
+    "damage": "Damage",
+    "armor": "Armor",
+    "roles": "Roles",
+    "score": "score",
+    "match": "Match",
+    "duration": "Duration"
+
 }
