@@ -1,7 +1,6 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
-import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_all_attributes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_fight_characteristics.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_stats_widget.dart';
@@ -62,7 +61,10 @@ class HeroGeneralInfoWidget extends StatelessWidget {
         ),
         Text(
           context.l10n.roles,
-          style: CustomTextStyle.subtitleTextStyle,
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge
+              ?.copyWith(color: Colors.grey),
         ),
         SizedBox(height: 10),
       ],

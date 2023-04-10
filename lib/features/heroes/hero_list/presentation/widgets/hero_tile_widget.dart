@@ -1,8 +1,6 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/dota_ui/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
-import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -38,10 +36,8 @@ class HeroTile extends StatelessWidget {
               if (hero.localizedName != null)
                 Row(
                   children: [
-                    Text(
-                      hero.localizedName!,
-                      style: CustomTextStyle.titleTextStyle,
-                    ),
+                    Text(hero.localizedName!,
+                        style: Theme.of(context).textTheme.titleLarge),
                     SizedBox(width: 10),
                     if (hero.primaryAttr != null)
                       HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),

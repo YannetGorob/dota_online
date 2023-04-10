@@ -1,4 +1,3 @@
-import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
 
 class HeroAttributeWidget extends StatelessWidget {
@@ -16,7 +15,8 @@ class HeroAttributeWidget extends StatelessWidget {
       children: [
         Image.asset(imgPath, height: 30),
         SizedBox(width: 8),
-        if (value != null) Text(value!, style: CustomTextStyle.textTextStyle),
+        if (value != null)
+          Text(value!, style: Theme.of(context).textTheme.titleMedium),
       ],
     );
   }

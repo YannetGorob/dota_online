@@ -1,4 +1,3 @@
-import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
 
 class HeroFightCharacteristics extends StatelessWidget {
@@ -24,11 +23,15 @@ class HeroFightCharacteristics extends StatelessWidget {
               child: image!,
             ),
           if (tittle != null)
-            Text('${tittle}: ', style: CustomTextStyle.subtitleTextStyle),
+            Text('${tittle}: ',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(color: Colors.grey)),
           if (value != null)
             Text(
               value!,
-              style: CustomTextStyle.textTextStyle,
+              style: Theme.of(context).textTheme.titleMedium,
             )
           else
             Text('---'),

@@ -1,4 +1,3 @@
-import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
 
 class HeroStatsWidget extends StatelessWidget {
@@ -22,7 +21,7 @@ class HeroStatsWidget extends StatelessWidget {
         ),
       ),
       height: 30,
-      child: Text(title, style: CustomTextStyle.textTextStyle),
+      child: Text(title, style: Theme.of(context).textTheme.titleMedium),
     );
   }
 }
