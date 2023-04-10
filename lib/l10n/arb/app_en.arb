@@ -15,6 +15,7 @@
     "roles": "Roles",
     "score": "score",
     "match": "Match",
-    "duration": "Duration"
+    "duration": "Duration",
+    "viewallplayers": "View all players"
 
 }

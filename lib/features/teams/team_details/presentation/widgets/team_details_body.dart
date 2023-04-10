@@ -4,9 +4,9 @@ import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/navigation/navigation.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
@@ -30,16 +30,9 @@ class TeamDetailsBody extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsetsDirectional.all(4),
               sliver: SliverToBoxAdapter(
-                child: Text(
-                  'PLAYERS',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.tinos(
-                    textStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
+                child: Text(context.l10n.players,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge),
               ),
             ),
           PlayersList(players: players!),
@@ -54,16 +47,9 @@ class TeamDetailsBody extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsets.only(top: 20),
               sliver: SliverToBoxAdapter(
-                child: Text(
-                  'MATCHES',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.tinos(
-                    textStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
-                ),
+                child: Text(context.l10n.matchesTab,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge),
               ),
             ),
           SliverList(
@@ -95,15 +81,8 @@ class TeamDetailsBody extends StatelessWidget {
     List<PlayerModel> players,
   ) {
     return ElevatedButton(
-      child: Text(
-        'View all players',
-        style: GoogleFonts.tinos(
-          textStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-      ),
+      child: Text(context.l10n.viewallplayers,
+          style: Theme.of(context).textTheme.titleLarge),
       onPressed: () {
         context.pushNamed(
           AppRoutes.playersListPage.name,

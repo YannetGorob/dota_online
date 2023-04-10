@@ -28,9 +28,20 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       theme: ThemeData.dark().copyWith(
+        textTheme: ThemeData.dark().textTheme.copyWith(
+            headlineSmall: TextStyle(fontWeight: FontWeight.bold),
+            titleLarge: TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.grey, fontSize: 25),
+            titleMedium: TextStyle(fontSize: 18)),
+
         //extensions: ,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: DotaColors.direColor,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+          ),
         ),
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,

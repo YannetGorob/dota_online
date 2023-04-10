@@ -37,7 +37,7 @@ class HeroTile extends StatelessWidget {
                 Row(
                   children: [
                     Text(hero.localizedName!,
-                        style: Theme.of(context).textTheme.titleLarge),
+                        style: Theme.of(context).textTheme.headlineSmall),
                     SizedBox(width: 10),
                     if (hero.primaryAttr != null)
                       HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),
