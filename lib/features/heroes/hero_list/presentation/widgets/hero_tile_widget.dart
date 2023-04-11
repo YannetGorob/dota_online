@@ -1,25 +1,23 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:dota_online/features/heroes/constants/custom_textstyle.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class HeroTile extends StatelessWidget {
-  const HeroTile({
-    required this.hero,
-    required this.detailsPath,
-  });
+  const HeroTile({required this.hero});
 
   final HeroStats hero;
-  final String detailsPath;
 
   @override
   Widget build(BuildContext context) {
     final cardHeight = MediaQuery.of(context).size.height * 0.285;
     final cardWidth = MediaQuery.of(context).size.width;
-    final primaryAtrImg = HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr);
+    final primaryAtrImg =
+        HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr);
     return Card(
       margin: EdgeInsets.symmetric(
         horizontal: defaultPadding,
@@ -29,7 +27,7 @@ class HeroTile extends StatelessWidget {
       elevation: 10,
       child: InkWell(
         onTap: () {
-          context.go(detailsPath, extra: hero);
+          context.router.push(HeroDetailsRoute(hero: hero));
         },
         child: Padding(
           padding: const EdgeInsets.all(defaultPadding),

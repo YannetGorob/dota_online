@@ -1,6 +1,6 @@
 import 'package:dota_online/core/di/di.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
-import 'package:dota_online/core/navigation/navigation.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +35,7 @@ class _AppState extends State<App> {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      routerConfig: locator.get<Navigation>().goRouter,
+      routerConfig: locator.get<AppRouter>().config(),
     );
   }
 }

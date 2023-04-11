@@ -10,9 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HeroesListWidget extends StatelessWidget {
-  const HeroesListWidget({super.key, required this.detailsPath});
-
-  final String detailsPath;
+  const HeroesListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +21,7 @@ class HeroesListWidget extends StatelessWidget {
           return state.map(
             loading: (_) => DotaProgressIndicator(),
             error: (_) => DotaErrorWidget(),
-            loaded: (state) => BodyHeroesWidget(
-              heroes: state.heroes,
-              detailsPath: detailsPath,
-            ),
+            loaded: (state) => BodyHeroesWidget(heroes: state.heroes),
           );
         },
       ),

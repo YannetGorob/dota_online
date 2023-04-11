@@ -3,12 +3,8 @@ import 'package:dota_online/features/heroes/hero_list/presentation/widgets/hero_
 import 'package:flutter/material.dart';
 
 class BodyHeroesWidget extends StatelessWidget {
-  const BodyHeroesWidget({
-    required this.detailsPath,
-    required this.heroes,
-  });
+  const BodyHeroesWidget({required this.heroes});
 
-  final String detailsPath;
   final List<HeroStats> heroes;
 
   @override
@@ -17,7 +13,7 @@ class BodyHeroesWidget extends StatelessWidget {
       itemCount: heroes.length,
       itemBuilder: (BuildContext context, int index) {
         final item = heroes[index];
-        return HeroTile(detailsPath: detailsPath, hero: item);
+        return HeroTile(hero: item);
       },
     );
   }

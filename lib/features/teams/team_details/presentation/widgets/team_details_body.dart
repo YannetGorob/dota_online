@@ -1,13 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/constants.dart';
-import 'package:dota_online/core/navigation/navigation.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'matches/team_match_list_item.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
@@ -73,10 +74,13 @@ class TeamDetailsBody extends StatelessWidget {
               (context, index) {
                 return InkWell(
                   onTap: () {
-                    context.pushNamed(
-                      AppRoutes.teamMatchesPage.name,
-                      extra: matches![index].matchId,
-                    );
+                  if(matches![index].matchId != null){
+                    context.router.push(
+                        MatchDetailsRoute(
+                          matchId: matches![index].matchId!,
+                        ),
+                      );
+                    }
                   },
                   child: TeamMatchListItem(
                     teamMatch: matches![index],
@@ -106,9 +110,8 @@ class TeamDetailsBody extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        context.pushNamed(
-          AppRoutes.playersListPage.name,
-          extra: players,
+        context.router.push(
+          PlayersListRoute(players: players)
         );
       },
     );

@@ -16,9 +16,7 @@ class TeamDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DotaAppBar(
-        title: team.name,
-      ),
+      appBar: DotaAppBar(title: team.name),
       body: BlocBuilder<TeamDetailCubit, TeamDetailState>(
         builder: (context, state) {
           return state.map(
