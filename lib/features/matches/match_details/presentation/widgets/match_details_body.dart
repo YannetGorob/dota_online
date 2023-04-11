@@ -40,9 +40,15 @@ class MatchDetailsBody extends StatelessWidget {
                             if (item.name != null)
                               Text(item.name!)
                             else if (item.personName != null)
-                              Text(item.personName!)
+                              Text(
+                                item.personName!,
+                                style: Theme.of(context).textTheme.titleMedium,
+                              )
                             else
-                              Text('???', style: TextStyle(color: Colors.grey)),
+                              Text(
+                                '???',
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
                           ],
                         ),
                       ),

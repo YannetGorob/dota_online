@@ -16,7 +16,10 @@ class DarkDotaTheme extends DotaTheme {
               color: Colors.grey,
               fontSize: 25,
             ),
-            titleMedium: TextStyle(fontSize: 18),
+            titleMedium: TextStyle(
+              fontSize: 18,
+              overflow: TextOverflow.ellipsis,
+            ),
             bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             bodySmall: TextStyle(fontSize: 12, color: Colors.grey),
           ),
