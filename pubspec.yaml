@@ -7,6 +7,8 @@ environment:
   sdk: ">=2.18.0 <3.0.0"
 
 dependencies:
+  auto_route: ^6.1.0
+  auto_route_generator: ^6.1.0
   bloc: ^8.1.1
   cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.5
@@ -20,7 +22,6 @@ dependencies:
   flutter_svg: ^2.0.4
   freezed_annotation: ^2.2.0
   get_it: ^7.2.0
-  go_router: ^6.5.2
   google_fonts: ^4.0.3
   intl: ^0.17.0
   json_annotation: ^4.8.0

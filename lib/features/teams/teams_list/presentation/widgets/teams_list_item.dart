@@ -3,7 +3,6 @@ import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 
 part 'card_info_field.dart';
-
 part 'team_card_text_content.dart';
 
 class TeamsListItem extends StatelessWidget {

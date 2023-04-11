@@ -101,6 +101,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
   double get minExtent => 180;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
-      true;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
+  }
 }

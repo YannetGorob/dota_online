@@ -2,6 +2,7 @@ import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
+import 'package:dota_online/core/utils/time_formater.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -24,6 +25,14 @@ class TeamMatchListItem extends StatelessWidget {
       return SizedBox();
     }
 
+    final Color borderColor;
+
+    if(teamMatch.radiant == true){
+      borderColor = DotaColors.radiantColor;
+    }else{
+      borderColor = DotaColors.direColor;
+    }
+
     return Card(
       color: Colors.black38,
       margin: const EdgeInsets.all(5),
@@ -31,12 +40,7 @@ class TeamMatchListItem extends StatelessWidget {
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            width: 5,
-            color: teamMatch.radiant!
-                ? DotaColors.radiantColor
-                : DotaColors.direColor,
-          ),
+          border: Border.all(width: 5, color: borderColor),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -101,28 +105,18 @@ class _MatchParamsWidget extends StatelessWidget {
             children: [
               Icon(Icons.timer),
               Text(
-                _formatMatchDuration(),
+                TimeFormater().formatMatchDuration(teamMatch.duration!),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ],
           ),
         if (teamMatch.startTime != null)
           Text(
-            _formatMatchStartTime(),
+            TimeFormater().formatMatchStartTime(teamMatch.startTime!),
             style: Theme.of(context).textTheme.titleMedium,
           ),
       ],
     );
-  }
-
-  String _formatMatchDuration() {
-    final timeInMinutes = teamMatch.duration! / 60;
-    return timeInMinutes.toStringAsFixed(2).replaceAll('.', ':');
-  }
-
-  String _formatMatchStartTime() {
-    final dt = DateTime.fromMillisecondsSinceEpoch(teamMatch.startTime! * 1000);
-    return DateFormat('dd.MM.yyyy').format(dt).toString();
   }
 }
 

@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:dota_online/core/api/dota_api.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/di/di.dart';
@@ -6,13 +7,10 @@ import 'package:dota_online/features/teams/team_details/presentation/team_detail
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+@RoutePage()
 class TeamDetailsPage extends StatelessWidget {
-  TeamDetailsPage({
-    required this.teamId,
-    required this.team,
-  });
+  TeamDetailsPage({required this.team});
 
-  final int teamId;
   final TeamModel team;
 
   @override
@@ -20,7 +18,7 @@ class TeamDetailsPage extends StatelessWidget {
     return BlocProvider<TeamDetailCubit>(
       create: (context) {
         return TeamDetailCubit(teamsProvider: locator.get<DotaApi>().teams)
-          ..loadTeamDetailsData(teamId);
+          ..loadTeamDetailsData(team.teamId!);
       },
       child: TeamDetailsWidget(team: team),
     );

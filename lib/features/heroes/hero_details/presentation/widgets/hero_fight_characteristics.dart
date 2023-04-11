@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class HeroFightCharacteristics extends StatelessWidget {
   const HeroFightCharacteristics({
-    required this.value,
+    this.value,
     this.tittle,
     this.image,
   });
@@ -23,11 +23,10 @@ class HeroFightCharacteristics extends StatelessWidget {
               child: image!,
             ),
           if (tittle != null)
-            Text('${tittle}: ',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(color: Colors.grey)),
+            Text(
+              '${tittle}: ',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
           if (value != null)
             Text(
               value!,

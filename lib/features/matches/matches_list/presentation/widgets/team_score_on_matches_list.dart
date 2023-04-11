@@ -7,7 +7,9 @@ class teamScoreOnMatchesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(teamScore.toString(),
-        style: Theme.of(context).textTheme.displayMedium);
+    return Text(
+      teamScore.toString(),
+      style: Theme.of(context).textTheme.displayMedium,
+    );
   }
 }

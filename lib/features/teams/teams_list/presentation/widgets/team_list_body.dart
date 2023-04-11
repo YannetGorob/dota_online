@@ -1,8 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/navigation/navigation.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/teams/teams_list/presentation/widgets/teams_list_item.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class TeamListBody extends StatelessWidget {
   const TeamListBody({required this.teams});
@@ -26,10 +26,8 @@ class TeamListBody extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     if (item.teamId != null) {
-                      context.goNamed(
-                        AppRoutes.teamDetailsPage.name,
-                        queryParams: {'teamId': item.teamId.toString()},
-                        extra: item,
+                      context.router.push(
+                        TeamDetailsRoute(team: item),
                       );
                     }
                   },

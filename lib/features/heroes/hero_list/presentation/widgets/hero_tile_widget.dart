@@ -1,17 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class HeroTile extends StatelessWidget {
-  const HeroTile({
-    required this.hero,
-    required this.detailsPath,
-  });
+  const HeroTile({required this.hero});
 
   final HeroStats hero;
-  final String detailsPath;
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +16,11 @@ class HeroTile extends StatelessWidget {
     final cardWidth = MediaQuery.of(context).size.width;
 
     return Card(
-      margin: EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10,
-      ),
+      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       shadowColor: Colors.black,
       elevation: 10,
       child: InkWell(
-        onTap: () {
-          context.go(detailsPath, extra: hero);
-        },
+        onTap: () => context.router.push(HeroDetailsRoute(hero: hero)),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -36,14 +28,16 @@ class HeroTile extends StatelessWidget {
               if (hero.localizedName != null)
                 Row(
                   children: [
-                    Text(hero.localizedName!,
-                        style: Theme.of(context).textTheme.headlineSmall),
-                    SizedBox(width: 10),
+                    Text(
+                      hero.localizedName!,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    ),
+                    const SizedBox(width: 10),
                     if (hero.primaryAttr != null)
                       HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),
                   ],
                 ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Hero(
                 tag: hero.id!,
                 child: ClipRRect(

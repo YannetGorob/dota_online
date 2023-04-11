@@ -10,6 +10,11 @@ class DarkDotaTheme extends DotaTheme {
   ThemeData darkTheme(BuildContext context) {
     return ThemeData.dark().copyWith(
       textTheme: ThemeData.dark().textTheme.copyWith(
+            labelLarge: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 25,
+            ),
             headlineSmall: TextStyle(fontWeight: FontWeight.bold),
             titleLarge: TextStyle(
               fontWeight: FontWeight.bold,

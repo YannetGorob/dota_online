@@ -14,8 +14,12 @@ class HeroesListCubit extends Cubit<HeroesListState> {
     final heroesResponse = await _heroesProvider.getHeroStats();
     heroesResponse.when(
       success: (data) {
-        final heroesData =
-            data.map((e) => e.copyWith(img: UrlUtil.fixUrl(e.img))).toList();
+        final heroesData = data.map(
+          (e) {
+            return e.copyWith(img: UrlUtil.fixUrl(e.img));
+          },
+        ).toList();
+
         heroesData.sort((a, b) {
           if (a.localizedName == null)
             return 1;
@@ -24,6 +28,7 @@ class HeroesListCubit extends Cubit<HeroesListState> {
           else
             return a.localizedName!.compareTo(b.localizedName!);
         });
+
         if (!this.isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },
       failure: (_) {

@@ -29,7 +29,10 @@ class PlayerListItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(player.name!, style: Theme.of(context).textTheme.bodyMedium),
+            Text(
+              player.name!,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
             if (player.wins != null && player.gamesPlayed != null)
               Text(
                 '${player.wins} wins out of ${player.gamesPlayed} games',

@@ -13,13 +13,10 @@ class DotaPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.titleLarge,
-      ),
+      child: Text(title, style: Theme.of(context).textTheme.labelLarge),
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        side: BorderSide(width: 1, color: Colors.white),
+        backgroundColor: Color(0xff2c776d),
       ),
     );
   }

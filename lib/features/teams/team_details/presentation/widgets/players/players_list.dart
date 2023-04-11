@@ -43,11 +43,7 @@ class _NoPlayersWidget extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
+          style: Theme.of(context).textTheme.labelLarge,
         ),
       ),
     );

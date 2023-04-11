@@ -11,28 +11,22 @@ class MatchScoreWidget extends StatelessWidget {
       return SizedBox();
     }
 
+    final customTextStyle = TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    );
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           teamMatch.radiantScore.toString(),
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: DotaColors.radiantColor,
-          ),
+          style: customTextStyle.copyWith(color: DotaColors.radiantColor),
         ),
-        Text(
-          ' : ',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
+        Text(' : ', style: customTextStyle),
         Text(
           teamMatch.direScore.toString(),
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: DotaColors.direColor,
-          ),
+          style: customTextStyle.copyWith(color: DotaColors.direColor),
         ),
       ],
     );

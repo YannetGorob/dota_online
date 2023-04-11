@@ -1,13 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
-import 'package:dota_online/core/navigation/navigation.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/teams/team_match_list_item.dart';
-import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
+import 'package:dota_online/l10n/l10n.dart';
+
+import 'matches/team_match_list_item.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
@@ -16,9 +17,9 @@ class TeamDetailsBody extends StatelessWidget {
     this.matches,
   });
 
+  final TeamModel team;
   final List<PlayerModel>? players;
   final List<TeamMatches>? matches;
-  final TeamModel team;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +32,11 @@ class TeamDetailsBody extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsetsDirectional.all(4),
               sliver: SliverToBoxAdapter(
-                child: Text(context.l10n.players,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge),
+                child: Text(
+                  context.l10n.players,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
             ),
           PlayersList(players: players!),
@@ -43,9 +46,8 @@ class TeamDetailsBody extends StatelessWidget {
               sliver: SliverToBoxAdapter(
                 child: DotaPrimaryButton(
                   onPressed: () {
-                    context.pushNamed(
-                      AppRoutes.playersListPage.name,
-                      extra: players,
+                    context.router.push(
+                      PlayersListRoute(players: players!),
                     );
                   },
                   title: context.l10n.viewallplayers,
@@ -56,24 +58,30 @@ class TeamDetailsBody extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsets.only(top: 20),
               sliver: SliverToBoxAdapter(
-                child: Text(context.l10n.matchesTab,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge),
+                child: Text(
+                  context.l10n.matchesTab,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               ),
             ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: matches!.length,
               (context, index) {
+                final item = matches![index];
                 return InkWell(
                   onTap: () {
-                    context.pushNamed(
-                      AppRoutes.teamMatchesPage.name,
-                      extra: matches![index].matchId,
-                    );
+                    if (item.matchId != null) {
+                      context.router.push(
+                        MatchDetailsRoute(
+                          matchId: item.matchId!,
+                        ),
+                      );
+                    }
                   },
                   child: TeamMatchListItem(
-                    teamMatch: matches![index],
+                    teamMatch: item,
                     team: team,
                   ),
                 );
