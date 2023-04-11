@@ -1,5 +1,5 @@
 import 'package:dota_online/core/api/models/match/match_model.dart';
-import 'package:dota_online/core/dota_ui/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/widgets/team_name_on_matches_list.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/widgets/team_score_on_matches_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -20,7 +20,7 @@ class MatchCard extends StatelessWidget {
           children: [
             Text(
               '🏆 ${match.leagueName ?? '???'}',
-              style: const TextStyle(fontSize: 15),
+              style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
             Row(
@@ -31,7 +31,11 @@ class MatchCard extends StatelessWidget {
                     teamName: match.radiantName ?? '???',
                   ),
                 ),
-                const Expanded(flex: 0, child: Center(child: Text(' vs '))),
+                Center(
+                    child: Text(
+                  ' vs ',
+                  style: Theme.of(context).textTheme.titleMedium,
+                )),
                 Expanded(
                   child: TeamNameOnMatchesListWidget(
                     teamName: match.direName ?? '???',
@@ -43,6 +47,7 @@ class MatchCard extends StatelessWidget {
             if (match.duration != null)
               Text(
                 '⏳${(match.duration! / 60).toStringAsFixed(2).replaceAll('.', ':')}',
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +59,7 @@ class MatchCard extends StatelessWidget {
             ),
             Text(
               context.l10n.score,
-              style: TextStyle(fontSize: 10, color: Colors.grey),
+              style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),

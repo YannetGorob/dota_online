@@ -31,7 +31,6 @@ class MatchDetailsBody extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Expanded(
                         child: Row(
@@ -41,20 +40,36 @@ class MatchDetailsBody extends StatelessWidget {
                             if (item.name != null)
                               Text(item.name!)
                             else if (item.personName != null)
-                              Text(item.personName!)
+                              Text(
+                                item.personName!,
+                                style: Theme.of(context).textTheme.titleMedium,
+                              )
                             else
-                              Text('???', style: TextStyle(color: Colors.grey)),
+                              Text(
+                                '???',
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
                           ],
                         ),
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           if (item.kills != null)
-                            PlayerStatsWidget(stats: item.kills!),
+                            PlayerStatsWidget(
+                              stats: item.kills!,
+                              statAbbr: 'K',
+                            ),
                           if (item.deaths != null)
-                            PlayerStatsWidget(stats: item.deaths!),
+                            PlayerStatsWidget(
+                              stats: item.deaths!,
+                              statAbbr: 'D',
+                            ),
                           if (item.assists != null)
-                            PlayerStatsWidget(stats: item.assists!),
+                            PlayerStatsWidget(
+                              stats: item.assists!,
+                              statAbbr: 'A',
+                            ),
                         ],
                       ),
                     ],

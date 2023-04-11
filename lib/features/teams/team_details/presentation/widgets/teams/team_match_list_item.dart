@@ -1,9 +1,8 @@
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 part 'match_score_widget.dart';
@@ -64,30 +63,23 @@ class _MatchOpponentsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      fit: BoxFit.fill,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _TeamItem(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          child: _TeamItem(
             teamName: team.name.toString(),
             img: team.logoUrl,
           ),
-          Text(
-            '  VS  ',
-            style: GoogleFonts.tinos(
-              textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 40,
-              ),
-            ),
-          ),
-          _TeamItem(
+        ),
+        Text('  VS  ', style: Theme.of(context).textTheme.bodyMedium),
+        Expanded(
+          child: _TeamItem(
             teamName: teamMatch.opposingTeamName.toString(),
             img: teamMatch.opposingTeamLogo,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
@@ -108,10 +100,17 @@ class _MatchParamsWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.timer),
-              Text(_formatMatchDuration()),
+              Text(
+                _formatMatchDuration(),
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
             ],
           ),
-        if (teamMatch.startTime != null) Text(_formatMatchStartTime()),
+        if (teamMatch.startTime != null)
+          Text(
+            _formatMatchStartTime(),
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
       ],
     );
   }
@@ -144,17 +143,11 @@ class _TeamItem extends StatelessWidget {
           imageUrl: img,
           height: 80,
         ),
-        Text(
-          teamName,
-          overflow: TextOverflow.ellipsis,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.tinos(
-            textStyle: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
-          ),
-        ),
+        SizedBox(height: 5),
+        Text(teamName,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium),
       ],
     );
   }
