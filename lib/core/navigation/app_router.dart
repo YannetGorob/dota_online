@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/navigation/empty_routes.dart';
+import 'package:dota_online/core/navigation/base_tab_routes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_page.dart';
 import 'package:dota_online/features/home/presentation/home_page.dart';

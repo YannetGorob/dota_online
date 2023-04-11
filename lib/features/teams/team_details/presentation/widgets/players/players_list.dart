@@ -1,7 +1,6 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/player_list_item.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PlayersList extends StatelessWidget {
   const PlayersList({required this.players});
@@ -44,13 +43,7 @@ class _NoPlayersWidget extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: GoogleFonts.tinos(
-            textStyle: TextStyle(
-              color: Colors.grey,
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
-            ),
-          ),
+          style: Theme.of(context).textTheme.labelLarge,
         ),
       ),
     );

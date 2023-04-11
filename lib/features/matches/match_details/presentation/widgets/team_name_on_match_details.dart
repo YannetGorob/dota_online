@@ -1,5 +1,5 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:flutter/material.dart';
 
 class TeamNameOnMatchDetails extends StatelessWidget {
@@ -25,10 +25,10 @@ class TeamNameOnMatchDetails extends StatelessWidget {
         ),
         if (matchDetails.radiantTeam != null &&
             teamName == matchDetails.radiantTeam!.name)
-          Text('The Radiant', style: TextStyle(color: radiantColor)),
+          Text('The Radiant', style: TextStyle(color: DotaColors.radiantColor)),
         if (matchDetails.direTeam != null &&
             teamName == matchDetails.direTeam!.name)
-          Text('The Dire', style: TextStyle(color: direColor)),
+          Text('The Dire', style: TextStyle(color: DotaColors.direColor)),
       ],
     );
   }

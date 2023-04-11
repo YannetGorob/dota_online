@@ -14,16 +14,10 @@ class TeamsListCubit extends Cubit<TeamsListState> {
 
     teamsResponse.when(
       success: (data) {
-        if (!this.isClosed)
-          emit(
-            TeamsListState.loaded(teams: data),
-          );
+        if (!this.isClosed) emit(TeamsListState.loaded(teams: data));
       },
       failure: (_) {
-        if (!this.isClosed)
-          emit(
-            const TeamsListState.error(),
-          );
+        if (!this.isClosed) emit(const TeamsListState.error());
       },
     );
   }

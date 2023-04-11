@@ -2,11 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/dota_ui/constants.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
+import 'package:dota_online/l10n/l10n.dart';
 
 import 'matches/team_match_list_item.dart';
 
@@ -17,14 +17,14 @@ class TeamDetailsBody extends StatelessWidget {
     this.matches,
   });
 
+  final TeamModel team;
   final List<PlayerModel>? players;
   final List<TeamMatches>? matches;
-  final TeamModel team;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CustomScrollView(
         slivers: [
           SliverPadding(padding: EdgeInsets.only(top: 10)),
@@ -33,14 +33,9 @@ class TeamDetailsBody extends StatelessWidget {
               padding: EdgeInsetsDirectional.all(4),
               sliver: SliverToBoxAdapter(
                 child: Text(
-                  'PLAYERS',
+                  context.l10n.players,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.tinos(
-                    textStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
             ),
@@ -49,7 +44,14 @@ class TeamDetailsBody extends StatelessWidget {
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 4),
               sliver: SliverToBoxAdapter(
-                child: _playersButton(context, players!),
+                child: DotaPrimaryButton(
+                  onPressed: () {
+                    context.router.push(
+                      PlayersListRoute(players: players!),
+                    );
+                  },
+                  title: context.l10n.viewallplayers,
+                ),
               ),
             ),
           if (matches != null)
@@ -57,14 +59,9 @@ class TeamDetailsBody extends StatelessWidget {
               padding: EdgeInsets.only(top: 20),
               sliver: SliverToBoxAdapter(
                 child: Text(
-                  'MATCHES',
+                  context.l10n.matchesTab,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.tinos(
-                    textStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25,
-                    ),
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
             ),
@@ -72,18 +69,19 @@ class TeamDetailsBody extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               childCount: matches!.length,
               (context, index) {
+                final item = matches![index];
                 return InkWell(
                   onTap: () {
-                  if(matches![index].matchId != null){
-                    context.router.push(
+                    if (item.matchId != null) {
+                      context.router.push(
                         MatchDetailsRoute(
-                          matchId: matches![index].matchId!,
+                          matchId: item.matchId!,
                         ),
                       );
                     }
                   },
                   child: TeamMatchListItem(
-                    teamMatch: matches![index],
+                    teamMatch: item,
                     team: team,
                   ),
                 );
@@ -92,28 +90,6 @@ class TeamDetailsBody extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-
-  ElevatedButton _playersButton(
-    BuildContext context,
-    List<PlayerModel> players,
-  ) {
-    return ElevatedButton(
-      child: Text(
-        'View all players',
-        style: GoogleFonts.tinos(
-          textStyle: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-      ),
-      onPressed: () {
-        context.router.push(
-          PlayersListRoute(players: players)
-        );
-      },
     );
   }
 }

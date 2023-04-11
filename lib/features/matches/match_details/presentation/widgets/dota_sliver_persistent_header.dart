@@ -1,6 +1,7 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_name_on_match_details.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_score_on_match_details.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
@@ -25,7 +26,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
           children: [
             if (matchDetails.matchId != null)
               Text(
-                'Match ${matchDetails.matchId.toString()}',
+                '${context.l10n.match} ${matchDetails.matchId.toString()}',
                 style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
             const SizedBox(height: 10),
@@ -66,11 +67,26 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                 ),
               ],
             ),
-            const Text('score', style: TextStyle(color: Colors.grey)),
+            Text(context.l10n.score, style: TextStyle(color: Colors.grey)),
             const SizedBox(height: 10),
-            Text(
-              'Duration: ${((matchDetails.duration!) / 60).toStringAsFixed(2).replaceAll('.', ':')}',
-              style: TextStyle(color: Colors.grey),
+            RichText(
+              text: TextSpan(
+                text: '${context.l10n.duration}: ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey,
+                ),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: ((matchDetails.duration!) / 60)
+                          .toStringAsFixed(2)
+                          .replaceAll('.', ':'),
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.normal,
+                      )),
+                ],
+              ),
             ),
           ],
         ),
@@ -85,6 +101,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
   double get minExtent => 180;
 
   @override
-  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) =>
-      true;
+  bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
+  }
 }

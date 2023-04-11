@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-
-import 'dota_progress_indicator.dart';
 
 class DotaCachedImage extends StatelessWidget {
   const DotaCachedImage({

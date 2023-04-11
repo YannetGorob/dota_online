@@ -3,10 +3,18 @@
     "matchesList": "Список матчів",
     "matchDetails": "Деталі матчу",
     "teamsList": "Список команд",
-    "teamDetails": "Деталі команди",
     "heroesList": "Список героїв",
     "matchesTab": "Матчі",
     "heroesTab": "Герої",
     "teamsTab": "Команди",
-    "players": "Гравці"
+    "players": "Гравці",
+    "attackType": "Тип атаки",
+    "speed": "Швидкість",
+    "damage": "Шкода",
+    "armor": "Захист",
+    "roles": "Ролі",
+    "score": "рахунок",
+    "match": "Матч",
+    "duration": "Тривалість",
+    "viewallplayers": "Показати всіх гравців"
 }

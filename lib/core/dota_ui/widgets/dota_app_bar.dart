@@ -12,18 +12,17 @@ class DotaAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: title == null ? null : Text(title!),
+      title: Text(
+              title ?? '',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
       backgroundColor: Theme.of(context).primaryColor,
       elevation: 0,
       centerTitle: true,
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: Image.asset(
-            Assets.images.dotaLogo.path,
-            height: 30,
-            width: 30,
-          ),
+          child: Assets.images.dotaLogo.image(height: 30, width: 30),
         ),
       ],
     );

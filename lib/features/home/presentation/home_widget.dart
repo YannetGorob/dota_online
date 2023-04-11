@@ -14,25 +14,25 @@ class HomeWidget extends StatelessWidget {
         HeroListRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
-      return BottomNavigationBar(
-        currentIndex: tabsRouter.activeIndex,
-        onTap: tabsRouter.setActiveIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.emoji_events_rounded),
-            label: context.l10n.matchesTab,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: context.l10n.teamsTab,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.ant),
-            label: context.l10n.heroesTab,
-          ),
-        ],
-      );
-    },
+        return BottomNavigationBar(
+          currentIndex: tabsRouter.activeIndex,
+          onTap: tabsRouter.setActiveIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.emoji_events_rounded),
+              label: context.l10n.matchesTab,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: context.l10n.teamsTab,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.ant),
+              label: context.l10n.heroesTab,
+            ),
+          ],
+        );
+      },
     );
   }
 }
