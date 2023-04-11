@@ -26,11 +26,6 @@ class DarkDotaTheme extends DotaTheme {
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: DotaColors.direColor,
       ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
-        ),
-      ),
     );
   }
 }
