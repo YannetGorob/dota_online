@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/leagues/league_list/presentation/widgets/league_list_tile.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +16,12 @@ class LeagueListBody extends StatelessWidget {
       itemCount: leagues.length,
       itemBuilder: (context, index) {
         final item = leagues[index];
-        return LeagueListTile(league: item);
+        return InkWell(
+          onTap: () {
+            context.router.push(LeagueDetailsRoute(leagueModel: item));
+          },
+          child: LeagueListTile(league: item),
+        );
       },
     );
   }

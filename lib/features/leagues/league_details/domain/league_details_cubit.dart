@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/base/api_result.dart';
-import 'package:dota_online/core/api/models/team/team_matches.dart';
+import 'package:dota_online/core/api/models/leagues/league_match/league_match.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/api/providers/league_provider.dart';
 import 'package:dota_online/features/leagues/league_details/domain/league_details_state.dart';
 
-class LeagueDetailCubit extends Cubit<LeagueDetailState> {
-  LeagueDetailCubit({required LeagueProvider leagueProvider})
+class LeagueDetailsCubit extends Cubit<LeagueDetailState> {
+  LeagueDetailsCubit({required LeagueProvider leagueProvider})
       : _leagueProvider = leagueProvider,
         super(const LeagueDetailState.loading());
 
@@ -23,7 +23,7 @@ class LeagueDetailCubit extends Cubit<LeagueDetailState> {
       failure: (_) => null,
     );
 
-    final matches = (leagueResponses[1] as ApiResult<List<TeamMatches>>).map(
+    final matches = (leagueResponses[1] as ApiResult<List<LeagueMatch>>).map(
       success: (data) => data.value,
       failure: (_) => null,
     );

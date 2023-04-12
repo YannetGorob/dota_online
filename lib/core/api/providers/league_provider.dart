@@ -1,7 +1,7 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
 import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
-import 'package:dota_online/core/api/models/match/match_model.dart';
+import 'package:dota_online/core/api/models/leagues/league_match/league_match.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 
 class LeagueProvider {
@@ -20,12 +20,12 @@ class LeagueProvider {
     );
   }
 
-  Future<ApiResult<List<MatchModel>>> getMatchesByLeagueId(int leagueId) {
-    return _network.sendRequest<List<MatchModel>>(
+  Future<ApiResult<List<LeagueMatch>>> getMatchesByLeagueId(int leagueId) {
+    return _network.sendRequest<List<LeagueMatch>>(
       path: '/leagues/$leagueId/matches',
       parseListResponse: (json) {
-        return List<MatchModel>.from(
-          json.map((e) => MatchModel.fromJson(e as Map<String, dynamic>)),
+        return List<LeagueMatch>.from(
+          json.map((e) => LeagueMatch.fromJson(e as Map<String, dynamic>)),
         );
       },
     );
@@ -36,10 +36,9 @@ class LeagueProvider {
       path: '/leagues/$leagueId/teams',
       parseListResponse: (json) {
         return List<TeamModel>.from(
-          json.map((e) => MatchModel.fromJson(e as Map<String, dynamic>)),
+          json.map((e) => TeamModel.fromJson(e as Map<String, dynamic>)),
         );
       },
     );
   }
-
 }

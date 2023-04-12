@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LeaguesListState {
+mixin _$LeagueListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -63,16 +63,16 @@ mixin _$LeaguesListState {
 }
 
 /// @nodoc
-abstract class $LeaguesListStateCopyWith<$Res> {
-  factory $LeaguesListStateCopyWith(
+abstract class $LeagueListStateCopyWith<$Res> {
+  factory $LeagueListStateCopyWith(
           LeagueListState value, $Res Function(LeagueListState) then) =
-      _$LeaguesListStateCopyWithImpl<$Res, LeagueListState>;
+      _$LeagueListStateCopyWithImpl<$Res, LeagueListState>;
 }
 
 /// @nodoc
-class _$LeaguesListStateCopyWithImpl<$Res, $Val extends LeagueListState>
-    implements $LeaguesListStateCopyWith<$Res> {
-  _$LeaguesListStateCopyWithImpl(this._value, this._then);
+class _$LeagueListStateCopyWithImpl<$Res, $Val extends LeagueListState>
+    implements $LeagueListStateCopyWith<$Res> {
+  _$LeagueListStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -88,7 +88,7 @@ abstract class _$$LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingCopyWithImpl<$Res>
-    extends _$LeaguesListStateCopyWithImpl<$Res, _$Loading>
+    extends _$LeagueListStateCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
@@ -101,7 +101,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'LeaguesListState.loading()';
+    return 'LeagueListState.loading()';
   }
 
   @override
@@ -196,7 +196,7 @@ abstract class _$$LoadedCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadedCopyWithImpl<$Res>
-    extends _$LeaguesListStateCopyWithImpl<$Res, _$Loaded>
+    extends _$LeagueListStateCopyWithImpl<$Res, _$Loaded>
     implements _$$LoadedCopyWith<$Res> {
   __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
       : super(_value, _then);
@@ -231,7 +231,7 @@ class _$Loaded implements Loaded {
 
   @override
   String toString() {
-    return 'LeaguesListState.loaded(leagues: $leagues)';
+    return 'LeagueListState.loaded(leagues: $leagues)';
   }
 
   @override
@@ -340,7 +340,7 @@ abstract class _$$ErrorCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorCopyWithImpl<$Res>
-    extends _$LeaguesListStateCopyWithImpl<$Res, _$Error>
+    extends _$LeagueListStateCopyWithImpl<$Res, _$Error>
     implements _$$ErrorCopyWith<$Res> {
   __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
       : super(_value, _then);
@@ -369,7 +369,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'LeaguesListState.error(message: $message)';
+    return 'LeagueListState.error(message: $message)';
   }
 
   @override

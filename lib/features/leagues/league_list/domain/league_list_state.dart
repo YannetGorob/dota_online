@@ -4,7 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'league_list_state.freezed.dart';
 
 @freezed
-class LeagueListState with _$LeaguesListState {
+class LeagueListState with _$LeagueListState {
   const factory LeagueListState.loading() = Loading;
 
   const factory LeagueListState.loaded({

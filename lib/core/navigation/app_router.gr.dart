@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: HeroesRouterPage(),
       );
     },
+    LeaguesRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: LeaguesRouterPage(),
+      );
+    },
     HeroDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<HeroDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -85,6 +91,13 @@ abstract class _$AppRouter extends RootStackRouter {
         child: PlayersListPage(players: args.players),
       );
     },
+    LeagueDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<LeagueDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: LeagueDetailsPage(leagueModel: args.leagueModel),
+      );
+    },
     LeagueListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -132,6 +145,20 @@ class HeroesRouter extends PageRouteInfo<void> {
         );
 
   static const String name = 'HeroesRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LeaguesRouterPage]
+class LeaguesRouter extends PageRouteInfo<void> {
+  const LeaguesRouter({List<PageRouteInfo>? children})
+      : super(
+          LeaguesRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LeaguesRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -305,6 +332,35 @@ class PlayersListRouteArgs {
   @override
   String toString() {
     return 'PlayersListRouteArgs{players: $players}';
+  }
+}
+
+/// generated route for
+/// [LeagueDetailsPage]
+class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
+  LeagueDetailsRoute({
+    required LeagueModel leagueModel,
+    List<PageRouteInfo>? children,
+  }) : super(
+          LeagueDetailsRoute.name,
+          args: LeagueDetailsRouteArgs(leagueModel: leagueModel),
+          initialChildren: children,
+        );
+
+  static const String name = 'LeagueDetailsRoute';
+
+  static const PageInfo<LeagueDetailsRouteArgs> page =
+      PageInfo<LeagueDetailsRouteArgs>(name);
+}
+
+class LeagueDetailsRouteArgs {
+  const LeagueDetailsRouteArgs({required this.leagueModel});
+
+  final LeagueModel leagueModel;
+
+  @override
+  String toString() {
+    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel}';
   }
 }
 

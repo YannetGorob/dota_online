@@ -1,4 +1,4 @@
-import 'package:dota_online/core/api/models/team/team_matches.dart';
+import 'package:dota_online/core/api/models/leagues/league_match/league_match.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -10,7 +10,7 @@ class LeagueDetailState with _$LeagueDetailState {
 
   const factory LeagueDetailState.loaded({
     List<TeamModel>? teams,
-    List<TeamMatches>? matches,
+    List<LeagueMatch>? matches,
   }) = Loaded;
 
   const factory LeagueDetailState.error([String? message]) = Error;
