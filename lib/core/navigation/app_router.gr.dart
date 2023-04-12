@@ -85,6 +85,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: PlayersListPage(players: args.players),
       );
     },
+    LeagueListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: LeagueListPage(),
+      );
+    },
   };
 }
 
@@ -300,4 +306,18 @@ class PlayersListRouteArgs {
   String toString() {
     return 'PlayersListRouteArgs{players: $players}';
   }
+}
+
+/// generated route for
+/// [LeagueListPage]
+class LeagueListRoute extends PageRouteInfo<void> {
+  const LeagueListRoute({List<PageRouteInfo>? children})
+      : super(
+          LeagueListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LeagueListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

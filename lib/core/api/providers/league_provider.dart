@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/models/match/match_details.dart';
+import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
 import 'package:dota_online/core/api/models/match/match_model.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 
@@ -9,12 +9,12 @@ class LeagueProvider {
 
   final BaseNetwork _network;
 
-  Future<ApiResult<List<League>>> getLeagues() {
-    return _network.sendRequest<List<League>>(
+  Future<ApiResult<List<LeagueModel>>> getLeagues() {
+    return _network.sendRequest<List<LeagueModel>>(
       path: '/leagues',
       parseListResponse: (json) {
-        return List<League>.from(
-          json.map((e) => League.fromJson(e as Map<String, dynamic>)),
+        return List<LeagueModel>.from(
+          json.map((e) => LeagueModel.fromJson(e as Map<String, dynamic>)),
         );
       },
     );

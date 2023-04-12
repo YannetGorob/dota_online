@@ -1,15 +1,15 @@
-import 'package:dota_online/core/api/models/match/match_details.dart';
+import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'leagues_list_state.freezed.dart';
+part 'league_list_state.freezed.dart';
 
 @freezed
-class LeaguesListState with _$LeaguesListState {
-  const factory LeaguesListState.loading() = Loading;
+class LeagueListState with _$LeaguesListState {
+  const factory LeagueListState.loading() = Loading;
 
-  const factory LeaguesListState.loaded({
-    required List<League> leagues,
+  const factory LeagueListState.loaded({
+    required List<LeagueModel> leagues,
   }) = Loaded;
 
-  const factory LeaguesListState.error([String? message]) = Error;
+  const factory LeagueListState.error([String? message]) = Error;
 }

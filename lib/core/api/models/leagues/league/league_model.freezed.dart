@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'league.dart';
+part of 'league_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-League _$LeagueFromJson(Map<String, dynamic> json) {
+LeagueModel _$LeagueModelFromJson(Map<String, dynamic> json) {
   return _League.fromJson(json);
 }
 
 /// @nodoc
-mixin _$League {
+mixin _$LeagueModel {
   int? get leagueid => throw _privateConstructorUsedError;
   String? get ticket => throw _privateConstructorUsedError;
   String? get banner => throw _privateConstructorUsedError;
@@ -28,13 +28,15 @@ mixin _$League {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LeagueCopyWith<League> get copyWith => throw _privateConstructorUsedError;
+  $LeagueModelCopyWith<LeagueModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LeagueCopyWith<$Res> {
-  factory $LeagueCopyWith(League value, $Res Function(League) then) =
-      _$LeagueCopyWithImpl<$Res, League>;
+abstract class $LeagueModelCopyWith<$Res> {
+  factory $LeagueModelCopyWith(
+          LeagueModel value, $Res Function(LeagueModel) then) =
+      _$LeagueModelCopyWithImpl<$Res, LeagueModel>;
   @useResult
   $Res call(
       {int? leagueid,
@@ -45,9 +47,9 @@ abstract class $LeagueCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LeagueCopyWithImpl<$Res, $Val extends League>
-    implements $LeagueCopyWith<$Res> {
-  _$LeagueCopyWithImpl(this._value, this._then);
+class _$LeagueModelCopyWithImpl<$Res, $Val extends LeagueModel>
+    implements $LeagueModelCopyWith<$Res> {
+  _$LeagueModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,7 +91,7 @@ class _$LeagueCopyWithImpl<$Res, $Val extends League>
 }
 
 /// @nodoc
-abstract class _$$_LeagueCopyWith<$Res> implements $LeagueCopyWith<$Res> {
+abstract class _$$_LeagueCopyWith<$Res> implements $LeagueModelCopyWith<$Res> {
   factory _$$_LeagueCopyWith(_$_League value, $Res Function(_$_League) then) =
       __$$_LeagueCopyWithImpl<$Res>;
   @override
@@ -104,7 +106,7 @@ abstract class _$$_LeagueCopyWith<$Res> implements $LeagueCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LeagueCopyWithImpl<$Res>
-    extends _$LeagueCopyWithImpl<$Res, _$_League>
+    extends _$LeagueModelCopyWithImpl<$Res, _$_League>
     implements _$$_LeagueCopyWith<$Res> {
   __$$_LeagueCopyWithImpl(_$_League _value, $Res Function(_$_League) _then)
       : super(_value, _then);
@@ -165,7 +167,7 @@ class _$_League implements _League {
 
   @override
   String toString() {
-    return 'League(leagueid: $leagueid, ticket: $ticket, banner: $banner, tier: $tier, name: $name)';
+    return 'LeagueModel(leagueid: $leagueid, ticket: $ticket, banner: $banner, tier: $tier, name: $name)';
   }
 
   @override
@@ -200,7 +202,7 @@ class _$_League implements _League {
   }
 }
 
-abstract class _League implements League {
+abstract class _League implements LeagueModel {
   const factory _League(
       {final int? leagueid,
       final String? ticket,

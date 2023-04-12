@@ -12,6 +12,7 @@ class HomeWidget extends StatelessWidget {
         MatchesListRoute(),
         TeamsListRoute(),
         HeroListRoute(),
+        LeagueListRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
@@ -29,6 +30,10 @@ class HomeWidget extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(CupertinoIcons.ant),
               label: context.l10n.heroesTab,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.text_aligncenter),
+              label: 'leagues',
             ),
           ],
         );

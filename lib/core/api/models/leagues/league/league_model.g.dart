@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'league.dart';
+part of 'league_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

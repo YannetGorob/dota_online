@@ -2,10 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/providers/league_provider.dart';
 import 'package:dota_online/features/leagues/league_list/domain/league_list_state.dart';
 
-class LeaguesListCubit extends Cubit<LeaguesListState> {
-  LeaguesListCubit({required LeagueProvider leagueProvider})
+class LeagueListCubit extends Cubit<LeagueListState> {
+  LeagueListCubit({required LeagueProvider leagueProvider})
       : _leagueProvider = leagueProvider,
-        super(const LeaguesListState.loading());
+        super(const LeagueListState.loading());
 
   final LeagueProvider _leagueProvider;
 
@@ -14,10 +14,10 @@ class LeaguesListCubit extends Cubit<LeaguesListState> {
 
     leaguesResponse.when(
       success: (data) {
-        if (!this.isClosed) emit(LeaguesListState.loaded(leagues: data));
+        if (!this.isClosed) emit(LeagueListState.loaded(leagues: data));
       },
       failure: (_) {
-        if (!this.isClosed) emit(const LeaguesListState.error());
+        if (!this.isClosed) emit(const LeagueListState.error());
       },
     );
   }

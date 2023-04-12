@@ -6,6 +6,7 @@ import 'package:dota_online/core/navigation/base_tab_routes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_page.dart';
 import 'package:dota_online/features/home/presentation/home_page.dart';
+import 'package:dota_online/features/leagues/league_list/presentation/league_list_page.dart';
 import 'package:dota_online/features/matches/match_details/presentation/match_details_page.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/matches_list_page.dart';
 import 'package:dota_online/features/teams/team_details/presentation/team_details_page.dart';
@@ -49,6 +50,7 @@ class AppRouter extends _$AppRouter {
               AutoRoute(path: 'match_details', page: MatchDetailsRoute.page)
             ],
           ),
+          AutoRoute(page: LeagueListRoute.page)
         ],
       ),
     ];
