@@ -12,6 +12,7 @@ class BaseNetwork {
 
   Future<ApiResult<T>> sendRequest<T>({
     required String path,
+    Map<String, dynamic>? queryParameters,
     T Function(Map<String, dynamic> json)? parseResponse,
     T Function(List<dynamic> json)? parseListResponse,
   }) async {
@@ -22,6 +23,7 @@ class BaseNetwork {
     try {
       final result = await _dio.request<dynamic>(
         path,
+        queryParameters: queryParameters,
       );
 
       final data = result.data;

@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: HeroesRouterPage(),
       );
     },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
+    },
     HeroDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<HeroDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -44,12 +50,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HeroListPage(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomePage(),
       );
     },
     MatchesListRoute.name: (routeData) {
@@ -131,6 +131,20 @@ class HeroesRouter extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HeroDetailsPage]
 class HeroDetailsRoute extends PageRouteInfo<HeroDetailsRouteArgs> {
   HeroDetailsRoute({
@@ -169,20 +183,6 @@ class HeroListRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HeroListRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
