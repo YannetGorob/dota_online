@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: HeroesRouterPage(),
       );
     },
+    PlayersRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProPlayersRouterPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -85,6 +91,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: PlayersListPage(players: args.players),
       );
     },
+    ProPlayersListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProPlayersListPage(),
+      );
+    },
   };
 }
 
@@ -126,6 +138,20 @@ class HeroesRouter extends PageRouteInfo<void> {
         );
 
   static const String name = 'HeroesRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProPlayersRouterPage]
+class PlayersRouter extends PageRouteInfo<void> {
+  const PlayersRouter({List<PageRouteInfo>? children})
+      : super(
+          PlayersRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PlayersRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -300,4 +326,18 @@ class PlayersListRouteArgs {
   String toString() {
     return 'PlayersListRouteArgs{players: $players}';
   }
+}
+
+/// generated route for
+/// [ProPlayersListPage]
+class ProPlayersListRoute extends PageRouteInfo<void> {
+  const ProPlayersListRoute({List<PageRouteInfo>? children})
+      : super(
+          ProPlayersListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProPlayersListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

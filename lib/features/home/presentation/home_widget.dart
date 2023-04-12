@@ -9,6 +9,7 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: [
+        ProPlayersListRoute(),
         MatchesListRoute(),
         TeamsListRoute(),
         HeroListRoute(),
@@ -18,6 +19,10 @@ class HomeWidget extends StatelessWidget {
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
           items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: context.l10n.home,
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.emoji_events_rounded),
               label: context.l10n.matchesTab,
