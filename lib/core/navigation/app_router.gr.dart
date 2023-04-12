@@ -97,6 +97,13 @@ abstract class _$AppRouter extends RootStackRouter {
         child: ProPlayersListPage(),
       );
     },
+    SearchPlayerRoute.name: (routeData) {
+      final args = routeData.argsAs<SearchPlayerRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SearchPlayerPage(searchValue: args.searchValue),
+      );
+    },
   };
 }
 
@@ -340,4 +347,33 @@ class ProPlayersListRoute extends PageRouteInfo<void> {
   static const String name = 'ProPlayersListRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchPlayerPage]
+class SearchPlayerRoute extends PageRouteInfo<SearchPlayerRouteArgs> {
+  SearchPlayerRoute({
+    required String searchValue,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SearchPlayerRoute.name,
+          args: SearchPlayerRouteArgs(searchValue: searchValue),
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchPlayerRoute';
+
+  static const PageInfo<SearchPlayerRouteArgs> page =
+      PageInfo<SearchPlayerRouteArgs>(name);
+}
+
+class SearchPlayerRouteArgs {
+  const SearchPlayerRouteArgs({required this.searchValue});
+
+  final String searchValue;
+
+  @override
+  String toString() {
+    return 'SearchPlayerRouteArgs{searchValue: $searchValue}';
+  }
 }

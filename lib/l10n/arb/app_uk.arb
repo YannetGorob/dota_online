@@ -17,5 +17,7 @@
     "match": "Матч",
     "duration": "Тривалість",
     "viewallplayers": "Показати всіх гравців",
-    "home": "Головна"
+    "home": "Головна",
+    "searchAccount": "Пошук акаунта",
+    "topPlayers": "Найкращі гравці"
 }

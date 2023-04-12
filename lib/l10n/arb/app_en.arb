@@ -17,6 +17,8 @@
     "match": "Match",
     "duration": "Duration",
     "viewallplayers": "View all players",
-    "home": "Home"
+    "home": "Home",
+    "searchAccount": "Search an account",
+    "topPlayers": "Top players"
 
 }

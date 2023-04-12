@@ -9,6 +9,7 @@ class DarkDotaTheme extends DotaTheme {
   @override
   ThemeData darkTheme(BuildContext context) {
     return ThemeData.dark().copyWith(
+      colorScheme: ThemeData().colorScheme.copyWith(primary: Colors.white),
       textTheme: ThemeData.dark().textTheme.copyWith(
             labelLarge: TextStyle(
               fontWeight: FontWeight.bold,
