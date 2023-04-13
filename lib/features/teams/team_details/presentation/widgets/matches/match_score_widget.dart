@@ -21,12 +21,12 @@ class MatchScoreWidget extends StatelessWidget {
       children: [
         Text(
           teamMatch.radiantScore.toString(),
-          style: customTextStyle.copyWith(color: DotaColors.radiantColor),
+          style: customTextStyle.copyWith(color: context.dotaColors.radiantColor),
         ),
         Text(' : ', style: customTextStyle),
         Text(
           teamMatch.direScore.toString(),
-          style: customTextStyle.copyWith(color: DotaColors.direColor),
+          style: customTextStyle.copyWith(color: context.dotaColors.direColor),
         ),
       ],
     );

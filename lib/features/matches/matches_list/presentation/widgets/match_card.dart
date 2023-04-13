@@ -27,7 +27,7 @@ class MatchCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: TeamNameOnMatchesListWidget(
-                    teamColor: DotaColors.radiantColor,
+                    teamColor: context.dotaColors.radiantColor,
                     teamName: match.radiantName ?? '???',
                   ),
                 ),
@@ -39,7 +39,7 @@ class MatchCard extends StatelessWidget {
                 Expanded(
                   child: TeamNameOnMatchesListWidget(
                     teamName: match.direName ?? '???',
-                    teamColor: DotaColors.direColor,
+                    teamColor: context.dotaColors.direColor,
                   ),
                 ),
               ],

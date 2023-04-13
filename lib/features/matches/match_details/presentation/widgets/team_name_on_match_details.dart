@@ -25,10 +25,10 @@ class TeamNameOnMatchDetails extends StatelessWidget {
         ),
         if (matchDetails.radiantTeam != null &&
             teamName == matchDetails.radiantTeam!.name)
-          Text('The Radiant', style: TextStyle(color: DotaColors.radiantColor)),
+          Text('The Radiant', style: TextStyle(color: context.dotaColors.radiantColor)),
         if (matchDetails.direTeam != null &&
             teamName == matchDetails.direTeam!.name)
-          Text('The Dire', style: TextStyle(color: DotaColors.direColor)),
+          Text('The Dire', style: TextStyle(color: context.dotaColors.direColor)),
       ],
     );
   }

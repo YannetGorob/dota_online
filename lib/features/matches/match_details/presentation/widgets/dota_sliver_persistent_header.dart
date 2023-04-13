@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_name_on_match_details.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_score_on_match_details.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -27,7 +28,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             if (matchDetails.matchId != null)
               Text(
                 '${context.l10n.match} ${matchDetails.matchId.toString()}',
-                style: TextStyle(fontSize: 15, color: Colors.grey),
+                style: TextStyle(
+                  fontSize: 15,
+                  color: context.dotaColors.dotaGreyColor,
+                ),
               ),
             const SizedBox(height: 10),
             if (matchDetails.league != null &&
@@ -35,7 +39,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
               Text(
                 matchDetails.league!.name!,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15, color: Colors.grey),
+                style: TextStyle(
+                  fontSize: 15,
+                  color: context.dotaColors.dotaGreyColor,
+                ),
               ),
             const SizedBox(height: 10),
             Row(
@@ -67,14 +74,19 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                 ),
               ],
             ),
-            Text(context.l10n.score, style: TextStyle(color: Colors.grey)),
+            Text(
+              context.l10n.score,
+              style: TextStyle(
+                color: context.dotaColors.dotaGreyColor,
+              ),
+            ),
             const SizedBox(height: 10),
             RichText(
               text: TextSpan(
                 text: '${context.l10n.duration}: ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey,
+                  color:  context.dotaColors.dotaGreyColor,
                 ),
                 children: <TextSpan>[
                   TextSpan(
@@ -82,7 +94,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                           .toStringAsFixed(2)
                           .replaceAll('.', ':'),
                       style: TextStyle(
-                        color: Colors.grey,
+                        color:  context.dotaColors.dotaGreyColor,
                         fontWeight: FontWeight.normal,
                       )),
                 ],

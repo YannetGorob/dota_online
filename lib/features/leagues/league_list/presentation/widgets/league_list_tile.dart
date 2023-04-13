@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:flutter/material.dart';
 
 class LeagueListTile extends StatelessWidget {
@@ -12,9 +13,8 @@ class LeagueListTile extends StatelessWidget {
       padding: EdgeInsetsDirectional.all(10),
       margin: EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: league.leagueid == 99 ? Colors.green :Colors.white10,
+        color: context.dotaColors.dotaGreyColor,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.black38)
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

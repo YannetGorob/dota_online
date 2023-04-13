@@ -12,13 +12,13 @@ class DarkDotaTheme extends DotaTheme {
       textTheme: ThemeData.dark().textTheme.copyWith(
             labelLarge: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: context.dotaColors.dotaWhiteColor,
               fontSize: 25,
             ),
             headlineSmall: TextStyle(fontWeight: FontWeight.bold),
             titleLarge: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.grey,
+              color: context.dotaColors.dotaGreyColor,
               fontSize: 25,
             ),
             titleMedium: TextStyle(
@@ -26,10 +26,10 @@ class DarkDotaTheme extends DotaTheme {
               overflow: TextOverflow.ellipsis,
             ),
             bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            bodySmall: TextStyle(fontSize: 12, color: Colors.grey),
+            bodySmall: TextStyle(fontSize: 12, color: context.dotaColors.dotaGreyColor),
           ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: DotaColors.direColor,
+        selectedItemColor: context.dotaColors.direColor,
       ),
     );
   }

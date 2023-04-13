@@ -27,9 +27,9 @@ class TeamMatchListItem extends StatelessWidget {
     final Color borderColor;
 
     if(teamMatch.radiant == true){
-      borderColor = DotaColors.radiantColor;
+      borderColor = context.dotaColors.radiantColor;
     }else{
-      borderColor = DotaColors.direColor;
+      borderColor = context.dotaColors.direColor;
     }
 
     return Card(
