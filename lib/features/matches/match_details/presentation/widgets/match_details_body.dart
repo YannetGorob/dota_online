@@ -38,10 +38,11 @@ class MatchDetailsBody extends StatelessWidget {
                             const Text('🎮', style: TextStyle(fontSize: 30)),
                             const SizedBox(width: 10),
                             if (item.name != null)
-                              Text(item.name!)
+                              Text(item.name!, overflow: TextOverflow.ellipsis)
                             else if (item.personName != null)
                               Text(
                                 item.personName!,
+                                overflow: TextOverflow.ellipsis,
                                 style: Theme.of(context).textTheme.titleMedium,
                               )
                             else

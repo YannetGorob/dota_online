@@ -40,8 +40,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             const SizedBox(height: 10),
             Row(
               children: [
-                if (matchDetails.radiantTeam != null &&
-                    matchDetails.direTeam != null)
+                if (matchDetails.radiantTeam != null)
                   Expanded(
                     child: TeamNameOnMatchDetails(
                       matchDetails: matchDetails,
@@ -59,12 +58,13 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                     ),
                   ],
                 ),
-                Expanded(
-                  child: TeamNameOnMatchDetails(
-                    matchDetails: matchDetails,
-                    teamName: matchDetails.direTeam!.name ?? '???',
+                if (matchDetails.direTeam != null)
+                  Expanded(
+                    child: TeamNameOnMatchDetails(
+                      matchDetails: matchDetails,
+                      teamName: matchDetails.direTeam!.name ?? '???',
+                    ),
                   ),
-                ),
               ],
             ),
             Text(context.l10n.score, style: TextStyle(color: Colors.grey)),
@@ -77,14 +77,16 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                   color: Colors.grey,
                 ),
                 children: <TextSpan>[
-                  TextSpan(
+                  if (matchDetails.duration != null)
+                    TextSpan(
                       text: ((matchDetails.duration!) / 60)
                           .toStringAsFixed(2)
                           .replaceAll('.', ':'),
                       style: TextStyle(
                         color: Colors.grey,
                         fontWeight: FontWeight.normal,
-                      )),
+                      ),
+                    ),
                 ],
               ),
             ),
