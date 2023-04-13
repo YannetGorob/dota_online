@@ -45,6 +45,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: ProPlayersRouterPage(),
       );
     },
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomePage(),
+      );
+    },
     HeroDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<HeroDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -56,12 +62,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HeroListPage(),
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomePage(),
       );
     },
     MatchesListRoute.name: (routeData) {
@@ -97,17 +97,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: PlayersListPage(players: args.players),
       );
     },
-    LeagueDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<LeagueDetailsRouteArgs>();
+    ProPlayersListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LeagueDetailsPage(leagueModel: args.leagueModel),
+        child: ProPlayersListPage(),
       );
     },
-    LeagueListRoute.name: (routeData) {
+    SearchPlayerResultRoute.name: (routeData) {
+      final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LeagueListPage(),
+        child: SearchPlayerResultPage(searchValue: args.searchValue),
       );
     },
     PlayerDetailsRoute.name: (routeData) {
@@ -121,17 +121,17 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
-    ProPlayersListRoute.name: (routeData) {
+    LeagueListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProPlayersListPage(),
+        child: LeagueListPage(),
       );
     },
-    SearchPlayerResultRoute.name: (routeData) {
-      final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
+    LeagueDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<LeagueDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: SearchPlayerResultPage(searchValue: args.searchValue),
+        child: LeagueDetailsPage(leagueModel: args.leagueModel),
       );
     },
   };
@@ -208,6 +208,20 @@ class PlayersRouter extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [HomePage]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HeroDetailsPage]
 class HeroDetailsRoute extends PageRouteInfo<HeroDetailsRouteArgs> {
   HeroDetailsRoute({
@@ -246,20 +260,6 @@ class HeroListRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'HeroListRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -380,46 +380,47 @@ class PlayersListRouteArgs {
 }
 
 /// generated route for
-/// [LeagueDetailsPage]
-class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
-  LeagueDetailsRoute({
-    required LeagueModel leagueModel,
-    List<PageRouteInfo>? children,
-  }) : super(
-          LeagueDetailsRoute.name,
-          args: LeagueDetailsRouteArgs(leagueModel: leagueModel),
+/// [ProPlayersListPage]
+class ProPlayersListRoute extends PageRouteInfo<void> {
+  const ProPlayersListRoute({List<PageRouteInfo>? children})
+      : super(
+          ProPlayersListRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'LeagueDetailsRoute';
+  static const String name = 'ProPlayersListRoute';
 
-  static const PageInfo<LeagueDetailsRouteArgs> page =
-      PageInfo<LeagueDetailsRouteArgs>(name);
-}
-
-class LeagueDetailsRouteArgs {
-  const LeagueDetailsRouteArgs({required this.leagueModel});
-
-  final LeagueModel leagueModel;
-
-  @override
-  String toString() {
-    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel}';
-  }
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [LeagueListPage]
-class LeagueListRoute extends PageRouteInfo<void> {
-  const LeagueListRoute({List<PageRouteInfo>? children})
-      : super(
-          LeagueListRoute.name,
+/// [SearchPlayerResultPage]
+class SearchPlayerResultRoute
+    extends PageRouteInfo<SearchPlayerResultRouteArgs> {
+  SearchPlayerResultRoute({
+    required String searchValue,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SearchPlayerResultRoute.name,
+          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
           initialChildren: children,
         );
 
-  static const String name = 'LeagueListRoute';
+  static const String name = 'SearchPlayerResultRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<SearchPlayerResultRouteArgs> page =
+      PageInfo<SearchPlayerResultRouteArgs>(name);
+}
+
+class SearchPlayerResultRouteArgs {
+  const SearchPlayerResultRouteArgs({required this.searchValue});
+
+  final String searchValue;
+
+  @override
+  String toString() {
+    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
+  }
 }
 
 /// generated route for
@@ -466,45 +467,44 @@ class PlayerDetailsRouteArgs {
 }
 
 /// generated route for
-/// [ProPlayersListPage]
-class ProPlayersListRoute extends PageRouteInfo<void> {
-  const ProPlayersListRoute({List<PageRouteInfo>? children})
+/// [LeagueListPage]
+class LeagueListRoute extends PageRouteInfo<void> {
+  const LeagueListRoute({List<PageRouteInfo>? children})
       : super(
-          ProPlayersListRoute.name,
+          LeagueListRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'ProPlayersListRoute';
+  static const String name = 'LeagueListRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
-/// [SearchPlayerResultPage]
-class SearchPlayerResultRoute
-    extends PageRouteInfo<SearchPlayerResultRouteArgs> {
-  SearchPlayerResultRoute({
-    required String searchValue,
+/// [LeagueDetailsPage]
+class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
+  LeagueDetailsRoute({
+    required LeagueModel leagueModel,
     List<PageRouteInfo>? children,
   }) : super(
-          SearchPlayerResultRoute.name,
-          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
+          LeagueDetailsRoute.name,
+          args: LeagueDetailsRouteArgs(leagueModel: leagueModel),
           initialChildren: children,
         );
 
-  static const String name = 'SearchPlayerResultRoute';
+  static const String name = 'LeagueDetailsRoute';
 
-  static const PageInfo<SearchPlayerResultRouteArgs> page =
-      PageInfo<SearchPlayerResultRouteArgs>(name);
+  static const PageInfo<LeagueDetailsRouteArgs> page =
+      PageInfo<LeagueDetailsRouteArgs>(name);
 }
 
-class SearchPlayerResultRouteArgs {
-  const SearchPlayerResultRouteArgs({required this.searchValue});
+class LeagueDetailsRouteArgs {
+  const LeagueDetailsRouteArgs({required this.leagueModel});
 
-  final String searchValue;
+  final LeagueModel leagueModel;
 
   @override
   String toString() {
-    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
+    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel}';
   }
 }
