@@ -97,11 +97,11 @@ abstract class _$AppRouter extends RootStackRouter {
         child: ProPlayersListPage(),
       );
     },
-    SearchPlayerRoute.name: (routeData) {
-      final args = routeData.argsAs<SearchPlayerRouteArgs>();
+    SearchPlayerResultRoute.name: (routeData) {
+      final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: SearchPlayerPage(searchValue: args.searchValue),
+        child: SearchPlayerResultPage(searchValue: args.searchValue),
       );
     },
   };
@@ -350,30 +350,31 @@ class ProPlayersListRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SearchPlayerPage]
-class SearchPlayerRoute extends PageRouteInfo<SearchPlayerRouteArgs> {
-  SearchPlayerRoute({
+/// [SearchPlayerResultPage]
+class SearchPlayerResultRoute
+    extends PageRouteInfo<SearchPlayerResultRouteArgs> {
+  SearchPlayerResultRoute({
     required String searchValue,
     List<PageRouteInfo>? children,
   }) : super(
-          SearchPlayerRoute.name,
-          args: SearchPlayerRouteArgs(searchValue: searchValue),
+          SearchPlayerResultRoute.name,
+          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
           initialChildren: children,
         );
 
-  static const String name = 'SearchPlayerRoute';
+  static const String name = 'SearchPlayerResultRoute';
 
-  static const PageInfo<SearchPlayerRouteArgs> page =
-      PageInfo<SearchPlayerRouteArgs>(name);
+  static const PageInfo<SearchPlayerResultRouteArgs> page =
+      PageInfo<SearchPlayerResultRouteArgs>(name);
 }
 
-class SearchPlayerRouteArgs {
-  const SearchPlayerRouteArgs({required this.searchValue});
+class SearchPlayerResultRouteArgs {
+  const SearchPlayerResultRouteArgs({required this.searchValue});
 
   final String searchValue;
 
   @override
   String toString() {
-    return 'SearchPlayerRouteArgs{searchValue: $searchValue}';
+    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
   }
 }
