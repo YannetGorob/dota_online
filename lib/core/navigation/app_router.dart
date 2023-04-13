@@ -8,6 +8,7 @@ import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_pag
 import 'package:dota_online/features/home/presentation/home_page.dart';
 import 'package:dota_online/features/matches/match_details/presentation/match_details_page.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/matches_list_page.dart';
+import 'package:dota_online/features/players/player_details/presentation/player_details_page.dart';
 import 'package:dota_online/features/players/pro_players_list/presentation/pro_players_list_page.dart';
 import 'package:dota_online/features/players/search_players_result/presentation/search_players_result_page.dart';
 import 'package:dota_online/features/teams/team_details/presentation/team_details_page.dart';
@@ -34,6 +35,7 @@ class AppRouter extends _$AppRouter {
                 path: 'search_player_result_page',
                 page: SearchPlayerResultRoute.page,
               ),
+              AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
             ],
           ),
           AutoRoute(

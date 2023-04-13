@@ -6,17 +6,20 @@ class PlayerTile extends StatelessWidget {
     this.name,
     this.steamId,
     this.avatar,
+    this.onTap,
   });
 
   final String? name;
   final String? steamId;
   final String? avatar;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(vertical: 1),
       child: ListTile(
+        onTap: onTap,
         leading: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(8)),
           child: DotaCachedImage(
