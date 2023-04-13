@@ -108,7 +108,10 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<PlayerDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: PlayerDetailsPage(accountId: args.accountId),
+        child: PlayerDetailsPage(
+          accountId: args.accountId,
+          playerName: args.playerName,
+        ),
       );
     },
   };
@@ -391,10 +394,14 @@ class SearchPlayerResultRouteArgs {
 class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
   PlayerDetailsRoute({
     required int accountId,
+    String? playerName,
     List<PageRouteInfo>? children,
   }) : super(
           PlayerDetailsRoute.name,
-          args: PlayerDetailsRouteArgs(accountId: accountId),
+          args: PlayerDetailsRouteArgs(
+            accountId: accountId,
+            playerName: playerName,
+          ),
           initialChildren: children,
         );
 
@@ -405,12 +412,17 @@ class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
 }
 
 class PlayerDetailsRouteArgs {
-  const PlayerDetailsRouteArgs({required this.accountId});
+  const PlayerDetailsRouteArgs({
+    required this.accountId,
+    this.playerName,
+  });
 
   final int accountId;
 
+  final String? playerName;
+
   @override
   String toString() {
-    return 'PlayerDetailsRouteArgs{accountId: $accountId}';
+    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName}';
   }
 }

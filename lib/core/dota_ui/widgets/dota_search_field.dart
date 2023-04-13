@@ -26,11 +26,18 @@ class DotaSearchField extends StatelessWidget {
       onFieldSubmitted: onFieldSubmitted,
       autocorrect: false,
       decoration: InputDecoration(
+        filled: true,
+        fillColor: Theme.of(context).dividerColor,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
-        border: OutlineInputBorder(
-          borderSide: const BorderSide(width: 0.2),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide.none,
+          borderRadius: BorderRadius.circular(100),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(width: 2, color: Theme.of(context).splashColor),
           borderRadius: BorderRadius.circular(100),
         ),
       ),

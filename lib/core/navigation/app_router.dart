@@ -36,6 +36,7 @@ class AppRouter extends _$AppRouter {
                 page: SearchPlayerResultRoute.page,
               ),
               AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
+              AutoRoute(path: 'match_details', page: MatchDetailsRoute.page),
             ],
           ),
           AutoRoute(

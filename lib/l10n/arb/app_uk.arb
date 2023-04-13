@@ -20,5 +20,8 @@
     "home": "Головна",
     "searchAccount": "Пошук акаунта",
     "topPlayers": "Найкращі гравці",
-    "searchResults": "Результати Пошуку"
+    "searchResults": "Результати Пошуку",
+    "generalInfo": "Загальні відомості",
+    "recentMatches": "Останні матчі"
+
 }

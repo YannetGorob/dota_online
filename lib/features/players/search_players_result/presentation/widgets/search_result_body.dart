@@ -21,7 +21,10 @@ class SearchResultBody extends StatelessWidget {
             onTap: () {
               if (item.accountId != null)
                 context.router.push(
-                  PlayerDetailsRoute(accountId: item.accountId!),
+                  PlayerDetailsRoute(
+                    accountId: item.accountId!,
+                    playerName: item.personaname,
+                  ),
                 );
             },
             name: item.personaname,

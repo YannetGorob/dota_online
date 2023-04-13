@@ -30,6 +30,7 @@ class DarkDotaTheme extends DotaTheme {
             ),
             bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             bodySmall: TextStyle(fontSize: 12, color: Colors.grey),
+            labelMedium: TextStyle(fontSize: 18, color: Colors.grey),
           ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: DotaColors.direColor,

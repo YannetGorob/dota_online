@@ -20,6 +20,8 @@
     "home": "Home",
     "searchAccount": "Search an account",
     "topPlayers": "Top players",
-    "searchResults": "Search Results"
+    "searchResults": "Search Results",
+    "generalInfo": "General Information",
+    "recentMatches": "Recent matches"
 
 }

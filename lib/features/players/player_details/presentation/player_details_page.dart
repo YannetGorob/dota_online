@@ -8,9 +8,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class PlayerDetailsPage extends StatelessWidget {
-  const PlayerDetailsPage({required this.accountId});
+  const PlayerDetailsPage({
+    required this.accountId,
+    this.playerName,
+  });
 
   final int accountId;
+  final String? playerName;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,7 @@ class PlayerDetailsPage extends StatelessWidget {
             playersProvider: locator.get<DotaApi>().players)
           ..loadPlayerDetailsData(accountId);
       },
-      child: PlayerDetailsWidget(),
+      child: PlayerDetailsWidget(playerName: playerName),
     );
   }
 }

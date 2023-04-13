@@ -9,12 +9,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PlayerDetailsWidget extends StatelessWidget {
-  const PlayerDetailsWidget({Key? key}) : super(key: key);
+  const PlayerDetailsWidget({this.playerName});
+
+  final String? playerName;
 
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(),
+      appBar: DotaAppBar(title: playerName),
       body: BlocBuilder<PlayerDetailsCubit, PlayerDetailsState>(
         builder: (context, state) {
           return state.map(
