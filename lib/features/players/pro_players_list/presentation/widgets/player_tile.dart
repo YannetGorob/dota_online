@@ -1,8 +1,8 @@
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 
-class ProPlayerTile extends StatelessWidget {
-  const ProPlayerTile({
+class PlayerTile extends StatelessWidget {
+  const PlayerTile({
     this.name,
     this.steamId,
     this.avatar,
@@ -27,15 +27,12 @@ class ProPlayerTile extends StatelessWidget {
         ),
         title: Text(name != null ? name! : '---',
             style: Theme.of(context).textTheme.titleMedium),
-        subtitle: RichText(
-          text: TextSpan(
-            text: 'Steam ID: ',
-            style: Theme.of(context).textTheme.bodySmall,
-            children: <TextSpan>[
-               TextSpan(text: steamId != null ? steamId : '---'),
-            ],
-          ),
-        ),
+        subtitle: steamId != null
+            ? Text(
+                'Steam ID: $steamId',
+                style: Theme.of(context).textTheme.bodySmall,
+              )
+            : null,
       ),
     );
   }

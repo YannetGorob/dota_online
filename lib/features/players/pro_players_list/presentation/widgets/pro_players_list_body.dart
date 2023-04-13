@@ -1,10 +1,10 @@
 import 'package:dota_online/core/api/models/player/pro_player_model.dart';
-import 'package:dota_online/features/players/pro_players_list/presentation/widgets/pro_player_tile.dart';
+import 'package:dota_online/features/players/pro_players_list/presentation/widgets/player_tile.dart';
 import 'package:dota_online/features/players/pro_players_list/presentation/widgets/search_field_widget.dart';
 import 'package:flutter/material.dart';
 
-class PlayersListBody extends StatelessWidget {
-  const PlayersListBody({required this.proPlayers});
+class ProPlayersListBody extends StatelessWidget {
+  const ProPlayersListBody({required this.proPlayers});
 
   final List<ProPlayerModel> proPlayers;
 
@@ -23,7 +23,7 @@ class PlayersListBody extends StatelessWidget {
                 childCount: proPlayers.length,
                 (context, index) {
                   final item = proPlayers[index];
-                  return ProPlayerTile(
+                  return PlayerTile(
                     name: item.name,
                     steamId: item.steamid,
                     avatar: item.avatar,

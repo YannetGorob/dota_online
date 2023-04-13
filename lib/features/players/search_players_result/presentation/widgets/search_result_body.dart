@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/player/search_player_model.dart';
+import 'package:dota_online/features/players/pro_players_list/presentation/widgets/player_tile.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultBody extends StatelessWidget {
@@ -10,15 +11,16 @@ class SearchResultBody extends StatelessWidget {
   Widget build(BuildContext context) {
     if (searchPlayerModel.isNotEmpty)
       return ListView.builder(
-          itemCount: searchPlayerModel.length,
-          itemBuilder: (context, index) {
-            final item = searchPlayerModel[index];
-            return ListTile(
-              title: Text(item.personaname == null ? '---' : item.personaname!),
-              subtitle: Text(
-                  item.accountId == null ? '---' : item.accountId.toString()),
-            );
-          });
+        padding: EdgeInsets.only(top: 1),
+        itemCount: searchPlayerModel.length,
+        itemBuilder: (context, index) {
+          final item = searchPlayerModel[index];
+          return PlayerTile(
+            name: item.personaname,
+            avatar: item.avatarfull,
+          );
+        },
+      );
     else
       return Center(
         child: Column(

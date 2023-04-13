@@ -4,12 +4,18 @@ import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
-class SearchFieldWidget extends StatelessWidget {
-  const SearchFieldWidget({Key? key}) : super(key: key);
+class SearchFieldWidget extends StatefulWidget {
+  const SearchFieldWidget({super.key});
 
   @override
+  State<SearchFieldWidget> createState() => _SearchFieldWidgetState();
+}
+
+final searchController = TextEditingController();
+
+class _SearchFieldWidgetState extends State<SearchFieldWidget> {
+  @override
   Widget build(BuildContext context) {
-    final searchController = TextEditingController();
     return Column(
       children: [
         DotaSearchField(
