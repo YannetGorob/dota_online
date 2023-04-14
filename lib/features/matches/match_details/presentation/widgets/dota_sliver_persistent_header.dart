@@ -11,10 +11,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-    BuildContext context,
-    double shrinkOffset,
-    bool overlapsContent,
-  ) {
+      BuildContext context,
+      double shrinkOffset,
+      bool overlapsContent,
+      ) {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -67,25 +67,6 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                   ),
               ],
             ),
-                  Row(
-                    children: [
-                      TeamScoreOnMatchDetails(
-                        teamScore: matchDetails.radiantScore ?? 0,
-                      ),
-                      const Text(' : ', style: TextStyle(fontSize: 25)),
-                      TeamScoreOnMatchDetails(
-                        teamScore: matchDetails.direScore ?? 0,
-                      ),
-                    ],
-                  ),
-                  Expanded(
-                    child: TeamNameOnMatchDetails(
-                      matchDetails: matchDetails,
-                      teamName: matchDetails.direTeam!.name ?? '???',
-                    ),
-                  ),
-                ],
-              ),
             Text(context.l10n.score, style: TextStyle(color: Colors.grey)),
             const SizedBox(height: 10),
             RichText(
