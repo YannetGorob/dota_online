@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dota_online/core/api/dto/league_match_dto.dart';
 import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
-import 'package:dota_online/core/api/models/leagues/league_match/league_match.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
+import 'package:dota_online/core/utils/time_formater.dart';
+import 'package:dota_online/features/leagues/league_details/presentation/widgets/match_opponent_logo_widget.dart';
 import 'package:dota_online/features/teams/teams_list/presentation/widgets/teams_list_item.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,7 @@ class LeagueDetailsBody extends StatelessWidget {
   });
 
   final LeagueModel leagueModel;
-  final List<LeagueMatch>? matches;
+  final List<LeagueMatchDTO>? matches;
   final List<TeamModel>? teams;
 
   @override
@@ -59,16 +61,32 @@ class LeagueDetailsBody extends StatelessWidget {
                 (context, index) {
                   final item = matches![index];
 
-                  return ListTile(
-                    onTap: () {
-                      if (item.matchId != null) {
-                        context.router.push(
-                          MatchDetailsRoute(matchId: item.matchId!),
-                        );
-                      }
-                    },
-                    title: Center(
-                      child: Text(item.matchId.toString()),
+                  return Card(
+                    elevation: 8,
+                    margin: EdgeInsets.all(4),
+                    child: ListTile(
+                      onTap: () {
+                        if (item.leagueMatch.matchId != null) {
+                          context.router.push(
+                            MatchDetailsRoute(matchId: item.leagueMatch.matchId!),
+                          );
+                        }
+                      },
+                      leading: MatchOpponentLogoWidget(),
+                      title: FittedBox(
+                        fit: BoxFit.fitHeight,
+                        child: Text(
+                          '${item.leagueMatch.radiantTeamName} VS ${item.leagueMatch.direTeamName}',
+                        ),
+                      ),
+                      subtitle: Text(
+                        'matchId: ${item.leagueMatch.matchId}',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                      trailing: item.leagueMatch.duration == null
+                          ? SizedBox()
+                          : Text(TimeFormater()
+                              .formatMatchDuration(item.leagueMatch.duration!)),
                     ),
                   );
                 },

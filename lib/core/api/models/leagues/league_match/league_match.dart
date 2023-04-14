@@ -14,6 +14,8 @@ class LeagueMatch with _$LeagueMatch {
     int? direTeamId,
     int? radiantScore,
     int? direScore,
+    String? radiantTeamName,
+    String? direTeamName,
   }) = _LeagueMatch;
 
   factory LeagueMatch.fromJson(Map<String, dynamic> json) => _$LeagueMatchFromJson(json);

@@ -16,6 +16,8 @@ _$_LeagueMatch _$$_LeagueMatchFromJson(Map<String, dynamic> json) =>
       direTeamId: json['dire_team_id'] as int?,
       radiantScore: json['radiant_score'] as int?,
       direScore: json['dire_score'] as int?,
+      radiantTeamName: json['radiant_team_name'] as String?,
+      direTeamName: json['dire_team_name'] as String?,
     );
 
 Map<String, dynamic> _$$_LeagueMatchToJson(_$_LeagueMatch instance) =>
@@ -28,6 +30,8 @@ Map<String, dynamic> _$$_LeagueMatchToJson(_$_LeagueMatch instance) =>
       'dire_team_id': instance.direTeamId,
       'radiant_score': instance.radiantScore,
       'dire_score': instance.direScore,
+      'radiant_team_name': instance.radiantTeamName,
+      'dire_team_name': instance.direTeamName,
     };
 
 _$_Chat _$$_ChatFromJson(Map<String, dynamic> json) => _$_Chat(

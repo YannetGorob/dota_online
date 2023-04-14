@@ -14,7 +14,8 @@ class LeagueListCubit extends Cubit<LeagueListState> {
 
     leaguesResponse.when(
       success: (data) {
-        if (!this.isClosed) emit(LeagueListState.loaded(leagues: data));
+        final leagues = data.where((e) => e.tier == 'professional').toList();
+        if (!this.isClosed) emit(LeagueListState.loaded(leagues: leagues));
       },
       failure: (_) {
         if (!this.isClosed) emit(const LeagueListState.error());

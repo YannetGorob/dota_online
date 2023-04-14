@@ -28,6 +28,8 @@ mixin _$LeagueMatch {
   int? get direTeamId => throw _privateConstructorUsedError;
   int? get radiantScore => throw _privateConstructorUsedError;
   int? get direScore => throw _privateConstructorUsedError;
+  String? get radiantTeamName => throw _privateConstructorUsedError;
+  String? get direTeamName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,7 +51,9 @@ abstract class $LeagueMatchCopyWith<$Res> {
       int? radiantTeamId,
       int? direTeamId,
       int? radiantScore,
-      int? direScore});
+      int? direScore,
+      String? radiantTeamName,
+      String? direTeamName});
 }
 
 /// @nodoc
@@ -73,6 +77,8 @@ class _$LeagueMatchCopyWithImpl<$Res, $Val extends LeagueMatch>
     Object? direTeamId = freezed,
     Object? radiantScore = freezed,
     Object? direScore = freezed,
+    Object? radiantTeamName = freezed,
+    Object? direTeamName = freezed,
   }) {
     return _then(_value.copyWith(
       matchId: freezed == matchId
@@ -107,6 +113,14 @@ class _$LeagueMatchCopyWithImpl<$Res, $Val extends LeagueMatch>
           ? _value.direScore
           : direScore // ignore: cast_nullable_to_non_nullable
               as int?,
+      radiantTeamName: freezed == radiantTeamName
+          ? _value.radiantTeamName
+          : radiantTeamName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      direTeamName: freezed == direTeamName
+          ? _value.direTeamName
+          : direTeamName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -127,7 +141,9 @@ abstract class _$$_LeagueMatchCopyWith<$Res>
       int? radiantTeamId,
       int? direTeamId,
       int? radiantScore,
-      int? direScore});
+      int? direScore,
+      String? radiantTeamName,
+      String? direTeamName});
 }
 
 /// @nodoc
@@ -149,6 +165,8 @@ class __$$_LeagueMatchCopyWithImpl<$Res>
     Object? direTeamId = freezed,
     Object? radiantScore = freezed,
     Object? direScore = freezed,
+    Object? radiantTeamName = freezed,
+    Object? direTeamName = freezed,
   }) {
     return _then(_$_LeagueMatch(
       matchId: freezed == matchId
@@ -183,6 +201,14 @@ class __$$_LeagueMatchCopyWithImpl<$Res>
           ? _value.direScore
           : direScore // ignore: cast_nullable_to_non_nullable
               as int?,
+      radiantTeamName: freezed == radiantTeamName
+          ? _value.radiantTeamName
+          : radiantTeamName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      direTeamName: freezed == direTeamName
+          ? _value.direTeamName
+          : direTeamName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -198,7 +224,9 @@ class _$_LeagueMatch implements _LeagueMatch {
       this.radiantTeamId,
       this.direTeamId,
       this.radiantScore,
-      this.direScore});
+      this.direScore,
+      this.radiantTeamName,
+      this.direTeamName});
 
   factory _$_LeagueMatch.fromJson(Map<String, dynamic> json) =>
       _$$_LeagueMatchFromJson(json);
@@ -219,10 +247,14 @@ class _$_LeagueMatch implements _LeagueMatch {
   final int? radiantScore;
   @override
   final int? direScore;
+  @override
+  final String? radiantTeamName;
+  @override
+  final String? direTeamName;
 
   @override
   String toString() {
-    return 'LeagueMatch(matchId: $matchId, radiantWin: $radiantWin, startTime: $startTime, duration: $duration, radiantTeamId: $radiantTeamId, direTeamId: $direTeamId, radiantScore: $radiantScore, direScore: $direScore)';
+    return 'LeagueMatch(matchId: $matchId, radiantWin: $radiantWin, startTime: $startTime, duration: $duration, radiantTeamId: $radiantTeamId, direTeamId: $direTeamId, radiantScore: $radiantScore, direScore: $direScore, radiantTeamName: $radiantTeamName, direTeamName: $direTeamName)';
   }
 
   @override
@@ -244,13 +276,27 @@ class _$_LeagueMatch implements _LeagueMatch {
             (identical(other.radiantScore, radiantScore) ||
                 other.radiantScore == radiantScore) &&
             (identical(other.direScore, direScore) ||
-                other.direScore == direScore));
+                other.direScore == direScore) &&
+            (identical(other.radiantTeamName, radiantTeamName) ||
+                other.radiantTeamName == radiantTeamName) &&
+            (identical(other.direTeamName, direTeamName) ||
+                other.direTeamName == direTeamName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, matchId, radiantWin, startTime,
-      duration, radiantTeamId, direTeamId, radiantScore, direScore);
+  int get hashCode => Object.hash(
+      runtimeType,
+      matchId,
+      radiantWin,
+      startTime,
+      duration,
+      radiantTeamId,
+      direTeamId,
+      radiantScore,
+      direScore,
+      radiantTeamName,
+      direTeamName);
 
   @JsonKey(ignore: true)
   @override
@@ -275,7 +321,9 @@ abstract class _LeagueMatch implements LeagueMatch {
       final int? radiantTeamId,
       final int? direTeamId,
       final int? radiantScore,
-      final int? direScore}) = _$_LeagueMatch;
+      final int? direScore,
+      final String? radiantTeamName,
+      final String? direTeamName}) = _$_LeagueMatch;
 
   factory _LeagueMatch.fromJson(Map<String, dynamic> json) =
       _$_LeagueMatch.fromJson;
@@ -296,6 +344,10 @@ abstract class _LeagueMatch implements LeagueMatch {
   int? get radiantScore;
   @override
   int? get direScore;
+  @override
+  String? get radiantTeamName;
+  @override
+  String? get direTeamName;
   @override
   @JsonKey(ignore: true)
   _$$_LeagueMatchCopyWith<_$_LeagueMatch> get copyWith =>

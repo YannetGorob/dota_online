@@ -20,7 +20,7 @@ mixin _$LeagueDetailState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(
-            List<TeamModel>? teams, List<LeagueMatch>? matches)
+            List<TeamModel>? teams, List<LeagueMatchDTO>? matches)
         loaded,
     required TResult Function(String? message) error,
   }) =>
@@ -28,7 +28,7 @@ mixin _$LeagueDetailState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult? Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult? Function(String? message)? error,
   }) =>
@@ -36,7 +36,7 @@ mixin _$LeagueDetailState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -122,7 +122,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(
-            List<TeamModel>? teams, List<LeagueMatch>? matches)
+            List<TeamModel>? teams, List<LeagueMatchDTO>? matches)
         loaded,
     required TResult Function(String? message) error,
   }) {
@@ -133,7 +133,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult? Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult? Function(String? message)? error,
   }) {
@@ -144,7 +144,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -199,7 +199,7 @@ abstract class _$$LoadedCopyWith<$Res> {
   factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
       __$$LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<TeamModel>? teams, List<LeagueMatch>? matches});
+  $Res call({List<TeamModel>? teams, List<LeagueMatchDTO>? matches});
 }
 
 /// @nodoc
@@ -223,7 +223,7 @@ class __$$LoadedCopyWithImpl<$Res>
       matches: freezed == matches
           ? _value._matches
           : matches // ignore: cast_nullable_to_non_nullable
-              as List<LeagueMatch>?,
+              as List<LeagueMatchDTO>?,
     ));
   }
 }
@@ -232,7 +232,7 @@ class __$$LoadedCopyWithImpl<$Res>
 
 class _$Loaded implements Loaded {
   const _$Loaded(
-      {final List<TeamModel>? teams, final List<LeagueMatch>? matches})
+      {final List<TeamModel>? teams, final List<LeagueMatchDTO>? matches})
       : _teams = teams,
         _matches = matches;
 
@@ -246,9 +246,9 @@ class _$Loaded implements Loaded {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<LeagueMatch>? _matches;
+  final List<LeagueMatchDTO>? _matches;
   @override
-  List<LeagueMatch>? get matches {
+  List<LeagueMatchDTO>? get matches {
     final value = _matches;
     if (value == null) return null;
     if (_matches is EqualUnmodifiableListView) return _matches;
@@ -287,7 +287,7 @@ class _$Loaded implements Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(
-            List<TeamModel>? teams, List<LeagueMatch>? matches)
+            List<TeamModel>? teams, List<LeagueMatchDTO>? matches)
         loaded,
     required TResult Function(String? message) error,
   }) {
@@ -298,7 +298,7 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult? Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult? Function(String? message)? error,
   }) {
@@ -309,7 +309,7 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -358,10 +358,10 @@ class _$Loaded implements Loaded {
 abstract class Loaded implements LeagueDetailState {
   const factory Loaded(
       {final List<TeamModel>? teams,
-      final List<LeagueMatch>? matches}) = _$Loaded;
+      final List<LeagueMatchDTO>? matches}) = _$Loaded;
 
   List<TeamModel>? get teams;
-  List<LeagueMatch>? get matches;
+  List<LeagueMatchDTO>? get matches;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -431,7 +431,7 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(
-            List<TeamModel>? teams, List<LeagueMatch>? matches)
+            List<TeamModel>? teams, List<LeagueMatchDTO>? matches)
         loaded,
     required TResult Function(String? message) error,
   }) {
@@ -442,7 +442,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult? Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult? Function(String? message)? error,
   }) {
@@ -453,7 +453,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<TeamModel>? teams, List<LeagueMatch>? matches)?
+    TResult Function(List<TeamModel>? teams, List<LeagueMatchDTO>? matches)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
