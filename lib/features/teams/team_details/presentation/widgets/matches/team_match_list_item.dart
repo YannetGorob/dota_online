@@ -46,7 +46,7 @@ class TeamMatchListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
-            Divider(color: Colors.white),
+            Divider(color: context.dotaColors.dotaWhiteColor),
             _MatchParamsWidget(teamMatch: teamMatch),
           ],
         ),

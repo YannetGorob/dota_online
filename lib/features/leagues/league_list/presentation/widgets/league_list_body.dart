@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class LeagueListBody extends StatelessWidget {
   const LeagueListBody({super.key, this.leagues = const []});
 
-  final List<LeagueModel> leagues;
+  final List<LeagueModel?> leagues;
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +16,17 @@ class LeagueListBody extends StatelessWidget {
       itemCount: leagues.length,
       itemBuilder: (context, index) {
         final item = leagues[index];
-        return InkWell(
-          onTap: () {
-            context.router.push(LeagueDetailsRoute(leagueModel: item));
-          },
-          child: LeagueListTile(league: item),
-        );
+        if (item != null) {
+          return InkWell(
+            onTap: () {
+              if (item.leagueid != null) {
+                context.router.push(LeagueDetailsRoute(leagueModel: item));
+              }
+            },
+            child: LeagueListTile(league: item),
+          );
+        }
+        return null;
       },
     );
   }

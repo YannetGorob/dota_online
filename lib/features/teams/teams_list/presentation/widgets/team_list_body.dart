@@ -23,22 +23,24 @@ class TeamListBody extends StatelessWidget {
               childCount: teams.length,
               (context, index) {
                 final item = teams[index];
-                return InkWell(
-                  onTap: () {
-                    if (item.teamId != null) {
-                      context.router.push(
-                        TeamDetailsRoute(team: item),
-                      );
-                    }
-                  },
-                  child: TeamsListItem(team: item),
-                );
+                if (item.name != null)
+                  return InkWell(
+                    onTap: () {
+                      if (item.teamId != null) {
+                        context.router.push(
+                          TeamDetailsRoute(team: item),
+                        );
+                      }
+                    },
+                    child: TeamsListItem(team: item),
+                  );
+                return null;
               },
             ),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               mainAxisSpacing: 15,
               crossAxisSpacing: 15,
-              crossAxisCount: 2,
+              crossAxisCount: 3,
               childAspectRatio: 0.7,
             ),
           ),

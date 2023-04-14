@@ -20,7 +20,7 @@ class LeagueDetailsCubit extends Cubit<LeagueDetailState> {
     ]);
 
     final teams = (leagueResponses[0] as ApiResult<List<TeamModel>>).map(
-      success: (data) => data.value,
+      success: (data) => data.value.where((e) => e.name != null).toList(),
       failure: (_) => null,
     );
 
@@ -41,16 +41,32 @@ class LeagueDetailsCubit extends Cubit<LeagueDetailState> {
 
         if (radiantTeamId == direTeamId) break;
 
-        // TODO: add league match model extension with team names and logos
+        String? tempRadiantName;
+        String? tempDireName;
+        String? tempRadiantLogo;
+        String? tempDireLogo;
+
         for (var j = 0; j < teams!.length; j++) {
           if (teams[j].teamId == radiantTeamId) {
-            /*matchesDTO[i].leagueMatch =
-                matches[i].copyWith(radiantTeamName: teams[j].name);*/
+            tempRadiantName = teams[j].name;
+            tempRadiantLogo = teams[j].logoUrl;
           }
           if (teams[j].teamId == direTeamId) {
-            /*newMatches![i] = matches[i].copyWith(direTeamName: teams[j].name);*/
+            tempDireName = teams[j].name;
+            tempDireLogo = teams[j].logoUrl;
           }
         }
+
+        matchesDTO.add(
+          LeagueMatchDTO(
+            leagueMatch: matches[i].copyWith(
+              radiantTeamName: tempRadiantName,
+              direTeamName: tempDireName,
+            ),
+            direTeamLogo: tempDireLogo,
+            radiantTeamLogo: tempRadiantLogo,
+          ),
+        );
       }
 
       emit(LeagueDetailState.loaded(
