@@ -15,13 +15,20 @@
     "roles": "Roles",
     "score": "score",
     "match": "Match",
-    "duration": "Duration",
+    "duration": "Duration: ",
     "viewallplayers": "View all players",
     "home": "Home",
     "searchAccount": "Search an account",
     "topPlayers": "Top players",
     "searchResults": "Search Results",
     "generalInfo": "General Information",
-    "recentMatches": "Recent matches"
+    "recentMatches": "Recent matches",
+    "recentMatchWas": "Recent match: ",
+    "min": " min",
+    "heroDamage": "Hero Damage",
+    "towerDamage": "Tower Damage",
+    "heroHealing": "Hero Healing",
+    "accounts": "Accounts"
+
 
 }

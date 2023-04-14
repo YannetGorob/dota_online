@@ -111,6 +111,7 @@ abstract class _$AppRouter extends RootStackRouter {
         child: PlayerDetailsPage(
           accountId: args.accountId,
           playerName: args.playerName,
+          lastMatchTime: args.lastMatchTime,
         ),
       );
     },
@@ -395,12 +396,14 @@ class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
   PlayerDetailsRoute({
     required int accountId,
     String? playerName,
+    String? lastMatchTime,
     List<PageRouteInfo>? children,
   }) : super(
           PlayerDetailsRoute.name,
           args: PlayerDetailsRouteArgs(
             accountId: accountId,
             playerName: playerName,
+            lastMatchTime: lastMatchTime,
           ),
           initialChildren: children,
         );
@@ -415,14 +418,17 @@ class PlayerDetailsRouteArgs {
   const PlayerDetailsRouteArgs({
     required this.accountId,
     this.playerName,
+    this.lastMatchTime,
   });
 
   final int accountId;
 
   final String? playerName;
 
+  final String? lastMatchTime;
+
   @override
   String toString() {
-    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName}';
+    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName, lastMatchTime: $lastMatchTime}';
   }
 }

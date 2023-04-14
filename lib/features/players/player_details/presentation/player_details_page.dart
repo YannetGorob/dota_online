@@ -11,10 +11,12 @@ class PlayerDetailsPage extends StatelessWidget {
   const PlayerDetailsPage({
     required this.accountId,
     this.playerName,
+    this.lastMatchTime,
   });
 
   final int accountId;
   final String? playerName;
+  final String? lastMatchTime;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,10 @@ class PlayerDetailsPage extends StatelessWidget {
             playersProvider: locator.get<DotaApi>().players)
           ..loadPlayerDetailsData(accountId);
       },
-      child: PlayerDetailsWidget(playerName: playerName),
+      child: PlayerDetailsWidget(
+        playerName: playerName,
+        lastMatchTime: lastMatchTime,
+      ),
     );
   }
 }

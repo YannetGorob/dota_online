@@ -9,9 +9,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class PlayerDetailsWidget extends StatelessWidget {
-  const PlayerDetailsWidget({this.playerName});
+  const PlayerDetailsWidget({this.playerName, this.lastMatchTime});
 
   final String? playerName;
+  final String? lastMatchTime;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class PlayerDetailsWidget extends StatelessWidget {
             loaded: (value) => PlayerDetailsBody(
               playerDetails: value.playerDetails,
               playerRecentMatches: value.recentMatches,
+              lastMatchTime: lastMatchTime,
             ),
           );
         },

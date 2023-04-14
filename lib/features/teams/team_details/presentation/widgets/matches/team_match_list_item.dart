@@ -2,7 +2,7 @@ import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
-import 'package:dota_online/core/utils/time_formater.dart';
+import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -105,14 +105,14 @@ class _MatchParamsWidget extends StatelessWidget {
             children: [
               Icon(Icons.timer),
               Text(
-                TimeFormater().formatMatchDuration(teamMatch.duration!),
+                DateTimeFormatter().formatMatchDuration(teamMatch.duration!),
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ],
           ),
         if (teamMatch.startTime != null)
           Text(
-            TimeFormater().formatMatchStartTime(teamMatch.startTime!),
+            DateTimeFormatter().formatMatchStartTime(teamMatch.startTime!),
             style: Theme.of(context).textTheme.titleMedium,
           ),
       ],

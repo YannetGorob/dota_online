@@ -20,8 +20,8 @@ class HomeWidget extends StatelessWidget {
           onTap: tabsRouter.setActiveIndex,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: context.l10n.home,
+              icon: Icon(Icons.person),
+              label: context.l10n.accounts,
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.emoji_events_rounded),
