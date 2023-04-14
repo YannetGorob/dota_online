@@ -1,7 +1,6 @@
 import 'package:intl/intl.dart';
 
-class TimeFormater{
-
+class DateTimeFormatter {
   String formatMatchDuration(int duration) {
     final timeInMinutes = duration / 60;
     return timeInMinutes.toStringAsFixed(2).replaceAll('.', ':');
@@ -10,5 +9,9 @@ class TimeFormater{
   String formatMatchStartTime(int startTime) {
     final dt = DateTime.fromMillisecondsSinceEpoch(startTime * 1000);
     return DateFormat('dd.MM.yyyy').format(dt).toString();
+  }
+
+  static String getFormattedDate(DateTime dateTime) {
+    return DateFormat('dd.MM.yyyy, hh:mm a').format(dateTime);
   }
 }

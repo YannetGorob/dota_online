@@ -15,7 +15,24 @@
     "roles": "Roles",
     "score": "score",
     "match": "Match",
-    "duration": "Duration",
-    "viewallplayers": "View all players"
-
+    "duration": "Duration: ",
+    "viewallplayers": "View all players",
+    "home": "Home",
+    "searchAccount": "Search an account",
+    "topPlayers": "Top players",
+    "searchResults": "Search Results",
+    "generalInfo": "General Information",
+    "recentMatches": "Recent matches",
+    "recentMatchWas": "Recent match: ",
+    "min": " min",
+    "heroDamage": "Heroes Damage",
+    "towerDamage": "Towers Damage",
+    "heroHealing": "Heroes Healing",
+    "accounts": "Accounts",
+    "rank": "Rank",
+    "leaguesList": "Leagues list",
+    "leagueDetails": "League details",
+    "leagueTab": "Leagues",
+    "showMore" : "show more...",
+    "hide": "hide"
 }

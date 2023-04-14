@@ -9,6 +9,9 @@ class DarkDotaTheme extends DotaTheme {
   @override
   ThemeData darkTheme(BuildContext context) {
     return ThemeData.dark().copyWith(
+      colorScheme: ThemeData().colorScheme.copyWith(
+            primary: Colors.grey.shade400,
+          ),
       textTheme: ThemeData.dark().textTheme.copyWith(
             labelLarge: TextStyle(
               fontWeight: FontWeight.bold,
@@ -25,8 +28,16 @@ class DarkDotaTheme extends DotaTheme {
               fontSize: 18,
               overflow: TextOverflow.ellipsis,
             ),
-            bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            bodySmall: TextStyle(fontSize: 12, color: context.dotaColors.dotaGreyColor),
+            bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),//main TextStyle
+
+            bodySmall: TextStyle(
+              fontSize: 12,
+              color: context.dotaColors.dotaGreyColor,
+            ),
+            labelMedium: TextStyle(
+              fontSize: 18,
+              color: context.dotaColors.dotaGreyColor,
+            ),
           ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: context.dotaColors.direColor,

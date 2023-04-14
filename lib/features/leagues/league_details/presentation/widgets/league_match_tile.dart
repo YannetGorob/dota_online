@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/league_match_dto.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
-import 'package:dota_online/core/utils/time_formater.dart';
+import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 
 class LeagueMatchTile extends StatelessWidget {
@@ -78,7 +78,7 @@ class LeagueMatchTile extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topCenter,
                   child: Text(
-                    TimeFormater().formatMatchDuration(
+                    DateTimeFormatter().formatMatchDuration(
                       item.leagueMatch.duration!,
                     ),
                     style: Theme.of(context).textTheme.bodySmall,

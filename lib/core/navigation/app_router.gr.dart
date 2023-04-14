@@ -39,6 +39,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: LeaguesRouterPage(),
       );
     },
+    PlayersRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProPlayersRouterPage(),
+      );
+    },
     HeroDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<HeroDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -104,6 +110,30 @@ abstract class _$AppRouter extends RootStackRouter {
         child: LeagueListPage(),
       );
     },
+    PlayerDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<PlayerDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PlayerDetailsPage(
+          accountId: args.accountId,
+          playerName: args.playerName,
+          lastMatchTime: args.lastMatchTime,
+        ),
+      );
+    },
+    ProPlayersListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProPlayersListPage(),
+      );
+    },
+    SearchPlayerResultRoute.name: (routeData) {
+      final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SearchPlayerResultPage(searchValue: args.searchValue),
+      );
+    },
   };
 }
 
@@ -159,6 +189,20 @@ class LeaguesRouter extends PageRouteInfo<void> {
         );
 
   static const String name = 'LeaguesRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ProPlayersRouterPage]
+class PlayersRouter extends PageRouteInfo<void> {
+  const PlayersRouter({List<PageRouteInfo>? children})
+      : super(
+          PlayersRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PlayersRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -376,4 +420,91 @@ class LeagueListRoute extends PageRouteInfo<void> {
   static const String name = 'LeagueListRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [PlayerDetailsPage]
+class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
+  PlayerDetailsRoute({
+    required int accountId,
+    String? playerName,
+    String? lastMatchTime,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PlayerDetailsRoute.name,
+          args: PlayerDetailsRouteArgs(
+            accountId: accountId,
+            playerName: playerName,
+            lastMatchTime: lastMatchTime,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PlayerDetailsRoute';
+
+  static const PageInfo<PlayerDetailsRouteArgs> page =
+      PageInfo<PlayerDetailsRouteArgs>(name);
+}
+
+class PlayerDetailsRouteArgs {
+  const PlayerDetailsRouteArgs({
+    required this.accountId,
+    this.playerName,
+    this.lastMatchTime,
+  });
+
+  final int accountId;
+
+  final String? playerName;
+
+  final String? lastMatchTime;
+
+  @override
+  String toString() {
+    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName, lastMatchTime: $lastMatchTime}';
+  }
+}
+
+/// generated route for
+/// [ProPlayersListPage]
+class ProPlayersListRoute extends PageRouteInfo<void> {
+  const ProPlayersListRoute({List<PageRouteInfo>? children})
+      : super(
+          ProPlayersListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProPlayersListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchPlayerResultPage]
+class SearchPlayerResultRoute
+    extends PageRouteInfo<SearchPlayerResultRouteArgs> {
+  SearchPlayerResultRoute({
+    required String searchValue,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SearchPlayerResultRoute.name,
+          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchPlayerResultRoute';
+
+  static const PageInfo<SearchPlayerResultRouteArgs> page =
+      PageInfo<SearchPlayerResultRouteArgs>(name);
+}
+
+class SearchPlayerResultRouteArgs {
+  const SearchPlayerResultRouteArgs({required this.searchValue});
+
+  final String searchValue;
+
+  @override
+  String toString() {
+    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
+  }
 }
