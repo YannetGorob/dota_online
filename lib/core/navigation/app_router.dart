@@ -1,11 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
+import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/navigation/base_tab_routes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/hero_list_page.dart';
 import 'package:dota_online/features/home/presentation/home_page.dart';
+import 'package:dota_online/features/leagues/league_details/presentation/league_details_page.dart';
+import 'package:dota_online/features/leagues/league_list/presentation/league_list_page.dart';
 import 'package:dota_online/features/matches/match_details/presentation/match_details_page.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/matches_list_page.dart';
 import 'package:dota_online/features/players/player_details/presentation/player_details_page.dart';
@@ -63,6 +66,15 @@ class AppRouter extends _$AppRouter {
             children: <AutoRoute>[
               AutoRoute(path: '', page: MatchesListRoute.page),
               AutoRoute(path: 'match_details', page: MatchDetailsRoute.page)
+            ],
+          ),
+          AutoRoute(
+            page: LeaguesRouter.page,
+            children: <AutoRoute>[
+              AutoRoute(path: '',page: LeagueListRoute.page),
+              AutoRoute(path: 'league_details',page: LeagueDetailsRoute.page),
+              AutoRoute(path: 'match_details',page: MatchDetailsRoute.page),
+              AutoRoute(path: 'team_details',page: TeamDetailsRoute.page)
             ],
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:flutter/material.dart';
 
 class PlayerListItem extends StatelessWidget {
@@ -15,9 +16,9 @@ class PlayerListItem extends StatelessWidget {
     final Color? cardColor;
 
     if (player.isCurrentTeamMember!) {
-      cardColor = Colors.green[900];
+      cardColor = context.dotaColors.currentTeamMemberColor;
     } else {
-      cardColor = Colors.green[200];
+      cardColor = context.dotaColors.notCurrentTeamMemberColor;
     }
 
     return Card(

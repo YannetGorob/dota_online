@@ -29,8 +29,6 @@ class TeamCardTextContent extends StatelessWidget {
           ),
           if (teamName.isNotEmpty)
             CardInfoField(
-              height: cardHeight * 0.1,
-              width: cardWidth,
               child: Text(
                 teamName,
                 style: Theme.of(context)
@@ -43,8 +41,6 @@ class TeamCardTextContent extends StatelessWidget {
           SizedBox(height: 5),
           if (teamRating != null)
             CardInfoField(
-              height: cardHeight * 0.11,
-              width: cardWidth,
               child: Row(
                 children: [
                   Icon(Icons.star),
@@ -56,8 +52,6 @@ class TeamCardTextContent extends StatelessWidget {
             ),
           if (teamWins != null)
             CardInfoField(
-              height: cardHeight * 0.11,
-              width: cardWidth,
               child: Row(
                 children: [
                   Icon(Icons.emoji_events_rounded),
@@ -68,8 +62,6 @@ class TeamCardTextContent extends StatelessWidget {
             ),
           if (teamLosses != null)
             CardInfoField(
-              height: cardHeight * 0.11,
-              width: cardWidth,
               child: Row(
                 children: [
                   Icon(Icons.trending_down),

@@ -29,6 +29,11 @@
     "towerDamage": "Пошкодження веж",
     "heroHealing": "Зцілення героїв",
     "accounts": "Акаунти",
-    "rank": "Ранг"
+    "rank": "Ранг",
+    "leaguesList": "Список ліг",
+    "leagueDetails": "Деталі ліги",
+    "leagueTab": "Ліги",
+    "showMore" : "показати більше...",
+    "hide": "заховати"
 
 }

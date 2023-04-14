@@ -12,9 +12,6 @@ class TeamsListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final canShowTeam = team.name != null;
-
-    if (!canShowTeam) return SizedBox();
 
     return LayoutBuilder(
       builder: (context, size) {
@@ -35,13 +32,15 @@ class TeamsListItem extends StatelessWidget {
                   height: cardHeight * 0.4,
                   imageUrl: team.logoUrl,
                 ),
-                TeamCardTextContent(
-                  cardHeight: cardHeight,
-                  cardWidth: cardWidth,
-                  teamName: team.name!,
-                  teamRating: team.rating.toString(),
-                  teamWins: team.wins.toString(),
-                  teamLosses: team.losses.toString(),
+                Expanded(
+                  child: TeamCardTextContent(
+                    cardHeight: cardHeight,
+                    cardWidth: cardWidth,
+                    teamName: team.name ?? '???',
+                    teamRating: team.rating.toString(),
+                    teamWins: team.wins.toString(),
+                    teamLosses: team.losses.toString(),
+                  ),
                 ),
               ],
             ),

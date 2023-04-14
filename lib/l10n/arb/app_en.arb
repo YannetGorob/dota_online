@@ -29,6 +29,10 @@
     "towerDamage": "Towers Damage",
     "heroHealing": "Heroes Healing",
     "accounts": "Accounts",
-    "rank": "Rank"
-
+    "rank": "Rank",
+    "leaguesList": "Leagues list",
+    "leagueDetails": "League details",
+    "leagueTab": "Leagues",
+    "showMore" : "show more...",
+    "hide": "hide"
 }

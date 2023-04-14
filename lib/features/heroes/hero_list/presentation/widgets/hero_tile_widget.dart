@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
@@ -17,7 +18,7 @@ class HeroTile extends StatelessWidget {
 
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      shadowColor: Colors.black,
+      shadowColor: context.dotaColors.dotaBlackColor,
       elevation: 10,
       child: InkWell(
         onTap: () => context.router.push(HeroDetailsRoute(hero: hero)),

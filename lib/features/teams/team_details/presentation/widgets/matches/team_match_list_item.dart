@@ -4,7 +4,6 @@ import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 part 'match_score_widget.dart';
 
@@ -28,9 +27,9 @@ class TeamMatchListItem extends StatelessWidget {
     final Color borderColor;
 
     if(teamMatch.radiant == true){
-      borderColor = DotaColors.radiantColor;
+      borderColor = context.dotaColors.radiantColor;
     }else{
-      borderColor = DotaColors.direColor;
+      borderColor = context.dotaColors.direColor;
     }
 
     return Card(
@@ -47,7 +46,7 @@ class TeamMatchListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
-            Divider(color: Colors.white),
+            Divider(color: context.dotaColors.dotaWhiteColor),
             _MatchParamsWidget(teamMatch: teamMatch),
           ],
         ),

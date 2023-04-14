@@ -9,5 +9,8 @@ class MatchesRouterPage extends AutoRouter {}
 @RoutePage(name: 'HeroesRouter')
 class HeroesRouterPage extends AutoRouter {}
 
+@RoutePage(name: 'LeaguesRouter')
+class LeaguesRouterPage extends AutoRouter {}
+
 @RoutePage(name: 'PlayersRouter')
 class ProPlayersRouterPage extends AutoRouter {}
