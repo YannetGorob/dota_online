@@ -26,8 +26,9 @@ class PlayerDetailsBody extends StatelessWidget {
         if (playerDetails?.profile != null)
           SliverToBoxAdapter(
             child: PlayerDetailsGeneralInfoWidget(
-                playerProfile: playerDetails!.profile!,
-                mmrEstimate: playerDetails!.mmrEstimate),
+              playerProfile: playerDetails!.profile!,
+              mmrEstimate: playerDetails!.mmrEstimate,
+            ),
           ),
         if (playerRecentMatches != null)
           SliverToBoxAdapter(
@@ -37,32 +38,33 @@ class PlayerDetailsBody extends StatelessWidget {
                 CustomHeadline(title: context.l10n.recentMatches),
                 SizedBox(height: 8),
                 if (lastMatchTime != null)
-                  RichText(
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    text: TextSpan(
-                      text: context.l10n.recentMatchWas,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.grey,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: lastMatchTime,
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: RichText(
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        text: context.l10n.recentMatchWas,
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.grey,
                         ),
-                      ],
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: lastMatchTime,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
               ],
             ),
           ),
         if (playerRecentMatches != null)
-          RecentMatchesList(
-            playerRecentMatches: playerRecentMatches!,
-          ),
+          RecentMatchesList(playerRecentMatches: playerRecentMatches!),
       ],
     );
   }

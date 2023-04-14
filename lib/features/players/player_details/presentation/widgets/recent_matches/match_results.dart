@@ -8,8 +8,7 @@ class _MatchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      RichText(
+    return RichText(
       text: TextSpan(
         text: '$tittle: ',
         style: TextStyle(
@@ -17,14 +16,13 @@ class _MatchResults extends StatelessWidget {
           color: Colors.grey,
         ),
         children: <TextSpan>[
-          if (value != null)
-            TextSpan(
-              text: value,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.normal,
-              ),
+          TextSpan(
+            text: value == null ? '-' : value,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.normal,
             ),
+          ),
         ],
       ),
     );

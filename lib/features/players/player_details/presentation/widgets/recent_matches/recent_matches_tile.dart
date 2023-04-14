@@ -25,7 +25,7 @@ class RecentMatchesTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 1),
+      margin: EdgeInsets.symmetric(vertical: 2, horizontal: 15),
       child: InkWell(
         onTap: () {
           if (playerRecentMatch.matchId != null)
@@ -34,7 +34,7 @@ class RecentMatchesTile extends StatelessWidget {
             );
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Column(
             children: [
               Row(
@@ -42,7 +42,7 @@ class RecentMatchesTile extends StatelessWidget {
                 children: [
                   RichText(
                     text: TextSpan(
-                      text: context.l10n.duration,
+                      text: '${context.l10n.duration}: ',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
@@ -103,8 +103,9 @@ class RecentMatchesTile extends StatelessWidget {
                       ),
                     ],
                   ),
+                  if(playerRecentMatch.averageRank != null)
                   _MatchResults(
-                    tittle: 'Rank',
+                    tittle: context.l10n.rank,
                     value: playerRecentMatch.averageRank.toString(),
                   )
                 ],

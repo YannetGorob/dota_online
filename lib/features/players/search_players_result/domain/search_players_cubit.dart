@@ -1,6 +1,5 @@
 import 'package:dota_online/core/api/providers/players_provider.dart';
 import 'package:dota_online/features/players/search_players_result/domain/search_players_state.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchPlayerCubit extends Cubit<SearchPlayersState> {

@@ -15,7 +15,7 @@
     "roles": "Ролі",
     "score": "рахунок",
     "match": "Матч",
-    "duration": "Тривалість: ",
+    "duration": "Тривалість",
     "viewallplayers": "Показати всіх гравців",
     "home": "Головна",
     "searchAccount": "Пошук акаунта",
@@ -25,9 +25,10 @@
     "recentMatches": "Останні матчі",
     "recentMatchWas": "Дата останнього матчу: ",
     "min": " хв",
-    "heroDamage": "Пошкодження героя",
-    "towerDamage": "Пошкодження вежі",
-    "heroHealing": "Зцілення героя",
-    "accounts": "Акаунти"
+    "heroDamage": "Пошкодження героїв",
+    "towerDamage": "Пошкодження веж",
+    "heroHealing": "Зцілення героїв",
+    "accounts": "Акаунти",
+    "rank": "Ранг"
 
 }

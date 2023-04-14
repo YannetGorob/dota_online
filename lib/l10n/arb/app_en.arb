@@ -25,10 +25,10 @@
     "recentMatches": "Recent matches",
     "recentMatchWas": "Recent match: ",
     "min": " min",
-    "heroDamage": "Hero Damage",
-    "towerDamage": "Tower Damage",
-    "heroHealing": "Hero Healing",
-    "accounts": "Accounts"
-
+    "heroDamage": "Heroes Damage",
+    "towerDamage": "Towers Damage",
+    "heroHealing": "Heroes Healing",
+    "accounts": "Accounts",
+    "rank": "Rank"
 
 }

@@ -12,6 +12,6 @@ class DateTimeFormatter {
   }
 
   static String getFormattedDate(DateTime dateTime) {
-    return DateFormat('EEEE, MMM d, y').format(dateTime);
+    return DateFormat('dd.MM.yyyy, hh:mm a').format(dateTime);
   }
 }

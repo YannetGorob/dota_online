@@ -5,6 +5,8 @@ import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/features/players/pro_players_list/presentation/widgets/player_tile.dart';
 import 'package:flutter/material.dart';
 
+part 'search_error_widget.dart';
+
 class SearchResultBody extends StatelessWidget {
   const SearchResultBody({required this.searchPlayerModel});
 
@@ -38,18 +40,6 @@ class SearchResultBody extends StatelessWidget {
         },
       );
     else
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('No result'),
-            SizedBox(height: 10),
-            Text(
-              'Try again',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
-        ),
-      );
+      return _SearchErrorWidget();
   }
 }
