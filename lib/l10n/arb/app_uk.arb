@@ -16,5 +16,19 @@
     "score": "рахунок",
     "match": "Матч",
     "duration": "Тривалість",
-    "viewallplayers": "Показати всіх гравців"
+    "viewallplayers": "Показати всіх гравців",
+    "home": "Головна",
+    "searchAccount": "Пошук акаунта",
+    "topPlayers": "Найкращі гравці",
+    "searchResults": "Результати Пошуку",
+    "generalInfo": "Загальні відомості",
+    "recentMatches": "Останні матчі",
+    "recentMatchWas": "Дата останнього матчу: ",
+    "min": " хв",
+    "heroDamage": "Пошкодження героїв",
+    "towerDamage": "Пошкодження веж",
+    "heroHealing": "Зцілення героїв",
+    "accounts": "Акаунти",
+    "rank": "Ранг"
+
 }
