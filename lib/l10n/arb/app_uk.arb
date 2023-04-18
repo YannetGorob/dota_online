@@ -33,7 +33,9 @@
     "leaguesList": "Список ліг",
     "leagueDetails": "Деталі ліги",
     "leagueTab": "Ліги",
-    "showMore" : "показати більше...",
-    "hide": "заховати"
-
+    "showMore": "показати більше...",
+    "hide": "заховати",
+    "recentMatchesWithThisHero": "Недавні матчі з цим героєм",
+    "matchups": "Матчапи з",
+    "viewAllMatches": "Переглянути всі матчі"
 }

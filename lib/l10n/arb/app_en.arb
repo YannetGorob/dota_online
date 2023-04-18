@@ -33,6 +33,9 @@
     "leaguesList": "Leagues list",
     "leagueDetails": "League details",
     "leagueTab": "Leagues",
-    "showMore" : "show more...",
-    "hide": "hide"
+    "showMore": "show more...",
+    "hide": "hide",
+    "recentMatchesWithThisHero": "recentMatchesWithThisHero",
+    "matchups": "Matchups with",
+    "viewAllMatches": "viewAllMatches"
 }

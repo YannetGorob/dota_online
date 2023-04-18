@@ -55,7 +55,10 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<HeroDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: HeroDetailsPage(hero: args.hero),
+        child: HeroDetailsPage(
+          hero: args.hero,
+          key: args.key,
+        ),
       );
     },
     HeroMatchupsRoute.name: (routeData) {
@@ -63,10 +66,10 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: HeroMatchupsPage(
-          key: args.key,
           heroMatchups: args.heroMatchups,
           heroes: args.heroes,
           heroId: args.heroId,
+          key: args.key,
         ),
       );
     },
@@ -75,10 +78,10 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: AllMatchesPage(
-          key: args.key,
           listLength: args.listLength,
           heroName: args.heroName,
           matches: args.matches,
+          key: args.key,
         ),
       );
     },
@@ -250,10 +253,14 @@ class HomeRoute extends PageRouteInfo<void> {
 class HeroDetailsRoute extends PageRouteInfo<HeroDetailsRouteArgs> {
   HeroDetailsRoute({
     required HeroStats hero,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           HeroDetailsRoute.name,
-          args: HeroDetailsRouteArgs(hero: hero),
+          args: HeroDetailsRouteArgs(
+            hero: hero,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -264,13 +271,18 @@ class HeroDetailsRoute extends PageRouteInfo<HeroDetailsRouteArgs> {
 }
 
 class HeroDetailsRouteArgs {
-  const HeroDetailsRouteArgs({required this.hero});
+  const HeroDetailsRouteArgs({
+    required this.hero,
+    this.key,
+  });
 
   final HeroStats hero;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'HeroDetailsRouteArgs{hero: $hero}';
+    return 'HeroDetailsRouteArgs{hero: $hero, key: $key}';
   }
 }
 
@@ -278,18 +290,18 @@ class HeroDetailsRouteArgs {
 /// [HeroMatchupsPage]
 class HeroMatchupsRoute extends PageRouteInfo<HeroMatchupsRouteArgs> {
   HeroMatchupsRoute({
-    Key? key,
     required List<MatchupByHeroId> heroMatchups,
     required List<HeroStats> heroes,
     required int heroId,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           HeroMatchupsRoute.name,
           args: HeroMatchupsRouteArgs(
-            key: key,
             heroMatchups: heroMatchups,
             heroes: heroes,
             heroId: heroId,
+            key: key,
           ),
           initialChildren: children,
         );
@@ -302,13 +314,11 @@ class HeroMatchupsRoute extends PageRouteInfo<HeroMatchupsRouteArgs> {
 
 class HeroMatchupsRouteArgs {
   const HeroMatchupsRouteArgs({
-    this.key,
     required this.heroMatchups,
     required this.heroes,
     required this.heroId,
+    this.key,
   });
-
-  final Key? key;
 
   final List<MatchupByHeroId> heroMatchups;
 
@@ -316,9 +326,11 @@ class HeroMatchupsRouteArgs {
 
   final int heroId;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'HeroMatchupsRouteArgs{key: $key, heroMatchups: $heroMatchups, heroes: $heroes, heroId: $heroId}';
+    return 'HeroMatchupsRouteArgs{heroMatchups: $heroMatchups, heroes: $heroes, heroId: $heroId, key: $key}';
   }
 }
 
@@ -326,18 +338,18 @@ class HeroMatchupsRouteArgs {
 /// [AllMatchesPage]
 class AllMatchesRoute extends PageRouteInfo<AllMatchesRouteArgs> {
   AllMatchesRoute({
-    Key? key,
     required int listLength,
     required String heroName,
     required List<MatchByHeroId> matches,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           AllMatchesRoute.name,
           args: AllMatchesRouteArgs(
-            key: key,
             listLength: listLength,
             heroName: heroName,
             matches: matches,
+            key: key,
           ),
           initialChildren: children,
         );
@@ -350,13 +362,11 @@ class AllMatchesRoute extends PageRouteInfo<AllMatchesRouteArgs> {
 
 class AllMatchesRouteArgs {
   const AllMatchesRouteArgs({
-    this.key,
     required this.listLength,
     required this.heroName,
     required this.matches,
+    this.key,
   });
-
-  final Key? key;
 
   final int listLength;
 
@@ -364,9 +374,11 @@ class AllMatchesRouteArgs {
 
   final List<MatchByHeroId> matches;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'AllMatchesRouteArgs{key: $key, listLength: $listLength, heroName: $heroName, matches: $matches}';
+    return 'AllMatchesRouteArgs{listLength: $listLength, heroName: $heroName, matches: $matches, key: $key}';
   }
 }
 

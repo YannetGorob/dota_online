@@ -1,3 +1,5 @@
+// ignore_for_file: cascade_invocations
+
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/providers/heroes_provider.dart';
 import 'package:dota_online/core/utils/url_util.dart';

@@ -34,7 +34,7 @@ class HeroFightCharacteristics extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             )
           else
-            Text('---'),
+            const Text('---'),
         ],
       ),
     );
