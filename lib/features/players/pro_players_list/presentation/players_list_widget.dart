@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProPlayersListWidget extends StatelessWidget {
+  const ProPlayersListWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
@@ -19,8 +21,8 @@ class ProPlayersListWidget extends StatelessWidget {
       body: BlocBuilder<ProPlayersListCubit, ProPlayersListState>(
         builder: (context, state) {
           return state.map(
-            error: (_) => DotaErrorWidget(),
-            loading: (_) => DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
+            loading: (_) => const DotaProgressIndicator(),
             loaded: (value) => ProPlayersListBody(
               proPlayers: value.proPlayers,
             ),

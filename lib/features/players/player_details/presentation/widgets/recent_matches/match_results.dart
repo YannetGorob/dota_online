@@ -11,14 +11,14 @@ class _MatchResults extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: '$tittle: ',
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 15,
           color: Colors.grey,
         ),
         children: <TextSpan>[
           TextSpan(
-            text: value == null ? '-' : value,
-            style: TextStyle(
+            text: value ?? '-',
+            style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.normal,
             ),

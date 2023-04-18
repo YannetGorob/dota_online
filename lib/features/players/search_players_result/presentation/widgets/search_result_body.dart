@@ -8,21 +8,21 @@ import 'package:flutter/material.dart';
 part 'search_error_widget.dart';
 
 class SearchResultBody extends StatelessWidget {
-  const SearchResultBody({required this.searchPlayerModel});
+  const SearchResultBody({required this.searchPlayerModel, super.key});
 
   final List<SearchPlayerModel> searchPlayerModel;
 
   @override
   Widget build(BuildContext context) {
-    if (searchPlayerModel.isNotEmpty)
+    if (searchPlayerModel.isNotEmpty) {
       return ListView.builder(
-        padding: EdgeInsets.only(top: 1),
+        padding: const EdgeInsets.only(top: 1),
         itemCount: searchPlayerModel.length,
         itemBuilder: (context, index) {
           final item = searchPlayerModel[index];
           return PlayerTile(
             onTap: () {
-              if (item.accountId != null)
+              if (item.accountId != null) {
                 context.router.push(
                   PlayerDetailsRoute(
                     accountId: item.accountId!,
@@ -30,16 +30,19 @@ class SearchResultBody extends StatelessWidget {
                     lastMatchTime: item.lastMatchTime == null
                         ? null
                         : DateTimeFormatter.getFormattedDate(
-                            DateTime.parse(item.lastMatchTime!)),
+                            DateTime.parse(item.lastMatchTime!),
+                          ),
                   ),
                 );
+              }
             },
             name: item.personaname,
             avatar: item.avatarfull,
           );
         },
       );
-    else
-      return _SearchErrorWidget();
+    } else {
+      return const _SearchErrorWidget();
+    }
   }
 }

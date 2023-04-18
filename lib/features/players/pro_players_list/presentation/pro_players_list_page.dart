@@ -8,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class ProPlayersListPage extends StatelessWidget {
+  const ProPlayersListPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ProPlayersListCubit>(

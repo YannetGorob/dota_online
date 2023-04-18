@@ -13,6 +13,7 @@ class RecentMatchesTile extends StatelessWidget {
     required this.kills,
     required this.deaths,
     required this.assists,
+    super.key,
     this.lastMatchTime,
   });
 
@@ -25,13 +26,14 @@ class RecentMatchesTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 2, horizontal: 15),
+      margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
       child: InkWell(
         onTap: () {
-          if (playerRecentMatch.matchId != null)
+          if (playerRecentMatch.matchId != null) {
             context.router.push(
               MatchDetailsRoute(matchId: playerRecentMatch.matchId!),
             );
+          }
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -43,7 +45,7 @@ class RecentMatchesTile extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       text: '${context.l10n.duration}: ',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.grey,
@@ -53,14 +55,14 @@ class RecentMatchesTile extends StatelessWidget {
                           TextSpan(
                             text: DateTimeFormatter().formatMatchDuration(
                                 playerRecentMatch.duration!),
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.normal,
                             ),
                           ),
                         TextSpan(
                           text: context.l10n.min,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.normal,
                           ),
                         ),
@@ -81,7 +83,7 @@ class RecentMatchesTile extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(thickness: 2),
+              const Divider(thickness: 2),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,11 +105,11 @@ class RecentMatchesTile extends StatelessWidget {
                       ),
                     ],
                   ),
-                  if(playerRecentMatch.averageRank != null)
-                  _MatchResults(
-                    tittle: context.l10n.rank,
-                    value: playerRecentMatch.averageRank.toString(),
-                  )
+                  if (playerRecentMatch.averageRank != null)
+                    _MatchResults(
+                      tittle: context.l10n.rank,
+                      value: playerRecentMatch.averageRank.toString(),
+                    )
                 ],
               ),
             ],

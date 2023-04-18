@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/models/player/player_details_model.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
-import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_details_general_widget.dart';
+import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_genaral_details_widget.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/recent_matches/recent_matches_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +25,7 @@ class PlayerDetailsBody extends StatelessWidget {
         SliverPadding(padding: EdgeInsets.only(top: 15)),
         if (playerDetails?.profile != null)
           SliverToBoxAdapter(
-            child: PlayerDetailsGeneralInfoWidget(
+            child: PlayerGeneralDetailsWidget(
               playerProfile: playerDetails!.profile!,
               mmrEstimate: playerDetails!.mmrEstimate,
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class PlayerTile extends StatelessWidget {
   const PlayerTile({
+    super.key,
     this.name,
     this.steamId,
     this.avatar,
@@ -17,11 +18,11 @@ class PlayerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 1),
+      margin: const EdgeInsets.symmetric(vertical: 1),
       child: ListTile(
         onTap: onTap,
         leading: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
           child: DotaCachedImage(
             height: 50,
             width: 50,

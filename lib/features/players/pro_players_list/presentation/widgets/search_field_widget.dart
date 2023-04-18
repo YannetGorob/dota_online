@@ -26,19 +26,19 @@ class _SearchFieldWidgetState extends State<SearchFieldWidget> {
             );
           },
           controller: searchController,
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           suffixIcon: IconButton(
-            icon: Icon(Icons.cancel),
+            icon: const Icon(Icons.cancel),
             onPressed: searchController.clear,
           ),
           hintText: '${context.l10n.searchAccount}...',
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Text(
           context.l10n.topPlayers,
           style: Theme.of(context).textTheme.titleLarge,
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
       ],
     );
   }

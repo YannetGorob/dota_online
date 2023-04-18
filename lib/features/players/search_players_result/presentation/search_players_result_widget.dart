@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchPlayersResultWidget extends StatelessWidget {
-  const SearchPlayersResultWidget({Key? key}) : super(key: key);
+  const SearchPlayersResultWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class SearchPlayersResultWidget extends StatelessWidget {
       body: BlocBuilder<SearchPlayerCubit, SearchPlayersState>(
         builder: (context, state) {
           return state.map(
-            error: (_) => DotaErrorWidget(),
-            loading: (_) => DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
+            loading: (_) => const DotaProgressIndicator(),
             loaded: (value) => SearchResultBody(
               searchPlayerModel: value.searchPlayerModel,
             ),

@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class PlayerDetailsPage extends StatelessWidget {
   const PlayerDetailsPage({
     required this.accountId,
+    super.key,
     this.playerName,
     this.lastMatchTime,
   });

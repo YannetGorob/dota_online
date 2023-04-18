@@ -4,9 +4,10 @@ import 'package:dota_online/features/players/player_details/presentation/widgets
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
-class PlayerDetailsGeneralInfoWidget extends StatelessWidget {
-  const PlayerDetailsGeneralInfoWidget({
+class PlayerGeneralDetailsWidget extends StatelessWidget {
+  const PlayerGeneralDetailsWidget({
     required this.playerProfile,
+    super.key,
     this.mmrEstimate,
   });
 
@@ -24,23 +25,23 @@ class PlayerDetailsGeneralInfoWidget extends StatelessWidget {
             height: 100,
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         if (playerProfile.personaname != null)
           Text(
             playerProfile.personaname!,
           ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         if (playerProfile.steamid != null)
           Text(
             'Steam ID: ${playerProfile.steamid!}',
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 15,
               color: Colors.grey,
             ),
           ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         CustomHeadline(title: context.l10n.generalInfo),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         if (mmrEstimate != null)
           Column(
             children: [
