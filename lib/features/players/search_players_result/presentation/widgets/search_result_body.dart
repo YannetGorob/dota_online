@@ -16,7 +16,7 @@ class SearchResultBody extends StatelessWidget {
   Widget build(BuildContext context) {
     if (searchPlayerModel.isNotEmpty) {
       return ListView.builder(
-        padding: const EdgeInsets.only(top: 1),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         itemCount: searchPlayerModel.length,
         itemBuilder: (context, index) {
           final item = searchPlayerModel[index];

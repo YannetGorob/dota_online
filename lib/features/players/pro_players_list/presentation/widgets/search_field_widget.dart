@@ -20,7 +20,6 @@ class _SearchFieldWidgetState extends State<SearchFieldWidget> {
     super.initState();
     searchController.addListener(() {
       final isButtonActive = searchController.text.isNotEmpty;
-
       setState(() {
         this.isButtonActive = isButtonActive;
       });

@@ -8,7 +8,7 @@ class DotaProgressIndicator extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final controller = useAnimationController(
-      duration: Duration(milliseconds: 700),
+      duration: const Duration(milliseconds: 700),
       lowerBound: 0.5,
     )..repeat(reverse: true);
 

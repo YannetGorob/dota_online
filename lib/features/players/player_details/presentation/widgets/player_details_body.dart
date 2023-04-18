@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/models/player/player_details_model.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
-import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_genaral_details_widget.dart';
+import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_general_details_widget.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/recent_matches/recent_matches_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +9,7 @@ part 'custom_headline.dart';
 
 class PlayerDetailsBody extends StatelessWidget {
   const PlayerDetailsBody({
+    super.key,
     this.playerDetails,
     this.playerRecentMatches,
     this.lastMatchTime,
@@ -22,7 +23,7 @@ class PlayerDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverPadding(padding: EdgeInsets.only(top: 15)),
+        const SliverPadding(padding: EdgeInsets.only(top: 15)),
         if (playerDetails?.profile != null)
           SliverToBoxAdapter(
             child: PlayerGeneralDetailsWidget(
@@ -34,9 +35,9 @@ class PlayerDetailsBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 CustomHeadline(title: context.l10n.recentMatches),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 if (lastMatchTime != null)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8),
@@ -45,14 +46,14 @@ class PlayerDetailsBody extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       text: TextSpan(
                         text: context.l10n.recentMatchWas,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 15,
                           color: Colors.grey,
                         ),
                         children: <TextSpan>[
                           TextSpan(
                             text: lastMatchTime,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                             ),
                           ),

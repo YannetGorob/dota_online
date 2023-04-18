@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class DotaPrimaryButton extends StatelessWidget {
   const DotaPrimaryButton({
-    super.key,
     required this.onPressed,
     required this.title,
+    super.key,
   });
 
   final VoidCallback onPressed;
@@ -13,11 +13,11 @@ class DotaPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      child: Text(title, style: Theme.of(context).textTheme.labelLarge),
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        backgroundColor: Color(0xff2c776d),
+        backgroundColor: const Color(0xff2c776d),
       ),
+      child: Text(title, style: Theme.of(context).textTheme.labelLarge),
     );
   }
 }

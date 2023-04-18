@@ -12,10 +12,12 @@ class DotaAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-              title ?? '',
+      title: title != null
+          ? Text(
+              title!,
               style: Theme.of(context).textTheme.headlineSmall,
-            ),
+            )
+          : const SizedBox(),
       backgroundColor: Theme.of(context).primaryColor,
       elevation: 0,
       centerTitle: true,

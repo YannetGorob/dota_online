@@ -26,8 +26,10 @@ class RecentMatchesTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
       child: InkWell(
+        borderRadius: BorderRadius.circular(8),
         onTap: () {
           if (playerRecentMatch.matchId != null) {
             context.router.push(
@@ -54,7 +56,8 @@ class RecentMatchesTile extends StatelessWidget {
                         if (playerRecentMatch.duration != null)
                           TextSpan(
                             text: DateTimeFormatter().formatMatchDuration(
-                                playerRecentMatch.duration!),
+                              playerRecentMatch.duration!,
+                            ),
                             style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.normal,
