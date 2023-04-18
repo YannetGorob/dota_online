@@ -11,23 +11,27 @@ class LeagueListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      itemCount: leagues.length,
-      itemBuilder: (context, index) {
-        final item = leagues[index];
-        if (item != null) {
-          return InkWell(
-            onTap: () {
-              if (item.leagueid != null) {
-                context.router.push(LeagueDetailsRoute(leagueModel: item));
-              }
-            },
-            child: LeagueListTile(league: item),
-          );
-        }
-        return null;
-      },
+    return Scrollbar(
+      thickness: 5,
+      interactive: true,
+      child: ListView.builder(
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        itemCount: leagues.length,
+        itemBuilder: (context, index) {
+          final item = leagues[index];
+          if (item != null) {
+            return InkWell(
+              onTap: () {
+                if (item.leagueid != null) {
+                  context.router.push(LeagueDetailsRoute(leagueModel: item));
+                }
+              },
+              child: LeagueListTile(league: item),
+            );
+          }
+          return null;
+        },
+      ),
     );
   }
 }
