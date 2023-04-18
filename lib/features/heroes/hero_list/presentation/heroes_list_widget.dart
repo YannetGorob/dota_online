@@ -19,8 +19,8 @@ class HeroesListWidget extends StatelessWidget {
       body: BlocBuilder<HeroesListCubit, HeroesListState>(
         builder: (context, state) {
           return state.map(
-            loading: (_) => DotaProgressIndicator(),
-            error: (_) => DotaErrorWidget(),
+            loading: (_) => const DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
             loaded: (state) => BodyHeroesWidget(heroes: state.heroes),
           );
         },

@@ -7,7 +7,7 @@ import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:flutter/material.dart';
 
 class HeroTile extends StatelessWidget {
-  const HeroTile({required this.hero});
+  const HeroTile({required this.hero, super.key});
 
   final HeroStats hero;
 
@@ -17,7 +17,7 @@ class HeroTile extends StatelessWidget {
     final cardWidth = MediaQuery.of(context).size.width;
 
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       shadowColor: context.dotaColors.dotaBlackColor,
       elevation: 10,
       child: InkWell(

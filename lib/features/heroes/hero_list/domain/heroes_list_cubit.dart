@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/providers/heroes_provider.dart';
 import 'package:dota_online/core/utils/url_util.dart';
-import 'heroes_list_state.dart';
+import 'package:dota_online/features/heroes/hero_list/domain/heroes_list_state.dart';
 
 class HeroesListCubit extends Cubit<HeroesListState> {
   HeroesListCubit({required HeroesProvider heroesProvider})
@@ -21,18 +21,19 @@ class HeroesListCubit extends Cubit<HeroesListState> {
         ).toList();
 
         heroesData.sort((a, b) {
-          if (a.localizedName == null)
+          if (a.localizedName == null) {
             return 1;
-          else if (b.localizedName == null)
+          } else if (b.localizedName == null) {
             return -1;
-          else
+          } else {
             return a.localizedName!.compareTo(b.localizedName!);
+          }
         });
 
-        if (!this.isClosed) emit(HeroesListState.loaded(heroes: heroesData));
+        if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },
       failure: (_) {
-        if (!this.isClosed) emit(HeroesListState.error());
+        if (!isClosed) emit(const HeroesListState.error());
       },
     );
   }

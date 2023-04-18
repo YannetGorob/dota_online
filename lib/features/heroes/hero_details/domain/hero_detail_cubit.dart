@@ -8,10 +8,10 @@ import 'package:dota_online/core/api/providers/matches_provider.dart';
 import 'package:dota_online/features/heroes/hero_details/domain/hero_detail_state.dart';
 
 class HeroDetailCubit extends Cubit<HeroDetailsState> {
-  HeroDetailCubit(
-      {required MatchesProvider matchesProvider,
-      required HeroesProvider heroesProvider})
-      : _matchesProvider = matchesProvider,
+  HeroDetailCubit({
+    required MatchesProvider matchesProvider,
+    required HeroesProvider heroesProvider,
+  })  : _matchesProvider = matchesProvider,
         _heroesProvider = heroesProvider,
         super(const HeroDetailsState.loading());
 
@@ -49,7 +49,7 @@ class HeroDetailCubit extends Cubit<HeroDetailsState> {
         ),
       );
     } else {
-      emit(HeroDetailsState.error());
+      emit(const HeroDetailsState.error());
     }
   }
 }

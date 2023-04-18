@@ -3,7 +3,7 @@ import 'package:dota_online/features/heroes/hero_list/presentation/widgets/hero_
 import 'package:flutter/material.dart';
 
 class BodyHeroesWidget extends StatelessWidget {
-  const BodyHeroesWidget({required this.heroes});
+  const BodyHeroesWidget({required this.heroes, super.key});
 
   final List<HeroStats> heroes;
 

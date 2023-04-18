@@ -4,6 +4,7 @@ class HeroAttributeWidget extends StatelessWidget {
   const HeroAttributeWidget({
     this.image,
     this.value,
+    super.key,
   });
 
   final Widget? image;
@@ -14,7 +15,7 @@ class HeroAttributeWidget extends StatelessWidget {
     return Row(
       children: [
         if (image != null) image!,
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         if (value != null)
           Text(value!, style: Theme.of(context).textTheme.titleMedium),
       ],

@@ -10,7 +10,7 @@ import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HeroGeneralInfoWidget extends StatelessWidget {
-  const HeroGeneralInfoWidget({required this.hero});
+  const HeroGeneralInfoWidget({required this.hero, super.key});
 
   final HeroStats hero;
 
@@ -18,7 +18,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         if (hero.attackType != null)
           HeroFightCharacteristics(
             value: hero.attackType!,
@@ -28,7 +28,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
         Hero(
           tag: hero.id!,
           child: ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(8)),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
             child: DotaCachedImage(imageUrl: hero.img, width: double.infinity),
           ),
         ),
@@ -42,9 +42,9 @@ class HeroGeneralInfoWidget extends StatelessWidget {
             color: context.dotaColors.dotaBlueColor,
             title: hero.baseMana.toString(),
           ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         HeroAllAttributes(hero: hero),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         HeroFightCharacteristics(
           value: hero.moveSpeed.toString(),
           image: Assets.images.iconMovementSpeed.image(),
@@ -66,7 +66,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
                 color: context.dotaColors.dotaGreyColor,
               ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
       ],
     );
   }

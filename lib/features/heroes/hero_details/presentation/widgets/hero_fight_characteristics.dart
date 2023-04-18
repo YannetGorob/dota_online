@@ -5,6 +5,7 @@ class HeroFightCharacteristics extends StatelessWidget {
     this.value,
     this.tittle,
     this.image,
+    super.key,
   });
 
   final String? value;
@@ -14,7 +15,7 @@ class HeroFightCharacteristics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.only(bottom: 15),
       child: Row(
         children: [
           if (image != null)
@@ -24,7 +25,7 @@ class HeroFightCharacteristics extends StatelessWidget {
             ),
           if (tittle != null)
             Text(
-              '${tittle}: ',
+              '$tittle: ',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           if (value != null)

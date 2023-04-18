@@ -9,10 +9,10 @@ import 'package:flutter/material.dart';
 @RoutePage()
 class AllMatchesPage extends StatelessWidget {
   const AllMatchesPage({
-    super.key,
     required this.listLength,
     required this.heroName,
     required this.matches,
+    super.key,
   });
 
   final List<MatchByHeroId> matches;
@@ -26,14 +26,20 @@ class AllMatchesPage extends StatelessWidget {
       body: ListView.builder(
         itemCount: listLength,
         itemBuilder: (ctx, index) {
-          if (matches[index].matchId != null)
-            return GestureDetector(
+          if (matches[index].matchId != null) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: GestureDetector(
                 onTap: () {
                   context.router.push(
                     MatchDetailsRoute(matchId: matches[index].matchId!),
                   );
                 },
-                child: MatchByHeroIdCard(item: matches[index]));
+                child: MatchByHeroIdCard(item: matches[index]),
+              ),
+            );
+          }
+          return null;
         },
       ),
     );

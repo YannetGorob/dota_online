@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HeroDetailsWidget extends StatelessWidget {
-  const HeroDetailsWidget({required this.hero});
+  const HeroDetailsWidget({required this.hero, super.key});
 
   final HeroStats hero;
 
@@ -21,7 +21,7 @@ class HeroDetailsWidget extends StatelessWidget {
       body: BlocBuilder<HeroDetailCubit, HeroDetailsState>(
         builder: (context, state) {
           return state.map(
-            loading: (_) => DotaProgressIndicator(),
+            loading: (_) => const DotaProgressIndicator(),
             loaded: (value) {
               return HeroDetailsBody(
                 heroes: value.heroes,
@@ -30,7 +30,7 @@ class HeroDetailsWidget extends StatelessWidget {
                 heroMatchups: value.heroMatchup,
               );
             },
-            error: (_) => DotaErrorWidget(),
+            error: (_) => const DotaErrorWidget(),
           );
         },
       ),

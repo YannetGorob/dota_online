@@ -4,10 +4,7 @@ import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class HeroAllAttributes extends StatelessWidget {
-  const HeroAllAttributes({
-    super.key,
-    required this.hero,
-  });
+  const HeroAllAttributes({required this.hero, super.key});
 
   final HeroStats hero;
 

@@ -10,11 +10,11 @@ import 'package:flutter/material.dart';
 
 class HeroDetailsBody extends StatelessWidget {
   const HeroDetailsBody({
-    super.key,
     required this.hero,
     required this.matchesByHeroId,
     required this.heroMatchups,
     required this.heroes,
+    super.key,
   });
 
   final HeroStats hero;
@@ -29,10 +29,10 @@ class HeroDetailsBody extends StatelessWidget {
     final roles = hero.roles;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CustomScrollView(
         slivers: [
-          SliverPadding(padding: EdgeInsets.only(top: 15)),
+          const SliverPadding(padding: EdgeInsets.only(top: 15)),
           SliverToBoxAdapter(child: HeroGeneralInfoWidget(hero: hero)),
           if (roles != null)
             SliverList(
@@ -46,7 +46,11 @@ class HeroDetailsBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: TextButton(
               onPressed: () => context.router.push(
-                HeroMatchupsRoute(heroMatchups: heroMatchups, heroes: heroes),
+                HeroMatchupsRoute(
+                  heroMatchups: heroMatchups,
+                  heroes: heroes,
+                  heroId: hero.id!,
+                ),
               ),
               child: Text('Look at ${hero.localizedName} matchups'),
             ),
@@ -71,7 +75,7 @@ class HeroDetailsBody extends StatelessWidget {
               childCount: recentMatchesAmount,
               (context, index) {
                 final item = matchesByHeroId[index];
-                if (matchesByHeroId[index].matchId != null)
+                if (matchesByHeroId[index].matchId != null) {
                   return GestureDetector(
                     onTap: () => context.router.push(
                       MatchDetailsRoute(
@@ -79,8 +83,9 @@ class HeroDetailsBody extends StatelessWidget {
                     ),
                     child: MatchByHeroIdCard(item: item),
                   );
-                else
-                  return Text('???');
+                } else {
+                  return const Text('???');
+                }
               },
             ),
           ),

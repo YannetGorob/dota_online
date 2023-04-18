@@ -3,7 +3,7 @@ import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 
 class MatchByHeroIdCard extends StatelessWidget {
-  const MatchByHeroIdCard({super.key, required this.item});
+  const MatchByHeroIdCard({required this.item, super.key});
 
   final MatchByHeroId item;
 
@@ -19,7 +19,7 @@ class MatchByHeroIdCard extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -37,7 +37,7 @@ class MatchByHeroIdCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

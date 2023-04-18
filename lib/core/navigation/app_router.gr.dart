@@ -58,10 +58,71 @@ abstract class _$AppRouter extends RootStackRouter {
         child: HeroDetailsPage(hero: args.hero),
       );
     },
+    HeroMatchupsRoute.name: (routeData) {
+      final args = routeData.argsAs<HeroMatchupsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: HeroMatchupsPage(
+          key: args.key,
+          heroMatchups: args.heroMatchups,
+          heroes: args.heroes,
+          heroId: args.heroId,
+        ),
+      );
+    },
+    AllMatchesRoute.name: (routeData) {
+      final args = routeData.argsAs<AllMatchesRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AllMatchesPage(
+          key: args.key,
+          listLength: args.listLength,
+          heroName: args.heroName,
+          matches: args.matches,
+        ),
+      );
+    },
     HeroListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HeroListPage(),
+      );
+    },
+    SearchPlayerResultRoute.name: (routeData) {
+      final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SearchPlayerResultPage(searchValue: args.searchValue),
+      );
+    },
+    PlayerDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<PlayerDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PlayerDetailsPage(
+          accountId: args.accountId,
+          playerName: args.playerName,
+          lastMatchTime: args.lastMatchTime,
+        ),
+      );
+    },
+    ProPlayersListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ProPlayersListPage(),
+      );
+    },
+    LeagueListRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: LeagueListPage(),
+      );
+    },
+    LeagueDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<LeagueDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: LeagueDetailsPage(leagueModel: args.leagueModel),
       );
     },
     MatchesListRoute.name: (routeData) {
@@ -95,66 +156,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: PlayersListPage(players: args.players),
-      );
-    },
-    ProPlayersListRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: ProPlayersListPage(),
-      );
-    },
-    SearchPlayerResultRoute.name: (routeData) {
-      final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: SearchPlayerResultPage(searchValue: args.searchValue),
-      );
-    },
-    PlayerDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<PlayerDetailsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: PlayerDetailsPage(
-          accountId: args.accountId,
-          playerName: args.playerName,
-          lastMatchTime: args.lastMatchTime,
-        ),
-      );
-    },
-    LeagueListRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: LeagueListPage(),
-      );
-    },
-    LeagueDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<LeagueDetailsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: LeagueDetailsPage(leagueModel: args.leagueModel),
-      );
-    },
-    HeroMatchupsRoute.name: (routeData) {
-      final args = routeData.argsAs<HeroMatchupsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: HeroMatchupsPage(
-          key: args.key,
-          heroMatchups: args.heroMatchups,
-          heroes: args.heroes,
-        ),
-      );
-    },
-    AllMatchesRoute.name: (routeData) {
-      final args = routeData.argsAs<AllMatchesRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: AllMatchesPage(
-          key: args.key,
-          listLength: args.listLength,
-          heroName: args.heroName,
-          matches: args.matches,
-        ),
       );
     },
   };
@@ -274,6 +275,102 @@ class HeroDetailsRouteArgs {
 }
 
 /// generated route for
+/// [HeroMatchupsPage]
+class HeroMatchupsRoute extends PageRouteInfo<HeroMatchupsRouteArgs> {
+  HeroMatchupsRoute({
+    Key? key,
+    required List<MatchupByHeroId> heroMatchups,
+    required List<HeroStats> heroes,
+    required int heroId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          HeroMatchupsRoute.name,
+          args: HeroMatchupsRouteArgs(
+            key: key,
+            heroMatchups: heroMatchups,
+            heroes: heroes,
+            heroId: heroId,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'HeroMatchupsRoute';
+
+  static const PageInfo<HeroMatchupsRouteArgs> page =
+      PageInfo<HeroMatchupsRouteArgs>(name);
+}
+
+class HeroMatchupsRouteArgs {
+  const HeroMatchupsRouteArgs({
+    this.key,
+    required this.heroMatchups,
+    required this.heroes,
+    required this.heroId,
+  });
+
+  final Key? key;
+
+  final List<MatchupByHeroId> heroMatchups;
+
+  final List<HeroStats> heroes;
+
+  final int heroId;
+
+  @override
+  String toString() {
+    return 'HeroMatchupsRouteArgs{key: $key, heroMatchups: $heroMatchups, heroes: $heroes, heroId: $heroId}';
+  }
+}
+
+/// generated route for
+/// [AllMatchesPage]
+class AllMatchesRoute extends PageRouteInfo<AllMatchesRouteArgs> {
+  AllMatchesRoute({
+    Key? key,
+    required int listLength,
+    required String heroName,
+    required List<MatchByHeroId> matches,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AllMatchesRoute.name,
+          args: AllMatchesRouteArgs(
+            key: key,
+            listLength: listLength,
+            heroName: heroName,
+            matches: matches,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'AllMatchesRoute';
+
+  static const PageInfo<AllMatchesRouteArgs> page =
+      PageInfo<AllMatchesRouteArgs>(name);
+}
+
+class AllMatchesRouteArgs {
+  const AllMatchesRouteArgs({
+    this.key,
+    required this.listLength,
+    required this.heroName,
+    required this.matches,
+  });
+
+  final Key? key;
+
+  final int listLength;
+
+  final String heroName;
+
+  final List<MatchByHeroId> matches;
+
+  @override
+  String toString() {
+    return 'AllMatchesRouteArgs{key: $key, listLength: $listLength, heroName: $heroName, matches: $matches}';
+  }
+}
+
+/// generated route for
 /// [HeroListPage]
 class HeroListRoute extends PageRouteInfo<void> {
   const HeroListRoute({List<PageRouteInfo>? children})
@@ -285,6 +382,136 @@ class HeroListRoute extends PageRouteInfo<void> {
   static const String name = 'HeroListRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchPlayerResultPage]
+class SearchPlayerResultRoute
+    extends PageRouteInfo<SearchPlayerResultRouteArgs> {
+  SearchPlayerResultRoute({
+    required String searchValue,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SearchPlayerResultRoute.name,
+          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchPlayerResultRoute';
+
+  static const PageInfo<SearchPlayerResultRouteArgs> page =
+      PageInfo<SearchPlayerResultRouteArgs>(name);
+}
+
+class SearchPlayerResultRouteArgs {
+  const SearchPlayerResultRouteArgs({required this.searchValue});
+
+  final String searchValue;
+
+  @override
+  String toString() {
+    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
+  }
+}
+
+/// generated route for
+/// [PlayerDetailsPage]
+class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
+  PlayerDetailsRoute({
+    required int accountId,
+    String? playerName,
+    String? lastMatchTime,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PlayerDetailsRoute.name,
+          args: PlayerDetailsRouteArgs(
+            accountId: accountId,
+            playerName: playerName,
+            lastMatchTime: lastMatchTime,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PlayerDetailsRoute';
+
+  static const PageInfo<PlayerDetailsRouteArgs> page =
+      PageInfo<PlayerDetailsRouteArgs>(name);
+}
+
+class PlayerDetailsRouteArgs {
+  const PlayerDetailsRouteArgs({
+    required this.accountId,
+    this.playerName,
+    this.lastMatchTime,
+  });
+
+  final int accountId;
+
+  final String? playerName;
+
+  final String? lastMatchTime;
+
+  @override
+  String toString() {
+    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName, lastMatchTime: $lastMatchTime}';
+  }
+}
+
+/// generated route for
+/// [ProPlayersListPage]
+class ProPlayersListRoute extends PageRouteInfo<void> {
+  const ProPlayersListRoute({List<PageRouteInfo>? children})
+      : super(
+          ProPlayersListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ProPlayersListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LeagueListPage]
+class LeagueListRoute extends PageRouteInfo<void> {
+  const LeagueListRoute({List<PageRouteInfo>? children})
+      : super(
+          LeagueListRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LeagueListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LeagueDetailsPage]
+class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
+  LeagueDetailsRoute({
+    required LeagueModel leagueModel,
+    List<PageRouteInfo>? children,
+  }) : super(
+          LeagueDetailsRoute.name,
+          args: LeagueDetailsRouteArgs(leagueModel: leagueModel),
+          initialChildren: children,
+        );
+
+  static const String name = 'LeagueDetailsRoute';
+
+  static const PageInfo<LeagueDetailsRouteArgs> page =
+      PageInfo<LeagueDetailsRouteArgs>(name);
+}
+
+class LeagueDetailsRouteArgs {
+  const LeagueDetailsRouteArgs({required this.leagueModel});
+
+  final LeagueModel leagueModel;
+
+  @override
+  String toString() {
+    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel}';
+  }
 }
 
 /// generated route for
@@ -399,226 +626,5 @@ class PlayersListRouteArgs {
   @override
   String toString() {
     return 'PlayersListRouteArgs{players: $players}';
-  }
-}
-
-/// generated route for
-/// [ProPlayersListPage]
-class ProPlayersListRoute extends PageRouteInfo<void> {
-  const ProPlayersListRoute({List<PageRouteInfo>? children})
-      : super(
-          ProPlayersListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'ProPlayersListRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SearchPlayerResultPage]
-class SearchPlayerResultRoute
-    extends PageRouteInfo<SearchPlayerResultRouteArgs> {
-  SearchPlayerResultRoute({
-    required String searchValue,
-    List<PageRouteInfo>? children,
-  }) : super(
-          SearchPlayerResultRoute.name,
-          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
-          initialChildren: children,
-        );
-
-  static const String name = 'SearchPlayerResultRoute';
-
-  static const PageInfo<SearchPlayerResultRouteArgs> page =
-      PageInfo<SearchPlayerResultRouteArgs>(name);
-}
-
-class SearchPlayerResultRouteArgs {
-  const SearchPlayerResultRouteArgs({required this.searchValue});
-
-  final String searchValue;
-
-  @override
-  String toString() {
-    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
-  }
-}
-
-/// generated route for
-/// [PlayerDetailsPage]
-class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
-  PlayerDetailsRoute({
-    required int accountId,
-    String? playerName,
-    String? lastMatchTime,
-    List<PageRouteInfo>? children,
-  }) : super(
-          PlayerDetailsRoute.name,
-          args: PlayerDetailsRouteArgs(
-            accountId: accountId,
-            playerName: playerName,
-            lastMatchTime: lastMatchTime,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'PlayerDetailsRoute';
-
-  static const PageInfo<PlayerDetailsRouteArgs> page =
-      PageInfo<PlayerDetailsRouteArgs>(name);
-}
-
-class PlayerDetailsRouteArgs {
-  const PlayerDetailsRouteArgs({
-    required this.accountId,
-    this.playerName,
-    this.lastMatchTime,
-  });
-
-  final int accountId;
-
-  final String? playerName;
-
-  final String? lastMatchTime;
-
-  @override
-  String toString() {
-    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName, lastMatchTime: $lastMatchTime}';
-  }
-}
-
-/// generated route for
-/// [LeagueListPage]
-class LeagueListRoute extends PageRouteInfo<void> {
-  const LeagueListRoute({List<PageRouteInfo>? children})
-      : super(
-          LeagueListRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'LeagueListRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [LeagueDetailsPage]
-class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
-  LeagueDetailsRoute({
-    required LeagueModel leagueModel,
-    List<PageRouteInfo>? children,
-  }) : super(
-          LeagueDetailsRoute.name,
-          args: LeagueDetailsRouteArgs(leagueModel: leagueModel),
-          initialChildren: children,
-        );
-
-  static const String name = 'LeagueDetailsRoute';
-
-  static const PageInfo<LeagueDetailsRouteArgs> page =
-      PageInfo<LeagueDetailsRouteArgs>(name);
-}
-
-class LeagueDetailsRouteArgs {
-  const LeagueDetailsRouteArgs({required this.leagueModel});
-
-  final LeagueModel leagueModel;
-
-  @override
-  String toString() {
-    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel}';
-  }
-}
-
-/// generated route for
-/// [HeroMatchupsPage]
-class HeroMatchupsRoute extends PageRouteInfo<HeroMatchupsRouteArgs> {
-  HeroMatchupsRoute({
-    Key? key,
-    required List<MatchupByHeroId> heroMatchups,
-    required List<HeroStats> heroes,
-    List<PageRouteInfo>? children,
-  }) : super(
-          HeroMatchupsRoute.name,
-          args: HeroMatchupsRouteArgs(
-            key: key,
-            heroMatchups: heroMatchups,
-            heroes: heroes,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'HeroMatchupsRoute';
-
-  static const PageInfo<HeroMatchupsRouteArgs> page =
-      PageInfo<HeroMatchupsRouteArgs>(name);
-}
-
-class HeroMatchupsRouteArgs {
-  const HeroMatchupsRouteArgs({
-    this.key,
-    required this.heroMatchups,
-    required this.heroes,
-  });
-
-  final Key? key;
-
-  final List<MatchupByHeroId> heroMatchups;
-
-  final List<HeroStats> heroes;
-
-  @override
-  String toString() {
-    return 'HeroMatchupsRouteArgs{key: $key, heroMatchups: $heroMatchups, heroes: $heroes}';
-  }
-}
-
-/// generated route for
-/// [AllMatchesPage]
-class AllMatchesRoute extends PageRouteInfo<AllMatchesRouteArgs> {
-  AllMatchesRoute({
-    Key? key,
-    required int listLength,
-    required String heroName,
-    required List<MatchByHeroId> matches,
-    List<PageRouteInfo>? children,
-  }) : super(
-          AllMatchesRoute.name,
-          args: AllMatchesRouteArgs(
-            key: key,
-            listLength: listLength,
-            heroName: heroName,
-            matches: matches,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'AllMatchesRoute';
-
-  static const PageInfo<AllMatchesRouteArgs> page =
-      PageInfo<AllMatchesRouteArgs>(name);
-}
-
-class AllMatchesRouteArgs {
-  const AllMatchesRouteArgs({
-    this.key,
-    required this.listLength,
-    required this.heroName,
-    required this.matches,
-  });
-
-  final Key? key;
-
-  final int listLength;
-
-  final String heroName;
-
-  final List<MatchByHeroId> matches;
-
-  @override
-  String toString() {
-    return 'AllMatchesRouteArgs{key: $key, listLength: $listLength, heroName: $heroName, matches: $matches}';
   }
 }
