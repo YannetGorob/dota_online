@@ -11,9 +11,22 @@ class SearchFieldWidget extends StatefulWidget {
   State<SearchFieldWidget> createState() => _SearchFieldWidgetState();
 }
 
-final searchController = TextEditingController();
-
 class _SearchFieldWidgetState extends State<SearchFieldWidget> {
+  bool isButtonActive = false;
+  final searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    searchController.addListener(() {
+      final isButtonActive = searchController.text.isNotEmpty;
+
+      setState(() {
+        this.isButtonActive = isButtonActive;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,7 +42,12 @@ class _SearchFieldWidgetState extends State<SearchFieldWidget> {
           prefixIcon: const Icon(Icons.search),
           suffixIcon: IconButton(
             icon: const Icon(Icons.cancel),
-            onPressed: searchController.clear,
+            onPressed: isButtonActive
+                ? () {
+                    setState(() => isButtonActive = false);
+                    searchController.clear();
+                  }
+                : null,
           ),
           hintText: '${context.l10n.searchAccount}...',
         ),

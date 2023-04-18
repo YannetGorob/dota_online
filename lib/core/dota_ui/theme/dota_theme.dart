@@ -18,18 +18,21 @@ class DarkDotaTheme extends DotaTheme {
               color: context.dotaColors.dotaWhiteColor,
               fontSize: 25,
             ),
-            headlineSmall: TextStyle(fontWeight: FontWeight.bold),
+            headlineSmall: const TextStyle(fontWeight: FontWeight.bold),
             titleLarge: TextStyle(
               fontWeight: FontWeight.bold,
               color: context.dotaColors.dotaGreyColor,
               fontSize: 25,
             ),
-            titleMedium: TextStyle(
+            titleMedium: const TextStyle(
               fontSize: 18,
               overflow: TextOverflow.ellipsis,
             ),
-            bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),//main TextStyle
-
+            bodyMedium: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+            //main TextStyle
             bodySmall: TextStyle(
               fontSize: 12,
               color: context.dotaColors.dotaGreyColor,
