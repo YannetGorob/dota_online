@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
+import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -25,6 +26,7 @@ class RecentMatchesTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).extension<TextStyleExtensions>()!;
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
@@ -40,6 +42,7 @@ class RecentMatchesTile extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,16 +61,11 @@ class RecentMatchesTile extends StatelessWidget {
                             text: DateTimeFormatter().formatMatchDuration(
                               playerRecentMatch.duration!,
                             ),
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                            ),
+                            style: textStyle.primaryTextStyle,
                           ),
                         TextSpan(
                           text: context.l10n.min,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.normal,
-                          ),
+                          style: textStyle.auxiliaryTextStyle,
                         ),
                       ],
                     ),
@@ -80,39 +78,41 @@ class RecentMatchesTile extends StatelessWidget {
                       ),
                       Text(
                         '$kills / $deaths / $assists',
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: textStyle.primaryTextStyle,
                       ),
                     ],
                   ),
                 ],
               ),
               const Divider(thickness: 2),
+              if (playerRecentMatch.averageRank != null)
+                _MatchResults(
+                  tittle: context.l10n.rank,
+                  value: playerRecentMatch.averageRank.toString(),
+                ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _MatchResults(
-                        tittle: context.l10n.heroDamage,
-                        value: playerRecentMatch.heroDamage.toString(),
-                      ),
-                      _MatchResults(
-                        tittle: context.l10n.towerDamage,
-                        value: playerRecentMatch.towerDamage.toString(),
-                      ),
-                      _MatchResults(
-                        tittle: context.l10n.heroHealing,
-                        value: playerRecentMatch.heroHealing.toString(),
-                      ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _MatchResults(
+                          tittle: context.l10n.towerDamage,
+                          value: playerRecentMatch.towerDamage.toString(),
+                        ),
+                        _MatchResults(
+                          tittle: context.l10n.heroHealing,
+                          value: playerRecentMatch.heroHealing.toString(),
+                        ),
+                        _MatchResults(
+                          tittle: context.l10n.heroDamage,
+                          value: playerRecentMatch.heroDamage.toString(),
+                        ),
+                      ],
+                    ),
                   ),
-                  if (playerRecentMatch.averageRank != null)
-                    _MatchResults(
-                      tittle: context.l10n.rank,
-                      value: playerRecentMatch.averageRank.toString(),
-                    )
                 ],
               ),
             ],

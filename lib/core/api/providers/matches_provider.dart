@@ -24,7 +24,8 @@ class MatchesProvider {
       path: '/heroes/$heroId/matches',
       parseListResponse: (json) {
         return List<MatchByHeroId>.from(
-            json.map((e) => MatchByHeroId.fromJson(e as Map<String, dynamic>)));
+          json.map((e) => MatchByHeroId.fromJson(e as Map<String, dynamic>)),
+        );
       },
     );
   }

@@ -18,7 +18,7 @@ class ProPlayersListPage extends StatelessWidget {
           playersProvider: locator.get<DotaApi>().players,
         )..fetchProPlayersInitialData();
       },
-      child: ProPlayersListWidget(),
+      child: const ProPlayersListWidget(),
     );
   }
 }

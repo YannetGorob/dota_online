@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
 
@@ -29,12 +30,14 @@ class PlayerTile extends StatelessWidget {
             imageUrl: avatar,
           ),
         ),
-        title: Text(name != null ? name! : '---',
-            style: Theme.of(context).textTheme.titleMedium),
+        title: Text(
+          name != null ? name! : '---',
+          style: context.textStyle.primaryTextStyle,
+        ),
         subtitle: steamId != null
             ? Text(
                 'Steam ID: $steamId',
-                style: Theme.of(context).textTheme.bodySmall,
+                style: context.textStyle.auxiliaryTextStyle,
               )
             : null,
       ),

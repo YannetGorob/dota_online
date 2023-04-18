@@ -29,7 +29,7 @@ class SearchResultBody extends StatelessWidget {
                     playerName: item.personaname,
                     lastMatchTime: item.lastMatchTime == null
                         ? null
-                        : DateTimeFormatter.getFormattedDate(
+                        : DateTimeFormatter().getFormattedDate(
                             DateTime.parse(item.lastMatchTime!),
                           ),
                   ),

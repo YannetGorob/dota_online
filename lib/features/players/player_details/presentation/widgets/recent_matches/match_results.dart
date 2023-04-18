@@ -8,20 +8,15 @@ class _MatchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).extension<TextStyleExtensions>()!;
     return RichText(
       text: TextSpan(
         text: '$tittle: ',
-        style: const TextStyle(
-          fontSize: 15,
-          color: Colors.grey,
-        ),
+        style: textStyle.auxiliaryTextStyle,
         children: <TextSpan>[
           TextSpan(
             text: value ?? '-',
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.normal,
-            ),
+            style: textStyle.primaryTextStyle,
           ),
         ],
       ),

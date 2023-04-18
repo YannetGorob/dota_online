@@ -15,12 +15,6 @@ class DotaApi {
     required this.leagues,
   });
 
-  final TeamsProvider teams;
-  final MatchesProvider matches;
-  final HeroesProvider heroes;
-  final LeagueProvider leagues;
-  final PlayersProvider players;
-
   factory DotaApi.init() {
     final dio = Dio(
       BaseOptions(
@@ -39,4 +33,10 @@ class DotaApi {
       players: PlayersProvider(network),
     );
   }
+
+  final TeamsProvider teams;
+  final MatchesProvider matches;
+  final HeroesProvider heroes;
+  final LeagueProvider leagues;
+  final PlayersProvider players;
 }

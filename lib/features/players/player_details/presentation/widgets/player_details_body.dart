@@ -1,5 +1,6 @@
 import 'package:dota_online/core/api/models/player/player_details_model.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
+import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_general_details_widget.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/recent_matches/recent_matches_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -21,6 +22,7 @@ class PlayerDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).extension<TextStyleExtensions>()!;
     return CustomScrollView(
       slivers: [
         const SliverPadding(padding: EdgeInsets.only(top: 15)),
@@ -41,24 +43,18 @@ class PlayerDetailsBody extends StatelessWidget {
                 if (lastMatchTime != null)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8),
-                    child: RichText(
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      text: TextSpan(
-                        text: context.l10n.recentMatchWas,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          color: Colors.grey,
+                    child: Column(
+                      children: [
+                        Text(
+                          context.l10n.recentMatchWas,
+                          style: textStyle.auxiliaryTextStyle,
                         ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: lastMatchTime,
-                            style: const TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
+                        const SizedBox(height: 8),
+                        Text(
+                          lastMatchTime!,
+                          style: textStyle.primaryTextStyle,
+                        ),
+                      ],
                     ),
                   ),
               ],

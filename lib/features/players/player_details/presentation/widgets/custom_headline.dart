@@ -31,7 +31,7 @@ class CustomHeadline extends StatelessWidget {
       width: double.infinity,
       child: Text(
         title,
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context).extension<TextStyleExtensions>()!.titleTextStyle,
       ),
     );
   }

@@ -39,8 +39,7 @@ class DotaSearchField extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(width: 2, color: Theme.of(context).splashColor),
+          borderSide: BorderSide(width: 2, color: Colors.grey.shade500),
           borderRadius: BorderRadius.circular(100),
         ),
       ),

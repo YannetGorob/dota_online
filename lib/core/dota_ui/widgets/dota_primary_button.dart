@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class DotaPrimaryButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class DotaPrimaryButton extends StatelessWidget {
       style: TextButton.styleFrom(
         backgroundColor: const Color(0xff2c776d),
       ),
-      child: Text(title, style: Theme.of(context).textTheme.labelLarge),
+      child: Text(title, style: context.textStyle.primaryTextStyle),
     );
   }
 }
