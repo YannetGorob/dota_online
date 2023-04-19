@@ -15,7 +15,7 @@ class ProPlayersListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaSearchAppBar(title: context.l10n.searchAccount),
+      appBar: DotaSearchAppBar(title: context.l10n.topPlayers),
       body: BlocBuilder<ProPlayersListCubit, ProPlayersListState>(
         builder: (context, state) {
           return state.map(

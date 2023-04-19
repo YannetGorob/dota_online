@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/player/pro_player_model.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/players/pro_players_list/presentation/widgets/player_tile.dart';
-import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProPlayersListBody extends StatelessWidget {
@@ -13,46 +11,28 @@ class ProPlayersListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: CustomScrollView(
-        slivers: [
-          const SliverPadding(padding: EdgeInsets.only(top: 15)),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Text(
-                  context.l10n.topPlayers,
-                  style: context.textStyle.appBarTextStyle,
-                ),
-                const SizedBox(height: 15),
-              ],
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              childCount: proPlayers.length,
-              (context, index) {
-                final item = proPlayers[index];
-                return PlayerTile(
-                  onTap: () {
-                    if (item.accountId != null) {
-                      context.router.push(
-                        PlayerDetailsRoute(
-                          accountId: item.accountId!,
-                          playerName: item.name,
-                        ),
-                      );
-                    }
-                  },
-                  name: item.name,
-                  steamId: item.steamid,
-                  avatar: item.avatar,
+    return Scrollbar(
+      child: ListView.builder(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        itemCount: proPlayers.length,
+        itemBuilder: (context, index) {
+          final item = proPlayers[index];
+          return PlayerTile(
+            onTap: () {
+              if (item.accountId != null) {
+                context.router.push(
+                  PlayerDetailsRoute(
+                    accountId: item.accountId!,
+                    playerName: item.name,
+                  ),
                 );
-              },
-            ),
-          ),
-        ],
+              }
+            },
+            name: item.name,
+            steamId: item.steamid,
+            avatar: item.avatar,
+          );
+        },
       ),
     );
   }

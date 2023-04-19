@@ -29,11 +29,11 @@ class SearchResultBody extends StatelessWidget {
                     PlayerDetailsRoute(
                       accountId: item.accountId!,
                       playerName: item.personaname,
-                      lastMatchTime: item.lastMatchTime == null
-                          ? null
-                          : DateTimeFormatter().getFormattedDate(
+                      lastMatchTime: item.lastMatchTime != null
+                          ? DateTimeFormatter().getFormattedDate(
                               DateTime.parse(item.lastMatchTime!),
-                            ),
+                            )
+                          : null,
                     ),
                   );
                 }

@@ -5,11 +5,7 @@ class PlayerSearchDelegate extends SearchDelegate<dynamic> {
   List<Widget>? buildActions(BuildContext context) {
     return <Widget>[
       IconButton(
-        onPressed: query.isNotEmpty
-            ? () {
-                query = '';
-              }
-            : null,
+        onPressed: query.isNotEmpty ? () => query = '' : null,
         icon: const Icon(Icons.clear),
       )
     ];
@@ -17,9 +13,7 @@ class PlayerSearchDelegate extends SearchDelegate<dynamic> {
 
   @override
   Widget? buildLeading(BuildContext context) => IconButton(
-        onPressed: () {
-          close(context, null);
-        },
+        onPressed: () => close(context, null),
         icon: const Icon(Icons.arrow_back_ios),
       );
 
