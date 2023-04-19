@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 @RoutePage()
 class PlayersListPage extends StatelessWidget {
-  const PlayersListPage({required this.players});
+  const PlayersListPage({required this.players, super.key});
 
   final List<PlayerModel> players;
 
@@ -19,9 +19,7 @@ class PlayersListPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverPadding(
-            padding: EdgeInsetsDirectional.symmetric(
-              horizontal: 20,
-            ),
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 childCount: players.length,

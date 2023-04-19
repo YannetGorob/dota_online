@@ -2,19 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/navigation/app_router.dart';
-import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
-import 'package:flutter/material.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
+import 'package:dota_online/features/teams/team_details/presentation/widgets/matches/team_match_list_item.dart';
+import 'package:dota_online/features/teams/team_details/presentation/widgets/players/players_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
-
-import 'matches/team_match_list_item.dart';
+import 'package:flutter/material.dart';
 
 class TeamDetailsBody extends StatelessWidget {
   const TeamDetailsBody({
     required this.team,
     this.players,
     this.matches,
+    super.key,
   });
 
   final TeamModel team;
@@ -27,22 +28,22 @@ class TeamDetailsBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CustomScrollView(
         slivers: [
-          SliverPadding(padding: EdgeInsets.only(top: 10)),
-          if (players != null)
+          const SliverPadding(padding: EdgeInsets.only(top: 10)),
+          if (players != null && players!.isNotEmpty)
             SliverPadding(
-              padding: EdgeInsetsDirectional.all(4),
+              padding: const EdgeInsetsDirectional.all(4),
               sliver: SliverToBoxAdapter(
                 child: Text(
                   context.l10n.players,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: context.textStyle.appBarTextStyle,
                 ),
               ),
             ),
           PlayersList(players: players!),
           if (players!.isNotEmpty)
             SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 4),
+              padding: const EdgeInsets.symmetric(horizontal: 4),
               sliver: SliverToBoxAdapter(
                 child: DotaPrimaryButton(
                   onPressed: () {
@@ -54,14 +55,14 @@ class TeamDetailsBody extends StatelessWidget {
                 ),
               ),
             ),
-          if (matches != null)
+          if (matches != null && matches!.isNotEmpty)
             SliverPadding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               sliver: SliverToBoxAdapter(
                 child: Text(
                   context.l10n.matchesTab,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: context.textStyle.appBarTextStyle,
                 ),
               ),
             ),

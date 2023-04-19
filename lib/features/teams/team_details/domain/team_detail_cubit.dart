@@ -28,12 +28,14 @@ class TeamDetailCubit extends Cubit<TeamDetailState> {
     );
 
     if (players == null && matches == null) {
-      emit(TeamDetailState.error());
+      emit(const TeamDetailState.error());
     } else {
-      emit(TeamDetailState.loaded(
-        players: players,
-        matches: matches,
-      ));
+      emit(
+        TeamDetailState.loaded(
+          players: players,
+          matches: matches,
+        ),
+      );
     }
   }
 }

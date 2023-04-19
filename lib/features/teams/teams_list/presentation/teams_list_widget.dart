@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TeamsListWidget extends StatelessWidget {
+  const TeamsListWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +18,8 @@ class TeamsListWidget extends StatelessWidget {
       body: BlocBuilder<TeamsListCubit, TeamsListState>(
         builder: (context, state) {
           return state.map(
-            error: (_) => DotaErrorWidget(),
-            loading: (_) => DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
+            loading: (_) => const DotaProgressIndicator(),
             loaded: (value) => TeamListBody(teams: value.teams),
           );
         },

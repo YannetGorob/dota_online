@@ -8,6 +8,7 @@ class TeamCardTextContent extends StatelessWidget {
     this.teamRating,
     this.teamWins,
     this.teamLosses,
+    super.key,
   });
 
   final double cardHeight;
@@ -22,31 +23,26 @@ class TeamCardTextContent extends StatelessWidget {
     return SizedBox(
       height: cardHeight * 0.5,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            height: 5,
-          ),
+          const SizedBox(height: 5),
           if (teamName.isNotEmpty)
             CardInfoField(
               child: Text(
                 teamName,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold, fontSize: 30),
-                textScaleFactor: 1.4,
+                style: context.textStyle.primaryTextStyle,
               ),
             ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           if (teamRating != null)
             CardInfoField(
               child: Row(
                 children: [
-                  Icon(Icons.star),
-                  Text(teamRating!,
-                      style: Theme.of(context).textTheme.titleMedium),
-                  Icon(Icons.star),
+                  const Icon(Icons.star),
+                  Text(
+                    teamRating!,
+                    style: context.textStyle.primaryTextStyle,
+                  ),
+                  const Icon(Icons.star),
                 ],
               ),
             ),
@@ -54,9 +50,11 @@ class TeamCardTextContent extends StatelessWidget {
             CardInfoField(
               child: Row(
                 children: [
-                  Icon(Icons.emoji_events_rounded),
-                  Text(teamWins!,
-                      style: Theme.of(context).textTheme.titleMedium),
+                  const Icon(Icons.emoji_events_rounded),
+                  Text(
+                    teamWins!,
+                    style: context.textStyle.primaryTextStyle,
+                  ),
                 ],
               ),
             ),
@@ -64,9 +62,11 @@ class TeamCardTextContent extends StatelessWidget {
             CardInfoField(
               child: Row(
                 children: [
-                  Icon(Icons.trending_down),
-                  Text(teamLosses!,
-                      style: Theme.of(context).textTheme.titleMedium),
+                  const Icon(Icons.trending_down),
+                  Text(
+                    teamLosses!,
+                    style: context.textStyle.primaryTextStyle,
+                  ),
                 ],
               ),
             ),

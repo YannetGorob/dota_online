@@ -5,47 +5,52 @@ import 'package:dota_online/features/teams/teams_list/presentation/widgets/teams
 import 'package:flutter/material.dart';
 
 class TeamListBody extends StatelessWidget {
-  const TeamListBody({required this.teams});
+  const TeamListBody({required this.teams, super.key});
 
   final List<TeamModel> teams;
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverPadding(
-          padding: const EdgeInsetsDirectional.symmetric(
-            horizontal: 20,
-            vertical: 10,
-          ),
-          sliver: SliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              childCount: teams.length,
-              (context, index) {
-                final item = teams[index];
-                if (item.name != null)
-                  return InkWell(
-                    onTap: () {
-                      if (item.teamId != null) {
-                        context.router.push(
-                          TeamDetailsRoute(team: item),
-                        );
-                      }
-                    },
-                    child: TeamsListItem(team: item),
-                  );
-                return null;
-              },
+    return Scrollbar(
+      thickness: 12,
+      interactive: true,
+      child: CustomScrollView(
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsetsDirectional.symmetric(
+              horizontal: 20,
+              vertical: 10,
             ),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 15,
-              crossAxisSpacing: 15,
-              crossAxisCount: 3,
-              childAspectRatio: 0.7,
+            sliver: SliverGrid(
+              delegate: SliverChildBuilderDelegate(
+                childCount: teams.length,
+                (context, index) {
+                  final item = teams[index];
+                  if (item.name != null) {
+                    return InkWell(
+                      onTap: () {
+                        if (item.teamId != null) {
+                          context.router.push(
+                            TeamDetailsRoute(team: item),
+                          );
+                        }
+                      },
+                      child: TeamsListItem(team: item),
+                    );
+                  }
+                  return null;
+                },
+              ),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                mainAxisSpacing: 15,
+                crossAxisSpacing: 15,
+                crossAxisCount: 3,
+                childAspectRatio: 0.7,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

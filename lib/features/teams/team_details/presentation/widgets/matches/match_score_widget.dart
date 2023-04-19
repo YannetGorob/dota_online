@@ -1,32 +1,36 @@
 part of 'team_match_list_item.dart';
 
 class MatchScoreWidget extends StatelessWidget {
-  const MatchScoreWidget({required this.teamMatch});
+  const MatchScoreWidget({required this.teamMatch, super.key});
 
   final TeamMatches teamMatch;
 
   @override
   Widget build(BuildContext context) {
     if (teamMatch.radiantScore == null && teamMatch.direScore == null) {
-      return SizedBox();
+      return const SizedBox();
     }
-
-    final customTextStyle = TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.bold,
-    );
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           teamMatch.radiantScore.toString(),
-          style: customTextStyle.copyWith(color: context.dotaColors.radiantColor),
+          style: context.textStyle.primaryTextStyle!.copyWith(
+            color: context.dotaColors.radiantColor,
+          ),
         ),
-        Text(' : ', style: customTextStyle),
+        Text(
+          ' : ',
+          style: context.textStyle.primaryTextStyle!.copyWith(
+            color: context.dotaColors.dotaGreyColor,
+          ),
+        ),
         Text(
           teamMatch.direScore.toString(),
-          style: customTextStyle.copyWith(color: context.dotaColors.direColor),
+          style: context.textStyle.primaryTextStyle!.copyWith(
+            color: context.dotaColors.direColor,
+          ),
         ),
       ],
     );

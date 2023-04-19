@@ -1,16 +1,18 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/player_list_item.dart';
 import 'package:flutter/material.dart';
 
 class PlayersList extends StatelessWidget {
-  const PlayersList({required this.players});
+  const PlayersList({required this.players, super.key});
 
   final List<PlayerModel> players;
 
   @override
   Widget build(BuildContext context) {
-    final currentPlayers =
-        players.where((e) => e.isCurrentTeamMember == true).toList();
+    final currentPlayers = players.where(
+      (e) => e.isCurrentTeamMember == true,
+    ).toList();
 
     if (currentPlayers.isNotEmpty) {
       return SliverList(
@@ -22,18 +24,18 @@ class PlayersList extends StatelessWidget {
           },
         ),
       );
-    } else if (currentPlayers.isEmpty && players.length > 0) {
-      return _NoPlayersWidget(
+    } else if (currentPlayers.isEmpty && players.isNotEmpty) {
+      return const _NoPlayersWidget(
         title: 'no active players',
       );
     } else {
-      return _NoPlayersWidget(title: 'no info about players');
+      return const _NoPlayersWidget(title: 'no info about players');
     }
   }
 }
 
 class _NoPlayersWidget extends StatelessWidget {
-  _NoPlayersWidget({required this.title});
+  const _NoPlayersWidget({required this.title});
 
   final String title;
 
@@ -43,7 +45,7 @@ class _NoPlayersWidget extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: Theme.of(context).textTheme.labelLarge,
+          style: context.textStyle.primaryTextStyle,
         ),
       ),
     );
