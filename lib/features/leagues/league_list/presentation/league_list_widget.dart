@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LeagueListWidget extends StatelessWidget {
-  const LeagueListWidget({Key? key}) : super(key: key);
+  const LeagueListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +18,8 @@ class LeagueListWidget extends StatelessWidget {
       body: BlocBuilder<LeagueListCubit, LeagueListState>(
         builder: (context, state) {
           return state.map(
-            error: (_) => DotaErrorWidget(),
-            loading: (_) => DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
+            loading: (_) => const DotaProgressIndicator(),
             loaded: (value) =>  LeagueListBody(leagues: value.leagues),
           );
         },

@@ -1,5 +1,4 @@
 import 'package:dota_online/core/api/dto/league_match_dto.dart';
-import 'package:dota_online/core/api/models/leagues/league_match/league_match.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

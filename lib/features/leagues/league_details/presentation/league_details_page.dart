@@ -9,7 +9,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class LeagueDetailsPage extends StatelessWidget {
-  LeagueDetailsPage ({required this.leagueModel});
+  const LeagueDetailsPage({
+    required this.leagueModel,
+    super.key,
+  });
 
   final LeagueModel leagueModel;
 
@@ -17,7 +20,8 @@ class LeagueDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<LeagueDetailsCubit>(
       create: (context) {
-        return LeagueDetailsCubit(leagueProvider: locator.get<DotaApi>().leagues
+        return LeagueDetailsCubit(
+          leagueProvider: locator.get<DotaApi>().leagues,
         )..loadLeagueDetailsData(leagueModel.leagueid!);
       },
       child: LeagueDetailsWidget(leagueModel: leagueModel),
