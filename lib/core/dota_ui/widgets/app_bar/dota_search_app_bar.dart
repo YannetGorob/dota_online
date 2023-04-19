@@ -18,6 +18,7 @@ class DotaSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: title != null
           ? Text(title!, style: context.textStyle.appBarTextStyle)
           : const SizedBox(),
+      centerTitle: true,
       elevation: 0,
       backgroundColor: Theme.of(context).primaryColor,
       actions: [

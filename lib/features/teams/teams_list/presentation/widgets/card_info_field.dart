@@ -9,7 +9,6 @@ class CardInfoField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: FittedBox(
-        fit: BoxFit.contain,
         child: child,
       ),
     );

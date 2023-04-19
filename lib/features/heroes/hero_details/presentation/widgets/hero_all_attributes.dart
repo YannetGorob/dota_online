@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 class HeroAllAttributes extends StatelessWidget {
   const HeroAllAttributes({
-    super.key,
     required this.hero,
+    super.key,
   });
 
   final HeroStats hero;

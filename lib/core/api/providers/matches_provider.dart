@@ -14,7 +14,8 @@ class MatchesProvider {
       path: '/proMatches',
       parseListResponse: (json) {
         return List<MatchModel>.from(
-            json.map((e) => MatchModel.fromJson(e as Map<String, dynamic>)));
+          json.map((e) => MatchModel.fromJson(e as Map<String, dynamic>)),
+        );
       },
     );
   }

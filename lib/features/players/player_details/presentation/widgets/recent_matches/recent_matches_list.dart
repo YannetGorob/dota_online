@@ -26,7 +26,6 @@ class RecentMatchesList extends StatelessWidget {
             assists: item.assists.toString(),
             lastMatchTime: lastMatchTime,
           );
-          return null;
         },
       ),
     );

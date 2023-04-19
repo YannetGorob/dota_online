@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'league_match.freezed.dart';
+
 part 'league_match.g.dart';
 
 @freezed
@@ -18,7 +19,9 @@ class LeagueMatch with _$LeagueMatch {
     String? direTeamName,
   }) = _LeagueMatch;
 
-  factory LeagueMatch.fromJson(Map<String, dynamic> json) => _$LeagueMatchFromJson(json);
+  factory LeagueMatch.fromJson(Map<String, dynamic> json) {
+    return _$LeagueMatchFromJson(json);
+  }
 }
 
 @freezed
@@ -37,7 +40,8 @@ class Chat with _$Chat {
 class Cosmetics with _$Cosmetics {
   const factory Cosmetics() = _Cosmetics;
 
-  factory Cosmetics.fromJson(Map<String, dynamic> json) => _$CosmeticsFromJson(json);
+  factory Cosmetics.fromJson(Map<String, dynamic> json) =>
+      _$CosmeticsFromJson(json);
 }
 
 @freezed
@@ -46,11 +50,12 @@ class Objective with _$Objective {
     int? time,
     String? type,
     int? slot,
-    dynamic? key,
+    dynamic key,
     int? team,
   }) = _Objective;
 
-  factory Objective.fromJson(Map<String, dynamic> json) => _$ObjectiveFromJson(json);
+  factory Objective.fromJson(Map<String, dynamic> json) =>
+      _$ObjectiveFromJson(json);
 }
 
 @freezed
@@ -62,5 +67,6 @@ class PicksBan with _$PicksBan {
     int? order,
   }) = _PicksBan;
 
-  factory PicksBan.fromJson(Map<String, dynamic> json) => _$PicksBanFromJson(json);
+  factory PicksBan.fromJson(Map<String, dynamic> json) =>
+      _$PicksBanFromJson(json);
 }

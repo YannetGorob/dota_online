@@ -35,12 +35,13 @@ class DarkDotaTheme {
           ),
         ),
       ],
-      colorScheme: ThemeData.dark().colorScheme.copyWith(
-            primary: Colors.grey.shade200,
-          ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: context.dotaColors.direColor,
       ),
+      colorScheme: ThemeData.dark().colorScheme.copyWith(
+            primary: Colors.grey.shade200,
+            secondary: ThemeData.dark().primaryColorDark,
+          ),
     );
   }
 }
