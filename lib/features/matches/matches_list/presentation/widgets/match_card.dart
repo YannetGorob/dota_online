@@ -1,5 +1,7 @@
 import 'package:dota_online/core/api/models/match/match_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
+import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/widgets/team_name_on_matches_list.dart';
 import 'package:dota_online/features/matches/matches_list/presentation/widgets/team_score_on_matches_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -20,7 +22,7 @@ class MatchCard extends StatelessWidget {
           children: [
             Text(
               '🏆 ${match.leagueName ?? '???'}',
-              style: Theme.of(context).textTheme.titleMedium,
+              style: context.textStyle.primaryTextStyle,
               textAlign: TextAlign.center,
             ),
             Row(
@@ -32,10 +34,11 @@ class MatchCard extends StatelessWidget {
                   ),
                 ),
                 Center(
-                    child: Text(
-                  ' vs ',
-                  style: Theme.of(context).textTheme.titleMedium,
-                )),
+                  child: Text(
+                    ' vs ',
+                    style: context.textStyle.primaryTextStyle,
+                  ),
+                ),
                 Expanded(
                   child: TeamNameOnMatchesListWidget(
                     teamName: match.direName ?? '???',
@@ -46,20 +49,20 @@ class MatchCard extends StatelessWidget {
             ),
             if (match.duration != null)
               Text(
-                '⏳${(match.duration! / 60).toStringAsFixed(2).replaceAll('.', ':')}',
-                style: Theme.of(context).textTheme.titleMedium,
+                DateTimeFormatter().formatMatchDuration(match.duration!),
+                style: context.textStyle.primaryTextStyle,
               ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                teamScoreOnMatchesList(teamScore: match.radiantScore ?? 0),
-                const Text(' : ', style: TextStyle(fontSize: 30)),
-                teamScoreOnMatchesList(teamScore: match.direScore ?? 0),
+                TeamScoreOnMatchesList(teamScore: match.radiantScore ?? 0),
+                Text(' : ', style: context.textStyle.appBarTextStyle),
+                TeamScoreOnMatchesList(teamScore: match.direScore ?? 0),
               ],
             ),
             Text(
               context.l10n.score,
-              style: Theme.of(context).textTheme.bodySmall,
+              style: context.textStyle.auxiliaryTextStyle,
             ),
           ],
         ),

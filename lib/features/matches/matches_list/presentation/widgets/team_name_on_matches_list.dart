@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class TeamNameOnMatchesListWidget extends StatelessWidget {
   const TeamNameOnMatchesListWidget({
-    super.key,
     required this.teamName,
     required this.teamColor,
+    super.key,
   });
 
   final String teamName;

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
@@ -26,7 +27,6 @@ class RecentMatchesTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).extension<TextStyleExtensions>()!;
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
@@ -50,22 +50,18 @@ class RecentMatchesTile extends StatelessWidget {
                   RichText(
                     text: TextSpan(
                       text: '${context.l10n.duration}: ',
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
-                      ),
+                      style: context.textStyle.auxiliaryTextStyle,
                       children: <TextSpan>[
                         if (playerRecentMatch.duration != null)
                           TextSpan(
                             text: DateTimeFormatter().formatMatchDuration(
                               playerRecentMatch.duration!,
                             ),
-                            style: textStyle.primaryTextStyle,
+                            style: context.textStyle.primaryTextStyle,
                           ),
                         TextSpan(
                           text: context.l10n.min,
-                          style: textStyle.auxiliaryTextStyle,
+                          style: context.textStyle.auxiliaryTextStyle,
                         ),
                       ],
                     ),
@@ -74,11 +70,11 @@ class RecentMatchesTile extends StatelessWidget {
                     children: [
                       Text(
                         'KDA',
-                        style: Theme.of(context).textTheme.labelMedium,
+                        style: context.textStyle.auxiliaryTextStyle,
                       ),
                       Text(
                         '$kills / $deaths / $assists',
-                        style: textStyle.primaryTextStyle,
+                        style: context.textStyle.primaryTextStyle,
                       ),
                     ],
                   ),

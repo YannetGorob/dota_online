@@ -13,13 +13,13 @@ class MatchesListCubit extends Cubit<MatchesListState> {
     final matchesResponse = await _matchesProvider.getMatches();
     matchesResponse.when(
       success: (data) {
-        if (!this.isClosed) {
+        if (!isClosed) {
           emit(MatchesListState.loaded(matches: data));
         }
       },
       failure: (_) {
-        if (!this.isClosed) {
-          emit(MatchesListState.error());
+        if (!isClosed) {
+          emit(const MatchesListState.error());
         }
       },
     );

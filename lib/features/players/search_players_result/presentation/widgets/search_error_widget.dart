@@ -1,7 +1,7 @@
 part of 'search_result_body.dart';
 
 class _SearchErrorWidget extends StatelessWidget {
-  const _SearchErrorWidget({super.key});
+  const _SearchErrorWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -9,11 +9,11 @@ class _SearchErrorWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('No result'),
+          Text('No result', style: context.textStyle.primaryTextStyle),
           const SizedBox(height: 10),
           Text(
             'Try again',
-            style: Theme.of(context).textTheme.bodySmall,
+            style: context.textStyle.auxiliaryTextStyle,
           ),
         ],
       ),

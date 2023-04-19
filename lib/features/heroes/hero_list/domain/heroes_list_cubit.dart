@@ -19,7 +19,6 @@ class HeroesListCubit extends Cubit<HeroesListState> {
             return e.copyWith(img: UrlUtil.fixUrl(e.img));
           },
         ).toList();
-
         heroesData.sort((a, b) {
           if (a.localizedName == null)
             return 1;

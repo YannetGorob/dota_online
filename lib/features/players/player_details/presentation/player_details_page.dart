@@ -24,8 +24,8 @@ class PlayerDetailsPage extends StatelessWidget {
     return BlocProvider<PlayerDetailsCubit>(
       create: (context) {
         return PlayerDetailsCubit(
-            playersProvider: locator.get<DotaApi>().players)
-          ..loadPlayerDetailsData(accountId);
+          playersProvider: locator.get<DotaApi>().players,
+        )..loadPlayerDetailsData(accountId);
       },
       child: PlayerDetailsWidget(
         playerName: playerName,

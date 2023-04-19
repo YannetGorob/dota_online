@@ -1,7 +1,5 @@
 import 'package:dota_online/core/api/models/player/player_details_model.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
-import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/player_details_body.dart';
 import 'package:dota_online/l10n/l10n.dart';
