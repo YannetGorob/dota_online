@@ -30,7 +30,7 @@ class PlayerDetailsCubit extends Cubit<PlayerDetailsState> {
     );
 
     if (playerDetails == null && playerRecentMatches == null) {
-      emit(PlayerDetailsState.error());
+      emit(const PlayerDetailsState.error());
     } else {
       emit(
         PlayerDetailsState.loaded(

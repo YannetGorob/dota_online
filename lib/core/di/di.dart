@@ -6,7 +6,8 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.I;
 
 void configureDependencies() {
-  locator.registerLazySingleton<DotaApi>(() => DotaApi.init());
-  locator.registerLazySingleton<AppRouter>(() => AppRouter());
-  locator.registerLazySingleton<DarkDotaTheme>(() => DarkDotaTheme());
+  locator
+    ..registerLazySingleton<DotaApi>(DotaApi.init)
+    ..registerLazySingleton<AppRouter>(AppRouter.new)
+    ..registerLazySingleton<DarkDotaTheme>(DarkDotaTheme.new);
 }

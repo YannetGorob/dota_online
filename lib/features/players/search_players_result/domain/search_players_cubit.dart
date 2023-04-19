@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class SearchPlayerCubit extends Cubit<SearchPlayersState> {
   SearchPlayerCubit({required PlayersProvider playersProvider})
       : _playersProvider = playersProvider,
-        super(SearchPlayersState.loading());
+        super(const SearchPlayersState.loading());
 
   final PlayersProvider _playersProvider;
 
@@ -13,9 +13,10 @@ class SearchPlayerCubit extends Cubit<SearchPlayersState> {
     final searchPlayerResponse =
         await _playersProvider.searchPlayersByName(personName);
     searchPlayerResponse.when(
-        success: (data) => emit(
-              SearchPlayersState.loaded(searchPlayerModel: data),
-            ),
-        failure: (_) => emit(SearchPlayersState.error()));
+      success: (data) => emit(
+        SearchPlayersState.loaded(searchPlayerModel: data),
+      ),
+      failure: (_) => emit(const SearchPlayersState.error()),
+    );
   }
 }

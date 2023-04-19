@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MatchDetailsWidget extends StatelessWidget {
-  MatchDetailsWidget({super.key});
+  const MatchDetailsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,8 @@ class MatchDetailsWidget extends StatelessWidget {
       body: BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
         builder: (context, state) {
           return state.map(
-            loading: ((_) => Center(child: DotaProgressIndicator())),
-            error: (_) => DotaErrorWidget(),
+            loading: (_) => const Center(child: DotaProgressIndicator()),
+            error: (_) => const DotaErrorWidget(),
             loaded: (value) {
               return MatchDetailsBody(matchDetails: value.matchDetails);
             },

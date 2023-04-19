@@ -6,7 +6,7 @@ import 'package:dota_online/features/players/pro_players_list/presentation/widge
 import 'package:flutter/material.dart';
 
 class ProPlayersListBody extends StatelessWidget {
-  const ProPlayersListBody({required this.proPlayers});
+  const ProPlayersListBody({required this.proPlayers, super.key});
 
   final List<ProPlayerModel> proPlayers;
 
@@ -18,8 +18,8 @@ class ProPlayersListBody extends StatelessWidget {
         onTap: FocusManager.instance.primaryFocus?.unfocus,
         child: CustomScrollView(
           slivers: [
-            SliverPadding(padding: EdgeInsets.only(top: 15)),
-            SliverToBoxAdapter(child: SearchFieldWidget()),
+            const SliverPadding(padding: EdgeInsets.only(top: 15)),
+            const SliverToBoxAdapter(child: SearchFieldWidget()),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 childCount: proPlayers.length,
@@ -27,13 +27,14 @@ class ProPlayersListBody extends StatelessWidget {
                   final item = proPlayers[index];
                   return PlayerTile(
                     onTap: () {
-                      if (item.accountId != null)
+                      if (item.accountId != null) {
                         context.router.push(
                           PlayerDetailsRoute(
                             accountId: item.accountId!,
                             playerName: item.name,
                           ),
                         );
+                      }
                     },
                     name: item.name,
                     steamId: item.steamid,

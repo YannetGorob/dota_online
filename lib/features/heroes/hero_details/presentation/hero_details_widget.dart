@@ -1,9 +1,13 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
-import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
-import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_roles_card.dart';
+import 'package:dota_online/features/heroes/hero_details/domain/hero_detail_cubit.dart';
+import 'package:dota_online/features/heroes/hero_details/domain/hero_detail_state.dart';
+import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_details_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HeroDetailsWidget extends StatelessWidget {
   const HeroDetailsWidget({required this.hero});
@@ -12,27 +16,23 @@ class HeroDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final roles = hero.roles;
-
     return DotaScaffold(
       appBar: DotaAppBar(title: hero.localizedName),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        child: CustomScrollView(
-          slivers: [
-            SliverPadding(padding: EdgeInsets.only(top: 15)),
-            SliverToBoxAdapter(child: HeroGeneralInfoWidget(hero: hero)),
-            if (roles != null)
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  childCount: roles.length,
-                  (BuildContext context, int index) {
-                    return HeroRolesCard(role: roles[index]);
-                  },
-                ),
-              ),
-          ],
-        ),
+      body: BlocBuilder<HeroDetailCubit, HeroDetailsState>(
+        builder: (context, state) {
+          return state.map(
+            loading: (_) => DotaProgressIndicator(),
+            loaded: (value) {
+              return HeroDetailsBody(
+                heroes: value.heroes,
+                hero: hero,
+                matchesByHeroId: value.matchByHeroId,
+                heroMatchups: value.heroMatchup,
+              );
+            },
+            error: (_) => DotaErrorWidget(),
+          );
+        },
       ),
     );
   }

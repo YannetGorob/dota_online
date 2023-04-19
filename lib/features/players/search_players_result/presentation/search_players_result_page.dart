@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class SearchPlayerResultPage extends StatelessWidget {
-  const SearchPlayerResultPage({required this.searchValue});
+  const SearchPlayerResultPage({required this.searchValue, super.key});
 
   final String searchValue;
 
@@ -20,7 +20,7 @@ class SearchPlayerResultPage extends StatelessWidget {
           playersProvider: locator.get<DotaApi>().players,
         )..searchPlayersByName(searchValue);
       },
-      child: SearchPlayersResultWidget(),
+      child: const SearchPlayersResultWidget(),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
+import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_name_on_match_details.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_score_on_match_details.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -12,10 +14,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-      BuildContext context,
-      double shrinkOffset,
-      bool overlapsContent,
-      ) {
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -23,15 +25,11 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if (matchDetails.matchId != null)
               Text(
-                '${context.l10n.match} ${matchDetails.matchId.toString()}',
-                style: TextStyle(
-                  fontSize: 15,
-                  color: context.dotaColors.dotaGreyColor,
-                ),
+                '${context.l10n.match} ${matchDetails.matchId}',
+                style: context.textStyle.auxiliaryTextStyle,
               ),
             const SizedBox(height: 10),
             if (matchDetails.league != null &&
@@ -46,6 +44,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
               ),
             const SizedBox(height: 10),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (matchDetails.radiantTeam != null)
                   Expanded(
@@ -59,7 +58,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                     TeamScoreOnMatchDetails(
                       teamScore: matchDetails.radiantScore ?? 0,
                     ),
-                    const Text(' : ', style: TextStyle(fontSize: 25)),
+                    Text(
+                      ' : ',
+                      style: context.textStyle.appBarTextStyle,
+                    ),
                     TeamScoreOnMatchDetails(
                       teamScore: matchDetails.direScore ?? 0,
                     ),
@@ -76,28 +78,19 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             ),
             Text(
               context.l10n.score,
-              style: TextStyle(
-                color: context.dotaColors.dotaGreyColor,
-              ),
+              style: context.textStyle.auxiliaryTextStyle,
             ),
             const SizedBox(height: 10),
             RichText(
               text: TextSpan(
                 text: '${context.l10n.duration}: ',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color:  context.dotaColors.dotaGreyColor,
-                ),
+                style: context.textStyle.auxiliaryTextStyle,
                 children: <TextSpan>[
                   if (matchDetails.duration != null)
                     TextSpan(
-                      text: ((matchDetails.duration!) / 60)
-                          .toStringAsFixed(2)
-                          .replaceAll('.', ':'),
-                      style: TextStyle(
-                        color:  context.dotaColors.dotaGreyColor,
-                        fontWeight: FontWeight.normal,
-                      ),
+                      text: DateTimeFormatter()
+                          .formatMatchDuration(matchDetails.duration!),
+                      style: context.textStyle.auxiliaryTextStyle,
                     ),
                 ],
               ),

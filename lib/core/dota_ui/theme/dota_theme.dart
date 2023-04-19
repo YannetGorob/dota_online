@@ -1,43 +1,42 @@
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:flutter/material.dart';
 
-abstract class DotaTheme {
-  ThemeData darkTheme(BuildContext context);
+extension ContextExtension on BuildContext {
+  TextStyleExtensions get textStyle =>
+      Theme.of(this).extension<TextStyleExtensions>()!;
 }
 
-class DarkDotaTheme extends DotaTheme {
-  @override
-  ThemeData darkTheme(BuildContext context) {
+class DarkDotaTheme {
+  ThemeData theme(BuildContext context) {
     return ThemeData.dark().copyWith(
-      colorScheme: ThemeData().colorScheme.copyWith(
-            primary: Colors.grey.shade400,
+      primaryColor: Colors.grey.shade900,
+      canvasColor: Colors.grey.shade900,
+      extensions: <ThemeExtension<dynamic>>[
+        TextStyleExtensions(
+          primaryTextStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+            color: context.dotaColors.dotaWhiteColor,
           ),
-      textTheme: ThemeData.dark().textTheme.copyWith(
-            labelLarge: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: context.dotaColors.dotaWhiteColor,
-              fontSize: 25,
-            ),
-            headlineSmall: TextStyle(fontWeight: FontWeight.bold),
-            titleLarge: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: context.dotaColors.dotaGreyColor,
-              fontSize: 25,
-            ),
-            titleMedium: TextStyle(
-              fontSize: 18,
-              overflow: TextOverflow.ellipsis,
-            ),
-            bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),//main TextStyle
-
-            bodySmall: TextStyle(
-              fontSize: 12,
-              color: context.dotaColors.dotaGreyColor,
-            ),
-            labelMedium: TextStyle(
-              fontSize: 18,
-              color: context.dotaColors.dotaGreyColor,
-            ),
+          appBarTextStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 25,
+            color: context.dotaColors.dotaWhiteColor,
+          ),
+          auxiliaryTextStyle: TextStyle(
+            fontSize: 16,
+            color: context.dotaColors.dotaGreyColor,
+          ),
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: context.dotaColors.dotaGreyColor,
+            fontSize: 25,
+          ),
+        ),
+      ],
+      colorScheme: ThemeData.dark().colorScheme.copyWith(
+            primary: Colors.grey.shade200,
           ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: context.dotaColors.direColor,

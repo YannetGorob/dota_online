@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class RecentMatchesList extends StatelessWidget {
   const RecentMatchesList({
     required this.playerRecentMatches,
+    super.key,
     this.lastMatchTime,
   });
 

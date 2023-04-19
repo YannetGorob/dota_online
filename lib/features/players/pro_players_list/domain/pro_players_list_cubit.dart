@@ -5,14 +5,15 @@ import 'package:dota_online/features/players/pro_players_list/domain/pro_players
 class ProPlayersListCubit extends Cubit<ProPlayersListState> {
   ProPlayersListCubit({required PlayersProvider playersProvider})
       : _playersProvider = playersProvider,
-        super(ProPlayersListState.loading());
+        super(const ProPlayersListState.loading());
 
   final PlayersProvider _playersProvider;
 
   Future<void> fetchProPlayersInitialData() async {
     final proPlayersResponse = await _playersProvider.getProPlayers();
     proPlayersResponse.when(
-        success: (data) => emit(ProPlayersListState.loaded(proPlayers: data)),
-        failure: (_) => emit(ProPlayersListState.error()));
+      success: (data) => emit(ProPlayersListState.loaded(proPlayers: data)),
+      failure: (_) => emit(const ProPlayersListState.error()),
+    );
   }
 }
