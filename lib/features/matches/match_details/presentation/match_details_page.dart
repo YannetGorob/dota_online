@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class MatchDetailsPage extends StatelessWidget {
-  const MatchDetailsPage({required this.matchId});
+  const MatchDetailsPage({required this.matchId, super.key});
 
   final int matchId;
 
@@ -18,7 +18,7 @@ class MatchDetailsPage extends StatelessWidget {
       create: (_) => MatchDetailsCubit(
         matchesProvider: locator.get<DotaApi>().matches,
       )..getMatchDetailsData(matchId),
-      child: MatchDetailsWidget(),
+      child: const MatchDetailsWidget(),
     );
   }
 }

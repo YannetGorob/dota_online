@@ -1,10 +1,11 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/dota_sliver_persistent_header.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/player_stats_widget.dart';
 import 'package:flutter/material.dart';
 
 class MatchDetailsBody extends StatelessWidget {
-  const MatchDetailsBody({super.key, required this.matchDetails});
+  const MatchDetailsBody({required this.matchDetails, super.key});
 
   final MatchDetails matchDetails;
 
@@ -40,21 +41,22 @@ class MatchDetailsBody extends StatelessWidget {
                             if (item.name != null)
                               Text(item.name!, overflow: TextOverflow.ellipsis)
                             else if (item.personName != null)
-                              Text(
-                                item.personName!,
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context).textTheme.titleMedium,
+                              Expanded(
+                                child: Text(
+                                  item.personName!,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: context.textStyle.primaryTextStyle,
+                                ),
                               )
                             else
                               Text(
                                 '???',
-                                style: Theme.of(context).textTheme.bodySmall,
+                                style: context.textStyle.auxiliaryTextStyle,
                               ),
                           ],
                         ),
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           if (item.kills != null)
                             PlayerStatsWidget(

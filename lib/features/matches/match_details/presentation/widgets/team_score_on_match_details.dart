@@ -1,7 +1,8 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class TeamScoreOnMatchDetails extends StatelessWidget {
-  const TeamScoreOnMatchDetails({super.key, required this.teamScore});
+  const TeamScoreOnMatchDetails({required this.teamScore, super.key});
 
   final int teamScore;
 
@@ -9,7 +10,7 @@ class TeamScoreOnMatchDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       teamScore.toString(),
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      style: context.textStyle.appBarTextStyle,
     );
   }
 }

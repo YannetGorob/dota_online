@@ -8,6 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class ProPlayersListPage extends StatelessWidget {
+  const ProPlayersListPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ProPlayersListCubit>(
@@ -16,7 +18,7 @@ class ProPlayersListPage extends StatelessWidget {
           playersProvider: locator.get<DotaApi>().players,
         )..fetchProPlayersInitialData();
       },
-      child: ProPlayersListWidget(),
+      child: const ProPlayersListWidget(),
     );
   }
 }

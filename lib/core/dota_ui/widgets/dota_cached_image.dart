@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class DotaCachedImage extends StatelessWidget {
   const DotaCachedImage({
     required this.imageUrl,
+    super.key,
     this.height,
     this.width,
     this.fit = BoxFit.fill,
@@ -30,7 +31,7 @@ class DotaCachedImage extends StatelessWidget {
       width: width,
       fit: fit,
       imageUrl: imageUrl!,
-      placeholder: (_, __) => DotaProgressIndicator(),
+      placeholder: (_, __) => const DotaProgressIndicator(),
       errorWidget: (_, __, ___) => Assets.images.dotaLogo.image(
         height: height,
         width: width,
