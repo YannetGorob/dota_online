@@ -29,7 +29,7 @@ class PlayersList extends StatelessWidget {
         title: 'no active players',
       );
     } else {
-      return const _NoPlayersWidget(title: 'no info about players');
+      return const SliverToBoxAdapter(child: SizedBox());
     }
   }
 }

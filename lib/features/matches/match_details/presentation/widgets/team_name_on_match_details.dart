@@ -18,9 +18,8 @@ class TeamNameOnMatchDetails extends StatelessWidget {
     return Column(
       children: [
         FittedBox(
-          fit: BoxFit.fitWidth,
           child: Text(
-            teamName,
+            teamName.isEmpty? '* * *': teamName,
             style: context.textStyle.primaryTextStyle,
           ),
         ),

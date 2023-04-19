@@ -16,7 +16,7 @@ class MatchesListPage extends StatelessWidget {
       create: (context) => MatchesListCubit(
         matchesProvider: locator.get<DotaApi>().matches,
       )..loadInitialMatchesData(),
-      child: MatchesListWidget(),
+      child: const MatchesListWidget(),
     );
   }
 }

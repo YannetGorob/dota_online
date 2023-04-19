@@ -38,6 +38,7 @@ class _LeagueListBodyState extends State<LeagueListBody> {
             final item = widget.leagues[index];
             if (item != null) {
               return InkWell(
+                borderRadius: BorderRadius.circular(4),
                 onTap: () {
                   if (item.leagueid != null) {
                     context.router.push(LeagueDetailsRoute(leagueModel: item));

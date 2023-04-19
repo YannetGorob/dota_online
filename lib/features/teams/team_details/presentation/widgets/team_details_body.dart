@@ -24,54 +24,62 @@ class TeamDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: CustomScrollView(
-        slivers: [
-          const SliverPadding(padding: EdgeInsets.only(top: 10)),
-          if (players != null && players!.isNotEmpty)
-            SliverPadding(
-              padding: const EdgeInsetsDirectional.all(4),
-              sliver: SliverToBoxAdapter(
-                child: Text(
-                  context.l10n.players,
-                  textAlign: TextAlign.center,
-                  style: context.textStyle.appBarTextStyle,
-                ),
+    return CustomScrollView(
+      slivers: [
+        const SliverPadding(
+          padding: EdgeInsets.only(top: 10),
+        ),
+        if (players != null && players!.isNotEmpty)
+          SliverPadding(
+            padding: const EdgeInsetsDirectional.all(4),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                context.l10n.players,
+                textAlign: TextAlign.center,
+                style: context.textStyle.appBarTextStyle,
               ),
             ),
-          PlayersList(players: players!),
-          if (players!.isNotEmpty)
-            SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              sliver: SliverToBoxAdapter(
-                child: DotaPrimaryButton(
-                  onPressed: () {
-                    context.router.push(
-                      PlayersListRoute(players: players!),
-                    );
-                  },
-                  title: context.l10n.viewallplayers,
-                ),
+          ),
+        PlayersList(players: players!),
+        if (players!.isNotEmpty)
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+            ),
+            sliver: SliverToBoxAdapter(
+              child: DotaPrimaryButton(
+                onPressed: () {
+                  context.router.push(
+                    PlayersListRoute(players: players!),
+                  );
+                },
+                title: context.l10n.viewallplayers,
               ),
             ),
-          if (matches != null && matches!.isNotEmpty)
-            SliverPadding(
-              padding: const EdgeInsets.only(top: 20),
-              sliver: SliverToBoxAdapter(
-                child: Text(
-                  context.l10n.matchesTab,
-                  textAlign: TextAlign.center,
-                  style: context.textStyle.appBarTextStyle,
-                ),
+          ),
+        if (matches != null && matches!.isNotEmpty)
+          SliverPadding(
+            padding: const EdgeInsets.only(top: 10),
+            sliver: SliverToBoxAdapter(
+              child: Text(
+                context.l10n.matchesTab,
+                textAlign: TextAlign.center,
+                style: context.textStyle.appBarTextStyle,
               ),
             ),
-          SliverList(
+          ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 10,
+          ),
+          sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               childCount: matches!.length,
               (context, index) {
                 final item = matches![index];
                 return InkWell(
+                  borderRadius: BorderRadius.circular(8),
                   onTap: () {
                     if (item.matchId != null) {
                       context.router.push(
@@ -89,8 +97,8 @@ class TeamDetailsBody extends StatelessWidget {
               },
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

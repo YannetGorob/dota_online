@@ -34,23 +34,21 @@ class TeamMatchListItem extends StatelessWidget {
       borderColor = context.dotaColors.direColor;
     }
 
-    return Card(
-      color: Colors.black38,
-      margin: const EdgeInsets.all(5),
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(width: 5, color: borderColor),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
-            Divider(color: context.dotaColors.dotaWhiteColor),
-            _MatchParamsWidget(teamMatch: teamMatch),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: context.dotaColors.dotaBlackColor,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(width: 4, color: borderColor),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
+          Divider(color: context.dotaColors.dotaWhiteColor),
+          _MatchParamsWidget(teamMatch: teamMatch),
+        ],
       ),
     );
   }
