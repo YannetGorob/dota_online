@@ -17,10 +17,10 @@ class TextStyleExtensions extends ThemeExtension<TextStyleExtensions> {
   @override
   TextStyleExtensions copyWith({Color? brandColor, Color? danger}) {
     return TextStyleExtensions(
-      primaryTextStyle: primaryTextStyle ?? primaryTextStyle,
-      appBarTextStyle: appBarTextStyle ?? appBarTextStyle,
-      auxiliaryTextStyle: auxiliaryTextStyle ?? auxiliaryTextStyle,
-      titleTextStyle: titleTextStyle ?? titleTextStyle,
+      primaryTextStyle: primaryTextStyle,
+      appBarTextStyle: appBarTextStyle,
+      auxiliaryTextStyle: auxiliaryTextStyle,
+      titleTextStyle: titleTextStyle,
     );
   }
 

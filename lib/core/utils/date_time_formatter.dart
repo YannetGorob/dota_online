@@ -8,10 +8,10 @@ class DateTimeFormatter {
 
   String formatMatchStartTime(int startTime) {
     final dt = DateTime.fromMillisecondsSinceEpoch(startTime * 1000);
-    return DateFormat('dd.MM.yyyy').format(dt).toString();
+    return DateFormat('dd.MM.yyyy').format(dt);
   }
 
-   String getFormattedDate(DateTime dateTime) {
+  String getFormattedDate(DateTime dateTime) {
     return DateFormat('dd.MM.yyyy, hh:mm a').format(dateTime);
   }
 }
