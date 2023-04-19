@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_search_field.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -51,12 +50,7 @@ class _SearchFieldWidgetState extends State<SearchFieldWidget> {
           ),
           hintText: '${context.l10n.searchAccount}...',
         ),
-        const SizedBox(height: 15),
-        Text(
-          context.l10n.topPlayers,
-          style: context.textStyle.titleTextStyle,
-        ),
-        const SizedBox(height: 15),
+
       ],
     );
   }

@@ -16,31 +16,33 @@ class SearchResultBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchPlayerModel.isNotEmpty) {
-      return ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        itemCount: searchPlayerModel.length,
-        itemBuilder: (context, index) {
-          final item = searchPlayerModel[index];
-          return PlayerTile(
-            onTap: () {
-              if (item.accountId != null) {
-                context.router.push(
-                  PlayerDetailsRoute(
-                    accountId: item.accountId!,
-                    playerName: item.personaname,
-                    lastMatchTime: item.lastMatchTime == null
-                        ? null
-                        : DateTimeFormatter().getFormattedDate(
-                            DateTime.parse(item.lastMatchTime!),
-                          ),
-                  ),
-                );
-              }
-            },
-            name: item.personaname,
-            avatar: item.avatarfull,
-          );
-        },
+      return Scrollbar(
+        child: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          itemCount: searchPlayerModel.length,
+          itemBuilder: (context, index) {
+            final item = searchPlayerModel[index];
+            return PlayerTile(
+              onTap: () {
+                if (item.accountId != null) {
+                  context.router.push(
+                    PlayerDetailsRoute(
+                      accountId: item.accountId!,
+                      playerName: item.personaname,
+                      lastMatchTime: item.lastMatchTime == null
+                          ? null
+                          : DateTimeFormatter().getFormattedDate(
+                              DateTime.parse(item.lastMatchTime!),
+                            ),
+                    ),
+                  );
+                }
+              },
+              name: item.personaname,
+              avatar: item.avatarfull,
+            );
+          },
+        ),
       );
     } else {
       return const _SearchErrorWidget();
