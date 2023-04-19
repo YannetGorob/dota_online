@@ -1,4 +1,4 @@
-import 'package:dota_online/core/api/models/player/player_details_model.dart';
+import 'package:dota_online/core/api/models/player/player_details/player_details_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/player_details_body.dart';

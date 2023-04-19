@@ -1,4 +1,4 @@
-import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/app_bar/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/features/teams/teams_list/domain/teams_list_cubit.dart';

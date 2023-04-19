@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/hero/matchup_by_hero_id.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/app_bar/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:flutter/material.dart';
 

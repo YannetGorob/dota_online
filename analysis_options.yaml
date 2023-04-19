@@ -13,6 +13,8 @@ analyzer:
   exclude:
     - [ lib/gen/** ]
     - /*.g.dart
+    - '**/*.g.dart'
+    - '**/*.gen.dart'
 
 linter:
   rules:

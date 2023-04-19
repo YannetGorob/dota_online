@@ -11,10 +11,7 @@ class _SearchErrorWidget extends StatelessWidget {
         children: [
           Text('No result', style: context.textStyle.primaryTextStyle),
           const SizedBox(height: 10),
-          Text(
-            'Try again',
-            style: context.textStyle.auxiliaryTextStyle,
-          ),
+          Text('Try again', style: context.textStyle.auxiliaryTextStyle),
         ],
       ),
     );

@@ -24,7 +24,6 @@ class MatchDetailsBody extends StatelessWidget {
             childCount: players.length,
             (context, index) {
               final item = players[index];
-
               return Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
