@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'player_details_model.freezed.dart';
 part 'player_details_model.g.dart';
 
+
 @freezed
 class PlayerDetailsModel with _$PlayerDetailsModel {
   const factory PlayerDetailsModel({

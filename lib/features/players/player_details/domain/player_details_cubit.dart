@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/base/api_result.dart';
-import 'package:dota_online/core/api/models/player/player_details_model.dart';
-import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
+import 'package:dota_online/core/api/models/player/player_details/player_details_model.dart';
+import 'package:dota_online/core/api/models/player/player_recent_matches/player_recent_matches_model.dart';
 import 'package:dota_online/core/api/providers/players_provider.dart';
 import 'package:dota_online/features/players/player_details/domain/player_details_state.dart';
 
