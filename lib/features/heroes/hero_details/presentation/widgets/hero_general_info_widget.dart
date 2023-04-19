@@ -21,7 +21,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
         const SizedBox(height: 10),
         if (hero.attackType != null)
           HeroFightCharacteristics(
-            value: hero.attackType!,
+            value: hero.attackType,
             tittle: context.l10n.attackType,
             image: HeroAssetUtil.getAttackTypeAsset(hero.attackType),
           ),

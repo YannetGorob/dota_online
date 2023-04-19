@@ -30,7 +30,7 @@ class AllMatchesPage extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 16,
-                vertical: 8,
+                vertical: 4,
               ),
               child: GestureDetector(
                 onTap: () {

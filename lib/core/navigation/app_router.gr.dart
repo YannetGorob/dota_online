@@ -66,9 +66,9 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: HeroMatchupsPage(
-          heroMatchups: args.heroMatchups,
-          heroes: args.heroes,
-          heroId: args.heroId,
+          heroMatchupsDTO: args.heroMatchupsDTO,
+          heroName: args.heroName,
+          heroAvatar: args.heroAvatar,
           key: args.key,
         ),
       );
@@ -290,17 +290,17 @@ class HeroDetailsRouteArgs {
 /// [HeroMatchupsPage]
 class HeroMatchupsRoute extends PageRouteInfo<HeroMatchupsRouteArgs> {
   HeroMatchupsRoute({
-    required List<MatchupByHeroId> heroMatchups,
-    required List<HeroStats> heroes,
-    required int heroId,
+    required List<HeroMatchupDTO> heroMatchupsDTO,
+    required String heroName,
+    required String heroAvatar,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           HeroMatchupsRoute.name,
           args: HeroMatchupsRouteArgs(
-            heroMatchups: heroMatchups,
-            heroes: heroes,
-            heroId: heroId,
+            heroMatchupsDTO: heroMatchupsDTO,
+            heroName: heroName,
+            heroAvatar: heroAvatar,
             key: key,
           ),
           initialChildren: children,
@@ -314,23 +314,23 @@ class HeroMatchupsRoute extends PageRouteInfo<HeroMatchupsRouteArgs> {
 
 class HeroMatchupsRouteArgs {
   const HeroMatchupsRouteArgs({
-    required this.heroMatchups,
-    required this.heroes,
-    required this.heroId,
+    required this.heroMatchupsDTO,
+    required this.heroName,
+    required this.heroAvatar,
     this.key,
   });
 
-  final List<MatchupByHeroId> heroMatchups;
+  final List<HeroMatchupDTO> heroMatchupsDTO;
 
-  final List<HeroStats> heroes;
+  final String heroName;
 
-  final int heroId;
+  final String heroAvatar;
 
   final Key? key;
 
   @override
   String toString() {
-    return 'HeroMatchupsRouteArgs{heroMatchups: $heroMatchups, heroes: $heroes, heroId: $heroId, key: $key}';
+    return 'HeroMatchupsRouteArgs{heroMatchupsDTO: $heroMatchupsDTO, heroName: $heroName, heroAvatar: $heroAvatar, key: $key}';
   }
 }
 

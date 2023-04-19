@@ -22,15 +22,14 @@ class HeroDetailsWidget extends StatelessWidget {
         builder: (context, state) {
           return state.map(
             loading: (_) => const DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
             loaded: (value) {
               return HeroDetailsBody(
-                heroes: value.heroes,
                 hero: hero,
                 matchesByHeroId: value.matchByHeroId,
-                heroMatchups: value.heroMatchup,
+                heroMatchupsDTO: value.heroMatchupDTO,
               );
             },
-            error: (_) => const DotaErrorWidget(),
           );
         },
       ),

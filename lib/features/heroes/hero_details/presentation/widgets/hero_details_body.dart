@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/api/models/hero/matchup_by_hero_id.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
@@ -13,15 +13,13 @@ class HeroDetailsBody extends StatelessWidget {
   const HeroDetailsBody({
     required this.hero,
     required this.matchesByHeroId,
-    required this.heroMatchups,
-    required this.heroes,
+    required this.heroMatchupsDTO,
     super.key,
   });
 
   final HeroStats hero;
   final List<MatchByHeroId> matchesByHeroId;
-  final List<MatchupByHeroId> heroMatchups;
-  final List<HeroStats> heroes;
+  final List<HeroMatchupDTO> heroMatchupsDTO;
 
   static const int recentMatchesAmount = 5;
 
@@ -52,9 +50,9 @@ class HeroDetailsBody extends StatelessWidget {
                 ),
                 onPressed: () => context.router.push(
                   HeroMatchupsRoute(
-                    heroMatchups: heroMatchups,
-                    heroes: heroes,
-                    heroId: hero.id!,
+                    heroMatchupsDTO: heroMatchupsDTO,
+                    heroAvatar: hero.img!,
+                    heroName: hero.localizedName!,
                   ),
                 ),
                 child: Text(

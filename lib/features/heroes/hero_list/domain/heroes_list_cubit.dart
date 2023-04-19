@@ -1,5 +1,3 @@
-// ignore_for_file: cascade_invocations
-
 import 'package:bloc/bloc.dart';
 import 'package:dota_online/core/api/providers/heroes_provider.dart';
 import 'package:dota_online/core/utils/url_util.dart';
@@ -22,15 +20,17 @@ class HeroesListCubit extends Cubit<HeroesListState> {
           },
         ).toList();
 
-        heroesData.sort((a, b) {
-          if (a.localizedName == null) {
-            return 1;
-          } else if (b.localizedName == null) {
-            return -1;
-          } else {
-            return a.localizedName!.compareTo(b.localizedName!);
-          }
-        });
+        heroesData.sort(
+          (a, b) {
+            if (a.localizedName == null) {
+              return 1;
+            } else if (b.localizedName == null) {
+              return -1;
+            } else {
+              return a.localizedName!.compareTo(b.localizedName!);
+            }
+          },
+        );
 
         if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },
