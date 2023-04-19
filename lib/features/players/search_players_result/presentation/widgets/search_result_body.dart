@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:dota_online/core/api/models/player/search_player_model.dart';
+import 'package:dota_online/core/api/models/player/search_player/search_player_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
@@ -16,31 +16,33 @@ class SearchResultBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchPlayerModel.isNotEmpty) {
-      return ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        itemCount: searchPlayerModel.length,
-        itemBuilder: (context, index) {
-          final item = searchPlayerModel[index];
-          return PlayerTile(
-            onTap: () {
-              if (item.accountId != null) {
-                context.router.push(
-                  PlayerDetailsRoute(
-                    accountId: item.accountId!,
-                    playerName: item.personaname,
-                    lastMatchTime: item.lastMatchTime == null
-                        ? null
-                        : DateTimeFormatter().getFormattedDate(
-                            DateTime.parse(item.lastMatchTime!),
-                          ),
-                  ),
-                );
-              }
-            },
-            name: item.personaname,
-            avatar: item.avatarfull,
-          );
-        },
+      return Scrollbar(
+        child: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          itemCount: searchPlayerModel.length,
+          itemBuilder: (context, index) {
+            final item = searchPlayerModel[index];
+            return PlayerTile(
+              onTap: () {
+                if (item.accountId != null) {
+                  context.router.push(
+                    PlayerDetailsRoute(
+                      accountId: item.accountId!,
+                      playerName: item.personaname,
+                      lastMatchTime: item.lastMatchTime != null
+                          ? DateTimeFormatter().getFormattedDate(
+                              DateTime.parse(item.lastMatchTime!),
+                            )
+                          : null,
+                    ),
+                  );
+                }
+              },
+              name: item.personaname,
+              avatar: item.avatarfull,
+            );
+          },
+        ),
       );
     } else {
       return const _SearchErrorWidget();

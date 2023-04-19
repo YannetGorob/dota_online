@@ -1,4 +1,4 @@
-import 'package:dota_online/core/api/models/player/pro_player_model.dart';
+import 'package:dota_online/core/api/models/player/pro_player/pro_player_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'pro_players_list_state.freezed.dart';

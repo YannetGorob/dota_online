@@ -1,9 +1,9 @@
 import 'package:dota_online/core/api/base/api_result.dart';
 import 'package:dota_online/core/api/base/base_network.dart';
-import 'package:dota_online/core/api/models/player/player_details_model.dart';
-import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
-import 'package:dota_online/core/api/models/player/pro_player_model.dart';
-import 'package:dota_online/core/api/models/player/search_player_model.dart';
+import 'package:dota_online/core/api/models/player/player_details/player_details_model.dart';
+import 'package:dota_online/core/api/models/player/player_recent_matches/player_recent_matches_model.dart';
+import 'package:dota_online/core/api/models/player/pro_player/pro_player_model.dart';
+import 'package:dota_online/core/api/models/player/search_player/search_player_model.dart';
 
 class PlayersProvider {
   PlayersProvider(this._network);

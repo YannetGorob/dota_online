@@ -1,5 +1,5 @@
-import 'package:dota_online/core/api/models/player/player_details_model.dart';
-import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
+import 'package:dota_online/core/api/models/player/player_details/player_details_model.dart';
+import 'package:dota_online/core/api/models/player/player_recent_matches/player_recent_matches_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_general_details_widget.dart';
