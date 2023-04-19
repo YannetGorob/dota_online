@@ -19,7 +19,7 @@ class DotaColors {
 
   Color get dotaGreyColor => const Color(0xff9d9d9d);
 
-  Color get dotaBlackColor => const Color(0xff000000);
+  Color get dotaBlackColor => const Color(0x5E000000);
 
   Color get dotaWhiteColor => const Color(0xffffffff);
 }

@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/team/team_model.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class TeamsListItem extends StatelessWidget {
         return Container(
           height: size.maxHeight,
           width: size.maxWidth,
-          color: Colors.black38,
+          color: context.dotaColors.dotaBlackColor,
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
