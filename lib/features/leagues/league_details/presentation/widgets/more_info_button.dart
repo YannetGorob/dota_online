@@ -2,11 +2,11 @@ part of 'league_details_body.dart';
 
 class MoreInfoButton extends StatefulWidget {
   const MoreInfoButton({
-    super.key,
     required this.isFullListShown,
     required this.hideText,
     required this.showMoreText,
     required this.onTap,
+    super.key,
   });
 
   final bool isFullListShown;
@@ -23,6 +23,7 @@ class _MoreInfoButtonState extends State<MoreInfoButton> {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: GestureDetector(
+        onTap: widget.onTap,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.only(bottom: 10),
@@ -31,7 +32,6 @@ class _MoreInfoButtonState extends State<MoreInfoButton> {
             ),
           ),
         ),
-        onTap: widget.onTap,
       ),
     );
   }

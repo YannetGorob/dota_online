@@ -58,8 +58,8 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
 
   @override
   Widget build(BuildContext context) {
-    final String showMoreText = context.l10n.showMore;
-    final String hideText = context.l10n.hide;
+    final showMoreText = context.l10n.showMore;
+    final hideText = context.l10n.hide;
 
     return CustomScrollView(
       slivers: [
@@ -109,7 +109,7 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
           ),
         if ((widget.matches == null || widget.matches!.isEmpty) &&
             (widget.teams == null || widget.teams!.isEmpty))
-          NoLeagueInfoWidget()
+          const NoLeagueInfoWidget()
       ],
     );
   }

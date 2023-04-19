@@ -21,18 +21,18 @@ class _LeagueListBodyState extends State<LeagueListBody> {
 
   @override
   Widget build(BuildContext context) {
-    Future<void> _refresh() async {
+    Future<void> refresh() async {
       await context.read<LeagueListCubit>().loadInitialLeaguesData();
     }
 
     return Scrollbar(
-      thickness: 5,
+      thickness: 12,
       interactive: true,
       child: RefreshIndicator(
         key: _refreshIndicatorKey,
-        onRefresh: _refresh,
+        onRefresh: refresh,
         child: ListView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           itemCount: widget.leagues.length,
           itemBuilder: (context, index) {
             final item = widget.leagues[index];

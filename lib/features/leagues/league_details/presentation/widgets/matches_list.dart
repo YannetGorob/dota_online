@@ -13,7 +13,7 @@ class MatchesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       sliver: SliverList(
         delegate: SliverChildBuilderDelegate(
           childCount: matchesCount,
@@ -21,8 +21,9 @@ class MatchesList extends StatelessWidget {
             final item = matches![index];
 
             if (item.leagueMatch.direTeamName != null &&
-                item.leagueMatch.radiantTeamName != null)
+                item.leagueMatch.radiantTeamName != null) {
               return LeagueMatchTile(item: item);
+            }
             return null;
           },
         ),

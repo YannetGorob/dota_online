@@ -2,9 +2,9 @@ part of 'league_details_body.dart';
 
 class TeamsList extends StatelessWidget {
   const TeamsList({
-    super.key,
     required this.teamCount,
     this.teams,
+    super.key,
   });
 
   final int teamCount;
@@ -13,7 +13,7 @@ class TeamsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       sliver: SliverGrid(
         delegate: SliverChildBuilderDelegate(
           childCount: teamCount,

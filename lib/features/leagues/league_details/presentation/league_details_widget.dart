@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LeagueDetailsWidget extends StatelessWidget {
-  const LeagueDetailsWidget({super.key, required this.leagueModel});
+  const LeagueDetailsWidget({required this.leagueModel, super.key});
 
   final LeagueModel leagueModel;
 
@@ -21,8 +21,8 @@ class LeagueDetailsWidget extends StatelessWidget {
       body: BlocBuilder<LeagueDetailsCubit, LeagueDetailState>(
         builder: (context, state) {
           return state.map(
-            error: (_) => DotaErrorWidget(),
-            loading: (_) => DotaProgressIndicator(),
+            error: (_) => const DotaErrorWidget(),
+            loading: (_) => const DotaProgressIndicator(),
             loaded: (value) => LeagueDetailsBody(
               leagueModel: leagueModel,
               matches: value.matches,
