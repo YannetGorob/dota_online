@@ -1,12 +1,13 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class TeamNameOnMatchDetails extends StatelessWidget {
   const TeamNameOnMatchDetails({
-    super.key,
     required this.matchDetails,
     required this.teamName,
+    super.key,
   });
 
   final MatchDetails matchDetails;
@@ -20,15 +21,21 @@ class TeamNameOnMatchDetails extends StatelessWidget {
           fit: BoxFit.fitWidth,
           child: Text(
             teamName,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            style: context.textStyle.primaryTextStyle,
           ),
         ),
         if (matchDetails.radiantTeam != null &&
             teamName == matchDetails.radiantTeam!.name)
-          Text('The Radiant', style: TextStyle(color: context.dotaColors.radiantColor)),
+          Text(
+            'The Radiant',
+            style: TextStyle(color: context.dotaColors.radiantColor),
+          ),
         if (matchDetails.direTeam != null &&
             teamName == matchDetails.direTeam!.name)
-          Text('The Dire', style: TextStyle(color: context.dotaColors.direColor)),
+          Text(
+            'The Dire',
+            style: TextStyle(color: context.dotaColors.direColor),
+          ),
       ],
     );
   }

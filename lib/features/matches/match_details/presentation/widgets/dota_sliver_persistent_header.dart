@@ -1,6 +1,6 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
-import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_name_on_match_details.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_score_on_match_details.dart';
@@ -18,7 +18,6 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
     double shrinkOffset,
     bool overlapsContent,
   ) {
-    final textStyle = Theme.of(context).extension<TextStyleExtensions>()!;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
@@ -30,7 +29,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             if (matchDetails.matchId != null)
               Text(
                 '${context.l10n.match} ${matchDetails.matchId}',
-                style: textStyle.auxiliaryTextStyle,
+                style: context.textStyle.auxiliaryTextStyle,
               ),
             const SizedBox(height: 10),
             if (matchDetails.league != null &&
@@ -61,7 +60,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                     ),
                     Text(
                       ' : ',
-                      style: textStyle.appBarTextStyle,
+                      style: context.textStyle.appBarTextStyle,
                     ),
                     TeamScoreOnMatchDetails(
                       teamScore: matchDetails.direScore ?? 0,
@@ -79,19 +78,19 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             ),
             Text(
               context.l10n.score,
-              style: textStyle.auxiliaryTextStyle,
+              style: context.textStyle.auxiliaryTextStyle,
             ),
             const SizedBox(height: 10),
             RichText(
               text: TextSpan(
                 text: '${context.l10n.duration}: ',
-                style: textStyle.auxiliaryTextStyle,
+                style: context.textStyle.auxiliaryTextStyle,
                 children: <TextSpan>[
                   if (matchDetails.duration != null)
                     TextSpan(
                       text: DateTimeFormatter()
                           .formatMatchDuration(matchDetails.duration!),
-                      style: textStyle.auxiliaryTextStyle,
+                      style: context.textStyle.auxiliaryTextStyle,
                     ),
                 ],
               ),

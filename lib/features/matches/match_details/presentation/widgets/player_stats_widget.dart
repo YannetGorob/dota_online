@@ -1,10 +1,11 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class PlayerStatsWidget extends StatelessWidget {
   const PlayerStatsWidget({
-    super.key,
     required this.stats,
     required this.statAbbr,
+    super.key,
   });
 
   final int stats;
@@ -15,8 +16,8 @@ class PlayerStatsWidget extends StatelessWidget {
     return SizedBox(
       width: 50,
       child: Text(
-        '$statAbbr: ${stats.toString()}',
-        style: Theme.of(context).textTheme.titleMedium,
+        '$statAbbr: $stats',
+        style: context.textStyle.primaryTextStyle,
       ),
     );
   }
