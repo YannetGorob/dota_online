@@ -43,7 +43,6 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
               ),
             const SizedBox(height: 10),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (matchDetails.radiantTeam != null)
                   Expanded(
@@ -51,37 +50,47 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                       matchDetails: matchDetails,
                       teamName: matchDetails.radiantTeam!.name ?? '???',
                       isRadiant: true,
+                      title: 'The Radiant',
+                      color: context.dotaColors.radiantColor,
                     ),
                   ),
-                Row(
-                  children: [
-                    TeamScoreOnMatchDetails(
-                      teamScore: matchDetails.radiantScore ?? 0,
-                    ),
-                    Text(
-                      ' : ',
-                      style: context.textStyle.appBarTextStyle,
-                    ),
-                    TeamScoreOnMatchDetails(
-                      teamScore: matchDetails.direScore ?? 0,
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          TeamScoreOnMatchDetails(
+                            teamScore: matchDetails.radiantScore ?? 0,
+                          ),
+                          Text(
+                            ' : ',
+                            style: context.textStyle.appBarTextStyle,
+                          ),
+                          TeamScoreOnMatchDetails(
+                            teamScore: matchDetails.direScore ?? 0,
+                          ),
+                        ],
+                      ),
+                      Text(
+                        context.l10n.score,
+                        style: context.textStyle.auxiliaryTextStyle,
+                      ),
+                    ],
+                  ),
                 ),
-                if (matchDetails.direTeam != null)
-                  Expanded(
-                    child: TeamNameOnMatchDetails(
-                      matchDetails: matchDetails,
-                      teamName: matchDetails.direTeam!.name ?? '???',
-                      isRadiant: false,
-                    ),
+                Expanded(
+                  child: TeamNameOnMatchDetails(
+                    matchDetails: matchDetails,
+                    teamName: matchDetails.direTeam?.name,
+                    isRadiant: false,
+                    title: 'The Dire',
+                    color: context.dotaColors.direColor,
                   ),
+                ),
               ],
             ),
-            Text(
-              context.l10n.score,
-              style: context.textStyle.auxiliaryTextStyle,
-            ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
             RichText(
               text: TextSpan(
                 text: '${context.l10n.duration}: ',
