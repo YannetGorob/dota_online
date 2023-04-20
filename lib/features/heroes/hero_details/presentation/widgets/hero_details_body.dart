@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_roles_card.dart';
@@ -71,10 +72,7 @@ class HeroDetailsBody extends StatelessWidget {
                 context.l10n.recentMatchesWithThisHero,
                 textAlign: TextAlign.center,
                 maxLines: 1,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: Colors.grey),
+                style: context.textStyle.titleTextStyle,
               ),
             ),
           ),

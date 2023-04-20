@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class HeroFightCharacteristics extends StatelessWidget {
@@ -26,12 +27,12 @@ class HeroFightCharacteristics extends StatelessWidget {
           if (tittle != null)
             Text(
               '$tittle: ',
-              style: Theme.of(context).textTheme.titleLarge,
+              style: context.textStyle.primaryTextStyle,
             ),
           if (value != null)
             Text(
               value!,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: context.textStyle.primaryTextStyle,
             )
           else
             const Text('---'),

@@ -1,4 +1,5 @@
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class MatchByHeroIdCard extends StatelessWidget {
               Text(
                 item.leagueName ?? '???',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleMedium,
+                style: context.textStyle.primaryTextStyle,
               ),
               const Divider(color: Colors.white),
               const SizedBox(height: 5),
@@ -32,15 +33,15 @@ class MatchByHeroIdCard extends StatelessWidget {
                 children: [
                   Text(
                     'K: ${item.kills}',
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: context.textStyle.primaryTextStyle,
                   ),
                   Text(
                     'D: ${item.deaths}',
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: context.textStyle.primaryTextStyle,
                   ),
                   Text(
                     'A: ${item.assists}',
-                    style: Theme.of(context).textTheme.titleMedium,
+                    style: context.textStyle.primaryTextStyle,
                   ),
                 ],
               ),
@@ -51,12 +52,12 @@ class MatchByHeroIdCard extends StatelessWidget {
                   if (item.duration != null)
                     Text(
                       '⏳${DateTimeFormatter().formatMatchDuration(item.duration!)}',
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: context.textStyle.primaryTextStyle,
                     ),
                   if (item.startTime != null)
                     Text(
                       '🗓${DateTimeFormatter().formatMatchStartTime(item.startTime!)}',
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: context.textStyle.primaryTextStyle,
                     ),
                 ],
               ),

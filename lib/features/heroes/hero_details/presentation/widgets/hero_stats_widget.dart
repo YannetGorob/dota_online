@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class HeroStatsWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class HeroStatsWidget extends StatelessWidget {
         ),
       ),
       height: 30,
-      child: Text(title, style: Theme.of(context).textTheme.titleMedium),
+      child: Text(title, style: context.textStyle.primaryTextStyle),
     );
   }
 }

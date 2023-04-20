@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class DotaPrimaryButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        backgroundColor: const Color(0xff2c776d),
+        backgroundColor: context.dotaColors.teamDetailsButtonColor,
       ),
       child: Text(title, style: context.textStyle.primaryTextStyle),
     );

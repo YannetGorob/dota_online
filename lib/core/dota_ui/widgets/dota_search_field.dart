@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:flutter/material.dart';
 
 class DotaSearchField extends StatelessWidget {
@@ -33,7 +34,7 @@ class DotaSearchField extends StatelessWidget {
       autocorrect: false,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Theme.of(context).dividerColor,
+        fillColor: context.dotaColors.dotaWhiteColor,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         hintText: hintText,
@@ -42,7 +43,10 @@ class DotaSearchField extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(width: 2, color: Colors.grey.shade500),
+          borderSide: BorderSide(
+            width: 2,
+            color: context.dotaColors.dotaGreyColor,
+          ),
           borderRadius: BorderRadius.circular(100),
         ),
       ),

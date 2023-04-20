@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class HeroRolesCard extends StatelessWidget {
@@ -13,7 +14,7 @@ class HeroRolesCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         child: Padding(
           padding: const EdgeInsets.all(8),
-          child: Text(role, style: Theme.of(context).textTheme.titleMedium),
+          child: Text(role, style: context.textStyle.primaryTextStyle),
         ),
       ),
     );

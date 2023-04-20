@@ -41,5 +41,6 @@
     "matchups": "Matchups",
     "gamesPlayed": "Games played:",
     "winRate": "Win Rate:",
-    "matchesWith": "Matches with"
+    "matchesWith": "Matches with",
+    "errorMessage": "Oops, something went wrong :("
 }

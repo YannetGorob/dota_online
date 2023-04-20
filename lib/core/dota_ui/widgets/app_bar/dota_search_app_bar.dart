@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/features/players/search_players_result/presentation/search_players_result_page.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class DotaSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
           : const SizedBox(),
       centerTitle: true,
       elevation: 0,
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: context.dotaColors.dotaBlackColor,
       actions: [
         IconButton(
           onPressed: () {
