@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:flutter/material.dart';
 
 class HeroTile extends StatelessWidget {
-  const HeroTile({super.key, required this.hero});
+  const HeroTile({required this.hero, super.key});
 
   final HeroStats hero;
 
@@ -31,7 +32,7 @@ class HeroTile extends StatelessWidget {
                   children: [
                     Text(
                       hero.localizedName!,
-                      style: Theme.of(context).textTheme.headlineSmall,
+                      style: context.textStyle.appBarTextStyle,
                     ),
                     const SizedBox(width: 10),
                     if (hero.primaryAttr != null)

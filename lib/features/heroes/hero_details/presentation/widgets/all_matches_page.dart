@@ -1,18 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/dota_ui/widgets/app_bar/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/match_by_hero_id_card.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
 class AllMatchesPage extends StatelessWidget {
   const AllMatchesPage({
-    super.key,
     required this.listLength,
     required this.heroName,
     required this.matches,
+    super.key,
   });
 
   final List<MatchByHeroId> matches;
@@ -22,21 +24,24 @@ class AllMatchesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(title: 'All matches with $heroName'),
+      appBar: DotaAppBar(title: '${context.l10n.matchesWith} $heroName'),
       body: ListView.builder(
         itemCount: listLength,
         itemBuilder: (ctx, index) {
           if (matches[index].matchId != null) {
-            return GestureDetector(
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: GestureDetector(
                 onTap: () {
                   context.router.push(
                     MatchDetailsRoute(matchId: matches[index].matchId!),
                   );
                 },
-                child: MatchByHeroIdCard(item: matches[index]),);
-          return null;
+                child: MatchByHeroIdCard(item: matches[index]),
+              ),
+            );
           }
-          return null;
+          return const DotaErrorWidget();
         },
       ),
     );

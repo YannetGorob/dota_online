@@ -19,19 +19,19 @@ class HeroesListCubit extends Cubit<HeroesListState> {
             return e.copyWith(img: UrlUtil.fixUrl(e.img));
           },
         ).toList();
-        heroesData.sort((a, b) {
-          if (a.localizedName == null) {
-            return 1;
-          } else if (b.localizedName == null) {
-            return -1;
-          } else {
-            return a.localizedName!.compareTo(b.localizedName!);
-          }
-        });
 
+        heroesData.sort(
+          (a, b) {
+            heroesData.removeWhere((element) => element.localizedName == null);
+            return a.localizedName!.compareTo(b.localizedName!);
+          },
+        );
+
+        if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
         if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },
       failure: (_) {
+        if (!isClosed) emit(const HeroesListState.error());
         if (!isClosed) emit(const HeroesListState.error());
       },
     );

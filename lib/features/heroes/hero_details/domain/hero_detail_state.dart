@@ -1,5 +1,4 @@
-import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/api/models/hero/matchup_by_hero_id.dart';
+import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -11,8 +10,7 @@ class HeroDetailsState with _$HeroDetailsState {
 
   const factory HeroDetailsState.loaded({
     required List<MatchByHeroId> matchByHeroId,
-    required List<MatchupByHeroId> heroMatchup,
-    required List<HeroStats> heroes,
+    required List<HeroMatchupDTO> heroMatchupDTO,
   }) = Loaded;
 
   const factory HeroDetailsState.error([String? message]) = Error;

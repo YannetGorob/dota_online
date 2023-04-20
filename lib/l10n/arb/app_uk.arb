@@ -33,7 +33,13 @@
     "leaguesList": "Список ліг",
     "leagueDetails": "Деталі ліги",
     "leagueTab": "Ліги",
-    "showMore" : "показати більше...",
-    "hide": "заховати"
-
+    "showMore": "показати більше...",
+    "hide": "заховати",
+    "recentMatchesWithThisHero": "Недавні матчі з цим героєм",
+    "matchupsWith": "Матчапи з",
+    "viewAllMatches": "Переглянути всі матчі",
+    "matchups": "Матчапи",
+    "gamesPlayed": "Ігор зіграно:",
+    "winRate": "Відсоток перемог:",
+    "matchesWith": "Матчі з"
 }

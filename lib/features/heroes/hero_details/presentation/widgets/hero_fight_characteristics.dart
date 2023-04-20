@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HeroFightCharacteristics extends StatelessWidget {
-  const HeroFightCharacteristics({super.key, 
+  const HeroFightCharacteristics({
     this.value,
     this.tittle,
     this.image,
+    super.key,
   });
 
   final String? value;
@@ -20,7 +21,7 @@ class HeroFightCharacteristics extends StatelessWidget {
           if (image != null)
             Padding(
               padding: const EdgeInsets.only(right: 15),
-              child: image!,
+              child: image,
             ),
           if (tittle != null)
             Text(

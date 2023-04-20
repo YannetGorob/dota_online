@@ -3,57 +3,65 @@ import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 
 class MatchByHeroIdCard extends StatelessWidget {
-  const MatchByHeroIdCard({super.key, required this.item});
+  const MatchByHeroIdCard({required this.item, super.key});
 
   final MatchByHeroId item;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Column(
-          children: [
-            Text(
-              item.leagueName ?? '???',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  'K: ${item.kills}',
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                Text(
-                  'D: ${item.deaths}',
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                Text(
-                  'A: ${item.assists}',
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-              ],
-            ),
-            const SizedBox(height: 5),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                if (item.duration != null)
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 12,
+          ),
+          child: Column(
+            children: [
+              Text(
+                item.leagueName ?? '???',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const Divider(color: Colors.white),
+              const SizedBox(height: 5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
                   Text(
-                    '⏳${DateTimeFormatter().formatMatchDuration(item.duration!)}',
+                    'K: ${item.kills}',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                if (item.startTime != null)
                   Text(
-                    '🗓${DateTimeFormatter().formatMatchStartTime(item.startTime!)}',
+                    'D: ${item.deaths}',
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-              ],
-            ),
-          ],
+                  Text(
+                    'A: ${item.assists}',
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 5),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  if (item.duration != null)
+                    Text(
+                      '⏳${DateTimeFormatter().formatMatchDuration(item.duration!)}',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                  if (item.startTime != null)
+                    Text(
+                      '🗓${DateTimeFormatter().formatMatchStartTime(item.startTime!)}',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

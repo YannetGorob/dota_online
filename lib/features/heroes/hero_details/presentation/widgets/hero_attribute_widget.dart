@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HeroAttributeWidget extends StatelessWidget {
-  const HeroAttributeWidget({super.key, 
+  const HeroAttributeWidget({
     this.image,
     this.value,
+    super.key,
   });
 
   final Widget? image;
