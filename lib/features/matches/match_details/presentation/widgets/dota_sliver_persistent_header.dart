@@ -44,11 +44,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             const SizedBox(height: 10),
             Row(
               children: [
-                if (matchDetails.radiantTeam != null)
                   Expanded(
                     child: TeamNameOnMatchDetails(
                       matchDetails: matchDetails,
-                      teamName: matchDetails.radiantTeam!.name ?? '???',
+                      teamName: matchDetails.radiantTeam?.name,
                       isRadiant: true,
                       title: 'The Radiant',
                       color: context.dotaColors.radiantColor,

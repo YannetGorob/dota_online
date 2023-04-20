@@ -17,7 +17,7 @@ class SearchResultBody extends StatelessWidget {
     if (searchPlayerModel.isNotEmpty) {
       return Scrollbar(
         child: ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          padding: const EdgeInsets.only(top: 8),
           itemCount: searchPlayerModel.length,
           itemBuilder: (context, index) {
             final item = searchPlayerModel[index];

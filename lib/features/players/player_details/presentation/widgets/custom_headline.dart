@@ -12,7 +12,7 @@ class CustomHeadline extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: context.dotaColors.direColor.withOpacity(0.1),
+            color: context.dotaColors.dotaBlackColor.withOpacity(0.1),
             spreadRadius: 1,
             blurRadius: 4,
             offset: const Offset(0, 6),
@@ -20,9 +20,11 @@ class CustomHeadline extends StatelessWidget {
         ],
         gradient: LinearGradient(
           colors: <Color>[
-            context.dotaColors.radiantColor,
-            context.dotaColors.direColor.withOpacity(0.6),
-            context.dotaColors.direColor.withOpacity(0.2),
+            context.dotaColors.radiantColor.withOpacity(0.1),
+            context.dotaColors.radiantColor.withOpacity(0.3),
+            context.dotaColors.radiantColor.withOpacity(0.7),
+            context.dotaColors.radiantColor.withOpacity(0.3),
+            context.dotaColors.radiantColor.withOpacity(0.1),
           ],
         ),
       ),
