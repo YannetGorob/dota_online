@@ -26,14 +26,17 @@ class AllMatchesPage extends StatelessWidget {
       body: ListView.builder(
         itemCount: listLength,
         itemBuilder: (ctx, index) {
-          if (matches[index].matchId != null)
+          if (matches[index].matchId != null) {
             return GestureDetector(
                 onTap: () {
                   context.router.push(
                     MatchDetailsRoute(matchId: matches[index].matchId!),
                   );
                 },
-                child: MatchByHeroIdCard(item: matches[index]));
+                child: MatchByHeroIdCard(item: matches[index]),);
+          return null;
+          }
+          return null;
         },
       ),
     );

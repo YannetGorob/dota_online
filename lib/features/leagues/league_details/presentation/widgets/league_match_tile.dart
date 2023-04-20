@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/league_match_dto.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
@@ -21,6 +20,7 @@ class LeagueMatchTile extends StatelessWidget {
       elevation: 8,
       margin: const EdgeInsets.all(4),
       child: InkWell(
+        borderRadius: BorderRadius.circular(4),
         onTap: () {
           if (item.leagueMatch.matchId != null) {
             context.router.push(

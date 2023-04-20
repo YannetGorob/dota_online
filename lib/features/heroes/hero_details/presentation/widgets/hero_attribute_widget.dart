@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeroAttributeWidget extends StatelessWidget {
-  const HeroAttributeWidget({
+  const HeroAttributeWidget({super.key, 
     this.image,
     this.value,
   });
@@ -14,7 +14,7 @@ class HeroAttributeWidget extends StatelessWidget {
     return Row(
       children: [
         if (image != null) image!,
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         if (value != null)
           Text(value!, style: Theme.of(context).textTheme.titleMedium),
       ],

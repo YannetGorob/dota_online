@@ -40,11 +40,14 @@ class TeamDetailsBody extends StatelessWidget {
               ),
             ),
           ),
-        PlayersList(players: players!),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          sliver: PlayersList(players: players!),
+        ),
         if (players!.isNotEmpty)
           SliverPadding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 24,
+              horizontal: 20,
             ),
             sliver: SliverToBoxAdapter(
               child: DotaPrimaryButton(
@@ -70,7 +73,7 @@ class TeamDetailsBody extends StatelessWidget {
           ),
         SliverPadding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 20,
+            horizontal: 16,
             vertical: 10,
           ),
           sliver: SliverList(

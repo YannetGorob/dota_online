@@ -80,8 +80,8 @@ class LeagueDetailsCubit extends Cubit<LeagueDetailState> {
       matchesDTO.add(
         LeagueMatchDTO(
           leagueMatch: matches[i].copyWith(
-            radiantTeamName: tempRadiantName,
-            direTeamName: tempDireName,
+            radiantTeamName: tempRadiantName ?? 'no info',
+            direTeamName: tempDireName ?? 'no info',
           ),
           direTeamLogo: tempDireLogo,
           radiantTeamLogo: tempRadiantLogo,

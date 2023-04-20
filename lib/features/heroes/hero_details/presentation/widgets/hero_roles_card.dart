@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeroRolesCard extends StatelessWidget {
-  const HeroRolesCard({required this.role});
+  const HeroRolesCard({super.key, required this.role});
 
   final String role;
 
@@ -9,7 +9,7 @@ class HeroRolesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Text(role, style: Theme.of(context).textTheme.titleMedium),
       ),
     );
