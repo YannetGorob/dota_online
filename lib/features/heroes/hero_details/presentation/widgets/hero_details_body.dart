@@ -31,104 +31,101 @@ class HeroDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final roles = hero.roles;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(child: HeroGeneralInfoWidget(hero: hero)),
-          if (roles != null)
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                childCount: roles.length,
-                (BuildContext context, int index) {
-                  return HeroRolesCard(role: roles[index]);
-                },
-              ),
-            ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: TextButton(
-                style: buttonStyle, //move to theme
-                onPressed: () => context.router.push(
-                  HeroMatchupsRoute(
-                    heroMatchupsDTO: heroMatchupsDTO,
-                    heroAvatar: hero.img!,
-                    heroName: hero.localizedName!,
-                  ),
-                ),
-                child: Text(
-                  ' ${context.l10n.matchups} ${hero.localizedName}',
-                  maxLines: 1,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Center(
-                child: Text(
-                  context.l10n.recentMatchesWithThisHero,
-                  textAlign: TextAlign.center,
-                  maxLines: 1,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(color: Colors.grey),
-                ),
-              ),
-            ),
-          ),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(child: HeroGeneralInfoWidget(hero: hero)),
+        if (roles != null)
           SliverList(
             delegate: SliverChildBuilderDelegate(
-              childCount: recentMatchesAmount,
-              (context, index) {
-                final item = matchesByHeroId[index];
-                if (matchesByHeroId[index].matchId != null) {
-                  if (matchesByHeroId[index].matchId != null) {
-                    return GestureDetector(
-                      onTap: () => context.router.push(
-                        MatchDetailsRoute(
-                          matchId: matchesByHeroId[index].matchId!,
-                        ),
-                      ),
-                      child: MatchByHeroIdCard(item: item),
-                    );
-                  } else {
-                    return const Text('???');
-                  }
-                } else {
-                  return const Text('???');
-                }
+              childCount: roles.length,
+              (BuildContext context, int index) {
+                return HeroRolesCard(role: roles[index]);
               },
             ),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: TextButton(
-                style: buttonStyle,
-                onPressed: () {
-                  context.router.push(
-                    AllMatchesRoute(
-                      listLength: matchesByHeroId.length,
-                      heroName: hero.localizedName ?? '???',
-                      matches: matchesByHeroId,
-                    ),
-                  );
-                },
-                child: Text(
-                  context.l10n.viewAllMatches,
-                  maxLines: 1,
-                  textAlign: TextAlign.center,
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: TextButton(
+              style: buttonStyle, //move to theme
+              onPressed: () => context.router.push(
+                HeroMatchupsRoute(
+                  heroMatchupsDTO: heroMatchupsDTO,
+                  heroAvatar: hero.img!,
+                  heroName: hero.localizedName!,
                 ),
+              ),
+              child: Text(
+                ' ${context.l10n.matchups} ${hero.localizedName}',
+                maxLines: 1,
+                textAlign: TextAlign.center,
               ),
             ),
           ),
-        ],
-      ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Center(
+              child: Text(
+                context.l10n.recentMatchesWithThisHero,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: Colors.grey),
+              ),
+            ),
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            childCount: recentMatchesAmount,
+            (context, index) {
+              final item = matchesByHeroId[index];
+              if (matchesByHeroId[index].matchId != null) {
+                if (matchesByHeroId[index].matchId != null) {
+                  return GestureDetector(
+                    onTap: () => context.router.push(
+                      MatchDetailsRoute(
+                        matchId: matchesByHeroId[index].matchId!,
+                      ),
+                    ),
+                    child: MatchByHeroIdCard(item: item),
+                  );
+                } else {
+                  return const Text('???');
+                }
+              } else {
+                return const Text('???');
+              }
+            },
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: TextButton(
+              style: buttonStyle,
+              onPressed: () {
+                context.router.push(
+                  AllMatchesRoute(
+                    listLength: matchesByHeroId.length,
+                    heroName: hero.localizedName ?? '???',
+                    matches: matchesByHeroId,
+                  ),
+                );
+              },
+              child: Text(
+                context.l10n.viewAllMatches,
+                maxLines: 1,
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

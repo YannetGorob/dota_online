@@ -13,7 +13,6 @@ class ProPlayersListBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scrollbar(
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
         itemCount: proPlayers.length,
         itemBuilder: (context, index) {
           final item = proPlayers[index];

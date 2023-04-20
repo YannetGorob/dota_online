@@ -51,6 +51,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                     child: TeamNameOnMatchDetails(
                       matchDetails: matchDetails,
                       teamName: matchDetails.radiantTeam!.name ?? '???',
+                      isRadiant: true,
                     ),
                   ),
                 Row(
@@ -72,6 +73,7 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
                     child: TeamNameOnMatchDetails(
                       matchDetails: matchDetails,
                       teamName: matchDetails.direTeam!.name ?? '???',
+                      isRadiant: false,
                     ),
                   ),
               ],

@@ -14,13 +14,20 @@ class PlayerTile extends StatelessWidget {
   final String? name;
   final String? steamId;
   final String? avatar;
-  final void Function()? onTap;
+  final GestureTapCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 1),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      elevation: 8,
       child: ListTile(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         onTap: onTap,
         leading: ClipRRect(
           borderRadius: const BorderRadius.all(Radius.circular(8)),

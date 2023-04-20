@@ -14,7 +14,15 @@ class DotaScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      body: SafeArea(bottom: false, child: body),
+      body: SafeArea(
+        bottom: false,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+          ),
+          child: body,
+        ),
+      ),
     );
   }
 }

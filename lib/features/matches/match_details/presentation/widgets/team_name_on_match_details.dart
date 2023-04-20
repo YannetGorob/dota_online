@@ -7,11 +7,13 @@ class TeamNameOnMatchDetails extends StatelessWidget {
   const TeamNameOnMatchDetails({
     required this.matchDetails,
     required this.teamName,
+    required this.isRadiant,
     super.key,
   });
 
   final MatchDetails matchDetails;
   final String teamName;
+  final bool isRadiant;
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +21,22 @@ class TeamNameOnMatchDetails extends StatelessWidget {
       children: [
         FittedBox(
           child: Text(
-            teamName.isEmpty? '* * *': teamName,
+            teamName.isEmpty ? 'no info' : teamName,
             style: context.textStyle.primaryTextStyle,
           ),
         ),
-        if (matchDetails.radiantTeam != null &&
-            teamName == matchDetails.radiantTeam!.name)
-          Text(
-            'The Radiant',
-            style: TextStyle(color: context.dotaColors.radiantColor),
+        if (isRadiant)
+          Column(
+            children: [
+              Text(
+                'The Radiant',
+                style: TextStyle(color: context.dotaColors.radiantColor),
+              ),
+              if (matchDetails.radiantWin == true) const Text('Win!'),
+              if (matchDetails.radiantWin == false) const Text('!Win'),
+            ],
           ),
-        if (matchDetails.direTeam != null &&
-            teamName == matchDetails.direTeam!.name)
+        if (!isRadiant)
           Text(
             'The Dire',
             style: TextStyle(color: context.dotaColors.direColor),

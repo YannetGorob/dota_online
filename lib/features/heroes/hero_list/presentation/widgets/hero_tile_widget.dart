@@ -18,9 +18,11 @@ class HeroTile extends StatelessWidget {
     final cardWidth = MediaQuery.of(context).size.width;
 
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       shadowColor: context.dotaColors.dotaBlackColor,
-      elevation: 10,
+      elevation: 8,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
       child: InkWell(
         onTap: () => context.router.push(HeroDetailsRoute(hero: hero)),
         child: Padding(

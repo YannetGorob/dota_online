@@ -28,10 +28,11 @@ class RecentMatchesTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 15),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      elevation: 8,
       child: InkWell(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(15),
         onTap: () {
           if (playerRecentMatch.matchId != null) {
             context.router.push(

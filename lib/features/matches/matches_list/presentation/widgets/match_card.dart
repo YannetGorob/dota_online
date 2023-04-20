@@ -16,6 +16,7 @@ class MatchCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 8,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -48,9 +49,19 @@ class MatchCard extends StatelessWidget {
               ],
             ),
             if (match.duration != null)
-              Text(
-                DateTimeFormatter().formatMatchDuration(match.duration!),
-                style: context.textStyle.primaryTextStyle,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.timer,
+                    color: context.dotaColors.dotaGreyColor,
+                  ),
+                  const SizedBox(width: 5),
+                  Text(
+                    DateTimeFormatter().formatMatchDuration(match.duration!),
+                    style: context.textStyle.auxiliaryTextStyle,
+                  ),
+                ],
               ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

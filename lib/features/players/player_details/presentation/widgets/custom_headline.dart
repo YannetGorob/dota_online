@@ -9,29 +9,29 @@ class CustomHeadline extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
-            color: Theme.of(context).cardColor.withOpacity(0.5),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 6), // changes position of shadow
+            color: context.dotaColors.direColor.withOpacity(0.1),
+            spreadRadius: 1,
+            blurRadius: 4,
+            offset: const Offset(0, 6),
           ),
         ],
         gradient: LinearGradient(
-          begin: Alignment.bottomRight,
-          end: Alignment.topRight,
           colors: <Color>[
-            Theme.of(context).primaryColor.withOpacity(0.9),
-            Theme.of(context).primaryColor.withOpacity(0.4),
+            context.dotaColors.direColor.withOpacity(0.2),
+            context.dotaColors.direColor.withOpacity(0.6),
+            context.dotaColors.direColor.withOpacity(0.2),
           ],
         ),
       ),
       alignment: Alignment.center,
       padding: const EdgeInsets.only(bottom: 3),
-      width: double.infinity,
+      width: MediaQuery.of(context).size.width * 0.89,
       child: Text(
         title,
-        style: context.textStyle.titleTextStyle,
+        style: context.textStyle.appBarTextStyle,
       ),
     );
   }

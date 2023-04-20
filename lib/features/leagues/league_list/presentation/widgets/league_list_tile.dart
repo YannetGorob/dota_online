@@ -9,11 +9,11 @@ class LeagueListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(4),
+      margin: const EdgeInsets.symmetric(vertical: 4),
       elevation: 8,
       child: ListTile(
         title: Text(
-          league.name ?? '',
+          league.name ?? 'no info',
           textAlign: TextAlign.start,
         ),
         subtitle: Text(league.tier ?? ''),
