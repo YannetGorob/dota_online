@@ -55,6 +55,7 @@ class HeroDetailCubit extends Cubit<HeroDetailsState> {
       );
     } else {
       emit(const HeroDetailsState.error());
+      emit(const HeroDetailsState.error());
     }
   }
 }

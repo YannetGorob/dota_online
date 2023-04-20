@@ -9,8 +9,11 @@ import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 part 'teams_list.dart';
+
 part 'matches_list.dart';
+
 part 'more_info_button.dart';
+
 part 'no_league_info_widget.dart';
 
 class LeagueDetailsBody extends StatefulWidget {
@@ -61,10 +64,15 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
     final showMoreText = context.l10n.showMore;
     final hideText = context.l10n.hide;
 
+
+
     return CustomScrollView(
       slivers: [
         if (widget.teams != null && widget.teams!.isNotEmpty)
-          TeamsList(teamCount: teamCount, teams: widget.teams),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            sliver: TeamsList(teamCount: teamCount, teams: widget.teams),
+          ),
         if (widget.teams != null &&
             widget.teams!.isNotEmpty &&
             widget.teams!.length > defaultTeamsCount)
@@ -96,7 +104,7 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
             showMoreText: showMoreText,
             onTap: () {
               setState(
-                    () {
+                () {
                   isFullMatchesListShown = !isFullMatchesListShown;
                   if (matchesCount == defaultMatchesCount) {
                     matchesCount = widget.matches!.length;

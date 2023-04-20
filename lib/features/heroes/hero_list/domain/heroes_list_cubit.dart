@@ -28,8 +28,10 @@ class HeroesListCubit extends Cubit<HeroesListState> {
         );
 
         if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
+        if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
       },
       failure: (_) {
+        if (!isClosed) emit(const HeroesListState.error());
         if (!isClosed) emit(const HeroesListState.error());
       },
     );
