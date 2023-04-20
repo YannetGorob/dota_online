@@ -1,16 +1,17 @@
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class PlayerListItem extends StatelessWidget {
-  const PlayerListItem({required this.player});
+  const PlayerListItem({required this.player, super.key});
 
   final PlayerModel player;
 
   @override
   Widget build(BuildContext context) {
     if (player.isCurrentTeamMember == null) {
-      return SizedBox();
+      return const SizedBox();
     }
 
     final Color? cardColor;
@@ -25,20 +26,16 @@ class PlayerListItem extends StatelessWidget {
       margin: const EdgeInsets.all(5),
       color: cardColor,
       child: Container(
-        padding: EdgeInsetsDirectional.all(10),
+        padding: const EdgeInsetsDirectional.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               player.name!,
-              style: Theme.of(context).textTheme.bodyMedium,
+              style: context.textStyle.appBarTextStyle,
             ),
             if (player.wins != null && player.gamesPlayed != null)
-              Text(
-                '${player.wins} wins out of ${player.gamesPlayed} games',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
+              Text('${player.wins} wins out of ${player.gamesPlayed} games'),
           ],
         ),
       ),

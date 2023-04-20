@@ -1,10 +1,11 @@
-import 'package:dota_online/core/api/models/player/player_recent_matches_model.dart';
+import 'package:dota_online/core/api/models/player/player_recent_matches/player_recent_matches_model.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/recent_matches/recent_matches_tile.dart';
 import 'package:flutter/material.dart';
 
 class RecentMatchesList extends StatelessWidget {
   const RecentMatchesList({
     required this.playerRecentMatches,
+    super.key,
     this.lastMatchTime,
   });
 
@@ -25,7 +26,6 @@ class RecentMatchesList extends StatelessWidget {
             assists: item.assists.toString(),
             lastMatchTime: lastMatchTime,
           );
-          return null;
         },
       ),
     );

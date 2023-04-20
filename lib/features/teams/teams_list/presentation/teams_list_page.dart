@@ -8,16 +8,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class TeamsListPage extends StatelessWidget {
+  const TeamsListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<TeamsListCubit>(
       create: (context) {
         return TeamsListCubit(
-        teamsProvider: locator.get<DotaApi>().teams,
-      )..loadInitialTeamsData();
+          teamsProvider: locator.get<DotaApi>().teams,
+        )..loadInitialTeamsData();
       },
-      child: TeamsListWidget(),
+      child: const TeamsListWidget(),
     );
   }
 }

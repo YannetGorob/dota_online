@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class MatchesListPage extends StatelessWidget {
-  const MatchesListPage({Key? key}) : super(key: key);
+  const MatchesListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class MatchesListPage extends StatelessWidget {
       create: (context) => MatchesListCubit(
         matchesProvider: locator.get<DotaApi>().matches,
       )..loadInitialMatchesData(),
-      child: MatchesListWidget(),
+      child: const MatchesListWidget(),
     );
   }
 }

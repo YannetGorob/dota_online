@@ -5,15 +5,20 @@ import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/leagues/league_details/presentation/widgets/league_match_tile.dart';
 import 'package:dota_online/features/teams/teams_list/presentation/widgets/teams_list_item.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
-// TODO: refactoring!
+part 'teams_list.dart';
+part 'matches_list.dart';
+part 'more_info_button.dart';
+part 'no_league_info_widget.dart';
+
 class LeagueDetailsBody extends StatefulWidget {
   const LeagueDetailsBody({
-    super.key,
     required this.leagueModel,
     this.matches,
     this.teams,
+    super.key,
   });
 
   final LeagueModel? leagueModel;
@@ -25,29 +30,25 @@ class LeagueDetailsBody extends StatefulWidget {
 }
 
 class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
-
   static const int defaultMatchesCount = 3;
   static const int defaultTeamsCount = 6;
-  static const String showMoreText = 'show more...';
-  static const String hideText = 'hide';
 
   int teamCount = 0;
   int matchesCount = 0;
-  late String matchesButtonText;
-  late String teamsButtonText;
+
+  bool isFullTeamsListShown = false;
+  bool isFullMatchesListShown = false;
 
   @override
   void initState() {
     super.initState();
 
-    teamsButtonText = showMoreText;
     if (widget.teams != null) {
       teamCount = widget.teams!.length > defaultTeamsCount
           ? defaultTeamsCount
           : widget.teams!.length;
     }
 
-    matchesButtonText = showMoreText;
     if (widget.matches != null) {
       matchesCount = widget.matches!.length > defaultMatchesCount
           ? defaultMatchesCount
@@ -57,100 +58,58 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
 
   @override
   Widget build(BuildContext context) {
+    final showMoreText = context.l10n.showMore;
+    final hideText = context.l10n.hide;
+
     return CustomScrollView(
       slivers: [
         if (widget.teams != null && widget.teams!.isNotEmpty)
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            sliver: SliverGrid(
-              delegate: SliverChildBuilderDelegate(
-                childCount: teamCount,
-                (context, index) {
-                  final item = widget.teams![index];
-                  return InkWell(
-                    onTap: () {
-                      if (item.teamId != null) {
-                        context.router.push(
-                          TeamDetailsRoute(team: item),
-                        );
-                      }
-                    },
-                    child: TeamsListItem(team: item),
-                  );
-                },
-              ),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 15,
-                crossAxisSpacing: 15,
-                crossAxisCount: 3,
-                childAspectRatio: 0.7,
-              ),
-            ),
-          ),
+          TeamsList(teamCount: teamCount, teams: widget.teams),
         if (widget.teams != null &&
             widget.teams!.isNotEmpty &&
             widget.teams!.length > defaultTeamsCount)
-          SliverToBoxAdapter(
-            child: GestureDetector(
-              child: Center(child: Text(teamsButtonText)),
-              onTap: () {
-                setState(() {
+          MoreInfoButton(
+            isFullListShown: isFullTeamsListShown,
+            hideText: hideText,
+            showMoreText: showMoreText,
+            onTap: () {
+              setState(
+                () {
+                  isFullTeamsListShown = !isFullTeamsListShown;
                   if (teamCount == defaultTeamsCount) {
                     teamCount = widget.teams!.length;
-                    teamsButtonText = hideText;
                   } else {
                     teamCount = defaultTeamsCount;
-                    teamsButtonText = showMoreText;
                   }
-                });
-              },
-            ),
+                },
+              );
+            },
           ),
         if (widget.matches != null && widget.matches!.isNotEmpty)
-          SliverPadding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                childCount: matchesCount,
-                (context, index) {
-                  final item = widget.matches![index];
-
-                  if (item.leagueMatch.direTeamName != null &&
-                      item.leagueMatch.radiantTeamName != null)
-                    return LeagueMatchTile(
-                      item: item,
-                    );
-                  return null;
-                },
-              ),
-            ),
-          ),
+          MatchesList(matchesCount: matchesCount, matches: widget.matches),
         if (widget.matches != null &&
             widget.matches!.isNotEmpty &&
             widget.matches!.length > defaultMatchesCount)
-          SliverToBoxAdapter(
-            child: GestureDetector(
-              child: Center(child: Text(matchesButtonText)),
-              onTap: () {
-                setState(() {
+          MoreInfoButton(
+            isFullListShown: isFullMatchesListShown,
+            hideText: hideText,
+            showMoreText: showMoreText,
+            onTap: () {
+              setState(
+                    () {
+                  isFullMatchesListShown = !isFullMatchesListShown;
                   if (matchesCount == defaultMatchesCount) {
-                    matchesCount = widget.teams!.length;
-                    matchesButtonText = hideText;
+                    matchesCount = widget.matches!.length;
                   } else {
                     matchesCount = defaultMatchesCount;
-                    matchesButtonText = showMoreText;
                   }
-                });
-              },
-            ),
+                },
+              );
+            },
           ),
         if ((widget.matches == null || widget.matches!.isEmpty) &&
             (widget.teams == null || widget.teams!.isEmpty))
-          SliverToBoxAdapter(
-            child: Center(
-              child: Text('no info'),
-            ),
-          )
+          const NoLeagueInfoWidget()
       ],
     );
   }

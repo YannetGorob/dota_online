@@ -1,5 +1,5 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/app_bar/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';

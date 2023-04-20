@@ -1,6 +1,7 @@
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ class TeamMatchListItem extends StatelessWidget {
   const TeamMatchListItem({
     required this.teamMatch,
     required this.team,
+    super.key,
   });
 
   final TeamMatches teamMatch;
@@ -21,35 +23,32 @@ class TeamMatchListItem extends StatelessWidget {
     final canShowMatch = teamMatch.opposingTeamName != null;
 
     if (!canShowMatch) {
-      return SizedBox();
+      return const SizedBox();
     }
 
     final Color borderColor;
 
-    if(teamMatch.radiant == true){
+    if (teamMatch.radiant == true) {
       borderColor = context.dotaColors.radiantColor;
-    }else{
+    } else {
       borderColor = context.dotaColors.direColor;
     }
 
-    return Card(
-      color: Colors.black38,
-      margin: const EdgeInsets.all(5),
-      child: Container(
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(width: 5, color: borderColor),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
-            Divider(color: context.dotaColors.dotaWhiteColor),
-            _MatchParamsWidget(teamMatch: teamMatch),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: context.dotaColors.dotaBlackColor,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(width: 4, color: borderColor),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          _MatchOpponentsWidget(teamMatch: teamMatch, team: team),
+          Divider(color: context.dotaColors.dotaWhiteColor),
+          _MatchParamsWidget(teamMatch: teamMatch),
+        ],
       ),
     );
   }
@@ -75,7 +74,7 @@ class _MatchOpponentsWidget extends StatelessWidget {
             img: team.logoUrl,
           ),
         ),
-        Text('  VS  ', style: Theme.of(context).textTheme.bodyMedium),
+        Text('  VS  ', style: context.textStyle.auxiliaryTextStyle),
         Expanded(
           child: _TeamItem(
             teamName: teamMatch.opposingTeamName.toString(),
@@ -102,17 +101,17 @@ class _MatchParamsWidget extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.timer),
+              const Icon(Icons.timer),
               Text(
                 DateTimeFormatter().formatMatchDuration(teamMatch.duration!),
-                style: Theme.of(context).textTheme.titleMedium,
+                style: context.textStyle.primaryTextStyle,
               ),
             ],
           ),
         if (teamMatch.startTime != null)
           Text(
             DateTimeFormatter().formatMatchStartTime(teamMatch.startTime!),
-            style: Theme.of(context).textTheme.titleMedium,
+            style: context.textStyle.primaryTextStyle,
           ),
       ],
     );
@@ -136,11 +135,13 @@ class _TeamItem extends StatelessWidget {
           imageUrl: img,
           height: 80,
         ),
-        SizedBox(height: 5),
-        Text(teamName,
-            overflow: TextOverflow.ellipsis,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium),
+        const SizedBox(height: 5),
+        Text(
+          teamName,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
+          style: context.textStyle.primaryTextStyle,
+        )
       ],
     );
   }

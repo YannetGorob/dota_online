@@ -30,49 +30,64 @@ class LeagueDetailsCubit extends Cubit<LeagueDetailState> {
     );
 
     if (teams == null && matches == null) {
-      emit(LeagueDetailState.error());
+      emit(const LeagueDetailState.error());
     } else {
-      // TODO(yehor) возможно удалить танцы с бубном!
-      List<LeagueMatchDTO> matchesDTO = [];
+      final matchesDTO = _fillMatchesDTO(matches!, teams!);
 
-      for (var i = 0; i < matches!.length; i++) {
-        final int radiantTeamId = matches[i].radiantTeamId ?? 0;
-        final int direTeamId = matches[i].direTeamId ?? 0;
+      emit(
+        LeagueDetailState.loaded(
+          teams: teams,
+          matches: matchesDTO,
+        ),
+      );
+    }
+  }
 
-        if (radiantTeamId == direTeamId) break;
+  ///The method[_fillMatchesDTO] populates a modelDTO object with information
+  // from two lists: List<LeagueMatch> matches and List<TeamModel> teams.
+  // The team's name and logo are retrieved from the
+  // teams list based on the team ID. The method loops through the matches
+  // list to find matches involving the team and adds them to the modelDTO.
+  //Once all relevant matches have been added, the list of  modelDTO is returned
+  List<LeagueMatchDTO> _fillMatchesDTO(
+    List<LeagueMatch> matches,
+    List<TeamModel> teams,
+  ) {
+    final matchesDTO = <LeagueMatchDTO>[];
 
-        String? tempRadiantName;
-        String? tempDireName;
-        String? tempRadiantLogo;
-        String? tempDireLogo;
+    for (var i = 0; i < matches.length; i++) {
+      final radiantTeamId = matches[i].radiantTeamId ?? 0;
+      final direTeamId = matches[i].direTeamId ?? 0;
 
-        for (var j = 0; j < teams!.length; j++) {
-          if (teams[j].teamId == radiantTeamId) {
-            tempRadiantName = teams[j].name;
-            tempRadiantLogo = teams[j].logoUrl;
-          }
-          if (teams[j].teamId == direTeamId) {
-            tempDireName = teams[j].name;
-            tempDireLogo = teams[j].logoUrl;
-          }
+      if (radiantTeamId == direTeamId) break;
+
+      String? tempRadiantName;
+      String? tempDireName;
+      String? tempRadiantLogo;
+      String? tempDireLogo;
+
+      for (var j = 0; j < teams.length; j++) {
+        if (teams[j].teamId == radiantTeamId) {
+          tempRadiantName = teams[j].name;
+          tempRadiantLogo = teams[j].logoUrl;
         }
-
-        matchesDTO.add(
-          LeagueMatchDTO(
-            leagueMatch: matches[i].copyWith(
-              radiantTeamName: tempRadiantName,
-              direTeamName: tempDireName,
-            ),
-            direTeamLogo: tempDireLogo,
-            radiantTeamLogo: tempRadiantLogo,
-          ),
-        );
+        if (teams[j].teamId == direTeamId) {
+          tempDireName = teams[j].name;
+          tempDireLogo = teams[j].logoUrl;
+        }
       }
 
-      emit(LeagueDetailState.loaded(
-        teams: teams,
-        matches: matchesDTO,
-      ));
+      matchesDTO.add(
+        LeagueMatchDTO(
+          leagueMatch: matches[i].copyWith(
+            radiantTeamName: tempRadiantName,
+            direTeamName: tempDireName,
+          ),
+          direTeamLogo: tempDireLogo,
+          radiantTeamLogo: tempRadiantLogo,
+        ),
+      );
     }
+    return matchesDTO;
   }
 }

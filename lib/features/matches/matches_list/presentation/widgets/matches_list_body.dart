@@ -5,7 +5,7 @@ import 'package:dota_online/features/matches/matches_list/presentation/widgets/m
 import 'package:flutter/material.dart';
 
 class MatchesListBody extends StatelessWidget {
-  const MatchesListBody({required this.matches});
+  const MatchesListBody({required this.matches, super.key});
 
   final List<MatchModel> matches;
 

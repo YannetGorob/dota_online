@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,10 +13,9 @@ class DotaAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
-              title ?? '',
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
+      title: title != null
+          ? Text(title!, style: context.textStyle.appBarTextStyle)
+          : const SizedBox(),
       backgroundColor: Theme.of(context).primaryColor,
       elevation: 0,
       centerTitle: true,

@@ -9,6 +9,8 @@ class DotaSearchField extends StatelessWidget {
     this.prefixIcon,
     this.onFieldSubmitted,
     this.hintText,
+    this.onChanged,
+    this.onTap,
   });
 
   final TextEditingController? controller;
@@ -17,10 +19,14 @@ class DotaSearchField extends StatelessWidget {
   final Widget? prefixIcon;
   final void Function(String)? onFieldSubmitted;
   final String? hintText;
+  final void Function(String)? onChanged;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: onTap,
+      onChanged: onChanged,
       controller: controller,
       textInputAction: textInputAction,
       onFieldSubmitted: onFieldSubmitted,
@@ -36,8 +42,7 @@ class DotaSearchField extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide:
-              BorderSide(width: 2, color: Theme.of(context).splashColor),
+          borderSide: BorderSide(width: 2, color: Colors.grey.shade500),
           borderRadius: BorderRadius.circular(100),
         ),
       ),

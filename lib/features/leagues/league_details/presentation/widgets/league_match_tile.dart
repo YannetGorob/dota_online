@@ -1,12 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/league_match_dto.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 
 class LeagueMatchTile extends StatelessWidget {
-  const LeagueMatchTile({super.key, required this.item});
+  const LeagueMatchTile({
+    required this.item,
+    super.key,
+  });
 
   final LeagueMatchDTO item;
 
@@ -14,20 +19,19 @@ class LeagueMatchTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 8,
-      margin: EdgeInsets.all(4),
+      margin: const EdgeInsets.all(4),
       child: InkWell(
         onTap: () {
           if (item.leagueMatch.matchId != null) {
             context.router.push(
-              MatchDetailsRoute(
-                  matchId: item.leagueMatch.matchId!),
+              MatchDetailsRoute(matchId: item.leagueMatch.matchId!),
             );
           }
         },
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8),
               child: Row(
                 children: [
                   Expanded(
@@ -37,22 +41,19 @@ class LeagueMatchTile extends StatelessWidget {
                           imageUrl: item.radiantTeamLogo,
                           height: 60,
                         ),
-                        SizedBox(height: 6),
+                        const SizedBox(height: 6),
                         Text(
                           item.leagueMatch.radiantTeamName!,
                           maxLines: 1,
                           textAlign: TextAlign.center,
                         ),
                       ],
-                      crossAxisAlignment:
-                      CrossAxisAlignment.center,
                     ),
                   ),
                   Text(
-                      '${item.leagueMatch.radiantScore} : ${item.leagueMatch.direScore}',
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge),
+                    '${item.leagueMatch.radiantScore} : ${item.leagueMatch.direScore}',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
                   Expanded(
                     child: Column(
                       children: [
@@ -60,7 +61,7 @@ class LeagueMatchTile extends StatelessWidget {
                           imageUrl: item.direTeamLogo,
                           height: 60,
                         ),
-                        SizedBox(height: 6),
+                        const SizedBox(height: 6),
                         Text(
                           item.leagueMatch.direTeamName!,
                           maxLines: 1,
@@ -72,16 +73,26 @@ class LeagueMatchTile extends StatelessWidget {
                 ],
               ),
             ),
-            if(item.leagueMatch.duration != null)
+            if (item.leagueMatch.duration != null)
               Padding(
-                padding: const EdgeInsets.all(6.0),
+                padding: const EdgeInsets.all(6),
                 child: Align(
                   alignment: Alignment.topCenter,
-                  child: Text(
-                    DateTimeFormatter().formatMatchDuration(
-                      item.leagueMatch.duration!,
-                    ),
-                    style: Theme.of(context).textTheme.bodySmall,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.timer,
+                        color: context.dotaColors.dotaGreyColor,
+                        size: 16,
+                      ),
+                      Text(
+                        DateTimeFormatter().formatMatchDuration(
+                          item.leagueMatch.duration!,
+                        ),
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ],
                   ),
                 ),
               )

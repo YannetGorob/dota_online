@@ -14,7 +14,8 @@ class MatchesProvider {
       path: '/proMatches',
       parseListResponse: (json) {
         return List<MatchModel>.from(
-            json.map((e) => MatchModel.fromJson(e as Map<String, dynamic>)));
+          json.map((e) => MatchModel.fromJson(e as Map<String, dynamic>)),
+        );
       },
     );
   }
@@ -24,7 +25,8 @@ class MatchesProvider {
       path: '/heroes/$heroId/matches',
       parseListResponse: (json) {
         return List<MatchByHeroId>.from(
-            json.map((e) => MatchByHeroId.fromJson(e as Map<String, dynamic>)));
+          json.map((e) => MatchByHeroId.fromJson(e as Map<String, dynamic>)),
+        );
       },
     );
   }

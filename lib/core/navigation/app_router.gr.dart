@@ -18,31 +18,31 @@ abstract class _$AppRouter extends RootStackRouter {
     TeamsRouter.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: TeamsRouterPage(),
+        child: const TeamsRouterPage(),
       );
     },
     MatchesRouter.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: MatchesRouterPage(),
+        child: const MatchesRouterPage(),
       );
     },
     HeroesRouter.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: HeroesRouterPage(),
+        child: const HeroesRouterPage(),
       );
     },
     LeaguesRouter.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LeaguesRouterPage(),
+        child: const LeaguesRouterPage(),
       );
     },
     PlayersRouter.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProPlayersRouterPage(),
+        child: const ProPlayersRouterPage(),
       );
     },
     HomeRoute.name: (routeData) {
@@ -95,7 +95,10 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<SearchPlayerResultRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: SearchPlayerResultPage(searchValue: args.searchValue),
+        child: SearchPlayerResultPage(
+          searchValue: args.searchValue,
+          key: args.key,
+        ),
       );
     },
     PlayerDetailsRoute.name: (routeData) {
@@ -104,6 +107,7 @@ abstract class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: PlayerDetailsPage(
           accountId: args.accountId,
+          key: args.key,
           playerName: args.playerName,
           lastMatchTime: args.lastMatchTime,
         ),
@@ -112,20 +116,23 @@ abstract class _$AppRouter extends RootStackRouter {
     ProPlayersListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: ProPlayersListPage(),
+        child: const ProPlayersListPage(),
       );
     },
     LeagueListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LeagueListPage(),
+        child: const LeagueListPage(),
       );
     },
     LeagueDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<LeagueDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: LeagueDetailsPage(leagueModel: args.leagueModel),
+        child: LeagueDetailsPage(
+          leagueModel: args.leagueModel,
+          key: args.key,
+        ),
       );
     },
     MatchesListRoute.name: (routeData) {
@@ -138,27 +145,36 @@ abstract class _$AppRouter extends RootStackRouter {
       final args = routeData.argsAs<MatchDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: MatchDetailsPage(matchId: args.matchId),
+        child: MatchDetailsPage(
+          matchId: args.matchId,
+          key: args.key,
+        ),
       );
     },
     TeamsListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: TeamsListPage(),
+        child: const TeamsListPage(),
       );
     },
     TeamDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<TeamDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: TeamDetailsPage(team: args.team),
+        child: TeamDetailsPage(
+          team: args.team,
+          key: args.key,
+        ),
       );
     },
     PlayersListRoute.name: (routeData) {
       final args = routeData.argsAs<PlayersListRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: PlayersListPage(players: args.players),
+        child: PlayersListPage(
+          players: args.players,
+          key: args.key,
+        ),
       );
     },
   };
@@ -402,10 +418,14 @@ class SearchPlayerResultRoute
     extends PageRouteInfo<SearchPlayerResultRouteArgs> {
   SearchPlayerResultRoute({
     required String searchValue,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           SearchPlayerResultRoute.name,
-          args: SearchPlayerResultRouteArgs(searchValue: searchValue),
+          args: SearchPlayerResultRouteArgs(
+            searchValue: searchValue,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -416,13 +436,18 @@ class SearchPlayerResultRoute
 }
 
 class SearchPlayerResultRouteArgs {
-  const SearchPlayerResultRouteArgs({required this.searchValue});
+  const SearchPlayerResultRouteArgs({
+    required this.searchValue,
+    this.key,
+  });
 
   final String searchValue;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue}';
+    return 'SearchPlayerResultRouteArgs{searchValue: $searchValue, key: $key}';
   }
 }
 
@@ -431,6 +456,7 @@ class SearchPlayerResultRouteArgs {
 class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
   PlayerDetailsRoute({
     required int accountId,
+    Key? key,
     String? playerName,
     String? lastMatchTime,
     List<PageRouteInfo>? children,
@@ -438,6 +464,7 @@ class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
           PlayerDetailsRoute.name,
           args: PlayerDetailsRouteArgs(
             accountId: accountId,
+            key: key,
             playerName: playerName,
             lastMatchTime: lastMatchTime,
           ),
@@ -453,11 +480,14 @@ class PlayerDetailsRoute extends PageRouteInfo<PlayerDetailsRouteArgs> {
 class PlayerDetailsRouteArgs {
   const PlayerDetailsRouteArgs({
     required this.accountId,
+    this.key,
     this.playerName,
     this.lastMatchTime,
   });
 
   final int accountId;
+
+  final Key? key;
 
   final String? playerName;
 
@@ -465,7 +495,7 @@ class PlayerDetailsRouteArgs {
 
   @override
   String toString() {
-    return 'PlayerDetailsRouteArgs{accountId: $accountId, playerName: $playerName, lastMatchTime: $lastMatchTime}';
+    return 'PlayerDetailsRouteArgs{accountId: $accountId, key: $key, playerName: $playerName, lastMatchTime: $lastMatchTime}';
   }
 }
 
@@ -502,10 +532,14 @@ class LeagueListRoute extends PageRouteInfo<void> {
 class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
   LeagueDetailsRoute({
     required LeagueModel leagueModel,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           LeagueDetailsRoute.name,
-          args: LeagueDetailsRouteArgs(leagueModel: leagueModel),
+          args: LeagueDetailsRouteArgs(
+            leagueModel: leagueModel,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -516,13 +550,18 @@ class LeagueDetailsRoute extends PageRouteInfo<LeagueDetailsRouteArgs> {
 }
 
 class LeagueDetailsRouteArgs {
-  const LeagueDetailsRouteArgs({required this.leagueModel});
+  const LeagueDetailsRouteArgs({
+    required this.leagueModel,
+    this.key,
+  });
 
   final LeagueModel leagueModel;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel}';
+    return 'LeagueDetailsRouteArgs{leagueModel: $leagueModel, key: $key}';
   }
 }
 
@@ -545,10 +584,14 @@ class MatchesListRoute extends PageRouteInfo<void> {
 class MatchDetailsRoute extends PageRouteInfo<MatchDetailsRouteArgs> {
   MatchDetailsRoute({
     required int matchId,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           MatchDetailsRoute.name,
-          args: MatchDetailsRouteArgs(matchId: matchId),
+          args: MatchDetailsRouteArgs(
+            matchId: matchId,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -559,13 +602,18 @@ class MatchDetailsRoute extends PageRouteInfo<MatchDetailsRouteArgs> {
 }
 
 class MatchDetailsRouteArgs {
-  const MatchDetailsRouteArgs({required this.matchId});
+  const MatchDetailsRouteArgs({
+    required this.matchId,
+    this.key,
+  });
 
   final int matchId;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'MatchDetailsRouteArgs{matchId: $matchId}';
+    return 'MatchDetailsRouteArgs{matchId: $matchId, key: $key}';
   }
 }
 
@@ -588,10 +636,14 @@ class TeamsListRoute extends PageRouteInfo<void> {
 class TeamDetailsRoute extends PageRouteInfo<TeamDetailsRouteArgs> {
   TeamDetailsRoute({
     required TeamModel team,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           TeamDetailsRoute.name,
-          args: TeamDetailsRouteArgs(team: team),
+          args: TeamDetailsRouteArgs(
+            team: team,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -602,13 +654,18 @@ class TeamDetailsRoute extends PageRouteInfo<TeamDetailsRouteArgs> {
 }
 
 class TeamDetailsRouteArgs {
-  const TeamDetailsRouteArgs({required this.team});
+  const TeamDetailsRouteArgs({
+    required this.team,
+    this.key,
+  });
 
   final TeamModel team;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'TeamDetailsRouteArgs{team: $team}';
+    return 'TeamDetailsRouteArgs{team: $team, key: $key}';
   }
 }
 
@@ -617,10 +674,14 @@ class TeamDetailsRouteArgs {
 class PlayersListRoute extends PageRouteInfo<PlayersListRouteArgs> {
   PlayersListRoute({
     required List<PlayerModel> players,
+    Key? key,
     List<PageRouteInfo>? children,
   }) : super(
           PlayersListRoute.name,
-          args: PlayersListRouteArgs(players: players),
+          args: PlayersListRouteArgs(
+            players: players,
+            key: key,
+          ),
           initialChildren: children,
         );
 
@@ -631,12 +692,17 @@ class PlayersListRoute extends PageRouteInfo<PlayersListRouteArgs> {
 }
 
 class PlayersListRouteArgs {
-  const PlayersListRouteArgs({required this.players});
+  const PlayersListRouteArgs({
+    required this.players,
+    this.key,
+  });
 
   final List<PlayerModel> players;
 
+  final Key? key;
+
   @override
   String toString() {
-    return 'PlayersListRouteArgs{players: $players}';
+    return 'PlayersListRouteArgs{players: $players, key: $key}';
   }
 }

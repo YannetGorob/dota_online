@@ -5,10 +5,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeWidget extends StatelessWidget {
+  const HomeWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      routes: [
+      routes: const [
         ProPlayersListRoute(),
         MatchesListRoute(),
         TeamsListRoute(),
@@ -21,23 +23,23 @@ class HomeWidget extends StatelessWidget {
           onTap: tabsRouter.setActiveIndex,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: context.l10n.accounts,
+              icon: const Icon(Icons.person),
+              label: context.l10n.players,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.emoji_events_rounded),
+              icon: const Icon(Icons.emoji_events_rounded),
               label: context.l10n.matchesTab,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.people),
+              icon: const Icon(Icons.people),
               label: context.l10n.teamsTab,
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.ant),
+              icon: const Icon(CupertinoIcons.ant),
               label: context.l10n.heroesTab,
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.text_aligncenter),
+              icon: const Icon(CupertinoIcons.text_aligncenter),
               label: context.l10n.leagueTab,
             ),
           ],

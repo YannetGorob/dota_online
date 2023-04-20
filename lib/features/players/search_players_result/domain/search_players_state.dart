@@ -1,4 +1,4 @@
-import 'package:dota_online/core/api/models/player/search_player_model.dart';
+import 'package:dota_online/core/api/models/player/search_player/search_player_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'search_players_state.freezed.dart';

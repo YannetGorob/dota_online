@@ -22,13 +22,8 @@ class HeroesListCubit extends Cubit<HeroesListState> {
 
         heroesData.sort(
           (a, b) {
-            if (a.localizedName == null) {
-              return 1;
-            } else if (b.localizedName == null) {
-              return -1;
-            } else {
-              return a.localizedName!.compareTo(b.localizedName!);
-            }
+            heroesData.removeWhere((element) => element.localizedName == null);
+            return a.localizedName!.compareTo(b.localizedName!);
           },
         );
 

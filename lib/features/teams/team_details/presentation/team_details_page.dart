@@ -9,7 +9,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class TeamDetailsPage extends StatelessWidget {
-  TeamDetailsPage({required this.team});
+  const TeamDetailsPage({
+    required this.team,
+    super.key,
+  });
 
   final TeamModel team;
 

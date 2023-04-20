@@ -16,5 +16,7 @@ class TeamModel with _$TeamModel {
     String? logoUrl,
   }) = _TeamModel;
 
-  factory TeamModel.fromJson(Map<String, dynamic> json) => _$TeamModelFromJson(json);
+  factory TeamModel.fromJson(Map<String, dynamic> json) {
+    return _$TeamModelFromJson(json);
+  }
 }

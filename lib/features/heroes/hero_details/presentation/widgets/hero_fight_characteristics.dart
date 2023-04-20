@@ -21,7 +21,7 @@ class HeroFightCharacteristics extends StatelessWidget {
           if (image != null)
             Padding(
               padding: const EdgeInsets.only(right: 15),
-              child: image!,
+              child: image,
             ),
           if (tittle != null)
             Text(

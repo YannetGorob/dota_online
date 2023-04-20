@@ -10,6 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class PlayerDetailsPage extends StatelessWidget {
   const PlayerDetailsPage({
     required this.accountId,
+    super.key,
     this.playerName,
     this.lastMatchTime,
   });
@@ -23,8 +24,8 @@ class PlayerDetailsPage extends StatelessWidget {
     return BlocProvider<PlayerDetailsCubit>(
       create: (context) {
         return PlayerDetailsCubit(
-            playersProvider: locator.get<DotaApi>().players)
-          ..loadPlayerDetailsData(accountId);
+          playersProvider: locator.get<DotaApi>().players,
+        )..loadPlayerDetailsData(accountId);
       },
       child: PlayerDetailsWidget(
         playerName: playerName,

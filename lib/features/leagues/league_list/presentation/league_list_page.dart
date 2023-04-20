@@ -8,15 +8,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class LeagueListPage extends StatelessWidget {
+  const LeagueListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<LeagueListCubit>(
       create: (context) {
-        return LeagueListCubit(leagueProvider: locator.get<DotaApi>().leagues
+        return LeagueListCubit(
+          leagueProvider: locator.get<DotaApi>().leagues,
         )..loadInitialLeaguesData();
       },
-      child: LeagueListWidget(),
+      child: const LeagueListWidget(),
     );
   }
 }
