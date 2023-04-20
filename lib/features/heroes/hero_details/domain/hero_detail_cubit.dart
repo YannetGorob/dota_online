@@ -45,39 +45,46 @@ class HeroDetailCubit extends Cubit<HeroDetailsState> {
     );
 
     if (heroMatches != null && heroMatchups != null && heroesStats != null) {
-      final heroMatchupsDTO = <HeroMatchupDTO>[];
-
-      for (var i = 0; i < heroMatchups.length; i++) {
-        String? heroName;
-        String? heroAvatarUrl;
-
-        if (heroMatchups[i].heroId != null) {
-          for (var j = 0; j < heroesStats.length; j++) {
-            if (heroMatchups[i].heroId == heroesStats[j].id) {
-              heroName = heroesStats[j].localizedName;
-              heroAvatarUrl = heroesStats[j].img;
-            }
-          }
-        }
-
-        heroMatchupsDTO.add(
-          HeroMatchupDTO(
-            heroMatchup: heroMatchups[i],
-            heroAvatarUrl: heroAvatarUrl,
-            heroName: heroName,
-          ),
-        );
-      }
+      final heroMatchupsDTO = _createHeroMatchupsDTO(heroMatchups, heroesStats);
 
       emit(
         HeroDetailsState.loaded(
           matchByHeroId: heroMatches,
           heroMatchupDTO: heroMatchupsDTO,
-          heroes: heroesStats,
         ),
       );
     } else {
       emit(const HeroDetailsState.error());
     }
   }
+}
+
+List<HeroMatchupDTO> _createHeroMatchupsDTO(
+  List<MatchupByHeroId> heroMatchups,
+  List<HeroStats> heroes,
+) {
+  final heroMatchupsDTO = <HeroMatchupDTO>[];
+
+  for (var i = 0; i < heroMatchups.length; i++) {
+    String? heroName;
+    String? heroAvatarUrl;
+
+    if (heroMatchups[i].heroId != null) {
+      for (var j = 0; j < heroes.length; j++) {
+        if (heroMatchups[i].heroId == heroes[j].id) {
+          heroName = heroes[j].localizedName;
+          heroAvatarUrl = heroes[j].img;
+        }
+      }
+    }
+
+    heroMatchupsDTO.add(
+      HeroMatchupDTO(
+        heroMatchup: heroMatchups[i],
+        heroAvatarUrl: heroAvatarUrl,
+        heroName: heroName,
+      ),
+    );
+  }
+  return heroMatchupsDTO;
 }

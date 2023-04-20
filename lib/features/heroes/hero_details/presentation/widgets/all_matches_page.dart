@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/match_by_hero_id_card.dart';
@@ -29,10 +30,7 @@ class AllMatchesPage extends StatelessWidget {
         itemBuilder: (ctx, index) {
           if (matches[index].matchId != null) {
             return Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 4,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               child: GestureDetector(
                 onTap: () {
                   context.router.push(
@@ -43,7 +41,7 @@ class AllMatchesPage extends StatelessWidget {
               ),
             );
           }
-          return null;
+          return const DotaErrorWidget();
         },
       ),
     );

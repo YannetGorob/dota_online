@@ -45,6 +45,7 @@ class HeroDetailsBody extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: TextButton(
+                //move to theme
                 style: TextButton.styleFrom(
                   side: const BorderSide(width: 3, color: Colors.grey),
                 ),
@@ -103,6 +104,7 @@ class HeroDetailsBody extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: TextButton(
+                //move to theme
                 style: TextButton.styleFrom(
                   side: const BorderSide(width: 3, color: Colors.grey),
                 ),

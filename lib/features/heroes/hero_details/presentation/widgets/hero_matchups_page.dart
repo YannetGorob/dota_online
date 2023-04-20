@@ -32,10 +32,7 @@ class HeroMatchupsPage extends StatelessWidget {
               item.heroMatchup.wins! / item.heroMatchup.gamesPlayed! * 100;
 
           return Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -49,19 +46,10 @@ class HeroMatchupsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Expanded(
-                          child: Column(
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(15),
-                                child: DotaCachedImage(
-                                  imageUrl: heroAvatar,
-                                ),
-                              ),
-                              Text(
-                                heroName,
-                                maxLines: 1,
-                              ),
-                            ],
+                          child: HeroInfoCard(
+                            heroAvatar: heroAvatar,
+                            heroName: heroName,
+                            item: item,
                           ),
                         ),
                         const SizedBox(width: 5),
@@ -96,7 +84,6 @@ class HeroMatchupsPage extends StatelessWidget {
                           Expanded(
                             child: Text(
                               '${context.l10n.gamesPlayed} ${item.heroMatchup.gamesPlayed}',
-                              overflow: TextOverflow.fade,
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -104,7 +91,6 @@ class HeroMatchupsPage extends StatelessWidget {
                           Expanded(
                             child: Text(
                               '${context.l10n.winRate} ${winRate.toStringAsFixed(0)}%',
-                              overflow: TextOverflow.fade,
                               textAlign: TextAlign.center,
                             ),
                           ),

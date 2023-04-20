@@ -20,7 +20,7 @@ mixin _$HeroDetailsState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)
+            List<HeroMatchupDTO> heroMatchupDTO)
         loaded,
     required TResult Function(String? message) error,
   }) =>
@@ -29,7 +29,7 @@ mixin _$HeroDetailsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult? Function(String? message)? error,
   }) =>
@@ -38,7 +38,7 @@ mixin _$HeroDetailsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -124,7 +124,7 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)
+            List<HeroMatchupDTO> heroMatchupDTO)
         loaded,
     required TResult Function(String? message) error,
   }) {
@@ -136,7 +136,7 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult? Function(String? message)? error,
   }) {
@@ -148,7 +148,7 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
@@ -204,9 +204,7 @@ abstract class _$$LoadedCopyWith<$Res> {
       __$$LoadedCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {List<MatchByHeroId> matchByHeroId,
-      List<HeroMatchupDTO> heroMatchupDTO,
-      List<HeroStats> heroes});
+      {List<MatchByHeroId> matchByHeroId, List<HeroMatchupDTO> heroMatchupDTO});
 }
 
 /// @nodoc
@@ -221,7 +219,6 @@ class __$$LoadedCopyWithImpl<$Res>
   $Res call({
     Object? matchByHeroId = null,
     Object? heroMatchupDTO = null,
-    Object? heroes = null,
   }) {
     return _then(_$Loaded(
       matchByHeroId: null == matchByHeroId
@@ -232,10 +229,6 @@ class __$$LoadedCopyWithImpl<$Res>
           ? _value._heroMatchupDTO
           : heroMatchupDTO // ignore: cast_nullable_to_non_nullable
               as List<HeroMatchupDTO>,
-      heroes: null == heroes
-          ? _value._heroes
-          : heroes // ignore: cast_nullable_to_non_nullable
-              as List<HeroStats>,
     ));
   }
 }
@@ -245,11 +238,9 @@ class __$$LoadedCopyWithImpl<$Res>
 class _$Loaded implements Loaded {
   const _$Loaded(
       {required final List<MatchByHeroId> matchByHeroId,
-      required final List<HeroMatchupDTO> heroMatchupDTO,
-      required final List<HeroStats> heroes})
+      required final List<HeroMatchupDTO> heroMatchupDTO})
       : _matchByHeroId = matchByHeroId,
-        _heroMatchupDTO = heroMatchupDTO,
-        _heroes = heroes;
+        _heroMatchupDTO = heroMatchupDTO;
 
   final List<MatchByHeroId> _matchByHeroId;
   @override
@@ -267,17 +258,9 @@ class _$Loaded implements Loaded {
     return EqualUnmodifiableListView(_heroMatchupDTO);
   }
 
-  final List<HeroStats> _heroes;
-  @override
-  List<HeroStats> get heroes {
-    if (_heroes is EqualUnmodifiableListView) return _heroes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_heroes);
-  }
-
   @override
   String toString() {
-    return 'HeroDetailsState.loaded(matchByHeroId: $matchByHeroId, heroMatchupDTO: $heroMatchupDTO, heroes: $heroes)';
+    return 'HeroDetailsState.loaded(matchByHeroId: $matchByHeroId, heroMatchupDTO: $heroMatchupDTO)';
   }
 
   @override
@@ -288,16 +271,14 @@ class _$Loaded implements Loaded {
             const DeepCollectionEquality()
                 .equals(other._matchByHeroId, _matchByHeroId) &&
             const DeepCollectionEquality()
-                .equals(other._heroMatchupDTO, _heroMatchupDTO) &&
-            const DeepCollectionEquality().equals(other._heroes, _heroes));
+                .equals(other._heroMatchupDTO, _heroMatchupDTO));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_matchByHeroId),
-      const DeepCollectionEquality().hash(_heroMatchupDTO),
-      const DeepCollectionEquality().hash(_heroes));
+      const DeepCollectionEquality().hash(_heroMatchupDTO));
 
   @JsonKey(ignore: true)
   @override
@@ -310,11 +291,11 @@ class _$Loaded implements Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)
+            List<HeroMatchupDTO> heroMatchupDTO)
         loaded,
     required TResult Function(String? message) error,
   }) {
-    return loaded(matchByHeroId, heroMatchupDTO, heroes);
+    return loaded(matchByHeroId, heroMatchupDTO);
   }
 
   @override
@@ -322,11 +303,11 @@ class _$Loaded implements Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult? Function(String? message)? error,
   }) {
-    return loaded?.call(matchByHeroId, heroMatchupDTO, heroes);
+    return loaded?.call(matchByHeroId, heroMatchupDTO);
   }
 
   @override
@@ -334,13 +315,13 @@ class _$Loaded implements Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(matchByHeroId, heroMatchupDTO, heroes);
+      return loaded(matchByHeroId, heroMatchupDTO);
     }
     return orElse();
   }
@@ -383,12 +364,10 @@ class _$Loaded implements Loaded {
 abstract class Loaded implements HeroDetailsState {
   const factory Loaded(
       {required final List<MatchByHeroId> matchByHeroId,
-      required final List<HeroMatchupDTO> heroMatchupDTO,
-      required final List<HeroStats> heroes}) = _$Loaded;
+      required final List<HeroMatchupDTO> heroMatchupDTO}) = _$Loaded;
 
   List<MatchByHeroId> get matchByHeroId;
   List<HeroMatchupDTO> get heroMatchupDTO;
-  List<HeroStats> get heroes;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -458,7 +437,7 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)
+            List<HeroMatchupDTO> heroMatchupDTO)
         loaded,
     required TResult Function(String? message) error,
   }) {
@@ -470,7 +449,7 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult? Function(String? message)? error,
   }) {
@@ -482,7 +461,7 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<MatchByHeroId> matchByHeroId,
-            List<HeroMatchupDTO> heroMatchupDTO, List<HeroStats> heroes)?
+            List<HeroMatchupDTO> heroMatchupDTO)?
         loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
