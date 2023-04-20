@@ -17,6 +17,9 @@ class ProPlayersListBody extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = proPlayers[index];
           return PlayerTile(
+            name: item.name,
+            steamId: item.steamid,
+            avatar: item.avatar,
             onTap: () {
               if (item.accountId != null) {
                 context.router.push(
@@ -27,9 +30,6 @@ class ProPlayersListBody extends StatelessWidget {
                 );
               }
             },
-            name: item.name,
-            steamId: item.steamid,
-            avatar: item.avatar,
           );
         },
       ),

@@ -11,18 +11,12 @@ part 'match_results.dart';
 
 class RecentMatchesTile extends StatelessWidget {
   const RecentMatchesTile({
-    required this.playerRecentMatch,
-    required this.kills,
-    required this.deaths,
-    required this.assists,
+    required this.match,
     super.key,
     this.lastMatchTime,
   });
 
-  final PlayerRecentMatchesModel playerRecentMatch;
-  final String kills;
-  final String deaths;
-  final String assists;
+  final PlayerRecentMatchesModel match;
   final String? lastMatchTime;
 
   @override
@@ -34,14 +28,14 @@ class RecentMatchesTile extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
         onTap: () {
-          if (playerRecentMatch.matchId != null) {
+          if (match.matchId != null) {
             context.router.push(
-              MatchDetailsRoute(matchId: playerRecentMatch.matchId!),
+              MatchDetailsRoute(matchId: match.matchId!),
             );
           }
         },
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -53,10 +47,10 @@ class RecentMatchesTile extends StatelessWidget {
                       text: '${context.l10n.duration}: ',
                       style: context.textStyle.auxiliaryTextStyle,
                       children: <TextSpan>[
-                        if (playerRecentMatch.duration != null)
+                        if (match.duration != null)
                           TextSpan(
                             text: DateTimeFormatter().formatMatchDuration(
-                              playerRecentMatch.duration!,
+                              match.duration!,
                             ),
                             style: context.textStyle.primaryTextStyle,
                           ),
@@ -69,12 +63,9 @@ class RecentMatchesTile extends StatelessWidget {
                   ),
                   Column(
                     children: [
+                      Text('KDA', style: context.textStyle.auxiliaryTextStyle),
                       Text(
-                        'KDA',
-                        style: context.textStyle.auxiliaryTextStyle,
-                      ),
-                      Text(
-                        '$kills / $deaths / $assists',
+                        '${match.kills} / ${match.deaths} / ${match.assists}',
                         style: context.textStyle.primaryTextStyle,
                       ),
                     ],
@@ -82,35 +73,21 @@ class RecentMatchesTile extends StatelessWidget {
                 ],
               ),
               const Divider(thickness: 2),
-              if (playerRecentMatch.averageRank != null)
-                _MatchResults(
-                  tittle: context.l10n.rank,
-                  value: playerRecentMatch.averageRank.toString(),
-                ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        _MatchResults(
-                          tittle: context.l10n.towerDamage,
-                          value: playerRecentMatch.towerDamage.toString(),
-                        ),
-                        _MatchResults(
-                          tittle: context.l10n.heroHealing,
-                          value: playerRecentMatch.heroHealing.toString(),
-                        ),
-                        _MatchResults(
-                          tittle: context.l10n.heroDamage,
-                          value: playerRecentMatch.heroDamage.toString(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              _MatchResults(
+                tittle: context.l10n.rank,
+                value: match.averageRank,
+              ),
+              _MatchResults(
+                tittle: context.l10n.towerDamage,
+                value: match.towerDamage,
+              ),
+              _MatchResults(
+                tittle: context.l10n.heroHealing,
+                value: match.heroHealing,
+              ),
+              _MatchResults(
+                tittle: context.l10n.heroDamage,
+                value: match.heroDamage,
               ),
             ],
           ),

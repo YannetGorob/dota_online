@@ -27,9 +27,9 @@ class PlayerGeneralDetailsWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        if (playerProfile.personaname != null)
+        if (playerProfile.personName != null)
           Text(
-            playerProfile.personaname!,
+            playerProfile.personName!,
             style: context.textStyle.primaryTextStyle,
           ),
         const SizedBox(height: 8),

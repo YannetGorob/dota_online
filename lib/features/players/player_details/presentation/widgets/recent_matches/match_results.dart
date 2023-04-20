@@ -4,7 +4,7 @@ class _MatchResults extends StatelessWidget {
   const _MatchResults({required this.tittle, this.value});
 
   final String tittle;
-  final String? value;
+  final int? value;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class _MatchResults extends StatelessWidget {
         style: context.textStyle.auxiliaryTextStyle,
         children: <TextSpan>[
           TextSpan(
-            text: value ?? '-',
+            text: value != null ? value.toString() : '---',
             style: context.textStyle.primaryTextStyle,
           ),
         ],
