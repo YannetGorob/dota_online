@@ -4,6 +4,7 @@ import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -22,7 +23,7 @@ class HeroMatchupsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: const DotaAppBar(title: 'Matchups'),
+      appBar: DotaAppBar(title: context.l10n.matchups),
       body: ListView.builder(
         itemCount: heroMatchupsDTO.length,
         itemBuilder: (context, index) {
@@ -30,74 +31,87 @@ class HeroMatchupsPage extends StatelessWidget {
           final winRate =
               item.heroMatchup.wins! / item.heroMatchup.gamesPlayed! * 100;
 
-          return SizedBox(
-            height: 220,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 8,
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 8,
+            ),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(15),
+                                child: DotaCachedImage(
+                                  imageUrl: heroAvatar,
+                                ),
+                              ),
+                              Text(
+                                heroName,
+                                maxLines: 1,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        const Text('VS'),
+                        const SizedBox(width: 5),
+                        Expanded(
+                          child: HeroInfoCard(
+                            item: item,
+                            heroAvatar: item.heroAvatarUrl,
+                            heroName: item.heroName,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        gradient: LinearGradient(
+                          colors: [
+                            context.dotaColors.radiantColor,
+                            context.dotaColors.direColor,
+                          ],
+                        ),
+                      ),
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
+                          const SizedBox(width: 10),
                           Expanded(
-                            child: Column(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(15),
-                                  child: DotaCachedImage(
-                                    imageUrl: heroAvatar,
-                                  ),
-                                ),
-                                Text(heroName),
-                              ],
+                            child: Text(
+                              '${context.l10n.gamesPlayed} ${item.heroMatchup.gamesPlayed}',
+                              overflow: TextOverflow.fade,
+                              textAlign: TextAlign.center,
                             ),
                           ),
-                          const SizedBox(width: 5),
-                          const Text('VS'),
-                          const SizedBox(width: 5),
+                          const SizedBox(width: 10),
                           Expanded(
-                            child: HeroInfoCard(
-                              item: item,
-                              heroAvatar: item.heroAvatarUrl,
-                              heroName: item.heroName,
+                            child: Text(
+                              '${context.l10n.winRate} ${winRate.toStringAsFixed(0)}%',
+                              overflow: TextOverflow.fade,
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ],
                       ),
-                      DecoratedBox(
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                          gradient: LinearGradient(
-                            colors: [
-                              context.dotaColors.radiantColor,
-                              context.dotaColors.direColor,
-                            ],
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Games played: ${item.heroMatchup.gamesPlayed}',
-                            ),
-                            Text('Win Rate: ${winRate.toStringAsFixed(0)}%'),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -131,7 +145,10 @@ class HeroInfoCard extends StatelessWidget {
               imageUrl: heroAvatar,
             ),
           ),
-        Text(heroName ?? '???'),
+        Text(
+          heroName ?? '???',
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }

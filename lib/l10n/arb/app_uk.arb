@@ -36,6 +36,10 @@
     "showMore": "показати більше...",
     "hide": "заховати",
     "recentMatchesWithThisHero": "Недавні матчі з цим героєм",
-    "matchups": "Матчапи з",
-    "viewAllMatches": "Переглянути всі матчі"
+    "matchupsWith": "Матчапи з",
+    "viewAllMatches": "Переглянути всі матчі",
+    "matchups": "Матчапи",
+    "gamesPlayed": "Ігор зіграно:",
+    "winRate": "Відсоток перемог:",
+    "matchesWith": "Матчі з"
 }

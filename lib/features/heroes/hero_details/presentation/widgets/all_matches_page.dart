@@ -4,6 +4,7 @@ import 'package:dota_online/core/dota_ui/widgets/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/match_by_hero_id_card.dart';
+import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -22,7 +23,7 @@ class AllMatchesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(title: 'All matches with $heroName'),
+      appBar: DotaAppBar(title: '${context.l10n.matchesWith} $heroName'),
       body: ListView.builder(
         itemCount: listLength,
         itemBuilder: (ctx, index) {

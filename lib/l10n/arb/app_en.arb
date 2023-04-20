@@ -35,7 +35,11 @@
     "leagueTab": "Leagues",
     "showMore": "show more...",
     "hide": "hide",
-    "recentMatchesWithThisHero": "recentMatchesWithThisHero",
-    "matchups": "Matchups with",
-    "viewAllMatches": "viewAllMatches"
+    "recentMatchesWithThisHero": "Recent matches with this hero",
+    "matchupsWith": "Matchups with",
+    "viewAllMatches": "View all matches",
+    "matchups": "Matchups",
+    "gamesPlayed": "Games played:",
+    "winRate": "Win Rate:",
+    "matchesWith": "Matches with"
 }
