@@ -49,7 +49,9 @@ class PlayerGeneralDetailsWidget extends StatelessWidget {
                 style: context.textStyle.appBarTextStyle,
               ),
               Text(
-                mmrEstimate!.estimate.toString(),
+                mmrEstimate!.estimate != null
+                    ? mmrEstimate!.estimate.toString()
+                    : '---',
                 style: context.textStyle.primaryTextStyle,
               ),
             ],
