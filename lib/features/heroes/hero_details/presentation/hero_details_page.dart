@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage()
 class HeroDetailsPage extends StatelessWidget {
-  const HeroDetailsPage({required this.hero});
+  const HeroDetailsPage({super.key, required this.hero});
 
   final HeroStats hero;
 

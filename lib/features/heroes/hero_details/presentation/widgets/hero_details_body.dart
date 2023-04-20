@@ -29,10 +29,10 @@ class HeroDetailsBody extends StatelessWidget {
     final roles = hero.roles;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CustomScrollView(
         slivers: [
-          SliverPadding(padding: EdgeInsets.only(top: 15)),
+          const SliverPadding(padding: EdgeInsets.only(top: 15)),
           SliverToBoxAdapter(child: HeroGeneralInfoWidget(hero: hero)),
           if (roles != null)
             SliverList(
@@ -71,16 +71,17 @@ class HeroDetailsBody extends StatelessWidget {
               childCount: recentMatchesAmount,
               (context, index) {
                 final item = matchesByHeroId[index];
-                if (matchesByHeroId[index].matchId != null)
+                if (matchesByHeroId[index].matchId != null) {
                   return GestureDetector(
                     onTap: () => context.router.push(
                       MatchDetailsRoute(
-                          matchId: matchesByHeroId[index].matchId!),
+                          matchId: matchesByHeroId[index].matchId!,),
                     ),
                     child: MatchByHeroIdCard(item: item),
                   );
-                else
-                  return Text('???');
+                } else {
+                  return const Text('???');
+                }
               },
             ),
           ),
@@ -95,7 +96,7 @@ class HeroDetailsBody extends StatelessWidget {
                   ),
                 );
               },
-              child: Text('View all matches'),
+              child: const Text('View all matches'),
             ),
           ),
         ],

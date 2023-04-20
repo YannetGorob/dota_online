@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeroStatsWidget extends StatelessWidget {
-  const HeroStatsWidget({
+  const HeroStatsWidget({super.key, 
     required this.title,
     required this.color,
   });

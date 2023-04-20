@@ -19,10 +19,10 @@ class HeroMatchupsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DotaScaffold(
-      appBar: DotaAppBar(title: 'Matchups'),
+      appBar: const DotaAppBar(title: 'Matchups'),
       body: ListView.builder(
         itemCount: heroes.length,
-        itemBuilder: ((context, index) {
+        itemBuilder: (context, index) {
           return Card(
             child: Column(
               children: [
@@ -31,7 +31,7 @@ class HeroMatchupsPage extends StatelessWidget {
               ],
             ),
           );
-        }),
+        },
       ),
     );
   }

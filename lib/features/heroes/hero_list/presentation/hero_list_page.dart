@@ -16,7 +16,7 @@ class HeroListPage extends StatelessWidget {
       create: (context) => HeroesListCubit(
         heroesProvider: locator.get<DotaApi>().heroes,
       )..getHeroesInitialData(),
-      child: HeroesListWidget(),
+      child: const HeroesListWidget(),
     );
   }
 }

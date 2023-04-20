@@ -20,11 +20,7 @@ class MatchesList extends StatelessWidget {
           (context, index) {
             final item = matches![index];
 
-            if (item.leagueMatch.direTeamName != null &&
-                item.leagueMatch.radiantTeamName != null) {
-              return LeagueMatchTile(item: item);
-            }
-            return null;
+            return LeagueMatchTile(item: item);
           },
         ),
       ),
