@@ -1,3 +1,4 @@
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class HeroAttributeWidget extends StatelessWidget {
@@ -17,7 +18,7 @@ class HeroAttributeWidget extends StatelessWidget {
         if (image != null) image!,
         const SizedBox(width: 8),
         if (value != null)
-          Text(value!, style: Theme.of(context).textTheme.titleMedium),
+          Text(value!, style: context.textStyle.primaryTextStyle),
       ],
     );
   }

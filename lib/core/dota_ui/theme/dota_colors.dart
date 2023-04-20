@@ -22,4 +22,6 @@ class DotaColors {
   Color get dotaBlackColor => const Color(0x5E000000);
 
   Color get dotaWhiteColor => const Color(0xffffffff);
+
+  Color get teamDetailsButtonColor => const Color(0xff2c776d);
 }

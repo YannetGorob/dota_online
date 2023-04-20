@@ -41,5 +41,6 @@
     "matchups": "Матчапи",
     "gamesPlayed": "Ігор зіграно:",
     "winRate": "Відсоток перемог:",
-    "matchesWith": "Матчі з"
+    "matchesWith": "Матчі з",
+    "errorMessage": "Упс, щось пішло не так :("
 }

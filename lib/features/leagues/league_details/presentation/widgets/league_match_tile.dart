@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/league_match_dto.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
@@ -52,7 +53,7 @@ class LeagueMatchTile extends StatelessWidget {
                   ),
                   Text(
                     '${item.leagueMatch.radiantScore} : ${item.leagueMatch.direScore}',
-                    style: Theme.of(context).textTheme.labelLarge,
+                    style: context.textStyle.appBarTextStyle,
                   ),
                   Expanded(
                     child: Column(
@@ -90,7 +91,7 @@ class LeagueMatchTile extends StatelessWidget {
                         DateTimeFormatter().formatMatchDuration(
                           item.leagueMatch.duration!,
                         ),
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: context.textStyle.auxiliaryTextStyle,
                       ),
                     ],
                   ),
