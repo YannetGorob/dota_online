@@ -82,6 +82,7 @@ _$_MatchDetailsPlayer _$$_MatchDetailsPlayerFromJson(
         Map<String, dynamic> json) =>
     _$_MatchDetailsPlayer(
       matchId: json['match_id'] as int?,
+      accountId: json['account_id'] as int?,
       assists: json['assists'] as int?,
       deaths: json['deaths'] as int?,
       kills: json['kills'] as int?,
@@ -98,6 +99,7 @@ Map<String, dynamic> _$$_MatchDetailsPlayerToJson(
         _$_MatchDetailsPlayer instance) =>
     <String, dynamic>{
       'match_id': instance.matchId,
+      'account_id': instance.accountId,
       'assists': instance.assists,
       'deaths': instance.deaths,
       'kills': instance.kills,

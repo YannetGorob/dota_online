@@ -91,10 +91,8 @@ class AppRouter extends _$AppRouter {
             page: MatchesRouter.page,
             children: <AutoRoute>[
               AutoRoute(path: '', page: MatchesListRoute.page),
-              AutoRoute(
-                path: 'match_details',
-                page: MatchDetailsRoute.page,
-              ),
+              AutoRoute(path: 'match_details', page: MatchDetailsRoute.page),
+              AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
             ],
           ),
           AutoRoute(
