@@ -15,29 +15,27 @@ class SearchResultBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchPlayerModel.isNotEmpty) {
-      return Scrollbar(
-        child: ListView.builder(
-          padding: const EdgeInsets.only(top: 8),
-          itemCount: searchPlayerModel.length,
-          itemBuilder: (context, index) {
-            final item = searchPlayerModel[index];
-            return PlayerTile(
-              onTap: () {
-                if (item.accountId != null) {
-                  context.router.push(
-                    PlayerDetailsRoute(
-                      accountId: item.accountId!,
-                      playerName: item.personaname,
-                      lastMatchTime: item.lastMatchTime,
-                    ),
-                  );
-                }
-              },
-              name: item.personaname,
-              avatar: item.avatarfull,
-            );
-          },
-        ),
+      return ListView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        itemCount: searchPlayerModel.length,
+        itemBuilder: (context, index) {
+          final item = searchPlayerModel[index];
+          return PlayerTile(
+            onTap: () {
+              if (item.accountId != null) {
+                context.router.push(
+                  PlayerDetailsRoute(
+                    accountId: item.accountId!,
+                    playerName: item.personaname,
+                    lastMatchTime: item.lastMatchTime,
+                  ),
+                );
+              }
+            },
+            name: item.personaname,
+            avatar: item.avatarfull,
+          );
+        },
       );
     } else {
       return const _SearchErrorWidget();

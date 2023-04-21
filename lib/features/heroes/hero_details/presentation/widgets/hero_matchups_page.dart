@@ -32,7 +32,7 @@ class HeroMatchupsPage extends StatelessWidget {
               item.heroMatchup.wins! / item.heroMatchup.gamesPlayed! * 100;
 
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),

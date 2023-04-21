@@ -39,7 +39,7 @@ class PlayerGeneralDetailsWidget extends StatelessWidget {
             style: context.textStyle.auxiliaryTextStyle,
           ),
         const SizedBox(height: 10),
-        CustomHeadline(title: context.l10n.generalInfo),
+        CustomTitle(title: context.l10n.generalInfo),
         const SizedBox(height: 8),
         if (mmrEstimate != null)
           Column(

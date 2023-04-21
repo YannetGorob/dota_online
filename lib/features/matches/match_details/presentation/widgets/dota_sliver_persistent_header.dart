@@ -18,12 +18,12 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     return DecoratedBox(
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-      ),
+      decoration:
+          BoxDecoration(color: Theme.of(context).scaffoldBackgroundColor),
       child: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (matchDetails.matchId != null)
               Text(
@@ -44,15 +44,15 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
             const SizedBox(height: 10),
             Row(
               children: [
-                  Expanded(
-                    child: TeamNameOnMatchDetails(
-                      matchDetails: matchDetails,
-                      teamName: matchDetails.radiantTeam?.name,
-                      isRadiant: true,
-                      title: 'The Radiant',
-                      color: context.dotaColors.radiantColor,
-                    ),
+                Expanded(
+                  child: TeamNameOnMatchDetails(
+                    matchDetails: matchDetails,
+                    teamName: matchDetails.radiantTeam?.name,
+                    isRadiant: true,
+                    title: 'The Radiant',
+                    color: context.dotaColors.radiantColor,
                   ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Column(
@@ -90,19 +90,29 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
               ],
             ),
             const SizedBox(height: 20),
-            RichText(
-              text: TextSpan(
-                text: '${context.l10n.duration}: ',
-                style: context.textStyle.auxiliaryTextStyle,
-                children: <TextSpan>[
-                  if (matchDetails.duration != null)
-                    TextSpan(
-                      text: DateTimeFormatter()
-                          .formatMatchDuration(matchDetails.duration!),
-                      style: context.textStyle.auxiliaryTextStyle,
-                    ),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.timer,
+                  color: context.dotaColors.dotaGreyColor,
+                ),
+                const SizedBox(width: 5),
+                RichText(
+                  text: TextSpan(
+                    text: '${context.l10n.duration}: ',
+                    style: context.textStyle.auxiliaryTextStyle,
+                    children: <TextSpan>[
+                      if (matchDetails.duration != null)
+                        TextSpan(
+                          text: DateTimeFormatter()
+                              .formatMatchDuration(matchDetails.duration!),
+                          style: context.textStyle.auxiliaryTextStyle,
+                        ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -111,10 +121,10 @@ class DotaSliverPersistentHeader extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 190;
+  double get maxExtent => 200;
 
   @override
-  double get minExtent => 180;
+  double get minExtent => 200;
 
   @override
   bool shouldRebuild(covariant SliverPersistentHeaderDelegate oldDelegate) {

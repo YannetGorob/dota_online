@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
-import 'package:dota_online/core/api/models/hero/matchup_by_hero_id.dart';
 import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';

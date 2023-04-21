@@ -38,7 +38,7 @@ class PlayerDetailsBody extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 8),
-                CustomHeadline(title: context.l10n.recentMatches),
+                CustomTitle(title: context.l10n.recentMatches),
                 const SizedBox(height: 8),
                 if (lastMatchTime != null)
                   Padding(

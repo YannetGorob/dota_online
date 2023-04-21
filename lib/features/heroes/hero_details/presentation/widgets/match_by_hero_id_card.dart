@@ -14,6 +14,7 @@ class MatchByHeroIdCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        elevation: 8,
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16,

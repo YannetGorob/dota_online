@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches/player_recent_matches_model.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
-import 'package:dota_online/core/dota_ui/theme/text_style_extensions.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/l10n/l10n.dart';
@@ -42,24 +42,33 @@ class RecentMatchesTile extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  RichText(
-                    text: TextSpan(
-                      text: '${context.l10n.duration}: ',
-                      style: context.textStyle.auxiliaryTextStyle,
-                      children: <TextSpan>[
-                        if (match.duration != null)
-                          TextSpan(
-                            text: DateTimeFormatter().formatMatchDuration(
-                              match.duration!,
-                            ),
-                            style: context.textStyle.primaryTextStyle,
-                          ),
-                        TextSpan(
-                          text: context.l10n.min,
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.timer,
+                        color: context.dotaColors.dotaGreyColor,
+                      ),
+                      const SizedBox(width: 5),
+                      RichText(
+                        text: TextSpan(
+                          text: '${context.l10n.duration}: ',
                           style: context.textStyle.auxiliaryTextStyle,
+                          children: <TextSpan>[
+                            if (match.duration != null)
+                              TextSpan(
+                                text: DateTimeFormatter().formatMatchDuration(
+                                  match.duration!,
+                                ),
+                                style: context.textStyle.primaryTextStyle,
+                              ),
+                            TextSpan(
+                              text: context.l10n.min,
+                              style: context.textStyle.auxiliaryTextStyle,
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Column(
                     children: [

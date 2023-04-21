@@ -32,12 +32,18 @@ class TeamNameOnMatchDetails extends StatelessWidget {
           ),
         Column(
           children: [
-            Text(title, style: TextStyle(color: color)),
             Text(
-              MatchDetailsUtil().isRadiantWin(
+              title,
+              style: context.textStyle.primaryTextStyle?.copyWith(
+                color: color,
+              ),
+            ),
+            Text(
+              MatchDetailsUtil().determineWinner(
                 isRadiant: isRadiant,
                 radiantWin: matchDetails.radiantWin,
               ),
+              style: context.textStyle.primaryTextStyle,
             ),
           ],
         ),

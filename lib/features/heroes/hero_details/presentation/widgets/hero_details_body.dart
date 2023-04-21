@@ -3,6 +3,7 @@ import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_roles_card.dart';
@@ -47,8 +48,7 @@ class HeroDetailsBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.all(5),
-            child: TextButton(
-              style: buttonStyle, //move to theme
+            child: DotaPrimaryButton(
               onPressed: () => context.router.push(
                 HeroMatchupsRoute(
                   heroMatchupsDTO: heroMatchupsDTO,
@@ -56,11 +56,7 @@ class HeroDetailsBody extends StatelessWidget {
                   heroName: hero.localizedName!,
                 ),
               ),
-              child: Text(
-                ' ${context.l10n.matchups} ${hero.localizedName}',
-                maxLines: 1,
-                textAlign: TextAlign.center,
-              ),
+              title: ' ${context.l10n.matchups} ${hero.localizedName}',
             ),
           ),
         ),
@@ -104,8 +100,8 @@ class HeroDetailsBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.all(5),
-            child: TextButton(
-              style: buttonStyle,
+            child: DotaPrimaryButton(
+              title: context.l10n.viewAllMatches,
               onPressed: () {
                 context.router.push(
                   AllMatchesRoute(
@@ -115,11 +111,6 @@ class HeroDetailsBody extends StatelessWidget {
                   ),
                 );
               },
-              child: Text(
-                context.l10n.viewAllMatches,
-                maxLines: 1,
-                textAlign: TextAlign.center,
-              ),
             ),
           ),
         ),

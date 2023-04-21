@@ -12,6 +12,7 @@ class HeroRolesCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        elevation: 8,
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Text(role, style: context.textStyle.primaryTextStyle),

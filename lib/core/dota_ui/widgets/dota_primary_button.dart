@@ -16,9 +16,19 @@ class DotaPrimaryButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        backgroundColor: context.dotaColors.teamDetailsButtonColor,
+        elevation: 10,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        backgroundColor: Colors.blueGrey,
       ),
-      child: Text(title, style: context.textStyle.primaryTextStyle),
+      child: Text(
+        title,
+        maxLines: 1,
+        style: TextStyle(
+          letterSpacing: 2,
+          fontSize: 22,
+          color: context.dotaColors.dotaWhiteColor.withOpacity(0.8),
+        ),
+      ),
     );
   }
 }

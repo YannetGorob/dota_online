@@ -12,31 +12,28 @@ class TeamsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      sliver: SliverGrid(
-        delegate: SliverChildBuilderDelegate(
-          childCount: teamCount,
-          (context, index) {
-            final item = teams![index];
-            return InkWell(
-              onTap: () {
-                if (item.teamId != null) {
-                  context.router.push(
-                    TeamDetailsRoute(team: item),
-                  );
-                }
-              },
-              child: TeamsListItem(team: item),
-            );
-          },
-        ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisSpacing: 15,
-          crossAxisSpacing: 15,
-          crossAxisCount: 3,
-          childAspectRatio: 0.7,
-        ),
+    return SliverGrid(
+      delegate: SliverChildBuilderDelegate(
+        childCount: teamCount,
+        (context, index) {
+          final item = teams![index];
+          return InkWell(
+            onTap: () {
+              if (item.teamId != null) {
+                context.router.push(
+                  TeamDetailsRoute(team: item),
+                );
+              }
+            },
+            child: TeamsListItem(team: item),
+          );
+        },
+      ),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
+        crossAxisCount: 3,
+        childAspectRatio: 0.7,
       ),
     );
   }

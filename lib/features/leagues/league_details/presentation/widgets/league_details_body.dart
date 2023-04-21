@@ -64,13 +64,11 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
     final showMoreText = context.l10n.showMore;
     final hideText = context.l10n.hide;
 
-
-
     return CustomScrollView(
       slivers: [
         if (widget.teams != null && widget.teams!.isNotEmpty)
           SliverPadding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
             sliver: TeamsList(teamCount: teamCount, teams: widget.teams),
           ),
         if (widget.teams != null &&

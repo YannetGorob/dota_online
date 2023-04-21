@@ -25,31 +25,26 @@ class _LeagueListBodyState extends State<LeagueListBody> {
       await context.read<LeagueListCubit>().loadInitialLeaguesData();
     }
 
-    return Scrollbar(
-      thickness: 12,
-      interactive: true,
-      child: RefreshIndicator(
-        key: _refreshIndicatorKey,
-        onRefresh: refresh,
-        child: ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          itemCount: widget.leagues.length,
-          itemBuilder: (context, index) {
-            final item = widget.leagues[index];
-            if (item != null) {
-              return InkWell(
-                borderRadius: BorderRadius.circular(4),
-                onTap: () {
-                  if (item.leagueid != null) {
-                    context.router.push(LeagueDetailsRoute(leagueModel: item));
-                  }
-                },
-                child: LeagueListTile(league: item),
-              );
-            }
-            return null;
-          },
-        ),
+    return RefreshIndicator(
+      key: _refreshIndicatorKey,
+      onRefresh: refresh,
+      child: ListView.builder(
+        itemCount: widget.leagues.length,
+        itemBuilder: (context, index) {
+          final item = widget.leagues[index];
+          if (item != null) {
+            return InkWell(
+              borderRadius: BorderRadius.circular(4),
+              onTap: () {
+                if (item.leagueid != null) {
+                  context.router.push(LeagueDetailsRoute(leagueModel: item));
+                }
+              },
+              child: LeagueListTile(league: item),
+            );
+          }
+          return null;
+        },
       ),
     );
   }
