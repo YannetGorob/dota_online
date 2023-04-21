@@ -22,9 +22,13 @@ class PlayerTile extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
       ),
-      margin: const EdgeInsets.symmetric(vertical: 4),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       elevation: 8,
       child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 5,
+          horizontal: 10,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),

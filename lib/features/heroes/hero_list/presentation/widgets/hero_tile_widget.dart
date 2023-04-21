@@ -23,6 +23,7 @@ class HeroTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: InkWell(
+        borderRadius: BorderRadius.circular(8),
         onTap: () => context.router.push(HeroDetailsRoute(hero: hero)),
         child: Padding(
           padding: const EdgeInsets.all(20),

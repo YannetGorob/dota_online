@@ -1,8 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
+import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 
 class LeagueListTile extends StatelessWidget {
-  const LeagueListTile({required this.league, super.key,});
+  const LeagueListTile({
+    required this.league,
+    super.key,
+  });
 
   final LeagueModel league;
 
@@ -11,13 +16,21 @@ class LeagueListTile extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 4),
       elevation: 8,
-      child: ListTile(
-        title: Text(
-          league.name ?? 'no info',
-          textAlign: TextAlign.start,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(4),
+        onTap: () {
+          if (league.leagueid != null) {
+            context.router.push(LeagueDetailsRoute(leagueModel: league));
+          }
+        },
+        child: ListTile(
+          title: Text(
+            league.name ?? 'no info',
+            textAlign: TextAlign.start,
+          ),
+          subtitle: Text(league.tier ?? ''),
+          trailing: Text(league.leagueid.toString()),
         ),
-        subtitle: Text(league.tier ?? ''),
-        trailing: Text(league.leagueid.toString()),
       ),
     );
   }

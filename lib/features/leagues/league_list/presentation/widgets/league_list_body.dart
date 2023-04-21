@@ -33,15 +33,7 @@ class _LeagueListBodyState extends State<LeagueListBody> {
         itemBuilder: (context, index) {
           final item = widget.leagues[index];
           if (item != null) {
-            return InkWell(
-              borderRadius: BorderRadius.circular(4),
-              onTap: () {
-                if (item.leagueid != null) {
-                  context.router.push(LeagueDetailsRoute(leagueModel: item));
-                }
-              },
-              child: LeagueListTile(league: item),
-            );
+            return LeagueListTile(league: item);
           }
           return null;
         },
