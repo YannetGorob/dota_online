@@ -35,6 +35,7 @@ class CustomTitle extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 3),
           width: MediaQuery.of(context).size.width * 0.89,
           child: Text(
+            textAlign: TextAlign.center,
             title,
             style: TextStyle(
               letterSpacing: 3,

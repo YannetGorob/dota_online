@@ -2,12 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_roles_card.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/match_by_hero_id_card.dart';
+import 'package:dota_online/features/players/player_details/presentation/widgets/player_details_body.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -64,12 +64,7 @@ class HeroDetailsBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: Center(
-              child: Text(
-                context.l10n.recentMatchesWithThisHero,
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                style: context.textStyle.titleTextStyle,
-              ),
+              child: CustomTitle(title: context.l10n.recentMatchesWithThisHero),
             ),
           ),
         ),
@@ -114,6 +109,7 @@ class HeroDetailsBody extends StatelessWidget {
             ),
           ),
         ),
+        const SliverPadding(padding: EdgeInsets.only(bottom: 10))
       ],
     );
   }

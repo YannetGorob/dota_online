@@ -13,20 +13,34 @@ class DotaPrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      style: TextButton.styleFrom(
-        elevation: 10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        backgroundColor: Colors.blueGrey,
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        gradient: LinearGradient(
+          colors: <Color>[
+            Colors.blueGrey[600]!.withOpacity(0.6),
+            Colors.blueGrey.withOpacity(0.7),
+            Colors.blueGrey[600]!.withOpacity(0.6),
+          ],
+        ),
       ),
-      child: Text(
-        title,
-        maxLines: 1,
-        style: TextStyle(
-          letterSpacing: 2,
-          fontSize: 22,
-          color: context.dotaColors.dotaWhiteColor.withOpacity(0.8),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          elevation: 10,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          backgroundColor: Colors.transparent,
+        ),
+        child: Text(
+          title,
+          maxLines: 1,
+          style: TextStyle(
+            letterSpacing: 1,
+            fontSize: 18,
+            color: context.dotaColors.dotaWhiteColor.withOpacity(0.9),
+          ),
         ),
       ),
     );

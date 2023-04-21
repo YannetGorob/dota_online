@@ -5,6 +5,7 @@ import 'package:dota_online/core/utils/hero_asset_util.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_all_attributes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_fight_characteristics.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_stats_widget.dart';
+import 'package:dota_online/features/players/player_details/presentation/widgets/player_details_body.dart';
 import 'package:dota_online/gen/assets.gen.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
@@ -63,12 +64,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
           image: Assets.images.iconArmor.image(),
           tittle: context.l10n.armor,
         ),
-        Text(
-          context.l10n.roles,
-          style: context.textStyle.appBarTextStyle,
-        ),
-        const SizedBox(height: 10),
-        const SizedBox(height: 10),
+        CustomTitle(title: context.l10n.roles),
       ],
     );
   }

@@ -7,7 +7,7 @@ import 'package:dota_online/features/players/player_details/presentation/widgets
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
-part 'custom_headline.dart';
+part 'custom_title.dart';
 
 class PlayerDetailsBody extends StatelessWidget {
   const PlayerDetailsBody({
