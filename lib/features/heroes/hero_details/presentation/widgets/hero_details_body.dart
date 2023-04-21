@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
@@ -49,6 +50,7 @@ class HeroDetailsBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: DotaPrimaryButton(
+              color: context.dotaColors.dotaBlueGrey,
               onPressed: () => context.router.push(
                 HeroMatchupsRoute(
                   heroMatchupsDTO: heroMatchupsDTO,
@@ -96,6 +98,7 @@ class HeroDetailsBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(5),
             child: DotaPrimaryButton(
+              color: context.dotaColors.dotaBlueGrey,
               title: context.l10n.viewAllMatches,
               onPressed: () {
                 context.router.push(

@@ -48,9 +48,12 @@ class TeamDetailsBody extends StatelessWidget {
           SliverPadding(
             padding: const EdgeInsets.symmetric(
               horizontal: 20,
+              vertical: 5,
             ),
             sliver: SliverToBoxAdapter(
               child: DotaPrimaryButton(
+                borderRadiusValue: 4,
+                color: context.dotaColors.teamDetailsButtonColor,
                 onPressed: () {
                   context.router.push(
                     PlayersListRoute(players: players!),

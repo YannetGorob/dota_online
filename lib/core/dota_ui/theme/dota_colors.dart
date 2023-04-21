@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class DotaColors {
   Color get radiantColor => const Color(0x8012dd03);
 
@@ -20,4 +22,6 @@ class DotaColors {
   Color get dotaWhiteColor => const Color(0xffffffff);
 
   Color get teamDetailsButtonColor => const Color(0xff2c776d);
+
+  Color get dotaBlueGrey => const Color.fromARGB(255, 92, 122, 137);
 }

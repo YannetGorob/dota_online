@@ -18,16 +18,13 @@ class PlayersListPage extends StatelessWidget {
       appBar: DotaAppBar(title: context.l10n.players),
       body: CustomScrollView(
         slivers: [
-          SliverPadding(
-            padding: const EdgeInsetsDirectional.symmetric(horizontal: 20),
-            sliver: SliverList(
-              delegate: SliverChildBuilderDelegate(
-                childCount: players.length,
-                (context, index) {
-                  final item = players[index];
-                  return PlayerListItem(player: item);
-                },
-              ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              childCount: players.length,
+              (context, index) {
+                final item = players[index];
+                return PlayerListItem(player: item);
+              },
             ),
           ),
         ],

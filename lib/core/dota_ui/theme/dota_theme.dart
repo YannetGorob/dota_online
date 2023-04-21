@@ -32,6 +32,7 @@ class DarkDotaTheme {
           dotaBlackColor: dotaColors.dotaBlackColor,
           dotaWhiteColor: dotaColors.dotaWhiteColor,
           teamDetailsButtonColor: dotaColors.teamDetailsButtonColor,
+          dotaBlueGrey: dotaColors.dotaBlueGrey,
         ),
         TextStyleExtensions(
           primaryTextStyle: TextStyle(

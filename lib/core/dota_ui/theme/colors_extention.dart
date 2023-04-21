@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class DotaColorsThemeExtension
     extends ThemeExtension<DotaColorsThemeExtension> {
   DotaColorsThemeExtension({
+    required this.dotaBlueGrey,
     required this.radiantColor,
     required this.direColor,
     required this.currentTeamMemberColor,
@@ -25,6 +26,7 @@ class DotaColorsThemeExtension
   final Color dotaBlackColor;
   final Color dotaWhiteColor;
   final Color teamDetailsButtonColor;
+  final Color dotaBlueGrey;
 
   @override
   DotaColorsThemeExtension copyWith({
@@ -42,6 +44,7 @@ class DotaColorsThemeExtension
     Color? dotaBlackColor,
     Color? dotaWhiteColor,
     Color? teamDetailsButtonColor,
+    Color? dotaBlueGrey,
   }) {
     return DotaColorsThemeExtension(
       radiantColor: radiantColor!,
@@ -54,6 +57,7 @@ class DotaColorsThemeExtension
       dotaBlackColor: dotaBlackColor!,
       dotaWhiteColor: dotaWhiteColor!,
       teamDetailsButtonColor: teamDetailsButtonColor!,
+      dotaBlueGrey: dotaBlueGrey!,
     );
   }
 
@@ -88,6 +92,7 @@ class DotaColorsThemeExtension
           other.teamDetailsButtonColor,
           t,
         )!,
+        dotaBlueGrey: Color.lerp(dotaBlueGrey, other.dotaBlueGrey, t)!,
       );
     }
 
