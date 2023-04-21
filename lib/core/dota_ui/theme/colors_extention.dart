@@ -3,27 +3,27 @@ import 'package:flutter/material.dart';
 class DotaColorsThemeExtension
     extends ThemeExtension<DotaColorsThemeExtension> {
   DotaColorsThemeExtension({
-    required this.radiantColor, // = const Color(0x8012dd03),
-    required this.direColor, // = const Color(0x93fc0f16),
-    required this.currentTeamMemberColor, // = const Color(0xff1b5e20),
-    required this.notCurrentTeamMemberColor, // = const Color(0xffa4d5a6),
-    required this.dotaGreenColor, // = const Color(0xff4cae50),
-    required this.dotaBlueColor, // = const Color(0xff2195f1),
-    required this.dotaGreyColor, // = const Color(0xff9d9d9d),
-    required this.dotaBlackColor, // = const Color(0x5E000000),
-    required this.dotaWhiteColor, // = const Color(0xffffffff),
+    required this.radiantColor,
+    required this.direColor,
+    required this.currentTeamMemberColor,
+    required this.notCurrentTeamMemberColor,
+    required this.dotaGreenColor,
+    required this.dotaBlueColor,
+    required this.dotaGreyColor,
+    required this.dotaBlackColor,
+    required this.dotaWhiteColor,
     required this.teamDetailsButtonColor,
   });
 
-  final Color radiantColor; // = const Color(0x8012dd03);
-  final Color direColor; // = const Color(0x93fc0f16);
-  final Color currentTeamMemberColor; // = const Color(0xff1b5e20);
-  final Color notCurrentTeamMemberColor; // = const Color(0xffa4d5a6);
-  final Color dotaGreenColor; // = const Color(0xff4cae50);
-  final Color dotaBlueColor; // = const Color(0xff2195f1);
-  final Color dotaGreyColor; // = const Color(0xff9d9d9d);
-  final Color dotaBlackColor; // = const Color(0x5E000000);
-  final Color dotaWhiteColor; // = const Color(0xffffffff);
+  final Color radiantColor;
+  final Color direColor;
+  final Color currentTeamMemberColor;
+  final Color notCurrentTeamMemberColor;
+  final Color dotaGreenColor;
+  final Color dotaBlueColor;
+  final Color dotaGreyColor;
+  final Color dotaBlackColor;
+  final Color dotaWhiteColor;
   final Color teamDetailsButtonColor;
 
   @override
