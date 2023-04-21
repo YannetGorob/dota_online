@@ -3,6 +3,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'match_details.freezed.dart';
+
 part 'match_details.g.dart';
 
 @freezed
@@ -56,6 +57,7 @@ class League with _$League {
 class MatchDetailsPlayer with _$MatchDetailsPlayer {
   const factory MatchDetailsPlayer({
     int? matchId,
+    int? accountId,
     int? assists,
     int? deaths,
     int? kills,

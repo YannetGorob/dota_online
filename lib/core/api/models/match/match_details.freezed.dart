@@ -876,6 +876,7 @@ MatchDetailsPlayer _$MatchDetailsPlayerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MatchDetailsPlayer {
   int? get matchId => throw _privateConstructorUsedError;
+  int? get accountId => throw _privateConstructorUsedError;
   int? get assists => throw _privateConstructorUsedError;
   int? get deaths => throw _privateConstructorUsedError;
   int? get kills => throw _privateConstructorUsedError;
@@ -902,6 +903,7 @@ abstract class $MatchDetailsPlayerCopyWith<$Res> {
   @useResult
   $Res call(
       {int? matchId,
+      int? accountId,
       int? assists,
       int? deaths,
       int? kills,
@@ -928,6 +930,7 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
   @override
   $Res call({
     Object? matchId = freezed,
+    Object? accountId = freezed,
     Object? assists = freezed,
     Object? deaths = freezed,
     Object? kills = freezed,
@@ -943,6 +946,10 @@ class _$MatchDetailsPlayerCopyWithImpl<$Res, $Val extends MatchDetailsPlayer>
       matchId: freezed == matchId
           ? _value.matchId
           : matchId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      accountId: freezed == accountId
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int?,
       assists: freezed == assists
           ? _value.assists
@@ -998,6 +1005,7 @@ abstract class _$$_MatchDetailsPlayerCopyWith<$Res>
   @useResult
   $Res call(
       {int? matchId,
+      int? accountId,
       int? assists,
       int? deaths,
       int? kills,
@@ -1022,6 +1030,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
   @override
   $Res call({
     Object? matchId = freezed,
+    Object? accountId = freezed,
     Object? assists = freezed,
     Object? deaths = freezed,
     Object? kills = freezed,
@@ -1037,6 +1046,10 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
       matchId: freezed == matchId
           ? _value.matchId
           : matchId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      accountId: freezed == accountId
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int?,
       assists: freezed == assists
           ? _value.assists
@@ -1087,6 +1100,7 @@ class __$$_MatchDetailsPlayerCopyWithImpl<$Res>
 class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   const _$_MatchDetailsPlayer(
       {this.matchId,
+      this.accountId,
       this.assists,
       this.deaths,
       this.kills,
@@ -1103,6 +1117,8 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
 
   @override
   final int? matchId;
+  @override
+  final int? accountId;
   @override
   final int? assists;
   @override
@@ -1127,7 +1143,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
 
   @override
   String toString() {
-    return 'MatchDetailsPlayer(matchId: $matchId, assists: $assists, deaths: $deaths, kills: $kills, personName: $personName, name: $name, radiantWin: $radiantWin, duration: $duration, isRadiant: $isRadiant, win: $win, lose: $lose)';
+    return 'MatchDetailsPlayer(matchId: $matchId, accountId: $accountId, assists: $assists, deaths: $deaths, kills: $kills, personName: $personName, name: $name, radiantWin: $radiantWin, duration: $duration, isRadiant: $isRadiant, win: $win, lose: $lose)';
   }
 
   @override
@@ -1136,6 +1152,8 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
         (other.runtimeType == runtimeType &&
             other is _$_MatchDetailsPlayer &&
             (identical(other.matchId, matchId) || other.matchId == matchId) &&
+            (identical(other.accountId, accountId) ||
+                other.accountId == accountId) &&
             (identical(other.assists, assists) || other.assists == assists) &&
             (identical(other.deaths, deaths) || other.deaths == deaths) &&
             (identical(other.kills, kills) || other.kills == kills) &&
@@ -1154,8 +1172,20 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, matchId, assists, deaths, kills,
-      personName, name, radiantWin, duration, isRadiant, win, lose);
+  int get hashCode => Object.hash(
+      runtimeType,
+      matchId,
+      accountId,
+      assists,
+      deaths,
+      kills,
+      personName,
+      name,
+      radiantWin,
+      duration,
+      isRadiant,
+      win,
+      lose);
 
   @JsonKey(ignore: true)
   @override
@@ -1175,6 +1205,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
 abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   const factory _MatchDetailsPlayer(
       {final int? matchId,
+      final int? accountId,
       final int? assists,
       final int? deaths,
       final int? kills,
@@ -1191,6 +1222,8 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
 
   @override
   int? get matchId;
+  @override
+  int? get accountId;
   @override
   int? get assists;
   @override
