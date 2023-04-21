@@ -1,10 +1,12 @@
 class MatchDetailsUtil {
-  String determineWinner({required bool isRadiant, required bool? radiantWin}) {
-    final check = radiantWin != null && radiantWin == true;
+  String determineWinner({
+    required bool isRadiant,
+    required bool? radiantWin,
+  }) {
     if (isRadiant) {
-      return check ? 'Victory' : 'Lose';
+      return radiantWin == true ? 'Victory' : 'Lose';
     } else {
-      return check ? 'Lose' : 'Victory';
+      return radiantWin == true ? 'Lose' : 'Victory';
     }
   }
 }

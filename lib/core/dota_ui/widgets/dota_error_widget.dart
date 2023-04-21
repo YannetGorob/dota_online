@@ -13,13 +13,12 @@ class DotaErrorWidget extends StatelessWidget {
       appBar: const DotaAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Center(
-          child: Column(
-            children: [
-              Assets.images.dotaLogo.image(),
-              Text(context.l10n.errorMessage),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Assets.images.dotaLogo.image(),
+            Text(context.l10n.errorMessage),
+          ],
         ),
       ),
     );
