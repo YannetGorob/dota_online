@@ -103,6 +103,7 @@ class AppRouter extends _$AppRouter {
               AutoRoute(path: 'match_details', page: MatchDetailsRoute.page),
               AutoRoute(path: 'team_details', page: TeamDetailsRoute.page),
               AutoRoute(path: 'players_list', page: PlayersListRoute.page),
+              AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
             ],
           ),
         ],
