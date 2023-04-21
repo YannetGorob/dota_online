@@ -33,7 +33,7 @@ class TeamCardTextContent extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 5),
-          if (teamRating != null)
+          if (teamRating != null && teamRating != 'null')
             CardInfoField(
               child: Row(
                 children: [
@@ -46,7 +46,7 @@ class TeamCardTextContent extends StatelessWidget {
                 ],
               ),
             ),
-          if (teamWins != null)
+          if (teamWins != null && teamWins != 'null')
             CardInfoField(
               child: Row(
                 children: [
@@ -58,7 +58,7 @@ class TeamCardTextContent extends StatelessWidget {
                 ],
               ),
             ),
-          if (teamLosses != null)
+          if (teamLosses != null && teamLosses != 'null')
             CardInfoField(
               child: Row(
                 children: [
