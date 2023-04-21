@@ -1,4 +1,4 @@
-import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
+import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:flutter/material.dart';
 
 class DotaSearchField extends StatelessWidget {

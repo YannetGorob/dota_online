@@ -1,5 +1,4 @@
 import 'package:dota_online/core/api/models/match/match_details.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/team_name_on_match_details.dart';

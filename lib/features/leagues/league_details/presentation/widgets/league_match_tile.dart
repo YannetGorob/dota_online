@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/league_match_dto.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_colors.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
@@ -52,8 +51,9 @@ class LeagueMatchTile extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '${item.leagueMatch.radiantScore} : ${item.leagueMatch.direScore}',
-                    style: context.textStyle.appBarTextStyle,
+                    '${item.leagueMatch.radiantScore} : '
+                        '${item.leagueMatch.direScore}',
+                    style: Theme.of(context).textTheme.labelLarge,
                   ),
                   Expanded(
                     child: Column(

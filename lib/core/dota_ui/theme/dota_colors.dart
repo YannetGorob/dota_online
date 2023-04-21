@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-extension ContextExtension on BuildContext {
-  DotaColors get dotaColors => DotaColors();
-}
+import 'dart:ui';
 
 class DotaColors {
   Color get radiantColor => const Color(0x8012dd03);

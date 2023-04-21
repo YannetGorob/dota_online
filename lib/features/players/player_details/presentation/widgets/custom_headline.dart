@@ -20,7 +20,7 @@ class CustomHeadline extends StatelessWidget {
         ],
         gradient: LinearGradient(
           colors: <Color>[
-            context.dotaColors.direColor.withOpacity(0.2),
+            context.dotaColors.radiantColor,
             context.dotaColors.direColor.withOpacity(0.6),
             context.dotaColors.direColor.withOpacity(0.2),
           ],
