@@ -2,8 +2,8 @@ import 'package:intl/intl.dart';
 
 class DateTimeFormatter {
   String formatMatchDuration(int duration) {
-    final time = Duration(seconds: duration);
-    return '${time.inMinutes}:${time.inSeconds.remainder(60)}';
+    final dt = Duration(seconds: duration);
+    return '${dt.inMinutes}:${(dt.inSeconds % 60).toString().padLeft(2, '0')}';
   }
 
   String formatMatchStartTime(int startTime) {

@@ -1,8 +1,10 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'player_details_model.freezed.dart';
-part 'player_details_model.g.dart';
 
+part 'player_details_model.g.dart';
 
 @freezed
 class PlayerDetailsModel with _$PlayerDetailsModel {
@@ -29,7 +31,7 @@ class MmrEstimate with _$MmrEstimate {
 class Profile with _$Profile {
   const factory Profile({
     int? accountId,
-    String? personaname,
+    @JsonKey(name: 'personaname') String? personName,
     String? steamid,
     String? avatar,
     String? avatarfull,

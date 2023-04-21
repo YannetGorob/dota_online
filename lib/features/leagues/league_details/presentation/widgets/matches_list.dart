@@ -12,17 +12,14 @@ class MatchesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      sliver: SliverList(
-        delegate: SliverChildBuilderDelegate(
-          childCount: matchesCount,
-          (context, index) {
-            final item = matches![index];
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        childCount: matchesCount,
+        (context, index) {
+          final item = matches![index];
 
-            return LeagueMatchTile(item: item);
-          },
-        ),
+          return LeagueMatchTile(item: item);
+        },
       ),
     );
   }

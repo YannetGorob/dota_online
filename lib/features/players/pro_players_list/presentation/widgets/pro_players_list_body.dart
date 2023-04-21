@@ -11,28 +11,27 @@ class ProPlayersListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      child: ListView.builder(
-        itemCount: proPlayers.length,
-        itemBuilder: (context, index) {
-          final item = proPlayers[index];
-          return PlayerTile(
-            onTap: () {
-              if (item.accountId != null) {
-                context.router.push(
-                  PlayerDetailsRoute(
-                    accountId: item.accountId!,
-                    playerName: item.name,
-                  ),
-                );
-              }
-            },
-            name: item.name,
-            steamId: item.steamid,
-            avatar: item.avatar,
-          );
-        },
-      ),
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      itemCount: proPlayers.length,
+      itemBuilder: (context, index) {
+        final item = proPlayers[index];
+        return PlayerTile(
+          name: item.name,
+          steamId: item.steamid,
+          avatar: item.avatar,
+          onTap: () {
+            if (item.accountId != null) {
+              context.router.push(
+                PlayerDetailsRoute(
+                  accountId: item.accountId!,
+                  playerName: item.name,
+                ),
+              );
+            }
+          },
+        );
+      },
     );
   }
 }

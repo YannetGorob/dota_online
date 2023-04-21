@@ -1,12 +1,13 @@
 import 'package:dota_online/core/api/models/player/player_details/player_details_model.dart';
 import 'package:dota_online/core/api/models/player/player_recent_matches/player_recent_matches_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
+import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/details/player_general_details_widget.dart';
 import 'package:dota_online/features/players/player_details/presentation/widgets/recent_matches/recent_matches_list.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
-part 'custom_headline.dart';
+part 'custom_title.dart';
 
 class PlayerDetailsBody extends StatelessWidget {
   const PlayerDetailsBody({
@@ -36,8 +37,8 @@ class PlayerDetailsBody extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                const SizedBox(height: 10),
-                CustomHeadline(title: context.l10n.recentMatches),
+                const SizedBox(height: 8),
+                CustomTitle(title: context.l10n.recentMatches),
                 const SizedBox(height: 8),
                 if (lastMatchTime != null)
                   Padding(
@@ -50,7 +51,9 @@ class PlayerDetailsBody extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          lastMatchTime!,
+                          DateTimeFormatter().getFormattedDate(
+                            DateTime.parse(lastMatchTime!),
+                          ),
                           style: context.textStyle.primaryTextStyle,
                         ),
                       ],

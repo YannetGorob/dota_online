@@ -27,9 +27,9 @@ class PlayerGeneralDetailsWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        if (playerProfile.personaname != null)
+        if (playerProfile.personName != null)
           Text(
-            playerProfile.personaname!,
+            playerProfile.personName!,
             style: context.textStyle.primaryTextStyle,
           ),
         const SizedBox(height: 8),
@@ -39,7 +39,7 @@ class PlayerGeneralDetailsWidget extends StatelessWidget {
             style: context.textStyle.auxiliaryTextStyle,
           ),
         const SizedBox(height: 10),
-        CustomHeadline(title: context.l10n.generalInfo),
+        CustomTitle(title: context.l10n.generalInfo),
         const SizedBox(height: 8),
         if (mmrEstimate != null)
           Column(
@@ -49,7 +49,9 @@ class PlayerGeneralDetailsWidget extends StatelessWidget {
                 style: context.textStyle.appBarTextStyle,
               ),
               Text(
-                mmrEstimate!.estimate.toString(),
+                mmrEstimate!.estimate != null
+                    ? mmrEstimate!.estimate.toString()
+                    : '---',
                 style: context.textStyle.primaryTextStyle,
               ),
             ],

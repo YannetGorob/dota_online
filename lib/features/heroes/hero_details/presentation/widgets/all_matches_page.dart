@@ -30,7 +30,7 @@ class AllMatchesPage extends StatelessWidget {
         itemBuilder: (ctx, index) {
           if (matches[index].matchId != null) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              padding: const EdgeInsets.symmetric(vertical: 4),
               child: GestureDetector(
                 onTap: () {
                   context.router.push(

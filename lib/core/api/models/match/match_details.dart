@@ -1,7 +1,8 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'match_details.freezed.dart';
-
 part 'match_details.g.dart';
 
 @freezed

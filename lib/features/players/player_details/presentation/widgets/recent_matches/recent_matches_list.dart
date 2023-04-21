@@ -20,10 +20,7 @@ class RecentMatchesList extends StatelessWidget {
         (BuildContext context, int index) {
           final item = playerRecentMatches[index];
           return RecentMatchesTile(
-            playerRecentMatch: item,
-            kills: item.kills.toString(),
-            deaths: item.deaths.toString(),
-            assists: item.assists.toString(),
+            match: item,
             lastMatchTime: lastMatchTime,
           );
         },

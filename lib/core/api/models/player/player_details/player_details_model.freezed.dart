@@ -346,7 +346,8 @@ Profile _$ProfileFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Profile {
   int? get accountId => throw _privateConstructorUsedError;
-  String? get personaname => throw _privateConstructorUsedError;
+  @JsonKey(name: 'personaname')
+  String? get personName => throw _privateConstructorUsedError;
   String? get steamid => throw _privateConstructorUsedError;
   String? get avatar => throw _privateConstructorUsedError;
   String? get avatarfull => throw _privateConstructorUsedError;
@@ -367,7 +368,7 @@ abstract class $ProfileCopyWith<$Res> {
   @useResult
   $Res call(
       {int? accountId,
-      String? personaname,
+      @JsonKey(name: 'personaname') String? personName,
       String? steamid,
       String? avatar,
       String? avatarfull,
@@ -391,7 +392,7 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
   @override
   $Res call({
     Object? accountId = freezed,
-    Object? personaname = freezed,
+    Object? personName = freezed,
     Object? steamid = freezed,
     Object? avatar = freezed,
     Object? avatarfull = freezed,
@@ -405,9 +406,9 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
               as int?,
-      personaname: freezed == personaname
-          ? _value.personaname
-          : personaname // ignore: cast_nullable_to_non_nullable
+      personName: freezed == personName
+          ? _value.personName
+          : personName // ignore: cast_nullable_to_non_nullable
               as String?,
       steamid: freezed == steamid
           ? _value.steamid
@@ -450,7 +451,7 @@ abstract class _$$_ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
   @useResult
   $Res call(
       {int? accountId,
-      String? personaname,
+      @JsonKey(name: 'personaname') String? personName,
       String? steamid,
       String? avatar,
       String? avatarfull,
@@ -471,7 +472,7 @@ class __$$_ProfileCopyWithImpl<$Res>
   @override
   $Res call({
     Object? accountId = freezed,
-    Object? personaname = freezed,
+    Object? personName = freezed,
     Object? steamid = freezed,
     Object? avatar = freezed,
     Object? avatarfull = freezed,
@@ -485,9 +486,9 @@ class __$$_ProfileCopyWithImpl<$Res>
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
               as int?,
-      personaname: freezed == personaname
-          ? _value.personaname
-          : personaname // ignore: cast_nullable_to_non_nullable
+      personName: freezed == personName
+          ? _value.personName
+          : personName // ignore: cast_nullable_to_non_nullable
               as String?,
       steamid: freezed == steamid
           ? _value.steamid
@@ -526,7 +527,7 @@ class __$$_ProfileCopyWithImpl<$Res>
 class _$_Profile implements _Profile {
   const _$_Profile(
       {this.accountId,
-      this.personaname,
+      @JsonKey(name: 'personaname') this.personName,
       this.steamid,
       this.avatar,
       this.avatarfull,
@@ -541,7 +542,8 @@ class _$_Profile implements _Profile {
   @override
   final int? accountId;
   @override
-  final String? personaname;
+  @JsonKey(name: 'personaname')
+  final String? personName;
   @override
   final String? steamid;
   @override
@@ -559,7 +561,7 @@ class _$_Profile implements _Profile {
 
   @override
   String toString() {
-    return 'Profile(accountId: $accountId, personaname: $personaname, steamid: $steamid, avatar: $avatar, avatarfull: $avatarfull, profileurl: $profileurl, loccountrycode: $loccountrycode, isContributor: $isContributor, isSubscriber: $isSubscriber)';
+    return 'Profile(accountId: $accountId, personName: $personName, steamid: $steamid, avatar: $avatar, avatarfull: $avatarfull, profileurl: $profileurl, loccountrycode: $loccountrycode, isContributor: $isContributor, isSubscriber: $isSubscriber)';
   }
 
   @override
@@ -569,8 +571,8 @@ class _$_Profile implements _Profile {
             other is _$_Profile &&
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId) &&
-            (identical(other.personaname, personaname) ||
-                other.personaname == personaname) &&
+            (identical(other.personName, personName) ||
+                other.personName == personName) &&
             (identical(other.steamid, steamid) || other.steamid == steamid) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
             (identical(other.avatarfull, avatarfull) ||
@@ -590,7 +592,7 @@ class _$_Profile implements _Profile {
   int get hashCode => Object.hash(
       runtimeType,
       accountId,
-      personaname,
+      personName,
       steamid,
       avatar,
       avatarfull,
@@ -616,7 +618,7 @@ class _$_Profile implements _Profile {
 abstract class _Profile implements Profile {
   const factory _Profile(
       {final int? accountId,
-      final String? personaname,
+      @JsonKey(name: 'personaname') final String? personName,
       final String? steamid,
       final String? avatar,
       final String? avatarfull,
@@ -630,7 +632,8 @@ abstract class _Profile implements Profile {
   @override
   int? get accountId;
   @override
-  String? get personaname;
+  @JsonKey(name: 'personaname')
+  String? get personName;
   @override
   String? get steamid;
   @override

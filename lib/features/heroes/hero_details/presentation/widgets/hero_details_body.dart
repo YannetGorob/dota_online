@@ -2,11 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
-import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
+import 'package:dota_online/core/dota_ui/widgets/dota_primary_button.dart';
 import 'package:dota_online/core/navigation/app_router.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_general_info_widget.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_roles_card.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/match_by_hero_id_card.dart';
+import 'package:dota_online/features/players/player_details/presentation/widgets/player_details_body.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -47,8 +48,7 @@ class HeroDetailsBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.all(5),
-            child: TextButton(
-              style: buttonStyle, //move to theme
+            child: DotaPrimaryButton(
               onPressed: () => context.router.push(
                 HeroMatchupsRoute(
                   heroMatchupsDTO: heroMatchupsDTO,
@@ -56,11 +56,7 @@ class HeroDetailsBody extends StatelessWidget {
                   heroName: hero.localizedName!,
                 ),
               ),
-              child: Text(
-                ' ${context.l10n.matchups} ${hero.localizedName}',
-                maxLines: 1,
-                textAlign: TextAlign.center,
-              ),
+              title: ' ${context.l10n.matchups} ${hero.localizedName}',
             ),
           ),
         ),
@@ -68,12 +64,7 @@ class HeroDetailsBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8),
             child: Center(
-              child: Text(
-                context.l10n.recentMatchesWithThisHero,
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                style: context.textStyle.titleTextStyle,
-              ),
+              child: CustomTitle(title: context.l10n.recentMatchesWithThisHero),
             ),
           ),
         ),
@@ -104,8 +95,8 @@ class HeroDetailsBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const EdgeInsets.all(5),
-            child: TextButton(
-              style: buttonStyle,
+            child: DotaPrimaryButton(
+              title: context.l10n.viewAllMatches,
               onPressed: () {
                 context.router.push(
                   AllMatchesRoute(
@@ -115,14 +106,10 @@ class HeroDetailsBody extends StatelessWidget {
                   ),
                 );
               },
-              child: Text(
-                context.l10n.viewAllMatches,
-                maxLines: 1,
-                textAlign: TextAlign.center,
-              ),
             ),
           ),
         ),
+        const SliverPadding(padding: EdgeInsets.only(bottom: 10))
       ],
     );
   }

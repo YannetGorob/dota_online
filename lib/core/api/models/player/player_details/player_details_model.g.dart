@@ -36,7 +36,7 @@ Map<String, dynamic> _$$_MmrEstimateToJson(_$_MmrEstimate instance) =>
 
 _$_Profile _$$_ProfileFromJson(Map<String, dynamic> json) => _$_Profile(
       accountId: json['account_id'] as int?,
-      personaname: json['personaname'] as String?,
+      personName: json['personaname'] as String?,
       steamid: json['steamid'] as String?,
       avatar: json['avatar'] as String?,
       avatarfull: json['avatarfull'] as String?,
@@ -49,7 +49,7 @@ _$_Profile _$$_ProfileFromJson(Map<String, dynamic> json) => _$_Profile(
 Map<String, dynamic> _$$_ProfileToJson(_$_Profile instance) =>
     <String, dynamic>{
       'account_id': instance.accountId,
-      'personaname': instance.personaname,
+      'personaname': instance.personName,
       'steamid': instance.steamid,
       'avatar': instance.avatar,
       'avatarfull': instance.avatarfull,

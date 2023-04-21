@@ -1,7 +1,6 @@
 import 'package:dota_online/core/dota_ui/widgets/app_bar/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_error_widget.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_progress_indicator.dart';
-import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
 import 'package:dota_online/features/matches/match_details/domain/match_details_cubit.dart';
 import 'package:dota_online/features/matches/match_details/domain/match_details_state.dart';
 import 'package:dota_online/features/matches/match_details/presentation/widgets/match_details_body.dart';
@@ -14,7 +13,7 @@ class MatchDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DotaScaffold(
+    return Scaffold(
       appBar: DotaAppBar(title: context.l10n.matchDetails),
       body: BlocBuilder<MatchDetailsCubit, MatchDetailsState>(
         builder: (context, state) {
