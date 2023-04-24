@@ -15,36 +15,6 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    TeamsRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const TeamsRouterPage(),
-      );
-    },
-    MatchesRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const MatchesRouterPage(),
-      );
-    },
-    HeroesRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HeroesRouterPage(),
-      );
-    },
-    LeaguesRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const LeaguesRouterPage(),
-      );
-    },
-    PlayersRouter.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const ProPlayersRouterPage(),
-      );
-    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -85,6 +55,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    HeroesRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HeroesRouterPage(),
+      );
+    },
     HeroListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -113,10 +89,22 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    PlayersRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ProPlayersRouterPage(),
+      );
+    },
     ProPlayersListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ProPlayersListPage(),
+      );
+    },
+    LeaguesRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LeaguesRouterPage(),
       );
     },
     LeagueListRoute.name: (routeData) {
@@ -135,6 +123,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    MatchesRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MatchesRouterPage(),
+      );
+    },
     MatchesListRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -149,6 +143,12 @@ abstract class _$AppRouter extends RootStackRouter {
           matchId: args.matchId,
           key: args.key,
         ),
+      );
+    },
+    TeamsRouter.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TeamsRouterPage(),
       );
     },
     TeamsListRoute.name: (routeData) {
@@ -178,76 +178,6 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
-}
-
-/// generated route for
-/// [TeamsRouterPage]
-class TeamsRouter extends PageRouteInfo<void> {
-  const TeamsRouter({List<PageRouteInfo>? children})
-      : super(
-          TeamsRouter.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'TeamsRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [MatchesRouterPage]
-class MatchesRouter extends PageRouteInfo<void> {
-  const MatchesRouter({List<PageRouteInfo>? children})
-      : super(
-          MatchesRouter.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MatchesRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [HeroesRouterPage]
-class HeroesRouter extends PageRouteInfo<void> {
-  const HeroesRouter({List<PageRouteInfo>? children})
-      : super(
-          HeroesRouter.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HeroesRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [LeaguesRouterPage]
-class LeaguesRouter extends PageRouteInfo<void> {
-  const LeaguesRouter({List<PageRouteInfo>? children})
-      : super(
-          LeaguesRouter.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'LeaguesRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ProPlayersRouterPage]
-class PlayersRouter extends PageRouteInfo<void> {
-  const PlayersRouter({List<PageRouteInfo>? children})
-      : super(
-          PlayersRouter.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'PlayersRouter';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -399,6 +329,20 @@ class AllMatchesRouteArgs {
 }
 
 /// generated route for
+/// [HeroesRouterPage]
+class HeroesRouter extends PageRouteInfo<void> {
+  const HeroesRouter({List<PageRouteInfo>? children})
+      : super(
+          HeroesRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HeroesRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [HeroListPage]
 class HeroListRoute extends PageRouteInfo<void> {
   const HeroListRoute({List<PageRouteInfo>? children})
@@ -500,6 +444,20 @@ class PlayerDetailsRouteArgs {
 }
 
 /// generated route for
+/// [ProPlayersRouterPage]
+class PlayersRouter extends PageRouteInfo<void> {
+  const PlayersRouter({List<PageRouteInfo>? children})
+      : super(
+          PlayersRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'PlayersRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [ProPlayersListPage]
 class ProPlayersListRoute extends PageRouteInfo<void> {
   const ProPlayersListRoute({List<PageRouteInfo>? children})
@@ -509,6 +467,20 @@ class ProPlayersListRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ProPlayersListRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LeaguesRouterPage]
+class LeaguesRouter extends PageRouteInfo<void> {
+  const LeaguesRouter({List<PageRouteInfo>? children})
+      : super(
+          LeaguesRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LeaguesRouter';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -566,6 +538,20 @@ class LeagueDetailsRouteArgs {
 }
 
 /// generated route for
+/// [MatchesRouterPage]
+class MatchesRouter extends PageRouteInfo<void> {
+  const MatchesRouter({List<PageRouteInfo>? children})
+      : super(
+          MatchesRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MatchesRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [MatchesListPage]
 class MatchesListRoute extends PageRouteInfo<void> {
   const MatchesListRoute({List<PageRouteInfo>? children})
@@ -615,6 +601,20 @@ class MatchDetailsRouteArgs {
   String toString() {
     return 'MatchDetailsRouteArgs{matchId: $matchId, key: $key}';
   }
+}
+
+/// generated route for
+/// [TeamsRouterPage]
+class TeamsRouter extends PageRouteInfo<void> {
+  const TeamsRouter({List<PageRouteInfo>? children})
+      : super(
+          TeamsRouter.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TeamsRouter';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

@@ -12,6 +12,7 @@ class MatchesListBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: const EdgeInsets.only(top: 10),
       itemCount: matches.length,
       itemBuilder: (context, index) {
         return GestureDetector(

@@ -74,11 +74,13 @@ class HeroDetailsBody extends StatelessWidget {
               if (matchesByHeroId[index].matchId != null) {
                 if (matchesByHeroId[index].matchId != null) {
                   return GestureDetector(
-                    onTap: () => context.router.push(
-                      MatchDetailsRoute(
-                        matchId: matchesByHeroId[index].matchId!,
-                      ),
-                    ),
+                    onTap: () {
+                      context.router.push(
+                        MatchDetailsRoute(
+                          matchId: matchesByHeroId[index].matchId!,
+                        ),
+                      );
+                    },
                     child: MatchByHeroIdCard(item: item),
                   );
                 } else {
