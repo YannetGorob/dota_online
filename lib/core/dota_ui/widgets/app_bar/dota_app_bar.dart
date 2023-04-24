@@ -15,7 +15,7 @@ class DotaAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: title != null
           ? Text(title!, style: context.textStyle.appBarTextStyle)
-          : const SizedBox(),
+          : null,
       backgroundColor: context.dotaColors.dotaBlackColor,
       elevation: 0,
       centerTitle: true,

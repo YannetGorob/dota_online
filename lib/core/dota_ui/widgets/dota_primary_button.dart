@@ -24,7 +24,7 @@ class DotaPrimaryButton extends StatelessWidget {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.3),
+              color: context.dotaColors.dotaBlackColor.withOpacity(0.3),
               spreadRadius: 3,
               blurRadius: 4,
               offset: const Offset(0, 6),
@@ -33,9 +33,9 @@ class DotaPrimaryButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadiusValue),
           gradient: LinearGradient(
             colors: <Color>[
-              Colors.blueGrey[600]!.withOpacity(0.4),
-              color.withOpacity(0.7),
-              Colors.blueGrey[600]!.withOpacity(0.4),
+              color.withOpacity(0.2),
+              context.dotaColors.dotaBlueColor.withOpacity(0.5),
+              color.withOpacity(0.2),
             ],
           ),
         ),

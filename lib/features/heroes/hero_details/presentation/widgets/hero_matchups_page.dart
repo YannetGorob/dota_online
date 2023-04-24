@@ -1,9 +1,12 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:auto_route/auto_route.dart';
 import 'package:dota_online/core/api/dto/hero_matchup_dto.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/dota_ui/widgets/app_bar/dota_app_bar.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_cached_image.dart';
 import 'package:dota_online/core/dota_ui/widgets/dota_scaffold.dart';
+import 'package:dota_online/core/utils/win_rate_calculator.dart';
 import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
@@ -28,8 +31,6 @@ class HeroMatchupsPage extends StatelessWidget {
         itemCount: heroMatchupsDTO.length,
         itemBuilder: (context, index) {
           final item = heroMatchupsDTO[index];
-          final winRate =
-              item.heroMatchup.wins! / item.heroMatchup.gamesPlayed! * 100;
 
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
@@ -88,12 +89,17 @@ class HeroMatchupsPage extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(width: 10),
-                          Expanded(
-                            child: Text(
-                              '${context.l10n.winRate} ${winRate.toStringAsFixed(0)}%',
-                              textAlign: TextAlign.center,
+                          if (item.heroMatchup.wins != null &&
+                              item.heroMatchup.gamesPlayed != null)
+                            Expanded(
+                              child: Text(
+                                '${context.l10n.winRate} ${WinRateCalculator().calculate(
+                                  item.heroMatchup.wins!,
+                                  item.heroMatchup.gamesPlayed!,
+                                )}',
+                                textAlign: TextAlign.center,
+                              ),
                             ),
-                          ),
                         ],
                       ),
                     ),

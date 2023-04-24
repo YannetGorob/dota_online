@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/core/utils/date_time_formatter.dart';
@@ -16,10 +18,7 @@ class MatchByHeroIdCard extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 8,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Column(
             children: [
               Text(
@@ -27,7 +26,7 @@ class MatchByHeroIdCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: context.textStyle.primaryTextStyle,
               ),
-              const Divider(color: Colors.white),
+              Divider(color: context.dotaColors.dotaWhiteColor),
               const SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

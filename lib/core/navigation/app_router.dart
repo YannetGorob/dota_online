@@ -35,16 +35,16 @@ class AppRouter extends _$AppRouter {
         page: HomeRoute.page,
         children: <AutoRoute>[
           AutoRoute(
-            path: 'players',
             page: PlayersRouter.page,
+            path: 'players',
             children: <AutoRoute>[
-              AutoRoute(path: '', page: ProPlayersListRoute.page),
+              AutoRoute(page: ProPlayersListRoute.page, path: ''),
               AutoRoute(
-                path: 'search_player_result_page',
                 page: SearchPlayerResultRoute.page,
+                path: 'search_player_result_page',
               ),
-              AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
-              AutoRoute(path: 'match_details', page: MatchDetailsRoute.page),
+              AutoRoute(page: PlayerDetailsRoute.page, path: 'player_details'),
+              AutoRoute(page: MatchDetailsRoute.page, path: 'match_details'),
             ],
           ),
           AutoRoute(
@@ -58,22 +58,13 @@ class AppRouter extends _$AppRouter {
             ],
           ),
           AutoRoute(
-            path: 'heroes',
             page: HeroesRouter.page,
+            path: 'heroes',
             children: <AutoRoute>[
-              AutoRoute(path: '', page: HeroListRoute.page),
-              AutoRoute(
-                path: 'hero_details',
-                page: HeroDetailsRoute.page,
-              ),
-              AutoRoute(
-                page: MatchDetailsRoute.page,
-                path: 'match_details',
-              ),
-              AutoRoute(
-                page: HeroMatchupsRoute.page,
-                path: 'hero_matchups',
-              ),
+              AutoRoute(page: HeroListRoute.page, path: ''),
+              AutoRoute(page: HeroDetailsRoute.page, path: 'hero_details'),
+              AutoRoute(page: MatchDetailsRoute.page, path: 'match_details'),
+              AutoRoute(page: HeroMatchupsRoute.page, path: 'hero_matchups'),
               AutoRoute(
                 page: AllMatchesRoute.page,
                 path: 'matches_by_hero_id,',
@@ -87,23 +78,23 @@ class AppRouter extends _$AppRouter {
             ],
           ),
           AutoRoute(
-            path: 'matches',
             page: MatchesRouter.page,
+            path: 'matches',
             children: <AutoRoute>[
-              AutoRoute(path: '', page: MatchesListRoute.page),
-              AutoRoute(path: 'match_details', page: MatchDetailsRoute.page),
-              AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
+              AutoRoute(page: MatchesListRoute.page, path: ''),
+              AutoRoute(page: MatchDetailsRoute.page, path: 'match_details'),
+              AutoRoute(page: PlayerDetailsRoute.page, path: 'player_details'),
             ],
           ),
           AutoRoute(
             page: LeaguesRouter.page,
             children: <AutoRoute>[
               AutoRoute(path: '', page: LeagueListRoute.page),
-              AutoRoute(path: 'league_details', page: LeagueDetailsRoute.page),
-              AutoRoute(path: 'match_details', page: MatchDetailsRoute.page),
-              AutoRoute(path: 'team_details', page: TeamDetailsRoute.page),
-              AutoRoute(path: 'players_list', page: PlayersListRoute.page),
-              AutoRoute(path: 'player_details', page: PlayerDetailsRoute.page),
+              AutoRoute(page: LeagueDetailsRoute.page, path: 'league_details'),
+              AutoRoute(page: MatchDetailsRoute.page, path: 'match_details'),
+              AutoRoute(page: TeamDetailsRoute.page, path: 'team_details'),
+              AutoRoute(page: PlayersListRoute.page, path: 'players_list'),
+              AutoRoute(page: PlayerDetailsRoute.page, path: 'player_details'),
             ],
           ),
         ],

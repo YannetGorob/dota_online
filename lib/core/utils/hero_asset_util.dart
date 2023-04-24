@@ -2,7 +2,7 @@ import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class HeroAssetUtil {
-  static Widget getPrimaryAttributesAsset(String? primaryAttr) {
+  Widget getPrimaryAttributesAsset(String? primaryAttr) {
     switch (primaryAttr) {
       case 'agi':
         return Assets.images.heroAgility.image(height: 30);
@@ -15,7 +15,7 @@ class HeroAssetUtil {
     }
   }
 
-  static Widget? getAttackTypeAsset(String? attackType) {
+  Widget? getAttackTypeAsset(String? attackType) {
     switch (attackType) {
       case 'Melee':
         return Assets.images.melee.svg();

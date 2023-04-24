@@ -7,10 +7,7 @@ import 'package:dota_online/core/utils/date_time_formatter.dart';
 import 'package:flutter/material.dart';
 
 class LeagueMatchTile extends StatelessWidget {
-  const LeagueMatchTile({
-    required this.item,
-    super.key,
-  });
+  const LeagueMatchTile({required this.item, super.key});
 
   final LeagueMatchDTO item;
 
@@ -52,8 +49,8 @@ class LeagueMatchTile extends StatelessWidget {
                   ),
                   Text(
                     '${item.leagueMatch.radiantScore} : '
-                        '${item.leagueMatch.direScore}',
-                    style: Theme.of(context).textTheme.labelLarge,
+                    '${item.leagueMatch.direScore}',
+                    style: context.textStyle.appBarTextStyle,
                   ),
                   Expanded(
                     child: Column(

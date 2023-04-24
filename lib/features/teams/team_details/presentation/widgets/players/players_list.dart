@@ -1,3 +1,5 @@
+// ignore_for_file: use_if_null_to_convert_nulls_to_bools
+
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';
 import 'package:dota_online/features/teams/team_details/presentation/widgets/players/player_list_item.dart';
@@ -10,9 +12,11 @@ class PlayersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentPlayers = players.where(
-      (e) => e.isCurrentTeamMember == true,
-    ).toList();
+    final currentPlayers = players
+        .where(
+          (e) => e.isCurrentTeamMember == true,
+        )
+        .toList();
 
     if (currentPlayers.isNotEmpty) {
       return SliverList(

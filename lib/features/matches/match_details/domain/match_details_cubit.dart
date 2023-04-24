@@ -14,7 +14,9 @@ class MatchDetailsCubit extends Cubit<MatchDetailsState> {
         await _matchesProvider.getMatchDetails(matchId);
 
     matchDetailsResponse.when(
-      success: (data) => emit(MatchDetailsState.loaded(matchDetails: data)),
+      success: (data) {
+        if (!isClosed) emit(MatchDetailsState.loaded(matchDetails: data));
+      },
       failure: (_) => emit(const MatchDetailsState.error()),
     );
   }

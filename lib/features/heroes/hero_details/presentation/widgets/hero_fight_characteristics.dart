@@ -20,20 +20,11 @@ class HeroFightCharacteristics extends StatelessWidget {
       child: Row(
         children: [
           if (image != null)
-            Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: image,
-            ),
+            Padding(padding: const EdgeInsets.only(right: 15), child: image),
           if (tittle != null)
-            Text(
-              '$tittle: ',
-              style: context.textStyle.primaryTextStyle,
-            ),
+            Text('$tittle: ', style: context.textStyle.primaryTextStyle),
           if (value != null)
-            Text(
-              value!,
-              style: context.textStyle.primaryTextStyle,
-            )
+            Text(value!, style: context.textStyle.primaryTextStyle)
           else
             const Text('---'),
         ],

@@ -39,13 +39,16 @@ class HeroDetailCubit extends Cubit<HeroDetailsState> {
 
     final heroesStats = (responses[2] as ApiResult<List<HeroStats>>).map(
       success: (data) => data.value
-          .map((e) => e.copyWith(img: UrlUtil.fixUrl(e.img)))
+          .map((e) => e.copyWith(img: UrlUtil().fixUrl(e.img)))
           .toList(),
       failure: (_) => null,
     );
 
     if (heroMatches != null && heroMatchups != null && heroesStats != null) {
-      final heroMatchupsDTO = _createHeroMatchupsDTO(heroMatchups, heroesStats);
+      final heroMatchupsDTO = _createHeroMatchupsDTO(
+        heroMatchups,
+        heroesStats,
+      );
 
       emit(
         HeroDetailsState.loaded(

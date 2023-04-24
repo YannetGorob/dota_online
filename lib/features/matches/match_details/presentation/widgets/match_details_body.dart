@@ -34,16 +34,18 @@ class MatchDetailsBody extends StatelessWidget {
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(15),
-                    onTap: () {
-                      if (item.accountId != null) {
-                        context.router.push(
-                          PlayerDetailsRoute(
-                            accountId: item.accountId!,
-                            playerName: item.personName,
-                          ),
-                        );
-                      }
-                    },
+                    onTap: item.personName == null
+                        ? null
+                        : () {
+                            if (item.accountId != null) {
+                              context.router.push(
+                                PlayerDetailsRoute(
+                                  accountId: item.accountId!,
+                                  playerName: item.personName,
+                                ),
+                              );
+                            }
+                          },
                     child: Padding(
                       padding: const EdgeInsets.all(8),
                       child: Row(
@@ -57,9 +59,11 @@ class MatchDetailsBody extends StatelessWidget {
                                 ),
                                 const SizedBox(width: 10),
                                 if (item.name != null)
-                                  Text(
-                                    item.name!,
-                                    overflow: TextOverflow.ellipsis,
+                                  Expanded(
+                                    child: Text(
+                                      item.name!,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
                                   )
                                 else if (item.personName != null)
                                   Expanded(

@@ -9,11 +9,8 @@ import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 part 'teams_list.dart';
-
 part 'matches_list.dart';
-
 part 'more_info_button.dart';
-
 part 'no_league_info_widget.dart';
 
 class LeagueDetailsBody extends StatefulWidget {
@@ -115,7 +112,7 @@ class _LeagueDetailsBodyState extends State<LeagueDetailsBody> {
           ),
         if ((widget.matches == null || widget.matches!.isEmpty) &&
             (widget.teams == null || widget.teams!.isEmpty))
-          const NoLeagueInfoWidget()
+          const Center(child: NoLeagueInfoWidget())
       ],
     );
   }

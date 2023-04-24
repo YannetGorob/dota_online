@@ -38,7 +38,9 @@ class HeroTile extends StatelessWidget {
                     ),
                     const SizedBox(width: 10),
                     if (hero.primaryAttr != null)
-                      HeroAssetUtil.getPrimaryAttributesAsset(hero.primaryAttr),
+                      HeroAssetUtil().getPrimaryAttributesAsset(
+                        hero.primaryAttr,
+                      ),
                   ],
                 ),
               const SizedBox(height: 5),

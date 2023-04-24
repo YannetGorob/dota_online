@@ -42,9 +42,7 @@ class PlayersProvider {
   Future<ApiResult<PlayerDetailsModel>> getPlayerDetails(int accountId) {
     return _network.sendRequest(
       path: '/players/$accountId',
-      parseResponse: (json) {
-        return PlayerDetailsModel.fromJson(json);
-      },
+      parseResponse: PlayerDetailsModel.fromJson,
     );
   }
 

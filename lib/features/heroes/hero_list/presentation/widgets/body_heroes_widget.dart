@@ -10,6 +10,7 @@ class BodyHeroesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      padding: const EdgeInsets.symmetric(vertical: 10),
       itemCount: heroes.length,
       itemBuilder: (BuildContext context, int index) {
         final item = heroes[index];

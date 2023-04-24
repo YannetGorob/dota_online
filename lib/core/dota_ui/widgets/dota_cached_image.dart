@@ -32,10 +32,9 @@ class DotaCachedImage extends StatelessWidget {
       fit: fit,
       imageUrl: imageUrl!,
       placeholder: (_, __) => const DotaProgressIndicator(),
-      errorWidget: (_, __, ___) => Assets.images.dotaLogo.image(
-        height: height,
-        width: width,
-      ),
+      errorWidget: (_, __, ___) {
+        return Assets.images.dotaLogo.image(height: height, width: width);
+      },
     );
   }
 }

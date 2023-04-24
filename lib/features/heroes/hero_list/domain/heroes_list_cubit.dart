@@ -16,7 +16,7 @@ class HeroesListCubit extends Cubit<HeroesListState> {
       success: (data) {
         final heroesData = data.map(
           (e) {
-            return e.copyWith(img: UrlUtil.fixUrl(e.img));
+            return e.copyWith(img: UrlUtil().fixUrl(e.img));
           },
         ).toList();
 

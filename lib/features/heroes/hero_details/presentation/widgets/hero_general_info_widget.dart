@@ -20,12 +20,11 @@ class HeroGeneralInfoWidget extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 10),
-        const SizedBox(height: 10),
         if (hero.attackType != null)
           HeroFightCharacteristics(
             value: hero.attackType,
             tittle: context.l10n.attackType,
-            image: HeroAssetUtil.getAttackTypeAsset(hero.attackType),
+            image: HeroAssetUtil().getAttackTypeAsset(hero.attackType),
           ),
         Hero(
           tag: hero.id!,
@@ -45,9 +44,7 @@ class HeroGeneralInfoWidget extends StatelessWidget {
             title: hero.baseMana.toString(),
           ),
         const SizedBox(height: 15),
-        const SizedBox(height: 15),
         HeroAllAttributes(hero: hero),
-        const SizedBox(height: 15),
         const SizedBox(height: 15),
         HeroFightCharacteristics(
           value: hero.moveSpeed.toString(),

@@ -13,7 +13,7 @@ import 'package:dota_online/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class HeroDetailsBody extends StatelessWidget {
-  HeroDetailsBody({
+  const HeroDetailsBody({
     required this.hero,
     required this.matchesByHeroId,
     required this.heroMatchupsDTO,
@@ -25,10 +25,6 @@ class HeroDetailsBody extends StatelessWidget {
   final List<HeroMatchupDTO> heroMatchupsDTO;
 
   static const int recentMatchesAmount = 5;
-
-  final ButtonStyle buttonStyle = TextButton.styleFrom(
-    side: const BorderSide(width: 3, color: Colors.grey),
-  );
 
   @override
   Widget build(BuildContext context) {

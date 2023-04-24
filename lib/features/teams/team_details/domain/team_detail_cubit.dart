@@ -28,7 +28,7 @@ class TeamDetailCubit extends Cubit<TeamDetailState> {
     );
 
     if (players == null && matches == null) {
-      emit(const TeamDetailState.error());
+      if (!isClosed) emit(const TeamDetailState.error());
     } else {
       emit(
         TeamDetailState.loaded(

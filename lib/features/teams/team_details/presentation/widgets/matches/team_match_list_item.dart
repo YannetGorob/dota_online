@@ -1,3 +1,5 @@
+// ignore_for_file: use_if_null_to_convert_nulls_to_bools
+
 import 'package:dota_online/core/api/models/team/team_matches.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
 import 'package:dota_online/core/dota_ui/theme/dota_theme.dart';

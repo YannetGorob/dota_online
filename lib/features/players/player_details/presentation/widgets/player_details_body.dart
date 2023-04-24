@@ -25,7 +25,7 @@ class PlayerDetailsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverPadding(padding: EdgeInsets.only(top: 15)),
+        const SliverPadding(padding: EdgeInsets.only(top: 10)),
         if (playerDetails?.profile != null)
           SliverToBoxAdapter(
             child: PlayerGeneralDetailsWidget(
@@ -64,6 +64,7 @@ class PlayerDetailsBody extends StatelessWidget {
           ),
         if (playerRecentMatches != null)
           RecentMatchesList(playerRecentMatches: playerRecentMatches!),
+        const SliverPadding(padding: EdgeInsets.only(bottom: 10)),
       ],
     );
   }
