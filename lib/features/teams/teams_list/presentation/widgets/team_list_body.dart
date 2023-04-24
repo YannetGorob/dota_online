@@ -11,39 +11,31 @@ class TeamListBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverPadding(
-          padding: const EdgeInsetsDirectional.symmetric(vertical: 10),
-          sliver: SliverGrid(
-            delegate: SliverChildBuilderDelegate(
-              childCount: teams.length,
-              (context, index) {
-                final item = teams[index];
-                if (item.name != null) {
-                  return InkWell(
-                    onTap: () {
-                      if (item.teamId != null) {
-                        context.router.push(
-                          TeamDetailsRoute(team: item),
-                        );
-                      }
-                    },
-                    child: TeamsListItem(team: item),
-                  );
-                }
-                return null;
-              },
-            ),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 15,
-              crossAxisSpacing: 15,
-              crossAxisCount: 3,
-              childAspectRatio: 0.7,
-            ),
-          ),
-        ),
-      ],
+    return GridView.builder(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
+        crossAxisCount: 3,
+        childAspectRatio: 0.7,
+      ),
+      itemCount: teams.length,
+      itemBuilder: (context, index) {
+        final item = teams[index];
+        if (item.name != null) {
+          return InkWell(
+            onTap: () {
+              if (item.teamId != null) {
+                context.router.push(
+                  TeamDetailsRoute(team: item),
+                );
+              }
+            },
+            child: TeamsListItem(team: item),
+          );
+        }
+        return null;
+      },
     );
   }
 }

@@ -5,7 +5,6 @@ import 'package:dota_online/core/api/models/leagues/league/league_model.dart';
 import 'package:dota_online/core/api/models/match/match_by_hero_id.dart';
 import 'package:dota_online/core/api/models/team/player_model.dart';
 import 'package:dota_online/core/api/models/team/team_model.dart';
-import 'package:dota_online/core/navigation/base_tab_routes.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/hero_details_page.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/all_matches_page.dart';
 import 'package:dota_online/features/heroes/hero_details/presentation/widgets/hero_matchups_page.dart';

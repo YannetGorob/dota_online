@@ -27,6 +27,7 @@ class _LeagueListBodyState extends State<LeagueListBody> {
       key: _refreshIndicatorKey,
       onRefresh: refresh,
       child: ListView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 5),
         itemCount: widget.leagues.length,
         itemBuilder: (context, index) {
           final item = widget.leagues[index];
