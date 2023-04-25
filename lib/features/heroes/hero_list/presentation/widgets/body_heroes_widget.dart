@@ -1,21 +1,13 @@
 import 'package:dota_online/core/api/models/hero/hero_stats.dart';
+import 'package:dota_online/core/utils/hero_sort_util.dart';
 import 'package:dota_online/features/heroes/hero_list/presentation/widgets/hero_tile_widget.dart';
 import 'package:dota_online/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class BodyHeroesWidget extends StatefulWidget {
-  const BodyHeroesWidget({
-    required this.heroes,
-    required this.heroesStr,
-    required this.heroesAgi,
-    required this.heroesInt,
-    super.key,
-  });
+  const BodyHeroesWidget({required this.heroes, super.key});
 
   final List<HeroStats> heroes;
-  final List<HeroStats> heroesStr;
-  final List<HeroStats> heroesAgi;
-  final List<HeroStats> heroesInt;
 
   @override
   State<BodyHeroesWidget> createState() => _BodyHeroesWidgetState();
@@ -58,7 +50,10 @@ class _BodyHeroesWidgetState extends State<BodyHeroesWidget> {
                       splashRadius: 20,
                       onPressed: () {
                         setState(() {
-                          heroesList = widget.heroesStr;
+                          heroesList = HeroSortUtil().sortHeroesByAttr(
+                            heroes: widget.heroes,
+                            attr: 'str',
+                          );
                         });
                       },
                       icon: Assets.images.heroStrength.image(height: 25),
@@ -66,16 +61,24 @@ class _BodyHeroesWidgetState extends State<BodyHeroesWidget> {
                     IconButton(
                       splashRadius: 20,
                       onPressed: () {
-                        heroesList = widget.heroesAgi;
-                        setState(() {});
+                        setState(() {
+                          heroesList = HeroSortUtil().sortHeroesByAttr(
+                            heroes: widget.heroes,
+                            attr: 'agi',
+                          );
+                        });
                       },
                       icon: Assets.images.heroAgility.image(height: 25),
                     ),
                     IconButton(
                       splashRadius: 20,
                       onPressed: () {
-                        heroesList = widget.heroesInt;
-                        setState(() {});
+                        setState(() {
+                          heroesList = HeroSortUtil().sortHeroesByAttr(
+                            heroes: widget.heroes,
+                            attr: 'int',
+                          );
+                        });
                       },
                       icon: Assets.images.heroIntelligence.image(height: 25),
                     ),

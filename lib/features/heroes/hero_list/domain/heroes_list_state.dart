@@ -9,9 +9,6 @@ class HeroesListState with _$HeroesListState {
 
   const factory HeroesListState.loaded({
     required List<HeroStats> heroes,
-    required List<HeroStats> heroesStr,
-    required List<HeroStats> heroesInt,
-    required List<HeroStats> heroesAgi,
   }) = Loaded;
 
   const factory HeroesListState.error([String? message]) = Error;
