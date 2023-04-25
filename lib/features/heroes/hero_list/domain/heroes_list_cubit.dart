@@ -26,8 +26,27 @@ class HeroesListCubit extends Cubit<HeroesListState> {
             return a.localizedName!.compareTo(b.localizedName!);
           },
         );
+      //TODO: Util
+        final heroesAgi = heroesData
+            .where((element) => element.primaryAttr == 'agi')
+            .toList();
+        final heroesInt = heroesData
+            .where((element) => element.primaryAttr == 'int')
+            .toList();
+        final heroesStr = heroesData
+            .where((element) => element.primaryAttr == 'str')
+            .toList();
 
-        if (!isClosed) emit(HeroesListState.loaded(heroes: heroesData));
+        if (!isClosed) {
+          emit(
+            HeroesListState.loaded(
+              heroesStr: heroesStr,
+              heroesInt: heroesInt,
+              heroesAgi: heroesAgi,
+              heroes: heroesData,
+            ),
+          );
+        }
       },
       failure: (_) {
         if (!isClosed) emit(const HeroesListState.error());

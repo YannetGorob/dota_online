@@ -19,21 +19,27 @@ mixin _$HeroesListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<HeroStats> heroes) loaded,
+    required TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)
+        loaded,
     required TResult Function(String? message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<HeroStats> heroes)? loaded,
+    TResult? Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult? Function(String? message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<HeroStats> heroes)? loaded,
+    TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) =>
@@ -117,7 +123,9 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<HeroStats> heroes) loaded,
+    required TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)
+        loaded,
     required TResult Function(String? message) error,
   }) {
     return loading();
@@ -127,7 +135,9 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<HeroStats> heroes)? loaded,
+    TResult? Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult? Function(String? message)? error,
   }) {
     return loading?.call();
@@ -137,7 +147,9 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<HeroStats> heroes)? loaded,
+    TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
@@ -191,7 +203,11 @@ abstract class _$$LoadedCopyWith<$Res> {
   factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
       __$$LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<HeroStats> heroes});
+  $Res call(
+      {List<HeroStats> heroes,
+      List<HeroStats> heroesStr,
+      List<HeroStats> heroesInt,
+      List<HeroStats> heroesAgi});
 }
 
 /// @nodoc
@@ -205,11 +221,26 @@ class __$$LoadedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? heroes = null,
+    Object? heroesStr = null,
+    Object? heroesInt = null,
+    Object? heroesAgi = null,
   }) {
     return _then(_$Loaded(
       heroes: null == heroes
           ? _value._heroes
           : heroes // ignore: cast_nullable_to_non_nullable
+              as List<HeroStats>,
+      heroesStr: null == heroesStr
+          ? _value._heroesStr
+          : heroesStr // ignore: cast_nullable_to_non_nullable
+              as List<HeroStats>,
+      heroesInt: null == heroesInt
+          ? _value._heroesInt
+          : heroesInt // ignore: cast_nullable_to_non_nullable
+              as List<HeroStats>,
+      heroesAgi: null == heroesAgi
+          ? _value._heroesAgi
+          : heroesAgi // ignore: cast_nullable_to_non_nullable
               as List<HeroStats>,
     ));
   }
@@ -218,7 +249,15 @@ class __$$LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Loaded implements Loaded {
-  const _$Loaded({required final List<HeroStats> heroes}) : _heroes = heroes;
+  const _$Loaded(
+      {required final List<HeroStats> heroes,
+      required final List<HeroStats> heroesStr,
+      required final List<HeroStats> heroesInt,
+      required final List<HeroStats> heroesAgi})
+      : _heroes = heroes,
+        _heroesStr = heroesStr,
+        _heroesInt = heroesInt,
+        _heroesAgi = heroesAgi;
 
   final List<HeroStats> _heroes;
   @override
@@ -228,9 +267,33 @@ class _$Loaded implements Loaded {
     return EqualUnmodifiableListView(_heroes);
   }
 
+  final List<HeroStats> _heroesStr;
+  @override
+  List<HeroStats> get heroesStr {
+    if (_heroesStr is EqualUnmodifiableListView) return _heroesStr;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_heroesStr);
+  }
+
+  final List<HeroStats> _heroesInt;
+  @override
+  List<HeroStats> get heroesInt {
+    if (_heroesInt is EqualUnmodifiableListView) return _heroesInt;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_heroesInt);
+  }
+
+  final List<HeroStats> _heroesAgi;
+  @override
+  List<HeroStats> get heroesAgi {
+    if (_heroesAgi is EqualUnmodifiableListView) return _heroesAgi;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_heroesAgi);
+  }
+
   @override
   String toString() {
-    return 'HeroesListState.loaded(heroes: $heroes)';
+    return 'HeroesListState.loaded(heroes: $heroes, heroesStr: $heroesStr, heroesInt: $heroesInt, heroesAgi: $heroesAgi)';
   }
 
   @override
@@ -238,12 +301,22 @@ class _$Loaded implements Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Loaded &&
-            const DeepCollectionEquality().equals(other._heroes, _heroes));
+            const DeepCollectionEquality().equals(other._heroes, _heroes) &&
+            const DeepCollectionEquality()
+                .equals(other._heroesStr, _heroesStr) &&
+            const DeepCollectionEquality()
+                .equals(other._heroesInt, _heroesInt) &&
+            const DeepCollectionEquality()
+                .equals(other._heroesAgi, _heroesAgi));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_heroes));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_heroes),
+      const DeepCollectionEquality().hash(_heroesStr),
+      const DeepCollectionEquality().hash(_heroesInt),
+      const DeepCollectionEquality().hash(_heroesAgi));
 
   @JsonKey(ignore: true)
   @override
@@ -255,32 +328,38 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<HeroStats> heroes) loaded,
+    required TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)
+        loaded,
     required TResult Function(String? message) error,
   }) {
-    return loaded(heroes);
+    return loaded(heroes, heroesStr, heroesInt, heroesAgi);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<HeroStats> heroes)? loaded,
+    TResult? Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult? Function(String? message)? error,
   }) {
-    return loaded?.call(heroes);
+    return loaded?.call(heroes, heroesStr, heroesInt, heroesAgi);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<HeroStats> heroes)? loaded,
+    TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(heroes);
+      return loaded(heroes, heroesStr, heroesInt, heroesAgi);
     }
     return orElse();
   }
@@ -321,9 +400,16 @@ class _$Loaded implements Loaded {
 }
 
 abstract class Loaded implements HeroesListState {
-  const factory Loaded({required final List<HeroStats> heroes}) = _$Loaded;
+  const factory Loaded(
+      {required final List<HeroStats> heroes,
+      required final List<HeroStats> heroesStr,
+      required final List<HeroStats> heroesInt,
+      required final List<HeroStats> heroesAgi}) = _$Loaded;
 
   List<HeroStats> get heroes;
+  List<HeroStats> get heroesStr;
+  List<HeroStats> get heroesInt;
+  List<HeroStats> get heroesAgi;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -392,7 +478,9 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<HeroStats> heroes) loaded,
+    required TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)
+        loaded,
     required TResult Function(String? message) error,
   }) {
     return error(message);
@@ -402,7 +490,9 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<HeroStats> heroes)? loaded,
+    TResult? Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult? Function(String? message)? error,
   }) {
     return error?.call(message);
@@ -412,7 +502,9 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<HeroStats> heroes)? loaded,
+    TResult Function(List<HeroStats> heroes, List<HeroStats> heroesStr,
+            List<HeroStats> heroesInt, List<HeroStats> heroesAgi)?
+        loaded,
     TResult Function(String? message)? error,
     required TResult orElse(),
   }) {

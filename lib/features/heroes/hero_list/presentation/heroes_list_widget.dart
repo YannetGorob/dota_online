@@ -21,7 +21,12 @@ class HeroesListWidget extends StatelessWidget {
           return state.map(
             loading: (_) => const DotaProgressIndicator(),
             error: (_) => const DotaErrorWidget(),
-            loaded: (state) => BodyHeroesWidget(heroes: state.heroes),
+            loaded: (state) => BodyHeroesWidget(
+              heroes: state.heroes,
+              heroesStr: state.heroesStr,
+              heroesAgi: state.heroesAgi,
+              heroesInt: state.heroesInt,
+            ),
           );
         },
       ),
