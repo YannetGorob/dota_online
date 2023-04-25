@@ -40,6 +40,9 @@ class MatchDetailsBody extends StatelessWidget {
                 return Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
+                    side: BorderSide(
+                      color: playerColor,
+                    ),
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(15),
@@ -72,7 +75,6 @@ class MatchDetailsBody extends StatelessWidget {
                                     child: Text(
                                       item.name!,
                                       overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: playerColor),
                                     ),
                                   )
                                 else if (item.personName != null)
@@ -80,7 +82,6 @@ class MatchDetailsBody extends StatelessWidget {
                                     child: Text(
                                       item.personName!,
                                       overflow: TextOverflow.ellipsis,
-                                      style: TextStyle(color: playerColor),
                                     ),
                                   )
                                 else
