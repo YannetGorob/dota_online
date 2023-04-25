@@ -885,6 +885,7 @@ mixin _$MatchDetailsPlayer {
   String? get name => throw _privateConstructorUsedError;
   bool? get radiantWin => throw _privateConstructorUsedError;
   int? get duration => throw _privateConstructorUsedError;
+  @JsonKey(name: 'isRadiant')
   bool? get isRadiant => throw _privateConstructorUsedError;
   int? get win => throw _privateConstructorUsedError;
   int? get lose => throw _privateConstructorUsedError;
@@ -911,7 +912,7 @@ abstract class $MatchDetailsPlayerCopyWith<$Res> {
       String? name,
       bool? radiantWin,
       int? duration,
-      bool? isRadiant,
+      @JsonKey(name: 'isRadiant') bool? isRadiant,
       int? win,
       int? lose});
 }
@@ -1013,7 +1014,7 @@ abstract class _$$_MatchDetailsPlayerCopyWith<$Res>
       String? name,
       bool? radiantWin,
       int? duration,
-      bool? isRadiant,
+      @JsonKey(name: 'isRadiant') bool? isRadiant,
       int? win,
       int? lose});
 }
@@ -1108,7 +1109,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
       this.name,
       this.radiantWin,
       this.duration,
-      this.isRadiant,
+      @JsonKey(name: 'isRadiant') this.isRadiant,
       this.win,
       this.lose});
 
@@ -1135,6 +1136,7 @@ class _$_MatchDetailsPlayer implements _MatchDetailsPlayer {
   @override
   final int? duration;
   @override
+  @JsonKey(name: 'isRadiant')
   final bool? isRadiant;
   @override
   final int? win;
@@ -1213,7 +1215,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
       final String? name,
       final bool? radiantWin,
       final int? duration,
-      final bool? isRadiant,
+      @JsonKey(name: 'isRadiant') final bool? isRadiant,
       final int? win,
       final int? lose}) = _$_MatchDetailsPlayer;
 
@@ -1240,6 +1242,7 @@ abstract class _MatchDetailsPlayer implements MatchDetailsPlayer {
   @override
   int? get duration;
   @override
+  @JsonKey(name: 'isRadiant')
   bool? get isRadiant;
   @override
   int? get win;

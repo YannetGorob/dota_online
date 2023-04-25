@@ -65,7 +65,7 @@ class MatchDetailsPlayer with _$MatchDetailsPlayer {
     String? name,
     bool? radiantWin,
     int? duration,
-    bool? isRadiant,
+    @JsonKey(name: 'isRadiant') bool? isRadiant,
     int? win,
     int? lose,
   }) = _MatchDetailsPlayer;

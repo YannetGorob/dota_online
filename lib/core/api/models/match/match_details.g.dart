@@ -90,7 +90,7 @@ _$_MatchDetailsPlayer _$$_MatchDetailsPlayerFromJson(
       name: json['name'] as String?,
       radiantWin: json['radiant_win'] as bool?,
       duration: json['duration'] as int?,
-      isRadiant: json['is_radiant'] as bool?,
+      isRadiant: json['isRadiant'] as bool?,
       win: json['win'] as int?,
       lose: json['lose'] as int?,
     );
@@ -107,7 +107,7 @@ Map<String, dynamic> _$$_MatchDetailsPlayerToJson(
       'name': instance.name,
       'radiant_win': instance.radiantWin,
       'duration': instance.duration,
-      'is_radiant': instance.isRadiant,
+      'isRadiant': instance.isRadiant,
       'win': instance.win,
       'lose': instance.lose,
     };

@@ -28,6 +28,15 @@ class MatchDetailsBody extends StatelessWidget {
               childCount: players.length,
               (context, index) {
                 final item = players[index];
+                final Color? playerColor;
+
+                if (item.isRadiant == true) {
+                  playerColor = context.dotaColors.radiantColor;
+                } else if (item.isRadiant == false) {
+                  playerColor = context.dotaColors.direColor;
+                } else {
+                  playerColor = context.dotaColors.dotaWhiteColor;
+                }
                 return Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
@@ -63,6 +72,7 @@ class MatchDetailsBody extends StatelessWidget {
                                     child: Text(
                                       item.name!,
                                       overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: playerColor),
                                     ),
                                   )
                                 else if (item.personName != null)
@@ -70,7 +80,7 @@ class MatchDetailsBody extends StatelessWidget {
                                     child: Text(
                                       item.personName!,
                                       overflow: TextOverflow.ellipsis,
-                                      style: context.textStyle.primaryTextStyle,
+                                      style: TextStyle(color: playerColor),
                                     ),
                                   )
                                 else
